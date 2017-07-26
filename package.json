@@ -1,27 +1,33 @@
 {
-  "name": "mdss",
-  "version": "1.0.0",
-  "description": "Stylesheets for displaying and printing Markdown documents",
-  "scripts": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vimtaai/mdss.git"
-  },
-  "keywords": [
-    "markdown",
-    "css",
-    "screen",
-    "print"
-  ],
-  "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vimtaai/mdss/issues"
-  },
-  "homepage": "https://github.com/vimtaai/mdss#readme",
-  "devDependencies": {
-    "node-sass": "^4.5.3",
-    "nodemon": "^1.11.0"
-  }
+    "name": "mdss",
+    "version": "1.0.0",
+    "description": "Stylesheets for displaying and printing Markdown documents",
+    "scripts": {
+        "build-print-dev": "node-sass --include-path src src/print.scss dist/mdss-print.css --output-style expanded",
+        "build-print": "node-sass --include-path src src/print.scss dist/mdss-print.min.css --output-style compressed",
+        "build-screen-dev": "node-sass --include-path src src/screen.scss dist/mdss-screen.css --output-style expanded",
+        "build-screen": "node-sass --include-path src src/print.scss dist/mdss-screen.min.css --output-style compressed",
+        "build-dev": "npm run build-print-dev && npm run build-screen-dev && node-sass --include-path src src/index.scss dist/mdss.css --output-style expanded",
+        "build": "npm run build-print && npm run build-screen && node-sass --include-path src src/index.scss dist/mdss.min.css --output-style compressed"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vimtaai/mdss.git"
+    },
+    "keywords": [
+        "markdown",
+        "css",
+        "screen",
+        "print"
+    ],
+    "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vimtaai/mdss/issues"
+    },
+    "homepage": "https://github.com/vimtaai/mdss#readme",
+    "devDependencies": {
+        "node-sass": "^4.5.3",
+        "nodemon": "^1.11.0"
+    }
 }
