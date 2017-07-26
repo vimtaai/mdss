@@ -1,0 +1,27 @@
+{
+  "name": "mdss",
+  "version": "1.0.0",
+  "description": "Stylesheets for displaying and printing Markdown documents",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimtaai/mdss.git"
+  },
+  "keywords": [
+    "markdown",
+    "css",
+    "screen",
+    "print"
+  ],
+  "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vimtaai/mdss/issues"
+  },
+  "homepage": "https://github.com/vimtaai/mdss#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
+  }
+}

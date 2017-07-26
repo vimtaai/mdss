@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Coverage data
+coverage
+
+# VS Code config
+.vscode
+
+# Optional npm cache directory
+.npm
+
+# Logs
+*.log
+
+# Output of 'npm pack'
+*.tgz

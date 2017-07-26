@@ -1,0 +1,19 @@
+@if $convert-buttons == true {
+    a > em:only-child {
+        
+    }
+
+    a > strong:only-child {
+
+    }
+}
+
+@if $convert-messages == true {
+    blockquote > em:only-child {
+        
+    }
+
+    blockquote > strong:only-child {
+
+    }
+}

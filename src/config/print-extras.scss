@@ -1,0 +1,22 @@
+// Replace horizontal rules/thematic breaks with page breaks
+// (true|false)
+// Default: true
+$manual-page-break: true;
+
+// A list of elements before which there will be an automatic page break
+// (list of HTML elements)
+// Default: (h2)
+$automatic-page-break: (h2);
+
+// Automatic numbering of pages
+// (true|false)
+// Default: true
+$automatic-page-numbering: true;
+
+// Show the total number of pages in page numbering
+$automatic-page-numbering-total: true;
+
+// A list of elements that should have numbering (typically headings)
+// (list of HTML elements)
+// Default: ()
+$automatic-section-numbering: ();

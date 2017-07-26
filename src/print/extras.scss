@@ -1,0 +1,12 @@
+@if $manual-page-break == true {
+    hr {
+        visibility: hidden;
+        page-break-after: always;
+    }
+}
+
+@each $element in $automatic-page-break {
+    #{$element} {
+        page-break-before: always;  
+    }
+}

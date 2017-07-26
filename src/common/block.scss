@@ -1,0 +1,51 @@
+h1, h2, h3 {
+    font-family: $heading-font;
+}
+
+@for $level from 1 through 3 {
+    h#{$level} {
+        font-size: map-get($heading-font-size, $level);
+        margin-bottom: map-get($heading-margin, $level);
+    }
+}
+
+blockquote, p, pre, ol, ul {
+    margin: $paragraph-margin 0;
+}
+
+p {
+    font-family: $paragraph-font;
+    font-size: $paragraph-font-size;
+    line-height: $paragraph-line-height;
+    text-align: justify;
+    text-indent: $paragraph-indent;
+}
+
+blockquote {
+    p {
+        text-indent: 0;
+    }
+}
+
+ol, ul {
+    ol, ul {
+        margin-bottom: 0;
+    }
+
+    p {
+        display: inline;
+    }
+}
+
+ol {
+    list-style: $ordered-list-style;
+}
+
+ul {
+    list-style: $unordered-list-style;
+}
+
+pre, code {
+    font-family: $code-font;
+    font-size: $code-font-size;
+}

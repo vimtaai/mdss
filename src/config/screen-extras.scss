@@ -1,0 +1,13 @@
+// Convert emphasised and strong links into buttons
+// (true|false)
+// Default: true
+// Example: 
+// **[This is a button](button-href-target)**
+$convert-buttons: true;
+
+// Convert emphasised and strong blockquotes into message boxes
+// (true|false)
+// Default: true
+// Example: 
+// > **This is a very important message**
+$convert-messages: true;
