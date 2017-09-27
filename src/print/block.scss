@@ -1,0 +1,7 @@
+@page {
+  margin: $page-margin-y $page-margin-x;
+}
+
+pre, table, ul {
+  page-break-inside: avoid;
+}

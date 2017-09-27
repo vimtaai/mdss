@@ -8,15 +8,12 @@ $manual-page-break: true;
 // Default: (h2)
 $automatic-page-break: (h2);
 
-// Automatic numbering of pages
-// (true|false)
-// Default: true
-$automatic-page-numbering: true;
-
-// Show the total number of pages in page numbering
-$automatic-page-numbering-total: true;
-
 // A list of elements that should have numbering (typically headings)
 // (list of HTML elements)
-// Default: ()
-$automatic-section-numbering: ();
+// Default: (h2, h3)
+$automatic-section-numbering: (h2, h3);
+
+// Show link URLs after link text
+// (true|false)
+// Default: true
+$show-link-urls: true

@@ -4,15 +4,22 @@ $color-gray-medium: #e2e2ea;
 $color-gray-dark: #42424a;
 $color-black: #000000;
 
-$paragraph-font: 'Times New Roman', 'Times', serif;
-$paragraph-font-size: 12pt;
+$page-margin-x: 25mm;
+$page-margin-y: 25mm;
+$page-max-width: 1189mm;
+
+$page-font: 'Times New Roman', 'Times', serif;
+$page-font-size: 12pt;
+
+$paragraph-font: $page-font;
+$paragraph-font-size: $page-font-size;
 $paragraph-line-height: 1.41;
 $paragraph-margin: 12pt;
 $paragraph-indent: 12pt;
 
 $heading-font: 'Arial Narrow', 'Helvetica Neue', 'Helvetica', sans-serif;
-$heading-font-size: (1: 18pt, 2: 16pt, 3: 14pt);
-$heading-margin: (1: 18pt, 2: 12pt, 3: 12pt);
+$heading-font-size: (1: 20pt, 2: 18pt, 3: 16pt);
+$heading-margin: (1: 20pt, 2: 16pt, 3: 12pt);
 
 $code-font: 'Consolas', 'Monaco', 'monospace';
 $code-font-size: 11pt;

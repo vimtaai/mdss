@@ -1,19 +1,24 @@
+body {
+  font-family: "Times New Roman", "Times", serif;
+  font-size: 12pt;
+}
+
 h1, h2, h3 {
   font-family: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 h1 {
-  font-size: 18pt;
-  margin-bottom: 18pt;
+  font-size: 20pt;
+  margin-bottom: 20pt;
 }
 
 h2 {
-  font-size: 16pt;
-  margin-bottom: 12pt;
+  font-size: 18pt;
+  margin-bottom: 16pt;
 }
 
 h3 {
-  font-size: 14pt;
+  font-size: 16pt;
   margin-bottom: 12pt;
 }
 
@@ -34,6 +39,7 @@ blockquote p {
 }
 
 ol ol, ol ul, ul ol, ul ul {
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -49,9 +55,16 @@ ul {
   list-style: square;
 }
 
-pre, code {
+code, pre {
+  background: #e2e2ea;
+  border-radius: 3px;
+  color: #42424a;
   font-family: "Consolas", "Monaco", "monospace";
   font-size: 11pt;
+}
+
+pre {
+  padding: 10px;
 }
 
 a {
@@ -63,6 +76,20 @@ img {
   vertical-align: middle;
 }
 
+@page {
+  margin: 25mm 25mm;
+}
+
+pre, table, ul {
+  page-break-inside: avoid;
+}
+
+a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 hr {
   visibility: hidden;
   page-break-after: always;
@@ -70,4 +97,30 @@ hr {
 
 h2 {
   page-break-before: always;
+}
+
+body {
+  counter-reset: section1;
+  counter-reset: section2;
+}
+
+h2 {
+  counter-reset: section2;
+  counter-increment: section1;
+}
+
+h2:before {
+  content: counter(section1) " ";
+}
+
+h3 {
+  counter-increment: section2;
+}
+
+h3:before {
+  content: counter(section1) "." counter(section2) " ";
+}
+
+a[href]:after {
+  content: " (" attr(href) ")";
 }

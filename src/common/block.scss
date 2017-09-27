@@ -1,3 +1,8 @@
+body {
+    font-family: $page-font;
+    font-size: $page-font-size;
+}
+
 h1, h2, h3 {
     font-family: $heading-font;
 }
@@ -29,6 +34,7 @@ blockquote {
 
 ol, ul {
     ol, ul {
+        margin-top: 0;
         margin-bottom: 0;
     }
 
@@ -45,7 +51,14 @@ ul {
     list-style: $unordered-list-style;
 }
 
-pre, code {
+code, pre {
+    background: $color-gray-medium;
+    border-radius: 3px;
+    color: $color-gray-dark;
     font-family: $code-font;
     font-size: $code-font-size;
+}
+
+pre {
+    padding: 10px;
 }

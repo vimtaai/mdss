@@ -1,0 +1,25 @@
+body {
+  margin: #{$page-margin-y} #{$page-margin-x};
+  max-width: $page-max-width;
+}
+
+pre {
+  position: relative;
+
+  &:before {
+    content: "<>";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: $color-gray-dark;
+    color: $color-white;
+    display: block;
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    padding: 11px 13px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

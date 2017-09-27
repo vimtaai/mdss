@@ -1,13 +1,17 @@
 @media screen {
+  body {
+    font-family: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 17px;
+  }
   h1, h2, h3 {
     font-family: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
   }
   h1 {
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-bottom: 1.4rem;
   }
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     margin-bottom: 1.2rem;
   }
   h3 {
@@ -19,8 +23,8 @@
   }
   p {
     font-family: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: 15px;
-    line-height: 1.14;
+    font-size: 17px;
+    line-height: 1.5;
     text-align: justify;
     text-indent: 0;
   }
@@ -28,6 +32,7 @@
     text-indent: 0;
   }
   ol ol, ol ul, ul ol, ul ul {
+    margin-top: 0;
     margin-bottom: 0;
   }
   ol p, ul p {
@@ -39,9 +44,15 @@
   ul {
     list-style: square;
   }
-  pre, code {
+  code, pre {
+    background: #e2e2ea;
+    border-radius: 3px;
+    color: #42424a;
     font-family: "Consolas", "Monaco", "monospace";
     font-size: 11pt;
+  }
+  pre {
+    padding: 10px;
   }
   a {
     text-decoration: none;
@@ -50,22 +61,49 @@
     max-width: 100%;
     vertical-align: middle;
   }
+  body {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  pre {
+    position: relative;
+  }
+  pre:before {
+    content: "<>";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #42424a;
+    color: #ffffff;
+    display: block;
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    padding: 11px 13px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 
 @media print {
+  body {
+    font-family: "Times New Roman", "Times", serif;
+    font-size: 12pt;
+  }
   h1, h2, h3 {
     font-family: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
   }
   h1 {
-    font-size: 18pt;
-    margin-bottom: 18pt;
+    font-size: 20pt;
+    margin-bottom: 20pt;
   }
   h2 {
-    font-size: 16pt;
-    margin-bottom: 12pt;
+    font-size: 18pt;
+    margin-bottom: 16pt;
   }
   h3 {
-    font-size: 14pt;
+    font-size: 16pt;
     margin-bottom: 12pt;
   }
   blockquote, p, pre, ol, ul {
@@ -82,6 +120,7 @@
     text-indent: 0;
   }
   ol ol, ol ul, ul ol, ul ul {
+    margin-top: 0;
     margin-bottom: 0;
   }
   ol p, ul p {
@@ -93,9 +132,15 @@
   ul {
     list-style: square;
   }
-  pre, code {
+  code, pre {
+    background: #e2e2ea;
+    border-radius: 3px;
+    color: #42424a;
     font-family: "Consolas", "Monaco", "monospace";
     font-size: 11pt;
+  }
+  pre {
+    padding: 10px;
   }
   a {
     text-decoration: none;
@@ -104,11 +149,42 @@
     max-width: 100%;
     vertical-align: middle;
   }
+  @page {
+    margin: 25mm 25mm;
+  }
+  pre, table, ul {
+    page-break-inside: avoid;
+  }
+  a {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+  }
   hr {
     visibility: hidden;
     page-break-after: always;
   }
   h2 {
     page-break-before: always;
+  }
+  body {
+    counter-reset: section1;
+    counter-reset: section2;
+  }
+  h2 {
+    counter-reset: section2;
+    counter-increment: section1;
+  }
+  h2:before {
+    content: counter(section1) " ";
+  }
+  h3 {
+    counter-increment: section2;
+  }
+  h3:before {
+    content: counter(section1) "." counter(section2) " ";
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
   }
 }
