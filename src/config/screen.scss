@@ -3,12 +3,13 @@ $color-gray-light: #f2f2fa;
 $color-gray-medium: #e2e2ea;
 $color-gray-dark: #42424a;
 $color-black: #000000;
+$color-accent: #16a085;
 
 $page-margin-x: auto;
 $page-margin-y: 0;
 $page-max-width: 800px;
 
-$page-font: 'Arial Narrow', 'Helvetica Neue', 'Helvetica', sans-serif;
+$page-font: 'Calibri', 'Helvetica Neue', 'Helvetica', sans-serif;
 $page-font-size: 17px;
 
 $paragraph-font: $page-font;
@@ -22,7 +23,9 @@ $heading-font-size: (1: 2rem, 2: 1.7rem, 3: 1.2rem);
 $heading-margin: (1: 1.4rem, 2: 1.2rem, 3: 0);
 
 $code-font: 'Consolas', 'Monaco', 'monospace';
-$code-font-size: 11pt;
+$code-font-size: .9em;
 
 $ordered-list-style: decimal;
 $unordered-list-style: square;
+
+$transition-duration: 250ms;

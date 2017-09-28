@@ -1,0 +1,9 @@
+a {
+  border-bottom: solid transparent 1px;
+  color: $color-accent;
+  transition: border-bottom-color $transition-duration;
+
+  &:hover {
+    border-bottom-color: $color-accent;
+  }
+}

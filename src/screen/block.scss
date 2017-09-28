@@ -8,18 +8,17 @@ pre {
 
   &:before {
     content: "<>";
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    background: $color-gray-dark;
+    background: $color-accent;
+    border-radius: 50%;
+    box-sizing: border-box;
     color: $color-white;
     display: block;
-    box-sizing: border-box;
-    width: 45px;
-    height: 45px;
-    padding: 11px 13px;
-    border-radius: 50%;
-    font-size: 18px;
     font-weight: bold;
+    height: 1.7em;
+    padding: .2em .3em;
+    position: absolute;
+    right: -.5em;
+    top: -10px;
+    width: -.5em;
   }
 }
