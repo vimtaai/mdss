@@ -1,19 +1,21 @@
+@import "mixins";
+
 @if $convert-buttons == true {
-    a > em:only-child {
-        
-    }
+  a > em:only-child {
+    @include button($color-gray-medium, $color-gray-dark);
+  }
 
-    a > strong:only-child {
-
-    }
+  a > strong:only-child {
+    @include button($color-accent, $color-white);
+  }
 }
 
 @if $convert-messages == true {
-    blockquote > em:only-child {
-        
-    }
+  strong > code:only-child {
+    @include message(#F7CA18, $color-black, "!");
+  }
 
-    blockquote > strong:only-child {
-
-    }
+  em > code:only-child {
+    @include message(#59ABE3, $color-black, "i");
+  }
 }

@@ -1,0 +1,58 @@
+@mixin badge($background, $foreground, $symbol) {
+  position: relative;
+
+  &:after {
+    content: $symbol;
+    background: $background;
+    border: solid $color-white 0.2rem;
+    border-radius: 50%;
+    box-sizing: content-box;
+    color: $foreground;
+    display: block;
+    font-family: $code-font;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: bold;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    position: absolute;
+    right: -0.5rem;
+    text-align: center;
+    top: -0.5rem;
+    width: 1.7rem;
+  }
+}
+
+@mixin button($background, $foreground) {
+  background: $background;
+  border: none;
+  border-radius: $border-radius;
+  color: $foreground;
+  display: inline-block;
+  font-style: normal;
+  font-weight: bold;
+  padding: 0.7em 1.2em;
+  transition: background $transition-duration;
+
+  &:hover {
+    background: darken($background, 5%);
+  }
+
+  &:active {
+    background: darken($background, 10%);
+  }
+}
+
+@mixin message($background, $foreground, $symbol) {
+  @include badge($background, $foreground, $symbol);
+
+  background: $background;
+  color: $foreground;
+  display: block;
+  font-family: $page-font;
+  font-style: normal;
+  font-weight: bold;
+  margin: $paragraph-margin 0;
+  padding: 1em;
+  width: 100%;
+}

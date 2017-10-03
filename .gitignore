@@ -15,3 +15,6 @@ coverage
 
 # Output of 'npm pack'
 *.tgz
+
+# Distributables
+dist

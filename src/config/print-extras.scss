@@ -5,15 +5,15 @@ $manual-page-break: true;
 
 // A list of elements before which there will be an automatic page break
 // (list of HTML elements)
-// Default: (h2)
-$automatic-page-break: (h2);
+// Default: h2
+$automatic-page-break: h2;
 
 // A list of elements that should have numbering (typically headings)
 // (list of HTML elements)
-// Default: (h2, h3)
-$automatic-section-numbering: (h2, h3);
+// Default: h2, h3
+$automatic-section-numbering: h2, h3;
 
 // Show link URLs after link text
 // (true|false)
 // Default: true
-$show-link-urls: true
+$show-link-urls: true;

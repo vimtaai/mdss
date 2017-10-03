@@ -1,24 +1,22 @@
+@import "mixins";
+
 body {
   margin: #{$page-margin-y} #{$page-margin-x};
   max-width: $page-max-width;
 }
 
-pre {
-  position: relative;
+h1 {
+  border-bottom: solid $page-foreground 0.3rem;
+  padding: $paragraph-margin 0;
+}
 
-  &:before {
-    content: "<>";
-    background: $color-accent;
-    border-radius: 50%;
-    box-sizing: border-box;
-    color: $color-white;
-    display: block;
-    font-weight: bold;
-    height: 1.7em;
-    padding: .2em .3em;
-    position: absolute;
-    right: -.5em;
-    top: -10px;
-    width: -.5em;
-  }
+pre {
+  @include badge($color-accent, $color-white, "<>");
+}
+
+blockquote {
+  @include badge($color-accent, $color-white, "”");
+
+  background: $color-gray-medium;
+  border-left: solid $color-accent 0.3rem;
 }

@@ -1,64 +1,74 @@
 body {
-    font-family: $page-font;
-    font-size: $page-font-size;
+  background: $page-background;
+  color: $page-foreground;
+  font-family: $page-font;
+  font-size: $page-font-size;
 }
 
 h1, h2, h3 {
-    font-family: $heading-font;
+  font-family: $heading-font;
 }
 
 @for $level from 1 through 3 {
-    h#{$level} {
-        font-size: map-get($heading-font-size, $level);
-        margin-bottom: map-get($heading-margin, $level);
-    }
+  h#{$level} {
+    font-size: map-get($heading-font-size, $level);
+    margin-bottom: map-get($heading-margin, $level);
+  }
 }
 
 blockquote, p, pre, ol, ul {
-    margin: $paragraph-margin 0;
+  margin: $paragraph-margin 0;
 }
 
 p {
-    font-family: $paragraph-font;
-    font-size: $paragraph-font-size;
-    line-height: $paragraph-line-height;
-    text-align: justify;
-    text-indent: $paragraph-indent;
+  font-family: $paragraph-font;
+  font-size: $paragraph-font-size;
+  line-height: $paragraph-line-height;
+  text-align: justify;
+  text-indent: $paragraph-indent;
 }
 
 blockquote {
-    p {
-        text-indent: 0;
-    }
+  border-radius: 0 $border-radius $border-radius 0;
+  font-style: italic;
+  padding: $padding-large;
+
+  p {
+    text-indent: 0;
+  }
 }
 
 ol, ul {
-    ol, ul {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+  ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-    p {
-        display: inline;
-    }
+  p {
+    display: inline;
+  }
 }
 
 ol {
-    list-style: $ordered-list-style;
+  list-style: $ordered-list-style;
 }
 
 ul {
-    list-style: $unordered-list-style;
+  list-style: $unordered-list-style;
 }
 
 code, pre {
-    background: $color-gray-medium;
-    border-radius: .3em;
-    color: $color-gray-dark;
-    font-family: $code-font;
-    font-size: $code-font-size;
+  background: $code-background;
+  border-radius: $border-radius;
+  color: $code-foreground;
+  font-family: $code-font;
+  font-size: $code-font-size;
 }
 
 pre {
-    padding: 10px;
+  padding: $padding-large;
+}
+
+hr {
+  border: solid $page-foreground .075rem;
 }

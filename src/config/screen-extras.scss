@@ -5,9 +5,9 @@
 // **[This is a button](button-href-target)**
 $convert-buttons: true;
 
-// Convert emphasised and strong blockquotes into message boxes
+// Convert emphasised and strong code into message boxes
 // (true|false)
 // Default: true
 // Example: 
-// > **This is a very important message**
+// **`This is a very important message`**
 $convert-messages: true;

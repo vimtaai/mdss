@@ -1,4 +1,6 @@
 body {
+  background: #ffffff;
+  color: #000000;
   font-family: "Times New Roman", "Times", serif;
   font-size: 12pt;
 }
@@ -34,6 +36,12 @@ p {
   text-indent: 12pt;
 }
 
+blockquote {
+  border-radius: 0 0.3em 0.3em 0;
+  font-style: italic;
+  padding: 0.5em;
+}
+
 blockquote p {
   text-indent: 0;
 }
@@ -57,14 +65,18 @@ ul {
 
 code, pre {
   background: #e2e2ea;
-  border-radius: .3em;
+  border-radius: 0.3em;
   color: #42424a;
   font-family: "Consolas", "Monaco", "monospace";
   font-size: 0.9em;
 }
 
 pre {
-  padding: 10px;
+  padding: 0.5em;
+}
+
+hr {
+  border: solid #000000 0.075rem;
 }
 
 a {
@@ -72,7 +84,7 @@ a {
 }
 
 code {
-  padding: 0 .3em;
+  padding: 0 0.3em;
 }
 
 img {
