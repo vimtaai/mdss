@@ -6,7 +6,7 @@
 
 **MDSS** is a small CSS code to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own builds for both screen and print or a single build for both media.
 
-To create a production build run the `npm run build` command. Individual *screen* and *print* builds can be created with the `npm run build-screen` and `npm run build-print` commands. 
+To create a production build run the `npm run build` command. Individual *screen* and *print* builds can be created with the `npm run build-screen` and `npm run build-print` commands.
 
 ## Extras
 
@@ -30,15 +30,15 @@ To create a production build run the `npm run build` command. Individual *screen
 - Automatic numbering of given elements (e.g. headings)
 - Automatic URL insertion after links
 
-### Configuration
+## Configuration
 
 Most visual aspects (like color, sizes, paddings) can be configured in **MDSS**. The `source/config` folder contains all the options to be modified the rest of the code uses the variables declared here.
 
 ## Installation
 
-To use **MDSS** you should clone this repository, install the npm dependencies and build your own bundle.
+To use **MDSS** you should clone this repository, install dependencies and build your own bundle.
 
-```
+```bash
 npm install
 npm run build
 ```
