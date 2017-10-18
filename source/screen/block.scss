@@ -19,4 +19,8 @@ blockquote {
 
   background: $color-gray-medium;
   border-left: solid $color-accent 0.3rem;
+
+  p {
+    padding-left: $padding-large;
+  }
 }

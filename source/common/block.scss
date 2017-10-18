@@ -69,6 +69,10 @@ pre {
   padding: $padding-large;
 }
 
+pre code {
+  padding: 0;
+}
+
 hr {
   border: solid $page-foreground .075rem;
 }
