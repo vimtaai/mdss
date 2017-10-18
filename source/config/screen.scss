@@ -27,6 +27,15 @@ $code-font: "Consolas", "Monaco", "monospace";
 $code-font-size: 0.9em;
 $code-background: $color-gray-dark;
 $code-foreground: $color-gray-light;
+$code-badge-background: $color-accent;
+$code-badge-foreground: $color-white;
+$code-badge-symbol: "<>";
+
+$blockquote-background: $color-gray-medium;
+$blockquote-foreground: $color-gray-dark;
+$blockquote-badge-background: $color-accent;
+$blockquote-badge-foreground: $color-white;
+$blockquote-badge-symbol: "˶";
 
 $padding-small: 0.3em;
 $padding-large: 0.5em;

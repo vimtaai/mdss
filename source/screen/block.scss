@@ -11,14 +11,19 @@ h1 {
 }
 
 pre {
-  @include badge($color-accent, $color-white, "<>");
+  @include badge($code-badge-background, 
+                 $code-badge-foreground, 
+                 $code-badge-symbol);
 }
 
 blockquote {
-  @include badge($color-accent, $color-white, "”");
+  @include badge($blockquote-badge-background, 
+                 $blockquote-badge-foreground, 
+                 $blockquote-badge-symbol);
 
-  background: $color-gray-medium;
+  background: $blockquote-background;
   border-left: solid $color-accent 0.3rem;
+  color: $blockquote-foreground;
 
   p {
     padding-left: $padding-large;

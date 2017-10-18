@@ -1,6 +1,6 @@
 # MDSS
 
-> Stylesheets for displaying and printing Markdown documents.
+> Stylesheets for displaying and printing Markdown documents
 
 ## Usage
 
