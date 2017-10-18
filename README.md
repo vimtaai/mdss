@@ -15,11 +15,11 @@ To create a production build run the `npm run build` command. Individual *screen
 ### Screen
 
 - Convert emphasised and strong links into buttons
-  ```markdown
+  ```
   `**[This is a button](button-href-target)**`
   ```
 - Convert emphasised and strong code into message boxes
-  ```markdown
+  ```
   **`This is a very important message`**
   ```
 
@@ -38,7 +38,7 @@ Most visual aspects (like color, sizes, paddings) can be configured in **MDSS**.
 
 To use **MDSS** you should clone this repository, install the npm dependencies and build your own bundle.
 
-```bash
+```
 npm install
 npm run build
 ```

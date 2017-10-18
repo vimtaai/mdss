@@ -5,9 +5,21 @@
 // **[This is a button](button-href-target)**
 $convert-buttons: true;
 
+$button-background-em: $color-gray-medium;
+$button-foreground-em: $color-gray-dark;
+$button-background-strong: $color-accent;
+$button-foreground-strong: $color-white;
+
 // Convert emphasised and strong code into message boxes
 // (true|false)
 // Default: true
 // Example: 
 // **`This is a very important message`**
 $convert-messages: true;
+
+$message-background-em: #59abe3;
+$message-foreground-em: $color-black;
+$message-symbol-em: "i";
+$message-background-strong: #f7ca18;
+$message-foreground-strong: $color-black;
+$message-symbol-strong: "!";

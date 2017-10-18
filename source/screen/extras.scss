@@ -2,20 +2,24 @@
 
 @if $convert-buttons == true {
   a > em:only-child {
-    @include button($color-gray-medium, $color-gray-dark);
+    @include button($button-background-em, $button-foreground-em);
   }
 
   a > strong:only-child {
-    @include button($color-accent, $color-white);
+    @include button($button-background-strong, $button-foreground-strong);
   }
 }
 
 @if $convert-messages == true {
-  strong > code:only-child {
-    @include message(#F7CA18, $color-black, "!");
+  em > code:only-child {
+    @include message($message-background-em, 
+                     $message-foreground-em, 
+                     $message-symbol-em);
   }
 
-  em > code:only-child {
-    @include message(#59ABE3, $color-black, "i");
+  strong > code:only-child {
+    @include message($message-background-strong, 
+                     $message-foreground-strong, 
+                     $message-symbol-strong);
   }
 }
