@@ -6,7 +6,7 @@
 
 **MDSS** is a small CSS code to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own builds for both screen and print or a single build for both media.
 
-To create a production build run the `npm run build` command. Individual *screen* and *print* builds can be created with the `npm run build-screen` and `npm run build-print` commands.
+To create a production build run the `npm run build` command. This will create a *combined* stylesheet with both *screen* and *print* styles. Individual *screen* and *print* builds can be created with the `npm run build:screen` and `npm run build:print` commands. The `npm run build:all` command creates all three files. Development versions (non-compressed) are also available by putting the `-dev` suffix to any build command.
 
 ## Extras
 
