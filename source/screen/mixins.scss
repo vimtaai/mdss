@@ -11,7 +11,6 @@
     display: block;
     font-family: $code-font;
     font-size: 1.1rem;
-    font-style: italic;
     font-weight: bold;
     height: 1.7rem;
     line-height: 1.7rem;
@@ -29,9 +28,10 @@
   border-radius: $border-radius;
   color: $foreground;
   display: inline-block;
+  font-size: $page-font-size;
   font-style: normal;
   font-weight: bold;
-  padding: 0.7em 1.2em;
+  padding: $padding-large $padding-huge;
   transition: background $transition-duration;
 
   &:hover {
@@ -43,16 +43,23 @@
   }
 }
 
-@mixin message($background, $foreground, $symbol) {
-  @include badge($background, $foreground, $symbol);
+@mixin message($background, 
+               $foreground, 
+               $badge-background, 
+               $badge-foreground, 
+               $badge-symbol) {
+  @include badge($badge-background, $badge-foreground, $badge-symbol);
 
   background: $background;
+  border-left: solid $badge-background 0.3rem;
+  border-radius: 0 $border-radius $border-radius 0;
   color: $foreground;
   display: block;
   font-family: $page-font;
+  font-size: $page-font-size;
   font-style: normal;
   font-weight: bold;
   margin: $paragraph-margin 0;
-  padding: 1em;
+  padding: $padding-huge;
   width: 100%;
 }

@@ -17,14 +17,11 @@ pre {
 }
 
 blockquote {
-  @include badge($blockquote-badge-background, 
-                 $blockquote-badge-foreground, 
-                 $blockquote-badge-symbol);
-
-  background: $blockquote-background;
-  border-left: solid $color-accent 0.3rem;
-  color: $blockquote-foreground;
-
+  @include message($blockquote-background,
+                   $blockquote-foreground,
+                   $blockquote-badge-background,
+                   $blockquote-badge-foreground,
+                   $blockquote-badge-symbol);
   p {
     padding-left: $padding-large;
   }

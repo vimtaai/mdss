@@ -7,6 +7,7 @@ $convert-buttons: true;
 
 $button-background-em: $color-gray-medium;
 $button-foreground-em: $color-gray-dark;
+
 $button-background-strong: $color-accent;
 $button-foreground-strong: $color-white;
 
@@ -17,9 +18,14 @@ $button-foreground-strong: $color-white;
 // **`This is a very important message`**
 $convert-messages: true;
 
-$message-background-em: #83D6DE;
 $message-foreground-em: $color-black;
+$message-background-em: $color-gray-medium;
+$message-badge-background-em: #3498db;
+$message-badge-foreground-em: $color-white;
 $message-symbol-em: "i";
-$message-background-strong: #F6CD61;
+
 $message-foreground-strong: $color-black;
+$message-background-strong: $color-gray-medium;
+$message-badge-background-strong: #f1c40f;
+$message-badge-foreground-strong: $color-white;
 $message-symbol-strong: "!";
