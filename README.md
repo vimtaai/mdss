@@ -16,7 +16,7 @@ To create a production build run the `npm run build` command. Individual *screen
 
 - Convert emphasised and strong links into buttons
   ```
-  `**[This is a button](button-href-target)**`
+  **[This is a button](button-href-target)**
   ```
 - Convert emphasised and strong code into message boxes
   ```
