@@ -46,11 +46,11 @@ $levels-of-numbered-sections: length($automatic-section-numbering);
 }
 
 @if $show-link-urls == true {
-  a[href|="http"]:after,
-  a[href|="ftp"]:after,
-  a[href|="scp"]:after,
-  a[href|="ssh"]:after
-  a[href|="mailto"]:after {
+  a[href^="http"]:after,
+  a[href^="ftp"]:after,
+  a[href^="scp"]:after,
+  a[href^="ssh"]:after,
+  a[href^="mailto"]:after {
     content: " (" attr(href) ")";
   }
 }
