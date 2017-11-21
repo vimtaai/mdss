@@ -45,4 +45,4 @@ npm run build
 
 ## Contributing
 
-All ideas, recommendations, bugs, pull requests are welcome. :smile:
+All ideas, recommendations, bug reports, pull requests are welcome. :smile:

@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "Stylesheets for displaying and printing Markdown documents",
   "scripts": {
-    "sass:prod": "node-sass --include-path source --output-style compressed",
-    "sass:dev": "node-sass --include-path source --output-style expanded",
+    "sass:prod": "node-sass --include-path src --output-style compressed",
+    "sass:dev": "node-sass --include-path src --output-style expanded",
 
-    "build:print-dev": "npm run sass:dev -- source/print/print.scss build/mdss-print.css",
-    "build:screen-dev": "npm run sass:dev -- source/screen/screen.scss build/mdss-screen.css",
-    "build:dev": "npm run sass:dev -- source/index.scss build/mdss.css",
+    "build:print-dev": "npm run sass:dev -- src/media/print/print.scss build/mdss-print.css",
+    "build:screen-dev": "npm run sass:dev -- src/media/screen/screen.scss build/mdss-screen.css",
+    "build:dev": "npm run sass:dev -- src/index.scss build/mdss.css",
     "build:all-dev": "npm run build:print-dev && npm run build:screen-dev && npm run build:dev",
 
-    "build:print": "npm run sass:prod -- source/print/print.scss build/mdss-print.min.css",
-    "build:screen": "npm run sass:prod -- source/screen/screen.scss build/mdss-screen.min.css",
-    "build": "npm run sass:prod -- source/index.scss build/mdss.min.css",
+    "build:print": "npm run sass:prod -- src/media/print/print.scss build/mdss-print.min.css",
+    "build:screen": "npm run sass:prod -- src/media/screen/screen.scss build/mdss-screen.min.css",
+    "build": "npm run sass:prod -- src/index.scss build/mdss.min.css",
     "build:all": "npm run build:print && npm run build:screen && npm run build"
   },
   "repository": {
