@@ -6,8 +6,8 @@ body {
 }
 
 h1 {
-  border-bottom: solid $page-foreground 0.3rem;
-  padding: $paragraph-margin 0;
+  color: $color-primary;
+  text-transform: uppercase;
 }
 
 pre {

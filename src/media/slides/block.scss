@@ -3,12 +3,12 @@
 }
 
 body {
-  color: $color-gray-light;
+  color: $page-foreground;
   padding: $page-margin-y $page-margin-x;
   z-index: 1;
 
   &:before {
-    background: $color-gray-dark;
+    background: $page-background;
     bottom: 0;
     content: '';
     display: block;
@@ -28,8 +28,12 @@ h2 {
   padding: $padding-huge 0 $padding-large 0;
 }
 
-h1, h2 {
+h3 {
   color: $color-accent;
+}
+
+h1, h2 {
+  color: $color-primary;
   text-transform: uppercase;
 }
 

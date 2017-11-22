@@ -1,7 +1,8 @@
+@import "config/shared";
 @import "config/slides";
 @import "config/slides-extras";
-@import "common/block";
-@import "common/inline";
+@import "shared/block";
+@import "shared/inline";
 @import "media/slides/block";
 @import "media/slides/inline";
 @import "media/slides/extras";

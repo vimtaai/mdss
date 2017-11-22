@@ -1,7 +1,8 @@
+@import "config/shared";
 @import "config/screen";
 @import "config/screen-extras";
-@import "common/block";
-@import "common/inline";
+@import "shared/block";
+@import "shared/inline";
 @import "media/screen/block";
 @import "media/screen/inline";
 @import "media/screen/extras";
