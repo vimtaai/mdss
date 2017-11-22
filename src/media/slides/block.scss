@@ -1,0 +1,38 @@
+@page {
+  margin: 0;
+}
+
+body {
+  color: $color-gray-light;
+  padding: $page-margin-y $page-margin-x;
+  z-index: 1;
+
+  &:before {
+    background: $color-gray-dark;
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+h1 {
+  padding: $padding-huge 0;
+}
+
+h2 {
+  padding: $padding-huge 0 $padding-large 0;
+}
+
+h1, h2 {
+  color: $color-accent;
+  text-transform: uppercase;
+}
+
+pre, table, ul {
+  page-break-inside: avoid;
+}

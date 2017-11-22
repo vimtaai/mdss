@@ -1,0 +1,38 @@
+$color-white: #ffffff;
+$color-gray-light: #f2f2fa;
+$color-gray-medium: #e2e2ea;
+$color-gray-dark: #42424a;
+$color-black: #000000;
+$color-accent: #16a085;
+
+$page-margin-x: 50px;
+$page-margin-y: 0;
+$page-max-width: 1920px;
+$page-font: "Calibri", "Helvetica Neue", "Helvetica", sans-serif;
+$page-font-size: 18pt;
+$page-background: $color-gray-dark;
+$page-foreground: $color-gray-light;
+
+$paragraph-font: $page-font;
+$paragraph-font-size: $page-font-size;
+$paragraph-line-height: 2.14;
+$paragraph-margin: 18pt;
+$paragraph-indent: 0;
+
+$heading-font: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
+$heading-font-size: (1: 40pt, 2: 24pt, 3: 20pt);
+$heading-margin: (1: 30pt, 2: 20pt, 3: 18pt);
+
+$code-font: "Consolas", "Monaco", "monospace";
+$code-font-size: 0.9em;
+$code-background: $color-black;
+$code-foreground: $color-white;
+
+$ordered-list-style: decimal;
+$unordered-list-style: square;
+
+$padding-small: 0.5em;
+$padding-large: 1em;
+$padding-huge: 2.5em;
+
+$border-radius: 0.3em;

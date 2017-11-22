@@ -2,6 +2,10 @@
   @import "media/screen/screen";
 }
 
-@media print {
+@media print and (orientation: portrait) {
   @import "media/print/print";
+}
+
+@media print and (orientation: landscape) {
+  @import "media/slides/slides";
 }
