@@ -2,7 +2,7 @@ $page-margin-x: 50px;
 $page-margin-y: 0;
 $page-max-width: 1920px;
 $page-font: "Calibri", "Helvetica Neue", "Helvetica", sans-serif;
-$page-font-size: 18pt;
+$page-font-size: 22pt;
 $page-background: $color-gray-dark;
 $page-foreground: $color-gray-light;
 
@@ -13,7 +13,7 @@ $paragraph-margin: 18pt;
 $paragraph-indent: 0;
 
 $heading-font: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
-$heading-font-size: (1: 40pt, 2: 24pt, 3: 20pt);
+$heading-font-size: (1: 40pt, 2: 28pt, 3: 24pt);
 $heading-margin: (1: 30pt, 2: 20pt, 3: 18pt);
 
 $link-color: $color-accent;
@@ -28,6 +28,6 @@ $unordered-list-style: square;
 
 $padding-small: 0.5em;
 $padding-large: 1em;
-$padding-huge: 2.5em;
+$padding-huge: 3em;
 
 $border-radius: 0.3em;
