@@ -38,7 +38,11 @@ blockquote {
 }
 
 p {
-  text-indent: $paragraph-indent;
+  text-indent: 0;
+
+  & + p {
+    text-indent: $paragraph-indent;
+  }
 }
 
 ol, ul {
@@ -71,6 +75,7 @@ pre {
 hr {
   background: none;
   border: none;
+  clear: both;
   margin: $spacing-large 0;
 
   &:after {

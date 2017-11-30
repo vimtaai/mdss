@@ -1,3 +1,5 @@
+// Base
+
 $page-margin-x: 25mm;
 $page-margin-y: 25mm;
 $page-max-width: 1189mm;
@@ -16,16 +18,16 @@ $paragraph-indent: 12pt;
 $link-color: $page-foreground;
 
 $code-font: $font-monospace;
-$code-font-size: 0.9em;
-$code-background: $color-gray-medium;
+$code-font-size: 0.9rem;
+$code-background: $color-gray-light;
 $code-foreground: $color-gray-dark;
 
 $quote-font: $page-font;
-$quote-font-size: $page-font-size;
-$quote-background: $color-gray-medium;
-$quote-foreground: $color-gray-dark;
+$quote-font-size: 1.2rem;
+$quote-background: $page-background;
+$quote-foreground: $page-foreground;
 
-$spacing-small: 6pt;
+$spacing-small: 3pt;
 $spacing-medium: 12pt;
 $spacing-large: 18pt;
 $spacing-huge: 24pt;
@@ -33,4 +35,12 @@ $spacing-huge: 24pt;
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0.3em;
+$border-radius: 0rem;
+
+// Extras
+
+$message-accent-em: $color-gray-light;
+$message-symbol-em: "i";
+$message-accent-strong: $color-gray-medium;
+$message-symbol-strong: "!";
+

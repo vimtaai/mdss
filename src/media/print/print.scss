@@ -1,8 +1,9 @@
 @import "config/shared";
 @import "config/print";
-@import "config/print-extras";
+@import "config/extras";
 @import "shared/block";
 @import "shared/inline";
+@import "shared/extras";
 @import "media/print/block";
 @import "media/print/inline";
 @import "media/print/extras";

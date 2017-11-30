@@ -11,40 +11,6 @@
   }
 }
 
-$levels-of-numbered-sections: length($automatic-section-numbering);
-
-@if $levels-of-numbered-sections > 0 {
-  body {
-    @for $level from 1 through $levels-of-numbered-sections {
-      counter-reset: section#{$level};
-    }
-  }
-
-  @for $level from 1 through $levels-of-numbered-sections {
-    #{nth($automatic-section-numbering, $level)} {
-      @if $level < $levels-of-numbered-sections {
-        @for $i from $level + 1 through $levels-of-numbered-sections {
-          counter-reset: section#{$i};
-        }
-      }
-
-      counter-increment: section#{$level};
-    }
-
-    #{nth($automatic-section-numbering, $level)}:before {
-      $label: counter(section1);
-
-      @if $level >= 2 {
-        @for $i from 2 through $level {
-          $label: #{$label} '"."' counter(section#{$i});
-        }
-      }
-
-      content: #{$label} " ";
-    }
-  }
-}
-
 @if $show-link-urls == true {
   a[href^="http"]:after,
   a[href^="ftp"]:after,

@@ -1,3 +1,5 @@
+// Base
+
 $page-margin-x: 50px;
 $page-margin-y: 0;
 $page-max-width: 1920px;
@@ -25,12 +27,19 @@ $quote-font-size: $page-font-size;
 $quote-background: $color-gray-medium;
 $quote-foreground: $color-gray-dark;
 
-$spacing-small: 1em;
-$spacing-medium: 2em;
-$spacing-large: 3em;
-$spacing-huge: 4em;
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 1.4rem;
+$spacing-huge: 2rem;
 
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0.3em;
+$border-radius: 0rem;
+
+// Extras
+
+$message-accent-em: $color-info;
+$message-symbol-em: "i";
+$message-accent-strong: $color-danger;
+$message-symbol-strong: "!";

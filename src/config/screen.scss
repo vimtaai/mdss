@@ -1,3 +1,5 @@
+// Base
+
 $page-margin-x: auto;
 $page-margin-y: 0;
 $page-max-width: 800px;
@@ -36,3 +38,15 @@ $unordered-list-style: square;
 $border-radius: 0rem;
 
 $transition-duration: 250ms;
+
+// Extras
+
+$message-accent-em: $color-info;
+$message-symbol-em: "i";
+$message-accent-strong: $color-danger;
+$message-symbol-strong: "!";
+
+$button-background-em: $color-gray-medium;
+$button-foreground-em: $color-gray-dark;
+$button-background-strong: $color-primary;
+$button-foreground-strong: $color-white;

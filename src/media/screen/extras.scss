@@ -1,4 +1,4 @@
-@import "mixins";
+@import "shared/mixins";
 
 @if $convert-buttons == true {
   a > em:only-child {
@@ -7,29 +7,5 @@
 
   a > strong:only-child {
     @include button($button-background-strong, $button-foreground-strong);
-  }
-}
-
-@if $convert-floating-symbols == true {
-  strong > strong {
-    @include symbol($color-primary);
-
-    border: solid $color-primary 2px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    height: 2.75rem;
-    margin-top: 0.8rem;
-    float: right;
-    width: 2.75rem;
-  }
-}
-
-@if $convert-messages == true {
-  em > code:only-child {
-    @include message($message-accent-em, $message-symbol-em);
-  }
-
-  strong > code:only-child {
-    @include message($message-accent-strong, $message-symbol-strong);
   }
 }
