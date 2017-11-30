@@ -1,20 +1,25 @@
-@mixin badge($accent, $symbol) {
+@mixin symbol($color) {
+  align-content: center;
+  color: $color;
+  display: flex;
+  font-family: $font-monospace;
+  font-size: 1.75rem;
+  font-weight: bold;
+  justify-content: center;
+  transform: translateY(-50%);
+  padding: 0 $spacing-huge;
+}
+
+@mixin badge($color, $symbol) {
   position: relative;
 
   &:after {
-    align-content: center;
+    @include symbol($color);
+
     content: $symbol;
-    color: $accent;
-    display: flex;
-    font-size: 1.75rem;
-    font-weight: bold;
-    justify-content: center;
-    margin: auto;
     position: absolute;
-    right: $spacing-huge;
+    right: 0;
     top: 50%;
-    font-family: $font-monospace;
-    transform: translateY(-50%);
   }
 }
 
@@ -52,7 +57,7 @@
   padding: $spacing-large $spacing-huge;
 }
 
-@mixin message($accent, $symbol) {
-  @include box($accent, $color-white);
+@mixin message($color, $symbol) {
+  @include box($color, $color-white);
   @include badge($page-background, $symbol);
 }

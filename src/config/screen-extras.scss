@@ -11,6 +11,13 @@ $button-foreground-em: $color-gray-dark;
 $button-background-strong: $color-primary;
 $button-foreground-strong: $color-white;
 
+// Convert double strong text to floating symbols
+// (true/false)
+// Default: true
+// Example: 
+// ****!****
+$convert-floating-symbols: true;
+
 // Convert emphasised and strong code into message boxes
 // (true|false)
 // Default: true

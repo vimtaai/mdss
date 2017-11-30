@@ -10,6 +10,15 @@
   }
 }
 
+@if $convert-floating-symbols == true {
+  strong > strong {
+    @include symbol($color-primary);
+
+    margin-top: 0.75rem;
+    float: right;
+  }
+}
+
 @if $convert-messages == true {
   em > code:only-child {
     @include message($message-accent-em, $message-symbol-em);
