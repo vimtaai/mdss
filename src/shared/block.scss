@@ -65,8 +65,15 @@ pre {
 }
 
 hr {
-  background: $page-foreground;
+  background: none;
   border: none;
-  height: 2px;
   margin: $spacing-large 0;
+
+  &:after {
+    content: '— · —';
+    display: block;
+    font-size: 1.5rem;
+    letter-spacing: $spacing-huge;
+    text-align: center;
+  }
 }
