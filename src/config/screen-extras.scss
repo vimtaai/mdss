@@ -18,14 +18,8 @@ $button-foreground-strong: $color-white;
 // **`This is a very important message`**
 $convert-messages: true;
 
-$message-foreground-em: $color-black;
-$message-background-em: $color-gray-medium;
-$message-badge-background-em: #3498db;
-$message-badge-foreground-em: $color-white;
+$message-accent-em: $color-info;
 $message-symbol-em: "i";
 
-$message-foreground-strong: $color-black;
-$message-background-strong: $color-gray-medium;
-$message-badge-background-strong: #f1c40f;
-$message-badge-foreground-strong: $color-white;
+$message-accent-strong: $color-danger;
 $message-symbol-strong: "!";

@@ -2,6 +2,8 @@
 
 > Stylesheets for displaying and printing Markdown documents
 
+**This project is in pre-alpha! Lots of changes are to be made!**
+
 ## Usage
 
 **MDSS** is a small CSS code to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own builds for both screen and print or a single build for both media.
@@ -16,7 +18,7 @@ To create a production build run the `npm run build` command. This will create a
 
 - Convert emphasised and strong links into buttons
   ```
-  **[This is a button](button-href-target)**
+  [**This is a button**](button-href-target)
   ```
 - Convert emphasised and strong code into message boxes
   ```

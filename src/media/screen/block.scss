@@ -11,13 +11,6 @@ h1 {
 }
 
 blockquote {
-  @include message($quote-background,
-                   $quote-foreground,
-                   $color-primary,
-                   $color-white,
-                   "˶");
-}
-
-blockquote p {
-  padding-left: $spacing-large;
+  @include box($quote-background, $quote-foreground);
+  font-style: italic;
 }

@@ -1,24 +1,20 @@
-@mixin badge($background, $foreground, $symbol) {
+@mixin badge($accent, $symbol) {
   position: relative;
 
   &:after {
+    align-content: center;
     content: $symbol;
-    background: $background;
-    border: solid $color-white 0.2rem;
-    border-radius: 50%;
-    box-sizing: content-box;
-    color: $foreground;
-    display: block;
-    font-family: $code-font;
-    font-size: 1.1rem;
+    color: $accent;
+    display: flex;
+    font-size: 1.75rem;
     font-weight: bold;
-    height: 1.7rem;
-    line-height: 1.7rem;
+    justify-content: center;
+    margin: auto;
     position: absolute;
-    right: -0.5rem;
-    text-align: center;
-    top: -0.5rem;
-    width: 1.7rem;
+    right: $spacing-huge;
+    top: 50%;
+    font-family: $font-monospace;
+    transform: translateY(-50%);
   }
 }
 
@@ -30,7 +26,7 @@
   display: inline-block;
   font-size: $page-font-size;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   padding: $spacing-large $spacing-huge;
   transition: background $transition-duration;
 
@@ -43,23 +39,20 @@
   }
 }
 
-@mixin message($background, 
-               $foreground, 
-               $badge-background, 
-               $badge-foreground, 
-               $badge-symbol) {
-  @include badge($badge-background, $badge-foreground, $badge-symbol);
-
+@mixin box($background, $foreground) {
   background: $background;
-  border-left: solid $badge-background 0.3rem;
-  border-radius: 0 $border-radius $border-radius 0;
+  border-radius: $border-radius;
   color: $foreground;
   display: block;
   font-family: $page-font;
   font-size: $page-font-size;
   font-style: normal;
-  font-weight: bold;
-  margin: $spacing-medium 0;
-  padding: $spacing-huge;
-  width: 100%;
+  font-weight: normal;
+  margin: $spacing-large 0;
+  padding: $spacing-large $spacing-huge;
+}
+
+@mixin message($accent, $symbol) {
+  @include box($accent, $color-white);
+  @include badge($page-background, $symbol);
 }

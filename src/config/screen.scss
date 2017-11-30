@@ -8,8 +8,8 @@ $page-font-size: 17px;
 $page-line-height: 1.5;
 
 $heading-font: $page-font;
-$heading-font-size: (1: 2em, 2: 1.5em, 3: 1.2em);
-$heading-margin: (1: 1.4em, 2: 1.2em, 3: 0);
+$heading-font-size: (1: 2rem, 2: 1.5rem, 3: 1.2rem);
+$heading-margin: (1: 1.2rem, 2: 1rem, 3: 0);
 
 $paragraph-indent: 0;
 
@@ -17,22 +17,22 @@ $link-color: $color-primary;
 
 $code-font: $font-monospace;
 $code-font-size: 0.9em;
-$code-background: $color-gray-dark;
-$code-foreground: $color-gray-light;
+$code-background: $color-gray-light;
+$code-foreground: $color-gray-dark;
 
 $quote-font: $page-font;
 $quote-font-size: $page-font-size;
-$quote-background: $color-gray-medium;
+$quote-background: $color-gray-light;
 $quote-foreground: $color-gray-dark;
 
-$spacing-small: 0.2em;
-$spacing-medium: 0.5em;
-$spacing-large: 0.75em;
-$spacing-huge: 1em;
+$spacing-small: 0.2rem;
+$spacing-medium: 0.5rem;
+$spacing-large: 0.75rem;
+$spacing-huge: 1.5rem;
 
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0.3em;
+$border-radius: 0rem;
 
 $transition-duration: 250ms;

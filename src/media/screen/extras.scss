@@ -12,18 +12,10 @@
 
 @if $convert-messages == true {
   em > code:only-child {
-    @include message($message-background-em,
-                     $message-foreground-em,
-                     $message-badge-background-em,
-                     $message-badge-foreground-em,
-                     $message-symbol-em);
+    @include message($message-accent-em, $message-symbol-em);
   }
 
   strong > code:only-child {
-    @include message($message-background-strong,
-                     $message-foreground-strong,
-                     $message-badge-background-strong,
-                     $message-badge-foreground-strong,
-                     $message-symbol-strong);
+    @include message($message-accent-strong, $message-symbol-strong);
   }
 }
