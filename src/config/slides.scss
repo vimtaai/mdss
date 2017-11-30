@@ -1,33 +1,36 @@
 $page-margin-x: 50px;
 $page-margin-y: 0;
 $page-max-width: 1920px;
-$page-font: "Calibri", "Helvetica Neue", "Helvetica", sans-serif;
-$page-font-size: 22pt;
 $page-background: $color-gray-dark;
 $page-foreground: $color-gray-light;
+$page-font: $font-sans-serif;
+$page-font-size: 22pt;
+$page-line-height: 2.14;
 
-$paragraph-font: $page-font;
-$paragraph-font-size: $page-font-size;
-$paragraph-line-height: 2.14;
-$paragraph-margin: 18pt;
-$paragraph-indent: 0;
-
-$heading-font: "Arial Narrow", "Helvetica Neue", "Helvetica", sans-serif;
+$heading-font: $page-font;
 $heading-font-size: (1: 40pt, 2: 28pt, 3: 24pt);
 $heading-margin: (1: 30pt, 2: 20pt, 3: 18pt);
 
+$paragraph-indent: 0;
+
 $link-color: $color-accent;
 
-$code-font: "Consolas", "Monaco", "monospace";
+$code-font: $font-monospace;
 $code-font-size: 0.9em;
 $code-background: $color-black;
 $code-foreground: $color-white;
 
+$quote-font: $page-font;
+$quote-font-size: $page-font-size;
+$quote-background: $color-gray-medium;
+$quote-foreground: $color-gray-dark;
+
+$spacing-small: 1em;
+$spacing-medium: 2em;
+$spacing-large: 3em;
+$spacing-huge: 4em;
+
 $ordered-list-style: decimal;
 $unordered-list-style: square;
-
-$padding-small: 0.5em;
-$padding-large: 1em;
-$padding-huge: 3em;
 
 $border-radius: 0.3em;

@@ -3,38 +3,32 @@ $page-margin-y: 0;
 $page-max-width: 800px;
 $page-background: $color-white;
 $page-foreground: $color-gray-dark;
-$page-font: "Calibri", "Helvetica Neue", "Helvetica", sans-serif;
+$page-font: $font-sans-serif;
 $page-font-size: 17px;
-
-$paragraph-font: $page-font;
-$paragraph-font-size: 1em;
-$paragraph-line-height: 1.5;
-$paragraph-margin: 1.1em;
-$paragraph-indent: 0;
+$page-line-height: 1.5;
 
 $heading-font: $page-font;
-$heading-font-size: (1: 2em, 2: 1.7em, 3: 1.2em);
+$heading-font-size: (1: 2em, 2: 1.5em, 3: 1.2em);
 $heading-margin: (1: 1.4em, 2: 1.2em, 3: 0);
+
+$paragraph-indent: 0;
 
 $link-color: $color-primary;
 
-$code-font: "Consolas", "Monaco", "monospace";
+$code-font: $font-monospace;
 $code-font-size: 0.9em;
 $code-background: $color-gray-dark;
 $code-foreground: $color-gray-light;
-$code-badge-background: $color-primary;
-$code-badge-foreground: $color-white;
-$code-badge-symbol: "<>";
 
-$blockquote-background: $color-gray-medium;
-$blockquote-foreground: $color-gray-dark;
-$blockquote-badge-background: $color-primary;
-$blockquote-badge-foreground: $color-white;
-$blockquote-badge-symbol: "˶";
+$quote-font: $page-font;
+$quote-font-size: $page-font-size;
+$quote-background: $color-gray-medium;
+$quote-foreground: $color-gray-dark;
 
-$padding-small: 0.3em;
-$padding-large: 0.5em;
-$padding-huge: 1em;
+$spacing-small: 0.2em;
+$spacing-medium: 0.5em;
+$spacing-large: 0.75em;
+$spacing-huge: 1em;
 
 $ordered-list-style: decimal;
 $unordered-list-style: square;

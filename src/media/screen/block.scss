@@ -10,19 +10,14 @@ h1 {
   text-transform: uppercase;
 }
 
-pre {
-  @include badge($code-badge-background, 
-                 $code-badge-foreground, 
-                 $code-badge-symbol);
+blockquote {
+  @include message($quote-background,
+                   $quote-foreground,
+                   $color-primary,
+                   $color-white,
+                   "˶");
 }
 
-blockquote {
-  @include message($blockquote-background,
-                   $blockquote-foreground,
-                   $blockquote-badge-background,
-                   $blockquote-badge-foreground,
-                   $blockquote-badge-symbol);
-  p {
-    padding-left: $padding-large;
-  }
+blockquote p {
+  padding-left: $spacing-large;
 }

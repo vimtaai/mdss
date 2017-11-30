@@ -31,7 +31,7 @@
   font-size: $page-font-size;
   font-style: normal;
   font-weight: bold;
-  padding: $padding-large $padding-huge;
+  padding: $spacing-large $spacing-huge;
   transition: background $transition-duration;
 
   &:hover {
@@ -59,7 +59,7 @@
   font-size: $page-font-size;
   font-style: normal;
   font-weight: bold;
-  margin: $paragraph-margin 0;
-  padding: $padding-huge;
+  margin: $spacing-medium 0;
+  padding: $spacing-huge;
   width: 100%;
 }

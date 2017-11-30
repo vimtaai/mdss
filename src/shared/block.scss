@@ -3,6 +3,7 @@ body {
   color: $page-foreground;
   font-family: $page-font;
   font-size: $page-font-size;
+  line-height: $page-line-height;
 }
 
 h1, h2, h3 {
@@ -17,38 +18,29 @@ h1, h2, h3 {
 }
 
 blockquote, p, pre, ol, ul {
-  margin: $paragraph-margin 0;
+  margin: $spacing-medium 0;
 }
 
-p {
-  font-family: $paragraph-font;
-  font-size: $paragraph-font-size;
-  line-height: $paragraph-line-height;
-  text-align: justify;
-  text-indent: $paragraph-indent;
+blockquote p,
+ol p,
+ul p {
+  display: inline;
+  text-indent: 0;
 }
 
 blockquote {
   font-style: italic;
-  padding: $padding-large;
+  padding: $spacing-large;
+}
 
-  p {
-    text-indent: 0;
-  }
+p {
+  text-indent: $paragraph-indent;
 }
 
 ol, ul {
   ol, ul {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  li {
-    line-height: $paragraph-line-height;
-  }
-
-  p {
-    display: inline;
   }
 }
 
@@ -69,9 +61,12 @@ code {
 }
 
 pre code {
-  padding: $padding-large;
+  padding: $spacing-medium;
 }
 
 hr {
-  border: solid $page-foreground 0.075rem;
+  background: $page-foreground;
+  border: none;
+  height: 2px;
+  margin: $spacing-large 0;
 }
