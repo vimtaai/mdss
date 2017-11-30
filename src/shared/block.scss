@@ -60,7 +60,7 @@ ul {
   list-style: $unordered-list-style;
 }
 
-code, pre {
+code {
   background: $code-background;
   border-radius: $border-radius;
   color: $code-foreground;
@@ -68,12 +68,8 @@ code, pre {
   font-size: $code-font-size;
 }
 
-pre {
-  padding: $padding-large;
-}
-
 pre code {
-  padding: 0;
+  padding: $padding-large;
 }
 
 hr {

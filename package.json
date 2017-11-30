@@ -2,38 +2,30 @@
   "name": "mdss",
   "version": "1.0.0",
   "description": "Stylesheets for displaying and printing Markdown documents",
+  "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimtaai/mdss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vimtaai/mdss/issues"
+  },
+  "homepage": "https://github.com/vimtaai/mdss#readme",
   "scripts": {
     "sass:prod": "node-sass --include-path src --output-style compressed",
     "sass:dev": "node-sass --include-path src --output-style expanded",
-
     "build:print-dev": "npm run sass:dev -- src/media/print/print.scss build/mdss-print.css",
     "build:slides-dev": "npm run sass:dev -- src/media/slides/slides.scss build/mdss-slides.css",
     "build:screen-dev": "npm run sass:dev -- src/media/screen/screen.scss build/mdss-screen.css",
     "build:dev": "npm run sass:dev -- src/index.scss build/mdss.css",
     "build:all-dev": "npm run build:print-dev && npm run build:screen-dev && npm run build:dev",
-
     "build:print": "npm run sass:prod -- src/media/print/print.scss build/mdss-print.min.css",
     "build:slides": "npm run sass:prod -- src/media/slides/slides.scss build/mdss-slides.min.css",
     "build:screen": "npm run sass:prod -- src/media/screen/screen.scss build/mdss-screen.min.css",
     "build": "npm run sass:prod -- src/index.scss build/mdss.min.css",
     "build:all": "npm run build:print && npm run build:screen && npm run build:slides && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vimtaai/mdss.git"
-  },
-  "keywords": [
-    "markdown",
-    "css",
-    "screen",
-    "print"
-  ],
-  "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vimtaai/mdss/issues"
-  },
-  "homepage": "https://github.com/vimtaai/mdss#readme",
   "devDependencies": {
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0"
