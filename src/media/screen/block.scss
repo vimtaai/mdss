@@ -11,6 +11,8 @@ h1 {
 }
 
 blockquote {
-  @include box($quote-background, $quote-foreground);
+  border-left: solid $quote-foreground 0.3rem;
   font-style: italic;
+  margin: $spacing-huge 0;
+  padding: $spacing-huge;
 }

@@ -14,8 +14,13 @@
   strong > strong {
     @include symbol($color-primary);
 
-    margin-top: 0.75rem;
+    border: solid $color-primary 2px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 2.75rem;
+    margin-top: 0.8rem;
     float: right;
+    width: 2.75rem;
   }
 }
 

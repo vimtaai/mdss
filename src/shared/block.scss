@@ -29,6 +29,10 @@ ul p {
 }
 
 blockquote {
+  background: $quote-background;
+  color: $quote-foreground;
+  font-family: $quote-font;
+  font-size: $quote-font-size;
   font-style: italic;
   padding: $spacing-large;
 }
