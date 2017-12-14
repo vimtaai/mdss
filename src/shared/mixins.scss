@@ -3,24 +3,12 @@
   color: $color;
   display: flex;
   font-family: $font-monospace;
-  font-size: 1.75rem;
+  font-size: $page-font-size * 1.5;
   font-weight: bold;
   justify-content: center;
+  position: absolute;
+  right: $spacing-huge;
   transform: translateY(-50%);
-  margin: 0 $spacing-huge;
-}
-
-@mixin badge($color, $symbol) {
-  position: relative;
-
-  &:after {
-    @include symbol($color);
-
-    content: $symbol;
-    position: absolute;
-    right: 0;
-    top: 50%;
-  }
 }
 
 @mixin button($background, $foreground) {
@@ -55,9 +43,29 @@
   font-weight: normal;
   margin: $spacing-large 0;
   padding: $spacing-large $spacing-huge;
+  position: relative;
 }
 
 @mixin message($color, $symbol) {
-  @include box($color, $color-white);
-  @include badge($page-background, $symbol);
+  $dark: $color-black;
+  @if lightness($page-foreground) < 50 {
+    $dark: $page-foreground;
+  } @else {
+    $dark: $page-background;
+  }
+
+  $foreground: $dark;
+  @if lightness($color) > 60 {
+    $foreground: $dark;
+  } @else {
+    $foreground: $color-white;
+  }
+
+  @include box($color, $foreground);
+
+  &:after {
+    @include symbol($foreground);
+    content: $symbol;
+    top: 50%;
+  }
 }
