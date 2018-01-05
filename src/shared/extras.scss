@@ -34,6 +34,7 @@ $levels-of-numbered-sections: length($automatic-section-numbering);
         }
       }
 
+      position: relative;
       counter-increment: section#{$level};
     }
 
@@ -46,6 +47,10 @@ $levels-of-numbered-sections: length($automatic-section-numbering);
         }
       }
 
+      position: absolute;
+      top: 0;
+      right: calc(100% + #{$spacing-large});
+      direction: rtl;
       content: #{$label} " ";
     }
   }

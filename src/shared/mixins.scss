@@ -35,6 +35,7 @@
 @mixin box($background, $foreground) {
   background: $background;
   border-radius: $border-radius;
+  box-sizing: border-box;
   color: $foreground;
   display: block;
   font-family: $page-font;
@@ -44,6 +45,7 @@
   margin: $spacing-large 0;
   padding: $spacing-large $spacing-huge;
   position: relative;
+  text-indent: 0;
 }
 
 @mixin message($color, $symbol) {

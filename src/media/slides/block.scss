@@ -1,10 +1,10 @@
 @page {
-  margin: 0;
+  margin: $page-margin-y 0;
 }
 
 body {
   color: $page-foreground;
-  padding: $page-margin-y $page-margin-x;
+  margin: 0 $page-margin-x;
   z-index: 1;
 
   &:before {
@@ -21,11 +21,11 @@ body {
 }
 
 h1 {
-  padding: $spacing-huge 0;
+  margin-top: $spacing-huge 0;
 }
 
 h2 {
-  padding: $spacing-large 0;
+  margin-top: $spacing-large 0;
 }
 
 h3 {

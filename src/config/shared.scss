@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&subset=latin-ext');
 
 $color-white: #ffffff;
-$color-gray-light: #dce0e1;
+$color-gray-light: #dfe7ef;
 $color-gray-medium: #bdc3c7;
-$color-gray-dark: #2c3e50;
+$color-gray-dark: #1c2a39;
 $color-black: #000000;
-$color-primary: #2ecc71;
-$color-accent: #f1c40f;
-$color-danger: #e74c3c;
-$color-info: #3498db;
+$color-red: #e74c3c;
+$color-green: #19a756;
+$color-blue: #2e7cac;
+$color-yellow: #f9bf3b;
+$color-purple: #9b59b6;
+$color-brown: #ae815b;
+$color-primary: $color-blue;
+$color-accent: $color-yellow;
+$color-danger: $color-red;
+$color-info: $color-blue;
 
 $font-serif: "Times New Roman", "Times", serif;
 $font-sans-serif: "Roboto Condensed", sans-serif;

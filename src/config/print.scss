@@ -1,8 +1,8 @@
 // Base
 
 $page-margin-x: 25mm;
-$page-margin-y: 25mm;
-$page-max-width: 1189mm;
+$page-margin-y: 20mm;
+$page-max-width: 100%;
 $page-background: $color-white;
 $page-foreground: $color-black;
 $page-font: $font-serif;
@@ -13,17 +13,17 @@ $heading-font: $font-sans-serif;
 $heading-font-size: (1: 20pt, 2: 16pt, 3: 14pt);
 $heading-margin: (1: 20pt, 2: 16pt, 3: 12pt);
 
-$paragraph-indent: 12pt;
+$paragraph-indent: 8pt;
 
 $link-color: $page-foreground;
 
 $code-font: $font-monospace;
-$code-font-size: 0.9rem;
+$code-font-size: 11pt;
 $code-background: $color-gray-light;
 $code-foreground: $color-gray-dark;
 
 $quote-font: $page-font;
-$quote-font-size: 1.2rem;
+$quote-font-size: 14pt;
 $quote-background: $page-background;
 $quote-foreground: $page-foreground;
 
@@ -35,7 +35,7 @@ $spacing-huge: 24pt;
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0rem;
+$border-radius: 0;
 
 // Extras
 
