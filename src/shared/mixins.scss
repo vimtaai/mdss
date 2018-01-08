@@ -7,7 +7,7 @@
   font-weight: bold;
   justify-content: center;
   position: absolute;
-  right: $spacing-huge;
+  right: 0;
   transform: translateY(-50%);
 }
 
@@ -43,7 +43,7 @@
   font-style: normal;
   font-weight: normal;
   margin: $spacing-large 0;
-  padding: $spacing-large $spacing-huge;
+  padding: $spacing-large;
   position: relative;
   text-indent: 0;
 }
@@ -68,6 +68,7 @@
   &:after {
     @include symbol($foreground);
     content: $symbol;
+    right: $spacing-large;
     top: 50%;
   }
 }

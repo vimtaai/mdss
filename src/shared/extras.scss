@@ -3,7 +3,8 @@
 @if $convert-floating-symbols == true {
   strong > strong {
     @include symbol($symbol-color);
-    margin: $page-font-size $page-margin-x 0 0;
+    margin-top: $page-font-size;
+    right: -($spacing-large + $spacing-small);
   }
 }
 
@@ -49,9 +50,9 @@ $levels-of-numbered-sections: length($automatic-section-numbering);
 
       position: absolute;
       top: 0;
-      right: calc(100% + #{$spacing-large});
+      right: calc(100% + #{$spacing-large} + #{$spacing-small});
       direction: rtl;
-      content: #{$label} " ";
+      content: #{$label};
     }
   }
 }

@@ -2,6 +2,7 @@
 
 body {
   margin: #{$page-margin-y} #{$page-margin-x};
+  padding: $spacing-medium;
 }
 
 h1 {
@@ -14,4 +15,9 @@ blockquote {
   font-style: italic;
   margin: $spacing-huge 0;
   padding: $spacing-huge;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
 }

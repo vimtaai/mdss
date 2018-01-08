@@ -77,6 +77,8 @@ pre, code {
 
 pre {
   padding: $spacing-medium;
+  overflow-x: hidden;
+  white-space: pre-wrap;
 }
 
 hr {
