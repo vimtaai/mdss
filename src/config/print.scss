@@ -13,14 +13,14 @@ $heading-font: $font-sans-serif;
 $heading-font-size: (1: 20pt, 2: 16pt, 3: 14pt);
 $heading-margin: (1: 20pt, 2: 16pt, 3: 12pt);
 
-$paragraph-indent: 8pt;
+$paragraph-indent: 12pt;
 
 $link-color: $page-foreground;
 
 $code-font: $font-monospace;
 $code-font-size: 11pt;
 $code-background: $color-gray-light;
-$code-foreground: $color-gray-dark;
+$code-foreground: $page-foreground;
 
 $quote-font: $page-font;
 $quote-font-size: 14pt;
