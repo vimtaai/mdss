@@ -2,39 +2,38 @@
 
 > Stylesheets for displaying and printing Markdown documents
 
-**This project is in pre-alpha! Lots of changes are to be made!**
+**This project is in beta! Some breaking changes may be made!**
 
 ## Usage
 
-**MDSS** is a small CSS code to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own builds for both screen and print or a single build for both media.
+**MDSS** is CSS stylesheet to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own builds for both screen and print or a single build for both media. MDSS also support printing Markdown as slides. All you need to do is to set the page orientation to landscape when printing.
 
-To create a production build run the `npm run build` command. This will create a *combined* stylesheet with both *screen* and *print* styles. Individual *screen* and *print* builds can be created with the `npm run build:screen` and `npm run build:print` commands. The `npm run build:all` command creates all three files. Development versions (non-compressed) are also available by putting the `-dev` suffix to any build command.
+To create a production build run the `npm run build` command. This will create a *combined* stylesheet with both *screen*, *print* and *slides* styles. Individual builds for each media type can be created with the `npm run build:screen`, `npm run build:print` and `npm run build:slides` commands. The `npm run build:all` command creates all four files. Development versions (non-compressed) are also available by putting the `-dev` suffix to any build command.
 
 ## Extras
 
 **MDSS** includes several visual extras in addition to the standard Markdown elements. All extras can be enabled or disabled for a single build of **MDSS**. Extras include the following:
 
-### Screen
-
-- Convert emphasised and strong links into buttons
+- Automatic numbering of given elements (e.g. headings) **(all media)**
+- Replace horizontal rules/thematic breaks with page breaks **(print, slides)**
+- Automatic page breaks before given elements **(print, slides)**
+- Automatic URL insertion after links **(print, slides)**
+- Convert double strong text to large symbols on page margin **(all media)**
+  ```
+  ****!****
+  ```
+- Convert emphasised and strong links into buttons **(screen)**
   ```
   [**This is a button**](button-href-target)
   ```
-- Convert emphasised and strong code into message boxes
+- Convert emphasised and strong code into message boxes **(screen)**
   ```
   **`This is a very important message`**
   ```
 
-### Print
-
-- Replace horizontal rules/thematic breaks with page breaks
-- Automatic page breaks before given elements
-- Automatic numbering of given elements (e.g. headings)
-- Automatic URL insertion after links
-
 ## Configuration
 
-Most visual aspects (like color, sizes, paddings) can be configured in **MDSS**. The `source/config` folder contains all the options to be modified the rest of the code uses the variables declared here.
+Most visual aspects (like color, sizes, spacing) can be configured in **MDSS**. The `src/config` folder contains all the options to be modified the rest of the code uses the variables declared here. You can configure each media type individually. You can also enable/disable all extra features using the `src/config/extras.scss` file.
 
 ## Installation
 
