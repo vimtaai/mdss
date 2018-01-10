@@ -1,3 +1,8 @@
+$BUNDLEBUILD: true;
+
+@import "config/shared";
+@import "config/extras";
+
 @media screen {
   @import "media/screen/screen";
 }
@@ -9,3 +14,5 @@
 @media print and (orientation: landscape) {
   @import "media/slides/slides";
 }
+
+@include fonts;

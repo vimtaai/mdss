@@ -22,9 +22,11 @@ $levels-of-numbered-sections: length($automatic-section-numbering);
 
 @if $levels-of-numbered-sections > 0 {
   body {
+    $levels: "";
     @for $level from 1 through $levels-of-numbered-sections {
-      counter-reset: section#{$level};
+       $levels: #{$levels} section#{$level};
     }
+    counter-reset: $levels;
   }
 
   @for $level from 1 through $levels-of-numbered-sections {

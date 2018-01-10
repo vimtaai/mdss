@@ -1,9 +1,13 @@
 @import "config/shared";
-@import "config/screen";
 @import "config/extras";
+@import "config/screen";
 @import "shared/block";
 @import "shared/inline";
 @import "shared/extras";
 @import "media/screen/block";
 @import "media/screen/inline";
 @import "media/screen/extras";
+
+@if variable-exists("BUNDLEBUILD") == false {
+  @include fonts;
+}
