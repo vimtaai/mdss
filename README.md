@@ -16,7 +16,8 @@ To create a production build run the `npm run build` command. This will create a
 
 - Automatic numbering of given elements (e.g. headings) **(all media)**
 - Replace horizontal rules/thematic breaks with page breaks **(print, slides)**
-- Automatic page breaks before given elements **(print, slides)**
+- Automatic page breaks before given elements **(print)**
+- Avoid page breaks after given elements **(print)**
 - Automatic URL insertion after links **(print, slides)**
 - Convert double strong text to large symbols on page margin **(all media)**
   ```

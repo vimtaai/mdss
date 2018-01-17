@@ -11,6 +11,18 @@
   }
 }
 
+@each $nobreak-element in $avoid-page-break {
+  @each $break-element in $automatic-page-break {
+    #{$nobreak-element} + #{$break-element} {
+      page-break-before: avoid;
+    }
+  }
+
+  #{$nobreak-element} {
+    page-break-after: avoid;
+  }
+}
+
 @if $show-link-urls == true {
   a[href^="http"]:after,
   a[href^="ftp"]:after,

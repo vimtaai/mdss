@@ -19,7 +19,7 @@ $convert-messages: true;
 // (true|false)
 // Default: true
 // Example: 
-// **[This is a button](button-href-target)**
+// [**This is a button**](button-href-target)
 $convert-buttons: true;
 
 // Replace horizontal rules/thematic breaks with page breaks
@@ -33,6 +33,12 @@ $manual-page-break: true;
 // (list of HTML elements)
 // Default: h2
 $automatic-page-break: h2;
+
+// A list of elements after which there never will be an automatic page break
+// Media: print
+// (list of HTML elements)
+// Default: h1
+$avoid-page-break: h1;
 
 // A list of elements that should have numbering (typically headings)
 // Media: screen, print, slides
