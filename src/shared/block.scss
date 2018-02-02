@@ -39,6 +39,7 @@ ul p {
 
 blockquote {
   background: $quote-background;
+  border-left: solid $quote-border-color $spacing-small;
   color: $quote-foreground;
   font-family: $quote-font;
   font-size: $quote-font-size;
