@@ -21,11 +21,13 @@ $code-font: $font-monospace;
 $code-font-size: 14px;
 $code-background: $color-gray-light;
 $code-foreground: $color-gray-dark;
+$code-border-color: transparent;
 
 $quote-font: $page-font;
 $quote-font-size: 1.3rem;
 $quote-background: $color-gray-light;
 $quote-foreground: $color-gray-dark;
+$quote-border-color: $color-primary;
 
 $spacing-small: 0.2rem;
 $spacing-medium: 0.5rem;
@@ -35,7 +37,7 @@ $spacing-huge: 1.5rem;
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0;
+$border-radius: 3px;
 
 $transition-duration: 250ms;
 

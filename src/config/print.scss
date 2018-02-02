@@ -21,11 +21,13 @@ $code-font: $font-monospace;
 $code-font-size: 11pt;
 $code-background: $color-gray-light;
 $code-foreground: $page-foreground;
+$code-border-color: transparent;
 
 $quote-font: $page-font;
 $quote-font-size: 14pt;
 $quote-background: $page-background;
 $quote-foreground: $page-foreground;
+$quote-border-color: $color-gray-medium;
 
 $spacing-small: 3pt;
 $spacing-medium: 12pt;
@@ -35,5 +37,5 @@ $spacing-huge: 24pt;
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0;
+$border-radius: 3px;
 

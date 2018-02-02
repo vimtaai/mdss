@@ -71,6 +71,7 @@ ul {
 
 pre, code {
   background: $code-background;
+  border: solid $code-border-color 1px;
   border-radius: $border-radius;
   color: $code-foreground;
   font-family: $code-font;
@@ -78,7 +79,13 @@ pre, code {
 }
 
 pre {
-  padding: $spacing-medium;
+  padding: 0.5em;
+}
+
+pre code {
+  background: inherit;
+  border: none;
+  display: block;
 }
 
 hr {

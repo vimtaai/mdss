@@ -19,17 +19,9 @@ To create a production build run the `npm run build` command. This will create a
 - Automatic page breaks before given elements **(print)**
 - Avoid page breaks after given elements **(print)**
 - Automatic URL insertion after links **(print, slides)**
-- Convert double strong text to large symbols on page margin **(all media)**
-  ```
-  ****!****
-  ```
 - Convert emphasised and strong links into buttons **(screen)**
   ```
   [**This is a button**](button-href-target)
-  ```
-- Convert emphasised and strong code into message boxes **(screen)**
-  ```
-  **`This is a very important message`**
   ```
 
 ## Configuration
