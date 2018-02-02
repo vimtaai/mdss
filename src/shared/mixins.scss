@@ -1,15 +1,3 @@
-@mixin symbol($color) {
-  align-content: center;
-  color: $color;
-  display: flex;
-  font-family: $font-monospace;
-  font-size: $page-font-size * 1.5;
-  font-weight: bold;
-  justify-content: center;
-  position: absolute;
-  transform: translateY(-50%);
-}
-
 @mixin button($background, $foreground) {
   background: $background;
   border: none;
@@ -28,46 +16,5 @@
 
   &:active {
     background: darken($background, 10%);
-  }
-}
-
-@mixin box($background, $foreground) {
-  background: $background;
-  border-radius: $border-radius;
-  box-sizing: border-box;
-  color: $foreground;
-  display: block;
-  font-family: $page-font;
-  font-size: $page-font-size;
-  font-style: normal;
-  font-weight: normal;
-  margin: $spacing-large 0;
-  padding: $spacing-large;
-  position: relative;
-  text-indent: 0;
-}
-
-@mixin message($color, $symbol) {
-  $dark: $color-black;
-  @if lightness($page-foreground) < 50 {
-    $dark: $page-foreground;
-  } @else {
-    $dark: $page-background;
-  }
-
-  $foreground: $dark;
-  @if lightness($color) > 60 {
-    $foreground: $dark;
-  } @else {
-    $foreground: $color-white;
-  }
-
-  @include box($color, $foreground);
-
-  &:after {
-    @include symbol($foreground);
-    content: $symbol;
-    right: $spacing-large;
-    top: 50%;
   }
 }

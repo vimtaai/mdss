@@ -1,7 +1,7 @@
 // Base
 
-$page-margin-x: 25mm;
-$page-margin-y: 20mm;
+$page-margin-x: 2cm;
+$page-margin-y: 0;
 $page-max-width: 100%;
 $page-background: $color-white;
 $page-foreground: $color-black;
@@ -10,10 +10,10 @@ $page-font-size: 12pt;
 $page-line-height: 1.41;
 
 $heading-font: $font-sans-serif;
-$heading-font-size: (1: 20pt, 2: 16pt, 3: 14pt);
-$heading-margin: (1: 20pt, 2: 16pt, 3: 12pt);
+$heading-font-size: (20pt, 16pt, 14pt);
+$heading-margin: (20pt, 16pt, 12pt);
 
-$paragraph-indent: 12pt;
+$paragraph-indent: 0;
 
 $link-color: $page-foreground;
 
@@ -36,13 +36,4 @@ $ordered-list-style: decimal;
 $unordered-list-style: square;
 
 $border-radius: 0;
-
-// Extras
-
-$message-accent-em: $color-gray-light;
-$message-symbol-em: "i";
-$message-accent-strong: $color-gray-medium;
-$message-symbol-strong: "!";
-
-$symbol-color: $page-foreground;
 

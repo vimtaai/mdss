@@ -1,42 +1,13 @@
-@page {
-  margin: $page-margin-y 0;
-}
-
-body {
-  color: $page-foreground;
-  margin: 0 $page-margin-x;
-  z-index: 1;
-
-  &:before {
-    background: $page-background;
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-}
-
-h1 {
-  margin-top: $spacing-huge 0;
-}
-
-h2 {
-  margin-top: $spacing-large 0;
+h1, h2 {
+  color: $color-primary;
+  text-transform: uppercase;
 }
 
 h3 {
   color: $color-accent;
 }
 
-h1, h2 {
-  color: $color-primary;
-  text-transform: uppercase;
-}
-
-pre, table, ul {
-  page-break-inside: avoid;
+pre {
+  overflow-x: hidden;
+  white-space: pre-wrap;
 }

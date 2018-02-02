@@ -1,17 +1,17 @@
 // Base
 
-$page-margin-x: 100px;
+$page-margin-x: 24pt;
 $page-margin-y: 0;
 $page-max-width: 100%;
-$page-background: $color-gray-dark;
-$page-foreground: $color-gray-light;
+$page-background: $color-white;
+$page-foreground: $color-gray-dark;
 $page-font: $font-sans-serif;
 $page-font-size: 22pt;
 $page-line-height: 2.14;
 
 $heading-font: $page-font;
-$heading-font-size: (1: 40pt, 2: 28pt, 3: 24pt);
-$heading-margin: (1: 30pt, 2: 20pt, 3: 18pt);
+$heading-font-size: (40pt, 28pt, 24pt);
+$heading-margin: (30pt, 20pt, 18pt);
 
 $paragraph-indent: 0;
 
@@ -19,8 +19,8 @@ $link-color: $color-accent;
 
 $code-font: $font-monospace;
 $code-font-size: 0.9em;
-$code-background: $color-black;
-$code-foreground: $color-white;
+$code-background: $color-gray-light;
+$code-foreground: $color-gray-dark;
 
 $quote-font: $page-font;
 $quote-font-size: $page-font-size;
@@ -35,13 +35,4 @@ $spacing-huge: 2rem;
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-$border-radius: 0rem;
-
-// Extras
-
-$message-accent-em: $color-info;
-$message-symbol-em: "i";
-$message-accent-strong: $color-danger;
-$message-symbol-strong: "!";
-
-$symbol-color: $color-primary;
+$border-radius: 0;

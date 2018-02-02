@@ -1,20 +1,10 @@
-@import "shared/mixins";
-
 body {
-  margin: #{$page-margin-y} #{$page-margin-x};
   padding: $spacing-medium;
 }
 
 h1 {
   color: $color-primary;
   text-transform: uppercase;
-}
-
-blockquote {
-  border-left: solid $quote-foreground 0.3rem;
-  font-style: italic;
-  margin: $spacing-huge 0;
-  padding: $spacing-huge;
 }
 
 pre {

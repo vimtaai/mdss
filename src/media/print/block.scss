@@ -1,13 +1,4 @@
-@page {
-  margin: $page-margin-y 0;
-} 
-
-body {
-  position: relative;
-  overflow: visible;
-  margin: 0 $page-margin-x;
-}
-
-pre, table, ul {
-  page-break-inside: avoid;
+pre {
+  overflow-x: hidden;
+  white-space: pre-wrap;
 }
