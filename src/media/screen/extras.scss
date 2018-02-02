@@ -8,4 +8,9 @@
   a > strong:only-child {
     @include button($button-background-strong, $button-foreground-strong);
   }
+
+  p > a:only-child > em:only-child,
+  p > a:only-child > strong:only-child {
+    display: block;
+  }
 }

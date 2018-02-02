@@ -7,7 +7,9 @@
   font-size: $page-font-size;
   font-style: normal;
   font-weight: normal;
-  padding: $spacing-large $spacing-huge;
+  padding: $spacing-medium $spacing-large;
+  margin: $spacing-small 0; 
+  text-align: center;
   transition: background $transition-duration;
 
   &:hover {
