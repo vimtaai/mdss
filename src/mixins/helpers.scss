@@ -1,0 +1,19 @@
+@import "shared/block";
+@import "shared/inline";
+@import "shared/extras";
+
+@mixin import-url($url) {
+  @import url($url);
+}
+
+@mixin import-externals($urls) {
+  @each $url in $urls {
+    @include import-url($url);
+  }
+}
+
+@mixin include-shared {
+  @include shared-block;
+  @include shared-inline;
+  @include shared-extras;
+}

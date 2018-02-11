@@ -1,8 +1,10 @@
-a {
-  border-bottom: solid transparent 0.1rem;
-  transition: border-bottom-color $transition-duration;
+@mixin screen-inline {
+  a {
+    border-bottom: solid transparent 0.1rem;
+    transition: border-bottom-color $transition-duration;
 
-  &:hover {
-    border-bottom-color: $color-primary;
+    &:hover {
+      border-bottom-color: $color-primary;
+    }
   }
 }

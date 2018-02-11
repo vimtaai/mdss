@@ -24,16 +24,16 @@ $automatic-page-break: h2;
 // Default: h1
 $avoid-page-break: h1;
 
-// A list of elements that should have automatic numbering (typically headings)
-// Media: screen, print, slides
-// (list of HTML elements)
-// Default: h2, h3
-$automatic-section-numbering: h2, h3;
-
 // Show link URLs after link text
 // Media: print, slides
 // (true|false)
 // Default: true
 $show-link-urls: true;
+
+// A list of elements that should have automatic numbering (typically headings)
+// Media: all
+// (list of HTML elements)
+// Default: h2, h3
+$automatic-section-numbering: h2, h3;
 
 

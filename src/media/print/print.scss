@@ -1,13 +1,26 @@
+@import "mixins/helpers";
+@import "config/external";
 @import "config/shared";
 @import "config/extras";
 @import "config/print";
-@import "shared/block";
-@import "shared/inline";
-@import "shared/extras";
 @import "media/print/block";
 @import "media/print/inline";
 @import "media/print/extras";
 
+@if $root-selector != "" {
+  #{$root-selector} {
+    @include include-shared;
+    @include print-block;
+    @include print-inline;
+    @include print-extras;
+  }
+} @else {
+  @include include-shared;
+  @include print-block;
+  @include print-inline;
+  @include print-extras;
+}
+
 @if variable-exists("BUNDLEBUILD") == false {
-  @include fonts;
+  @include import-externals($external-fonts);
 }

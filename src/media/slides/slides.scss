@@ -1,13 +1,26 @@
+@import "mixins/helpers";
+@import "config/external";
 @import "config/shared";
 @import "config/extras";
 @import "config/slides";
-@import "shared/block";
-@import "shared/inline";
-@import "shared/extras";
 @import "media/slides/block";
 @import "media/slides/inline";
 @import "media/slides/extras";
 
+@if $root-selector != "" {
+  #{$root-selector} {
+    @include include-shared;
+    @include slides-block;
+    @include slides-inline;
+    @include slides-extras;
+  }
+} @else {
+  @include include-shared;
+  @include slides-block;
+  @include slides-inline;
+  @include slides-extras;
+}
+
 @if variable-exists("BUNDLEBUILD") == false {
-  @include fonts;
+  @include import-externals($external-fonts);
 }

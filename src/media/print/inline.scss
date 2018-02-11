@@ -1,3 +1,5 @@
-a {
-  font-weight: bold;
+@mixin print-inline {
+  a {
+    font-weight: bold;
+  }
 }

@@ -1,4 +1,6 @@
-pre {
-  overflow-x: hidden;
-  white-space: pre-wrap;
+@mixin print-block {
+  pre {
+    overflow-x: hidden;
+    white-space: pre-wrap;
+  }
 }

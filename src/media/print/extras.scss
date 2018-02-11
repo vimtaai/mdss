@@ -1,34 +1,36 @@
-@if $manual-page-break == true {
-  hr {
-    visibility: hidden;
-    page-break-after: always;
-  }
-}
-
-@each $element in $automatic-page-break {
-  #{$element} {
-    page-break-before: always;
-  }
-}
-
-@each $nobreak-element in $avoid-page-break {
-  @each $break-element in $automatic-page-break {
-    #{$nobreak-element} + #{$break-element} {
-      page-break-before: avoid;
+@mixin print-extras {
+  @if $manual-page-break == true {
+    hr {
+      visibility: hidden;
+      page-break-after: always;
     }
   }
 
-  #{$nobreak-element} {
-    page-break-after: avoid;
+  @each $element in $automatic-page-break {
+    #{$element} {
+      page-break-before: always;
+    }
   }
-}
 
-@if $show-link-urls == true {
-  a[href^="http"]:after,
-  a[href^="ftp"]:after,
-  a[href^="scp"]:after,
-  a[href^="ssh"]:after,
-  a[href^="mailto"]:after {
-    content: " (" attr(href) ")";
+  @each $nobreak-element in $avoid-page-break {
+    @each $break-element in $automatic-page-break {
+      #{$nobreak-element} + #{$break-element} {
+        page-break-before: avoid;
+      }
+    }
+
+    #{$nobreak-element} {
+      page-break-after: avoid;
+    }
+  }
+
+  @if $show-link-urls == true {
+    a[href^="http"]:after,
+    a[href^="ftp"]:after,
+    a[href^="scp"]:after,
+    a[href^="ssh"]:after,
+    a[href^="mailto"]:after {
+      content: " (" attr(href) ")";
+    }
   }
 }

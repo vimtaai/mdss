@@ -1,8 +1,10 @@
-a {
-  font-weight: bold;
-}
+@mixin slides-inline {
+  a {
+    font-weight: bold;
+  }
 
-hr {
-  visibility: hidden;
-  page-break-after: always;
+  hr {
+    visibility: hidden;
+    page-break-after: always;
+  }
 }

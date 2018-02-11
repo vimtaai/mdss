@@ -1,17 +1,19 @@
-h1, h2 {
-  color: $color-primary;
-  text-transform: uppercase;
-}
+@mixin slides-block {
+  h1, h2 {
+    color: $color-primary;
+    text-transform: uppercase;
+  }
 
-h1 {
-  line-height: 1;
-}
+  h1 {
+    line-height: 1;
+  }
 
-h3 {
-  color: $color-accent;
-}
+  h3 {
+    color: $color-accent;
+  }
 
-pre {
-  overflow-x: hidden;
-  white-space: pre-wrap;
+  pre {
+    overflow-x: hidden;
+    white-space: pre-wrap;
+  }
 }

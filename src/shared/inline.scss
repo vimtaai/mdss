@@ -1,13 +1,15 @@
-a {
-  color: $link-color;
-  text-decoration: none;
-}
+@mixin shared-inline {
+  a {
+    color: $link-color;
+    text-decoration: none;
+  }
 
-code {
-  padding: $spacing-small;
-}
+  code {
+    padding: $spacing-small;
+  }
 
-img {
-  max-width: 100%;
-  vertical-align: middle;
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
 }

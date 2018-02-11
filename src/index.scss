@@ -1,7 +1,7 @@
 $BUNDLEBUILD: true;
 
-@import "config/shared";
-@import "config/extras";
+@import "config/external";
+@import "mixins/helpers";
 
 @media screen {
   @import "media/screen/screen";
@@ -15,4 +15,4 @@ $BUNDLEBUILD: true;
   @import "media/slides/slides";
 }
 
-@include fonts;
+@include import-externals($external-fonts);

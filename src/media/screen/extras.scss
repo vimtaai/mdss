@@ -1,16 +1,18 @@
-@import "shared/mixins";
+@import "mixins/components";
 
-@if $convert-buttons == true {
-  a > em:only-child {
-    @include button($button-background-em, $button-foreground-em);
-  }
+@mixin screen-extras {
+  @if $convert-buttons == true {
+    a > em:only-child {
+      @include button($button-background-em, $button-foreground-em);
+    }
 
-  a > strong:only-child {
-    @include button($button-background-strong, $button-foreground-strong);
-  }
+    a > strong:only-child {
+      @include button($button-background-strong, $button-foreground-strong);
+    }
 
-  p > a:only-child > em:only-child,
-  p > a:only-child > strong:only-child {
-    display: block;
+    p > a:only-child > em:only-child,
+    p > a:only-child > strong:only-child {
+      display: block;
+    }
   }
 }
