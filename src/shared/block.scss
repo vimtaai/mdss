@@ -32,6 +32,7 @@
   }
 
   p {
+    text-align: $paragraph-align;
     text-indent: 0;
 
     & + p {

@@ -1,6 +1,7 @@
 @mixin print-block {
   pre {
     overflow-x: hidden;
+    page-break-inside: avoid;
     white-space: pre-wrap;
   }
 }
