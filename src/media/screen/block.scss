@@ -1,12 +1,4 @@
 @mixin screen-block {
-  @if $root-selector == "" {
-    body {
-      padding: $spacing-huge;
-    }
-  } @else {
-    padding: $spacing-huge;
-  }
-
   h1 {
     color: $color-primary;
     text-transform: uppercase;

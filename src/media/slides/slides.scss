@@ -3,24 +3,30 @@
 @import "config/shared";
 @import "config/extras";
 @import "config/slides";
+@import "media/slides/root";
 @import "media/slides/block";
 @import "media/slides/inline";
 @import "media/slides/extras";
 
-@if $root-selector != "" {
-  #{$root-selector} {
-    @include include-shared;
-    @include slides-block;
-    @include slides-inline;
-    @include slides-extras;
-  }
-} @else {
-  @include include-shared;
+@mixin include-slides {
+  @include root { @include shared-root };
+  @include shared-block;
+  @include shared-inline;
+  @include shared-extras;
+  @include root { @include slides-root };
   @include slides-block;
   @include slides-inline;
   @include slides-extras;
 }
 
+@if $root-selector == "" {
+  @include include-slides;
+} @else {
+  #{$root-selector} {
+    @include include-slides;
+  }
+}
+
 @if variable-exists("BUNDLEBUILD") == false {
-  @include import-externals($external-fonts);
+  @include import-externals($external-imports);
 }

@@ -3,24 +3,30 @@
 @import "config/shared";
 @import "config/extras";
 @import "config/print";
+@import "media/print/root";
 @import "media/print/block";
 @import "media/print/inline";
 @import "media/print/extras";
 
-@if $root-selector != "" {
-  #{$root-selector} {
-    @include include-shared;
-    @include print-block;
-    @include print-inline;
-    @include print-extras;
-  }
-} @else {
-  @include include-shared;
+@mixin include-print {
+  @include root { @include shared-root };
+  @include shared-block;
+  @include shared-inline;
+  @include shared-extras;
+  @include root { @include print-root };
   @include print-block;
   @include print-inline;
   @include print-extras;
 }
 
+@if $root-selector == "" {
+  @include include-print;
+} @else {
+  #{$root-selector} {
+    @include include-print;
+  }
+}
+
 @if variable-exists("BUNDLEBUILD") == false {
-  @include import-externals($external-fonts);
+  @include import-externals($external-imports);
 }
