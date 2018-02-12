@@ -1,8 +1,3 @@
-@import "shared/root";
-@import "shared/block";
-@import "shared/inline";
-@import "shared/extras";
-
 @mixin import-externals($urls) {
   @each $url in $urls {
     @import url($url);

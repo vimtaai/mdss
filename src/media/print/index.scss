@@ -1,29 +1,33 @@
 @import "mixins/helpers";
+
 @import "config/external";
 @import "config/shared";
 @import "config/extras";
-@import "config/slides";
-@import "media/slides/root";
-@import "media/slides/block";
-@import "media/slides/inline";
-@import "media/slides/extras";
+@import "config/print";
 
-@mixin include-slides {
+@import "shared/index";
+
+@import "media/print/root";
+@import "media/print/block";
+@import "media/print/inline";
+@import "media/print/extras";
+
+@mixin include-print {
   @include root { @include shared-root };
   @include shared-block;
   @include shared-inline;
   @include shared-extras;
-  @include root { @include slides-root };
-  @include slides-block;
-  @include slides-inline;
-  @include slides-extras;
+  @include root { @include print-root };
+  @include print-block;
+  @include print-inline;
+  @include print-extras;
 }
 
 @if $root-selector == "" {
-  @include include-slides;
+  @include include-print;
 } @else {
   #{$root-selector} {
-    @include include-slides;
+    @include include-print;
   }
 }
 

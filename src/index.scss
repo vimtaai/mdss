@@ -4,15 +4,15 @@ $BUNDLEBUILD: true;
 @import "mixins/helpers";
 
 @media screen {
-  @import "media/screen/screen";
+  @import "media/screen/index";
 }
 
 @media print and (orientation: portrait) {
-  @import "media/print/print";
+  @import "media/print/index";
 }
 
 @media print and (orientation: landscape) {
-  @import "media/slides/slides";
+  @import "media/slides/index";
 }
 
 @include import-externals($external-imports);
