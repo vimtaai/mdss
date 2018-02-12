@@ -1,12 +1,13 @@
 @mixin shared-root {
-  background: $page-background;
+  background: $root-background;
   box-sizing: border-box;
-  color: $page-foreground;
-  font-family: $page-font;
-  font-size: $page-font-size;
-  line-height: $page-line-height;
-  margin: #{$page-margin-y} #{$page-margin-x};
-  max-width: $page-max-width;
+  color: $root-foreground;
+  font-family: $root-font;
+  font-size: $root-font-size;
+  line-height: $root-line-height;
+  margin: #{$root-margin-y} #{$root-margin-x};
+  max-width: $root-max-width;
+  min-width: $root-min-width;
   overflow: visible;
   position: relative;
 }

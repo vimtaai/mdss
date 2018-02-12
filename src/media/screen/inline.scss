@@ -1,6 +1,6 @@
 @mixin screen-inline {
   a {
-    border-bottom: solid transparent 0.1rem;
+    border-bottom: solid transparent 2px;
     transition: border-bottom-color $transition-duration;
 
     &:hover {

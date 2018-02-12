@@ -1,15 +1,16 @@
 // Base
 
-$page-margin-x: 80pt;
-$page-margin-y: 0;
-$page-max-width: 100%;
-$page-background: $color-white;
-$page-foreground: $color-gray-dark;
-$page-font: $font-sans-serif;
-$page-font-size: 22pt;
-$page-line-height: 2.14;
+$root-margin-x: 80pt;
+$root-margin-y: 0;
+$root-max-width: 100%;
+$root-min-width: 0;
+$root-background: $color-white;
+$root-foreground: $color-gray-dark;
+$root-font: $font-sans-serif;
+$root-font-size: 22pt;
+$root-line-height: 2.14;
 
-$heading-font: $page-font;
+$heading-font: $root-font;
 $heading-font-size: (40pt, 28pt, 24pt);
 $heading-margin: (30pt, 20pt, 18pt);
 
@@ -19,21 +20,21 @@ $paragraph-align: left;
 $link-color: $color-accent;
 
 $code-font: $font-monospace;
-$code-font-size: 0.9em;
+$code-font-size: 20pt;
 $code-background: $color-gray-light;
 $code-foreground: $color-gray-dark;
 $code-border-color: transparent;
 
-$quote-font: $page-font;
-$quote-font-size: 1.1em;
+$quote-font: $root-font;
+$quote-font-size: 24pt;
 $quote-background: $color-gray-light;
-$quote-foreground: $page-foreground;
+$quote-foreground: $root-foreground;
 $quote-border-color: $color-primary;
 
-$spacing-small: 0.5rem;
-$spacing-medium: 1rem;
-$spacing-large: 1.4rem;
-$spacing-huge: 2rem;
+$spacing-small: 0.5 * $root-font-size;
+$spacing-medium: 1 * $root-font-size;
+$spacing-large: 1.4 * $root-font-size;
+$spacing-huge: 2 * $root-font-size;
 
 $ordered-list-style: decimal;
 $unordered-list-style: square;

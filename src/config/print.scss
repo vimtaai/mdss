@@ -1,13 +1,14 @@
 // Base
 
-$page-margin-x: 2cm;
-$page-margin-y: 0;
-$page-max-width: 100%;
-$page-background: $color-white;
-$page-foreground: $color-black;
-$page-font: $font-serif;
-$page-font-size: 12pt;
-$page-line-height: 1.41;
+$root-margin-x: 2cm;
+$root-margin-y: 0;
+$root-max-width: 100%;
+$root-min-width: 0;
+$root-background: $color-white;
+$root-foreground: $color-black;
+$root-font: $font-serif;
+$root-font-size: 12pt;
+$root-line-height: 1.41;
 
 $heading-font: $font-sans-serif;
 $heading-font-size: (20pt, 16pt, 14pt);
@@ -16,18 +17,18 @@ $heading-margin: (20pt, 16pt, 12pt);
 $paragraph-indent: 0;
 $paragraph-align: justify;
 
-$link-color: $page-foreground;
+$link-color: $root-foreground;
 
 $code-font: $font-monospace;
 $code-font-size: 11pt;
 $code-background: $color-gray-light;
-$code-foreground: $page-foreground;
+$code-foreground: $root-foreground;
 $code-border-color: transparent;
 
-$quote-font: $page-font;
+$quote-font: $root-font;
 $quote-font-size: 13pt;
 $quote-background: $color-gray-light;
-$quote-foreground: $page-foreground;
+$quote-foreground: $root-foreground;
 $quote-border-color: $color-gray-medium;
 
 $spacing-small: 3pt;
