@@ -1,19 +1,19 @@
 @mixin print-extras {
-  @if $manual-page-break == true {
+  @if $page-break-manual == true {
     hr {
       visibility: hidden;
       page-break-after: always;
     }
   }
 
-  @each $element in $automatic-page-break {
+  @each $element in $page-break-insert-before {
     #{$element} {
       page-break-before: always;
     }
   }
 
-  @each $nobreak-element in $avoid-page-break {
-    @each $break-element in $automatic-page-break {
+  @each $nobreak-element in $page-break-avoid-after {
+    @each $break-element in $page-break-insert-before {
       #{$nobreak-element} + #{$break-element} {
         page-break-before: avoid;
       }
@@ -24,13 +24,12 @@
     }
   }
 
-  @if $show-link-urls == true {
+  @if $print-link-urls == true {
     a[href^="http"]:after,
     a[href^="ftp"]:after,
     a[href^="scp"]:after,
-    a[href^="ssh"]:after,
-    a[href^="mailto"]:after {
-      content: " (" attr(href) ")";
+    a[href^="ssh"]:after {
+      content: " <" attr(href) ">";
     }
   }
 }

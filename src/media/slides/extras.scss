@@ -1,11 +1,10 @@
 @mixin slides-extras {
-  @if $show-link-urls == true {
+  @if $print-link-urls == true {
     a[href^="http"]:after,
     a[href^="ftp"]:after,
     a[href^="scp"]:after,
-    a[href^="ssh"]:after,
-    a[href^="mailto"]:after {
-      content: " (" attr(href) ")";
+    a[href^="ssh"]:after {
+      content: " <" attr(href) ">";
     }
   }
 }

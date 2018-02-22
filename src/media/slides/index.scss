@@ -13,11 +13,11 @@
 @import "media/slides/extras";
 
 @mixin include-slides {
-  @include root { @include shared-root };
+  @include on-root { @include shared-root };
   @include shared-block;
   @include shared-inline;
   @include shared-extras;
-  @include root { @include slides-root };
+  @include on-root { @include slides-root };
   @include slides-block;
   @include slides-inline;
   @include slides-extras;

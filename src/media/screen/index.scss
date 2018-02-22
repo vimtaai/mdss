@@ -13,11 +13,11 @@
 @import "media/screen/extras";
 
 @mixin include-screen {
-  @include root { @include shared-root };
+  @include on-root { @include shared-root };
   @include shared-block;
   @include shared-inline;
   @include shared-extras;
-  @include root { @include screen-root };
+  @include on-root { @include screen-root };
   @include screen-block;
   @include screen-inline;
   @include screen-extras;

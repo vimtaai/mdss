@@ -1,5 +1,4 @@
-// Base
-
+// Root Element
 $root-margin-x: auto;
 $root-margin-y: 10px;
 $root-max-width: 800px;
@@ -10,35 +9,43 @@ $root-font: $font-sans-serif;
 $root-font-size: 17px;
 $root-line-height: 1.67;
 
+// Headings
 $heading-font: $root-font;
 $heading-font-size: (2 * $root-font-size, 1.5 * $root-font-size, 1.2 * $root-font-size);
 $heading-margin: (1.2 * $root-font-size, 1 * $root-font-size, 0);
 
+// Paragraphs
 $paragraph-indent: 0;
 $paragraph-align: left;
 
-$link-color: $color-primary;
-
-$code-font: $font-monospace;
-$code-font-size: 14px;
-$code-background: $color-gray-light;
-$code-foreground: $color-gray-dark;
-$code-border-color: transparent;
-
+// Blockquotes
 $quote-font: $root-font;
 $quote-font-size: 1.1 * $root-font-size;
 $quote-background: $color-gray-light;
 $quote-foreground: $root-foreground;
 $quote-border-color: $color-primary;
 
+// Lists
+$ordered-list-style: decimal;
+$unordered-list-style: square;
+
+// Links
+$link-color: $color-primary;
+
+// Code
+$code-font: $font-monospace;
+$code-font-size: 14px;
+$code-background: $color-gray-light;
+$code-foreground: $color-gray-dark;
+$code-border-color: transparent;
+
+// Spacing
 $spacing-small: 0.2 * $root-font-size;
 $spacing-medium: 0.5 * $root-font-size;
 $spacing-large: 0.75 * $root-font-size;
 $spacing-huge: 1.5 * $root-font-size;
 
-$ordered-list-style: decimal;
-$unordered-list-style: square;
-
+// Border Radius
 $border-radius: 3px;
 
 $transition-duration: 250ms;

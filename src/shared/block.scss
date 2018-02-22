@@ -40,19 +40,19 @@
     }
   }
 
-  ol, ul {
-    ol, ul {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-
   ol {
     list-style: $ordered-list-style;
   }
 
   ul {
     list-style: $unordered-list-style;
+  }
+
+  ol, ul {
+    ol, ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   pre, code {

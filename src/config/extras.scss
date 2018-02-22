@@ -1,39 +1,22 @@
-// Convert emphasised and strong links into buttons
-// Media: screen
-// (true|false)
-// Default: true
-// Example: 
-// [**This is a button**](button-href-target)
-$convert-buttons: true;
+// MDSS Extras
+$page-break-manual: true;
+$page-break-insert-before: h2;
+$page-break-avoid-after: h1;
 
-// Replace horizontal rules/thematic breaks with page breaks
-// Media: print
-// (true|false)
-// Default: true
-$manual-page-break: true;
+$numbered-headings: h2, h3;
+$numbered-elements: img, table;
 
-// A list of elements before which there will be an automatic page break
-// Media: print
-// (list of HTML elements)
-// Default: h2
-$automatic-page-break: h2;
+$print-link-urls: true;
 
-// A list of elements after which there never will be an automatic page break
-// Media: print
-// (list of HTML elements)
-// Default: h1
-$avoid-page-break: h1;
+// Markdown Extensions
+$use-abbreviation: false;
+$use-definition-list: false;
+$use-insert: false;
+$use-mark: false;
+$use-strikethrough: false;
+$use-table: false;
+$use-task-list: false;
 
-// Show link URLs after link text
-// Media: print, slides
-// (true|false)
-// Default: true
-$show-link-urls: true;
-
-// A list of elements that should have automatic numbering (typically headings)
-// Media: all
-// (list of HTML elements)
-// Default: h2, h3
-$automatic-section-numbering: h2, h3;
-
+// Markdown Containers
+$container-flex: false
 

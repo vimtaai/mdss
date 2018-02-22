@@ -13,11 +13,11 @@
 @import "media/print/extras";
 
 @mixin include-print {
-  @include root { @include shared-root };
+  @include on-root { @include shared-root };
   @include shared-block;
   @include shared-inline;
   @include shared-extras;
-  @include root { @include print-root };
+  @include on-root { @include print-root };
   @include print-block;
   @include print-inline;
   @include print-extras;

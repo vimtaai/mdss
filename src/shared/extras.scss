@@ -1,42 +1,51 @@
 @mixin shared-extras {
-  $levels-of-numbered-sections: length($automatic-section-numbering);
+  $counters: "";
 
-  @if $levels-of-numbered-sections > 0 {
-    body {
-      $levels: "";
-      @for $level from 1 through $levels-of-numbered-sections {
-        $levels: #{$levels} section#{$level};
+  @for $level from 1 through length($numbered-headings) {
+    $heading: nth($numbered-headings, $level);
+    $counters: #{$counters} #{$heading};
+
+    $counter-resets: "";
+    @if $level < length($numbered-headings) {
+      @for $i from $level + 1 through length($numbered-headings) {
+        $counter-resets: #{$counter-resets} #{nth($numbered-headings, $i)}
       }
-      counter-reset: $levels;
     }
 
-    @for $level from 1 through $levels-of-numbered-sections {
-      #{nth($automatic-section-numbering, $level)} {
-        @if $level < $levels-of-numbered-sections {
-          @for $i from $level + 1 through $levels-of-numbered-sections {
-            counter-reset: section#{$i};
-          }
-        }
+    $label: "";
+    @for $i from 1 through $level {
+      $label: #{$label} counter(#{nth($numbered-headings, $i)}) '"."'
+    }
 
-        position: relative;
-        counter-increment: section#{$level};
-      }
+    #{$heading} {
+      position: relative;
+      counter-increment: #{$heading};
+      counter-reset: #{$counter-resets};
+    }
 
-      #{nth($automatic-section-numbering, $level)}:before {
-        $label: counter(section1);
-
-        @if $level >= 2 {
-          @for $i from 2 through $level {
-            $label: #{$label} '"."' counter(section#{$i});
-          }
-        }
-
-        position: absolute;
-        top: 0;
-        right: calc(100% + #{$spacing-medium});
-        direction: rtl;
+    #{$heading}:before {
+      @include on-left-margin {
         content: #{$label};
       }
     }
+  }
+
+  @each $element in $numbered-elements {
+    $counters: #{$counters} #{$element};
+
+    #{$element} {
+      position: relative;
+      counter-increment: #{$element};
+    }
+
+    #{$element}:before {
+      @include on-right-margin {
+        content: "(" counter(#{$element}) ")";
+      }
+    }
+  }
+
+  @include on-root {
+    counter-reset: #{$counters};
   }
 }

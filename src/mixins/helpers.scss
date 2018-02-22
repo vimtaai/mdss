@@ -4,7 +4,7 @@
   }
 }
 
-@mixin root {
+@mixin on-root {
   @if $root-selector == "" {
     body {
       @content;
@@ -12,4 +12,19 @@
   } @else {
     @content;
   }
+}
+
+@mixin on-right-margin {
+  position: absolute;
+  top: 0;
+  left: calc(100% + #{$spacing-medium});
+  @content;
+}
+
+@mixin on-left-margin {
+  position: absolute;
+  top: 0;
+  right: calc(100% + #{$spacing-medium});
+  direction: rtl;
+  @content;
 }
