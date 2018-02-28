@@ -14,7 +14,12 @@
 
     $label: "";
     @for $i from 1 through $level {
-      $label: #{$label} counter(#{nth($numbered-headings, $i)}) '"."'
+      $label: #{$label} counter(#{nth($numbered-headings, $i)});
+      @if ($i != $level) {
+        $label: #{$label} '"."'
+      } @else {
+        $label: #{$label} '"\00a0"'
+      }
     }
 
     #{$heading} {

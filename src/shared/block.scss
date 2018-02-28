@@ -1,11 +1,12 @@
 @mixin shared-block {
   h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font;
+    @include use-font($heading-font);
   }
 
   @for $level from 1 through length($heading-font-size) {
     h#{$level} {
-      font-size: nth($heading-font-size, $level);
+      @include use-font-size(nth($heading-font-size, $level));
+      
       margin-bottom: nth($heading-margin, $level);
     }
   }
@@ -22,11 +23,12 @@
   }
 
   blockquote {
-    background: $quote-background;
+    @include use-font($quote-font);
+    @include use-font-color($quote-foreground);
+    @include use-font-size($quote-font-size);
+    @include use-background($quote-background);
+
     border-left: solid $quote-border-color $spacing-small;
-    color: $quote-foreground;
-    font-family: $quote-font;
-    font-size: $quote-font-size;
     font-style: italic;
     padding: $spacing-large;
   }
@@ -56,12 +58,13 @@
   }
 
   pre, code {
-    background: $code-background;
+    @include use-font($code-font);
+    @include use-font-size($code-font-size);
+    @include use-font-color($code-foreground);
+    @include use-background($code-background);
+    
     border: solid $code-border-color 1px;
     border-radius: $border-radius;
-    color: $code-foreground;
-    font-family: $code-font;
-    font-size: $code-font-size;
   }
 
   pre {

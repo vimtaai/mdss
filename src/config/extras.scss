@@ -4,7 +4,7 @@ $page-break-insert-before: h2;
 $page-break-avoid-after: h1;
 
 $numbered-headings: h2, h3;
-$numbered-elements: img, table;
+$numbered-elements: (img, table);
 
 $print-link-urls: true;
 

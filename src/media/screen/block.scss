@@ -1,6 +1,7 @@
 @mixin screen-block {
   h1 {
-    color: $color-primary;
+    @include use-font-color($color-primary);
+    
     text-transform: uppercase;
   }
 

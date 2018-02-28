@@ -1,6 +1,7 @@
 @mixin shared-inline {
   a {
-    color: $link-color;
+    @include use-font-color($link-color);
+
     text-decoration: none;
   }
 

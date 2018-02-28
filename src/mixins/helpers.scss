@@ -4,6 +4,30 @@
   }
 }
 
+@mixin use-font($font) {
+  @if ($font != $root-font) {
+    font-family: $font;
+  }
+}
+
+@mixin use-font-size($font-size) {
+  @if ($font-size != $root-font-size) {
+    font-size: $font-size;
+  }
+}
+
+@mixin use-font-color($color) {
+  @if ($color != $root-foreground) {
+    color: $color;
+  }
+}
+
+@mixin use-background($background) {
+  @if ($background != $root-background) {
+    background: $background;
+  }
+}
+
 @mixin on-root {
   @if $root-selector == "" {
     body {
@@ -25,6 +49,5 @@
   position: absolute;
   top: 0;
   right: calc(100% + #{$spacing-medium});
-  direction: rtl;
   @content;
 }
