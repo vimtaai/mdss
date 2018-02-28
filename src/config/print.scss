@@ -4,7 +4,7 @@ $root-margin-y: 0;
 $root-max-width: 100%;
 $root-min-width: 0;
 $root-background: $color-white;
-$root-foreground: $color-black;
+$root-font-color: $color-black;
 $root-font: $font-serif;
 $root-font-size: 12pt;
 $root-line-height: 1.41;
@@ -22,7 +22,7 @@ $paragraph-align: justify;
 $quote-font: $root-font;
 $quote-font-size: 13pt;
 $quote-background: $color-gray-light;
-$quote-foreground: $root-foreground;
+$quote-font-color: $root-font-color;
 $quote-border-color: $color-gray-medium;
 
 // Lists
@@ -30,13 +30,13 @@ $ordered-list-style: decimal;
 $unordered-list-style: square;
 
 // Links
-$link-color: $root-foreground;
+$link-color: $root-font-color;
 
 // Code
 $code-font: $font-monospace;
 $code-font-size: 11pt;
 $code-background: $color-gray-light;
-$code-foreground: $root-foreground;
+$code-font-color: $root-font-color;
 $code-border-color: transparent;
 
 // Spacing

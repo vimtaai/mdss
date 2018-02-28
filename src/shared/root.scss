@@ -1,7 +1,7 @@
 @mixin shared-root {
   background: $root-background;
   box-sizing: border-box;
-  color: $root-foreground;
+  color: $root-font-color;
   font-family: $root-font;
   font-size: $root-font-size;
   line-height: $root-line-height;

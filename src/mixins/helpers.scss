@@ -17,7 +17,7 @@
 }
 
 @mixin use-font-color($color) {
-  @if ($color != $root-foreground) {
+  @if ($color != $root-font-color) {
     color: $color;
   }
 }

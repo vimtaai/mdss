@@ -1,8 +1,8 @@
-@mixin button($background, $foreground) {
+@mixin button($background, $font-color) {
   background: $background;
   border: none;
   border-radius: $border-radius;
-  color: $foreground;
+  color: $font-color;
   display: inline-block;
   font-size: $root-font-size;
   font-style: normal;

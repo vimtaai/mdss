@@ -4,7 +4,7 @@ $root-margin-y: 10px;
 $root-max-width: 800px;
 $root-min-width: 350px;
 $root-background: $color-white;
-$root-foreground: $color-gray-dark;
+$root-font-color: $color-gray-dark;
 $root-font: $font-sans-serif;
 $root-font-size: 17px;
 $root-line-height: 1.67;
@@ -22,7 +22,7 @@ $paragraph-align: left;
 $quote-font: $root-font;
 $quote-font-size: 1.1 * $root-font-size;
 $quote-background: $color-gray-light;
-$quote-foreground: $root-foreground;
+$quote-font-color: $root-font-color;
 $quote-border-color: $color-primary;
 
 // Lists
@@ -36,7 +36,7 @@ $link-color: $color-primary;
 $code-font: $font-monospace;
 $code-font-size: 14px;
 $code-background: $color-gray-light;
-$code-foreground: $color-gray-dark;
+$code-font-color: $color-gray-dark;
 $code-border-color: transparent;
 
 // Spacing
@@ -53,6 +53,6 @@ $transition-duration: 250ms;
 // Extras
 
 $button-background-em: $color-gray-medium;
-$button-foreground-em: $color-gray-dark;
+$button-font-color-em: $color-gray-dark;
 $button-background-strong: $color-primary;
-$button-foreground-strong: $color-white;
+$button-font-color-strong: $color-white;
