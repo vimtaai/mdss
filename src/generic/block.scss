@@ -1,0 +1,62 @@
+@mixin generic-block {
+  h1, h2, h3, h4, h5, h6 {
+    @include font($heading-font);
+  }
+
+  @for $level from 1 through length($heading-font-size) {
+    h#{$level} {
+      @include font-size(nth($heading-font-size, $level));
+      
+      margin-bottom: nth($heading-margin, $level);
+    }
+  }
+
+  blockquote, p, pre, ol, ul {
+    margin: $spacing-medium 0;
+  }
+
+  blockquote {
+    @include font($quote-font);
+    @include font-color($quote-font-color);
+    @include font-size($quote-font-size);
+    @include background($quote-background);
+
+    border-left: solid $quote-border-color $spacing-small;
+    padding: $spacing-large;
+  }
+
+  p {
+    text-align: $paragraph-align;
+
+    & + p {
+      text-indent: $paragraph-indent;
+    }
+  }
+
+  ol {
+    list-style: $ordered-list-style;
+  }
+
+  ul {
+    list-style: $unordered-list-style;
+  }
+
+  li {
+    text-align: $paragraph-align;
+  }
+
+  pre, code {
+    @include font($code-font);
+    @include font-size($code-font-size);
+    @include font-color($code-font-color);
+    @include background($code-background);
+    
+    border: solid $code-border-color 1px;
+    border-radius: $border-radius;
+  }
+
+  hr {
+    background: $color-gray-medium;
+    margin: $spacing-large 0;
+  }
+}

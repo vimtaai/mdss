@@ -1,11 +1,6 @@
 @mixin shared-inline {
   a {
-    color: $link-color;
     text-decoration: none;
-  }
-
-  code {
-    padding: $spacing-small;
   }
 
   img {

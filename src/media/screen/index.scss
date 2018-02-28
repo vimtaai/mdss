@@ -5,18 +5,17 @@
 @import "config/extras";
 @import "config/screen";
 
-@import "shared/index";
-
 @import "media/screen/root";
 @import "media/screen/block";
 @import "media/screen/inline";
 @import "media/screen/extras";
 
-@mixin include-screen {
-  @include on-root { @include shared-root };
-  @include shared-block;
-  @include shared-inline;
-  @include shared-extras;
+@import "generic/index";
+@import "shared/index";
+
+@mixin screen {
+  @include generic;
+  
   @include on-root { @include screen-root };
   @include screen-block;
   @include screen-inline;
@@ -24,13 +23,14 @@
 }
 
 @if $root-selector == "" {
-  @include include-screen;
+  @include screen;
 } @else {
   #{$root-selector} {
-    @include include-screen;
+    @include screen;
   }
 }
 
 @if variable-exists("BUNDLEBUILD") == false {
-  @include import-externals($external-imports);
+  @include shared;
+  @include externals($external-imports);
 }

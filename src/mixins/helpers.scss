@@ -1,28 +1,28 @@
-@mixin import-externals($urls) {
+@mixin externals($urls) {
   @each $url in $urls {
     @import url($url);
   }
 }
 
-@mixin use-font($font) {
+@mixin font($font) {
   @if ($font != $root-font) {
     font-family: $font;
   }
 }
 
-@mixin use-font-size($font-size) {
+@mixin font-size($font-size) {
   @if ($font-size != $root-font-size) {
     font-size: $font-size;
   }
 }
 
-@mixin use-font-color($color) {
+@mixin font-color($color) {
   @if ($color != $root-font-color) {
     color: $color;
   }
 }
 
-@mixin use-background($background) {
+@mixin background($background) {
   @if ($background != $root-background) {
     background: $background;
   }

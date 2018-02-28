@@ -1,0 +1,9 @@
+@mixin generic-inline {
+  a {
+    color: $link-color;
+  }
+
+  code {
+    padding: $spacing-small;
+  }
+}

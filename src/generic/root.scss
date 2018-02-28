@@ -1,0 +1,10 @@
+@mixin generic-root {
+  background: $root-background;
+  color: $root-font-color;
+  font-family: $root-font;
+  font-size: $root-font-size;
+  line-height: $root-line-height;
+  margin: #{$root-margin-y} #{$root-margin-x};
+  max-width: $root-max-width;
+  min-width: $root-min-width;
+}

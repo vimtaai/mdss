@@ -5,18 +5,17 @@
 @import "config/extras";
 @import "config/print";
 
-@import "shared/index";
-
 @import "media/print/root";
 @import "media/print/block";
 @import "media/print/inline";
 @import "media/print/extras";
 
-@mixin include-print {
-  @include on-root { @include shared-root };
-  @include shared-block;
-  @include shared-inline;
-  @include shared-extras;
+@import "generic/index";
+@import "shared/index";
+
+@mixin print {
+  @include generic;
+  
   @include on-root { @include print-root };
   @include print-block;
   @include print-inline;
@@ -24,13 +23,14 @@
 }
 
 @if $root-selector == "" {
-  @include include-print;
+  @include print;
 } @else {
   #{$root-selector} {
-    @include include-print;
+    @include print;
   }
 }
 
 @if variable-exists("BUNDLEBUILD") == false {
-  @include import-externals($external-imports);
+  @include shared;
+  @include externals($external-imports);
 }

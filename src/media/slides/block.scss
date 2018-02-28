@@ -1,6 +1,6 @@
 @mixin slides-block {
   h1, h2 {
-    @include use-font-color($color-primary);
+    @include font-color($color-primary);
 
     text-transform: uppercase;
   }
@@ -10,7 +10,7 @@
   }
 
   h3 {
-    @include use-font-color($color-accent);
+    @include font-color($color-accent);
   }
 
   pre {

@@ -1,7 +1,9 @@
 $BUNDLEBUILD: true;
 
 @import "config/external";
+@import "config/shared";
 @import "mixins/helpers";
+@import "shared/index";
 
 @media screen {
   @import "media/screen/index";
@@ -15,4 +17,5 @@ $BUNDLEBUILD: true;
   @import "media/slides/index";
 }
 
-@include import-externals($external-imports);
+@include shared;
+@include externals($external-imports);
