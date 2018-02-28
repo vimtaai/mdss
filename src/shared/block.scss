@@ -57,6 +57,10 @@
     }
   }
 
+  li {
+    text-align: $paragraph-align;
+  }
+
   pre, code {
     @include use-font($code-font);
     @include use-font-size($code-font-size);
