@@ -1,6 +1,6 @@
 // Root Element
 $root-margin-x: auto;
-$root-margin-y: 10px;
+$root-margin-y: 0;
 $root-max-width: 800px;
 $root-min-width: 350px;
 $root-background: $color-white;
@@ -9,18 +9,25 @@ $root-font: $font-sans-serif;
 $root-font-size: 17px;
 $root-line-height: 1.67;
 
+// Spacing
+$spacing-small: 0.2 * $root-font-size;
+$spacing-medium: 0.5 * $root-font-size;
+$spacing-large: 0.75 * $root-font-size;
+$spacing-huge: 1.5 * $root-font-size;
+
 // Headings
 $heading-font: $root-font;
 $heading-font-size: (2 * $root-font-size, 1.5 * $root-font-size, 1.2 * $root-font-size);
 $heading-margin: (1.2 * $root-font-size, 1 * $root-font-size, 0);
 
 // Paragraphs
-$paragraph-indent: 0;
 $paragraph-align: left;
+$paragraph-indent: 0;
+$paragraph-margin: $spacing-large;
 
 // Blockquotes
 $quote-font: $root-font;
-$quote-font-size: 1.1 * $root-font-size;
+$quote-font-size: $root-font-size;
 $quote-background: $color-gray-light;
 $quote-font-color: $root-font-color;
 $quote-border-color: $color-primary;
@@ -38,12 +45,6 @@ $code-font-size: 14px;
 $code-background: $color-gray-light;
 $code-font-color: $color-gray-dark;
 $code-border-color: transparent;
-
-// Spacing
-$spacing-small: 0.2 * $root-font-size;
-$spacing-medium: 0.5 * $root-font-size;
-$spacing-large: 0.75 * $root-font-size;
-$spacing-huge: 1.5 * $root-font-size;
 
 // Border Radius
 $border-radius: 3px;

@@ -1,4 +1,8 @@
 @mixin shared-block {
+  h1 {
+    text-transform: uppercase;
+  }
+
   blockquote p,
   ol p,
   ul p {

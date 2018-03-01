@@ -9,14 +9,21 @@ $root-font: $font-serif;
 $root-font-size: 12pt;
 $root-line-height: 1.41;
 
+// Spacing
+$spacing-small: 3pt;
+$spacing-medium: 12pt;
+$spacing-large: 18pt;
+$spacing-huge: 24pt;
+
 // Headings
 $heading-font: $font-sans-serif;
 $heading-font-size: (20pt, 16pt, 14pt);
 $heading-margin: (20pt, 16pt, 12pt);
 
 // Paragraphs
-$paragraph-indent: 0;
 $paragraph-align: justify;
+$paragraph-indent: 0;
+$paragraph-margin: $spacing-medium;
 
 // Blockquotes
 $quote-font: $root-font;
@@ -38,12 +45,6 @@ $code-font-size: 11pt;
 $code-background: $color-gray-light;
 $code-font-color: $root-font-color;
 $code-border-color: transparent;
-
-// Spacing
-$spacing-small: 3pt;
-$spacing-medium: 12pt;
-$spacing-large: 18pt;
-$spacing-huge: 24pt;
 
 // Border Radius
 $border-radius: 3px;

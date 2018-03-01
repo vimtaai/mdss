@@ -1,7 +1,9 @@
 @mixin slides-block {
   h1, h2 {
     @include font-color($color-primary);
+  }
 
+  h2 {
     text-transform: uppercase;
   }
 

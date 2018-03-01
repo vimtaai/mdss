@@ -7,11 +7,11 @@
     h#{$level} {
       @include font-size(nth($heading-font-size, $level));
       
-      margin-bottom: nth($heading-margin, $level);
+      margin: nth($heading-margin, $level) 0;
     }
   }
 
-  blockquote, p, pre, ol, ul {
+  blockquote, pre, ol, ul {
     margin: $spacing-medium 0;
   }
 
@@ -21,11 +21,12 @@
     @include font-size($quote-font-size);
     @include background($quote-background);
 
-    border-left: solid $quote-border-color $spacing-small;
-    padding: $spacing-large;
+    border-left: solid $quote-border-color 4px;
+    padding: $spacing-large $spacing-huge;
   }
 
   p {
+    margin: $paragraph-margin 0;
     text-align: $paragraph-align;
 
     & + p {
@@ -43,6 +44,7 @@
 
   li {
     text-align: $paragraph-align;
+    margin: $spacing-small 0;
   }
 
   pre, code {
