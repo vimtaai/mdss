@@ -18,11 +18,15 @@
   }
 
   blockquote {
-    @include card($quote-font, 
-                  $quote-font-color, 
-                  $quote-font-size, 
-                  $quote-background, 
-                  $quote-border-color);
+    @include card(
+      $quote-font, 
+      $quote-font-color, 
+      $quote-font-size, 
+      $quote-background, 
+      $quote-border-color
+    );
+
+    padding: $spacing-medium $spacing-huge;
   }
 
   p {
@@ -47,13 +51,24 @@
     margin: $spacing-small 0;
   }
 
-  pre, code {
+  code {
     @include font($code-font);
     @include font-size($code-font-size);
     @include font-color($code-font-color);
     @include background($code-background);
     
-    border: solid $code-border-color 1px;
+    border-radius: $border-radius;
+  }
+
+  pre {
+    @include card(
+      $code-font,
+      $code-font-color,
+      $code-font-size,
+      $code-background,
+      $code-border-color
+    );
+
     border-radius: $border-radius;
   }
 

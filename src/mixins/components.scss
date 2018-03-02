@@ -21,13 +21,13 @@
   }
 }
 
-@mixin card($font, $font-color, $font-size, $background, $border-color) {
+@mixin card($font, $font-size, $font-color, $background, $border-color) {
   @include font($font);
-  @include font-color($font-color);
   @include font-size($font-size);
+  @include font-color($font-color);
   @include background($background);
 
   border-left: solid $border-color $spacing-small;
   display: block;
-  padding: $spacing-medium $spacing-huge;
+  padding: $card-padding;
 }
