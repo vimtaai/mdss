@@ -26,11 +26,11 @@ $paragraph-indent: 0;
 $paragraph-margin: $spacing-medium;
 
 // Blockquotes
-$quote-font: $root-font;
+$quote-font: $font-sans-serif;
 $quote-font-size: 13pt;
-$quote-background: $color-gray-light;
+$quote-background: $root-background;
 $quote-font-color: $root-font-color;
-$quote-border-color: $color-gray-medium;
+$quote-border-color: $root-background;
 
 // Lists
 $ordered-list-style: decimal;

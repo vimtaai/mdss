@@ -1,3 +1,5 @@
+@import "mixins/components";
+
 @mixin generic-block {
   h1, h2, h3, h4, h5, h6 {
     @include font($heading-font);
@@ -16,13 +18,11 @@
   }
 
   blockquote {
-    @include font($quote-font);
-    @include font-color($quote-font-color);
-    @include font-size($quote-font-size);
-    @include background($quote-background);
-
-    border-left: solid $quote-border-color 4px;
-    padding: $spacing-large $spacing-huge;
+    @include card($quote-font, 
+                  $quote-font-color, 
+                  $quote-font-size, 
+                  $quote-background, 
+                  $quote-border-color);
   }
 
   p {

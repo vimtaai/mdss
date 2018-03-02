@@ -27,8 +27,8 @@ $paragraph-margin: $spacing-large;
 
 // Blockquotes
 $quote-font: $root-font;
-$quote-font-size: $root-font-size;
-$quote-background: $color-gray-light;
+$quote-font-size:  1.1 * $root-font-size;
+$quote-background: $root-background;
 $quote-font-color: $root-font-color;
 $quote-border-color: $color-primary;
 

@@ -20,3 +20,14 @@
     background: darken($background, 10%);
   }
 }
+
+@mixin card($font, $font-color, $font-size, $background, $border-color) {
+  @include font($font);
+  @include font-color($font-color);
+  @include font-size($font-size);
+  @include background($background);
+
+  border-left: solid $border-color $spacing-small;
+  display: block;
+  padding: $spacing-medium $spacing-huge;
+}
