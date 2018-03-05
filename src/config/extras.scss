@@ -4,7 +4,7 @@ $page-break-insert-before: h2;
 $page-break-avoid-after: h1;
 
 $numbered-headings: h2, h3;
-$numbered-elements: (img, table);
+$numbered-elements: ();
 
 $print-link-urls: true;
 
@@ -18,5 +18,30 @@ $use-table: false;
 $use-task-list: false;
 
 // Markdown Containers
-$container-flex: false
+$container-flex: false;
 
+// Syntax Highlighting
+$use-syntax-highlighting: true;
+
+$syntax-selector-comment: ".comment";
+$syntax-selector-keyword: ".keyword";
+$syntax-selector-literal: ".literal";
+$syntax-selector-string: ".string";
+$syntax-selector-placeholder: ".subst";
+$syntax-selector-number: ".number";
+$syntax-selector-function: ".title";
+$syntax-selector-regexp: ".regexp";
+$syntax-selector-tagname: ".tag .name";
+$syntax-selector-attribute: ".tag .attr";
+
+// Syntax Highlighting for Pandoc
+// $syntax-selector-comment: ".co, .do";
+// $syntax-selector-keyword: ".kw, .cf, .dt";
+// $syntax-selector-literal: ".li";
+// $syntax-selector-string: ".st, .vs";
+// $syntax-selector-placeholder: ".sc";
+// $syntax-selector-number: ".nu, .dv";
+// $syntax-selector-function: ".fu";
+// $syntax-selector-regexp: ".ss";
+// $syntax-selector-tagname: ".kw";
+// $syntax-selector-attribute: ".ot";

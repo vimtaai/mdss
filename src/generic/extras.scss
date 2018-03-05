@@ -53,4 +53,31 @@
   @include on-root {
     counter-reset: #{$counters};
   }
+
+  @if $use-syntax-highlighting == true {
+    pre code {
+      #{$syntax-selector-function},
+      #{$syntax-selector-attribute} {
+        color: $color-green;
+      }
+      #{$syntax-selector-keyword}, 
+      #{$syntax-selector-literal},
+      #{$syntax-selector-tagname} {
+        color: $color-blue;
+        font-weight: bold;
+      }
+      #{$syntax-selector-string},
+      #{$syntax-selector-number},
+      #{$syntax-selector-regexp} {
+        color: $color-purple;
+      }
+      #{$syntax-selector-comment} {
+        color: $color-brown;
+      }
+      #{$syntax-selector-placeholder} {
+        //color: $code-font-color;
+        color: $color-violet;
+      }
+    }
+  }
 }
