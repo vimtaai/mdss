@@ -16,6 +16,14 @@
 
   p {
     text-indent: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   ol, ul {
@@ -26,10 +34,10 @@
   }
 
   pre code {
-    background: inherit;
+    background: none;
     border: none;
     display: block;
-    padding: 0.5em; // for highlight.js compatibility
+    padding: 0;
   }
 
   hr {

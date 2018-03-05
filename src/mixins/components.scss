@@ -28,6 +28,6 @@
   @include background($background);
 
   border-left: solid $border-color $spacing-small;
-  display: block;
+  margin: $spacing-medium 0;
   padding: $card-padding;
 }

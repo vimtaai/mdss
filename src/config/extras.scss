@@ -9,16 +9,23 @@ $numbered-elements: ();
 $print-link-urls: true;
 
 // Markdown Extensions
-$use-abbreviation: false;
-$use-definition-list: false;
-$use-insert: false;
-$use-mark: false;
-$use-strikethrough: false;
-$use-table: false;
-$use-task-list: false;
+$use-abbreviation: false; // unsupported
+$use-definition-list: false; // unsupported
+$use-insert: false; // unsupported
+$use-mark: false; // unsupported
+$use-strikethrough: false; // unsupported
+$use-table: false; // unsupported
 
 // Markdown Containers
-$container-flex: false;
+$use-container-flex: true;
+$use-container-align: true;
+$use-container-text-align: true;
+$use-container-custom: (
+  "error": $color-red,
+  "warning": $color-yellow,
+  "success": $color-green,
+  "info": $color-blue
+);
 
 // Syntax Highlighting
 $use-syntax-highlighting: true;

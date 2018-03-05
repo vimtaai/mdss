@@ -1,3 +1,64 @@
 @mixin shared-extras {
-  
+  @if $use-syntax-highlighting == true {
+    pre code {
+      #{$syntax-selector-function},
+      #{$syntax-selector-attribute} {
+        color: $color-green;
+      }
+      #{$syntax-selector-keyword}, 
+      #{$syntax-selector-literal},
+      #{$syntax-selector-tagname} {
+        color: $color-blue;
+        font-weight: bold;
+      }
+      #{$syntax-selector-string},
+      #{$syntax-selector-number},
+      #{$syntax-selector-regexp} {
+        color: $color-purple;
+      }
+      #{$syntax-selector-comment} {
+        color: $color-brown;
+      }
+      #{$syntax-selector-placeholder} {
+        color: $color-violet;
+      }
+    }
+  }
+
+  @if $use-container-flex == true {
+    .flex {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+  }
+
+  @if $use-container-align == true {
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @if $use-container-text-align == true {
+    .text-left {
+      text-align: left;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  }
 }
