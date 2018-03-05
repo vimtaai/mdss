@@ -63,13 +63,11 @@
   pre {
     @include card(
       $code-font,
-      $code-font-color,
       $code-font-size,
+      $code-font-color,
       $code-background,
       $code-border-color
     );
-
-    border-radius: $border-radius;
   }
 
   hr {

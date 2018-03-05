@@ -25,14 +25,11 @@
     }
   }
 
-  pre {
-    padding: 0.5em; // for highlight.js compatibility
-  }
-
   pre code {
     background: inherit;
     border: none;
     display: block;
+    padding: 0.5em; // for highlight.js compatibility
   }
 
   hr {

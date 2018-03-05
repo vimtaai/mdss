@@ -44,10 +44,10 @@ $code-font: $font-monospace;
 $code-font-size: 20pt;
 $code-background: $color-gray-light;
 $code-font-color: $color-gray-dark;
-$code-border-color: transparent;
+$code-border-color: $color-gray-medium;
 
 // Border Radius
-$border-radius: 3px;
+$border-radius: 5px;
 
 // Cards
 $card-padding: 0.5em;
