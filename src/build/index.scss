@@ -3,19 +3,21 @@ $BUNDLEBUILD: true;
 @import "config/external";
 @import "config/shared";
 @import "config/extras";
+
 @import "mixins/helpers";
-@import "shared/index";
+
+@import "build/shared";
 
 @media screen {
-  @import "media/screen/index";
+  @import "build/screen";
 }
 
 @media print and (orientation: portrait) {
-  @import "media/print/index";
+  @import "build/print";
 }
 
 @media print and (orientation: landscape) {
-  @import "media/slides/index";
+  @import "build/slides";
 }
 
 @include shared;
