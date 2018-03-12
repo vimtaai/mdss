@@ -4,13 +4,8 @@
   "description": "Stylesheets for displaying and printing Markdown documents",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vimtaai/mdss.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vimtaai/mdss/issues"
-  },
+  "repository": "github:vimtaai/mdss",
+  "bugs": "https://github.com/vimtaai/mdss/issues",
   "homepage": "https://github.com/vimtaai/mdss#readme",
   "scripts": {
     "sass": "node-sass --include-path src --output-style expanded",
