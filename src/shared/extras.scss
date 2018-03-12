@@ -33,18 +33,13 @@
     }
   }
 
-  @if $use-container-align == true {
+  @if $use-container-float == true {
     .left {
       float: left;
     }
 
     .right {
       float: right;
-    }
-
-    .center {
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 

@@ -18,7 +18,7 @@ $use-table: false; // unsupported
 
 // Markdown Containers
 $use-container-flex: true;
-$use-container-align: true;
+$use-container-float: true;
 $use-container-text-align: true;
 $use-container-custom: (
   "error": $color-red,

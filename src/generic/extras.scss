@@ -67,4 +67,16 @@
       );
     }
   }
+
+  // Left and Right Aligned Containers
+  @if $use-container-float == true {
+    .left {
+      margin-right: $spacing-medium;
+    }
+
+    .right {
+      margin-left: $spacing-medium;
+    }
+  }
+
 }
