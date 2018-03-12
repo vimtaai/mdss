@@ -9,18 +9,14 @@ $numbered-elements: ();
 $print-link-urls: true;
 
 // Markdown Extensions
-$use-abbreviation: false; // unsupported
-$use-definition-list: false; // unsupported
-$use-insert: false; // unsupported
-$use-mark: false; // unsupported
-$use-strikethrough: false; // unsupported
-$use-table: false; // unsupported
+$use-definition-list: true;
+$use-table: true;
 
 // Markdown Containers
 $use-container-flex: true;
 $use-container-float: true;
 $use-container-text-align: true;
-$use-container-custom: (
+$container-custom: (
   "error": $color-red,
   "warning": $color-yellow,
   "success": $color-green,
@@ -29,17 +25,18 @@ $use-container-custom: (
 
 // Syntax Highlighting
 $use-syntax-highlighting: true;
-
-$syntax-selector-comment: ".comment";
-$syntax-selector-keyword: ".keyword";
-$syntax-selector-literal: ".literal";
-$syntax-selector-string: ".string";
-$syntax-selector-placeholder: ".subst";
-$syntax-selector-number: ".number";
-$syntax-selector-function: ".title";
-$syntax-selector-regexp: ".regexp";
-$syntax-selector-tagname: ".tag .name";
-$syntax-selector-attribute: ".tag .attr";
+$syntax-highlighting: (
+  ".comment": $color-brown,   // Comments
+  ".keyword": $color-blue,    // Keywords
+  ".literal": $color-blue,    // Literals (e.g. null, true, false)
+  ".string": $color-purple,   // Strings
+  ".subst": $color-violet,    // String placeholders (e.g. ${})
+  ".number": $color-purple,   // Numbers
+  ".regexp": $color-violet,   // Regular expressions
+  ".title": $color-green,     // Function/Class names
+  ".tag .name": $color-blue,  // HTML/XML tag names
+  ".tag .attr": $color-green  // HTML/XML attribute names
+);
 
 // Syntax Highlighting for Pandoc
 // $syntax-selector-comment: ".co, .do";

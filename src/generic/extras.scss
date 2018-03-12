@@ -1,6 +1,7 @@
 @import "mixins/components";
 
 @mixin generic-extras {
+  // Numbered Elements
   $counters: "";
 
   @for $level from 1 through length($numbered-headings) {
@@ -56,15 +57,21 @@
     counter-reset: #{$counters};
   }
 
-  @each $name, $color in $use-container-custom {
-    .#{$name} {
-      @include card(
-        $root-font,
-        $root-font-size,
-        $root-font-color,
-        desaturate(lighten($color, 45%), 25%),
-        $color
-      );
+  // Tables
+  @if $use-table == true {
+    thead {
+      border-bottom: solid $root-font-color 1px;
+    }
+
+    th, td {
+      padding: $spacing-medium $spacing-large;
+    }
+  }
+
+  // Definition Lists
+  @if $use-definition-list == true {
+    dd {
+      margin-left: $spacing-huge;
     }
   }
 
@@ -79,4 +86,16 @@
     }
   }
 
+  // Custom Containers (Cards)
+  @each $name, $color in $container-custom {
+    .#{$name} {
+      @include card(
+        $root-font,
+        $root-font-size,
+        $root-font-color,
+        desaturate(lighten($color, 45%), 25%),
+        $color
+      );
+    }
+  }
 }

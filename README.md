@@ -65,14 +65,7 @@ Various Markdown Extensions that extend the capabilites of the CommonMark compli
   + Aligned containers
   + Containers with text align
   + Custom, colored containers
-
-We also plan to support in the future:
-
-- Abbreviations
 - Definition lists
-- Inserted content
-- Marked content
-- Strikethroughs
 - Tables
 
 ## Configuration

@@ -1,30 +1,34 @@
 @mixin shared-extras {
-  @if $use-syntax-highlighting == true {
-    pre code {
-      #{$syntax-selector-function},
-      #{$syntax-selector-attribute} {
-        color: $color-green;
-      }
-      #{$syntax-selector-keyword}, 
-      #{$syntax-selector-literal},
-      #{$syntax-selector-tagname} {
-        color: $color-blue;
+  // Tables
+  @if $use-table == true {
+    table {
+      border-collapse: collapse;
+
+      thead {
+        color: $color-primary;
         font-weight: bold;
-      }
-      #{$syntax-selector-string},
-      #{$syntax-selector-number},
-      #{$syntax-selector-regexp} {
-        color: $color-purple;
-      }
-      #{$syntax-selector-comment} {
-        color: $color-brown;
-      }
-      #{$syntax-selector-placeholder} {
-        color: $color-violet;
+        text-transform: uppercase;
+
+        th {
+          text-align: left;
+        }
       }
     }
   }
 
+  // Definition Lists
+  @if $use-definition-list == true {
+    dt {
+      display: block;
+      font-weight: bold;
+    }
+
+    dd {
+      display: block;
+    }
+  }
+
+  // Flex Containers
   @if $use-container-flex == true {
     .flex {
       display: flex;
@@ -33,6 +37,7 @@
     }
   }
 
+  // Left and Right Aligned Containers
   @if $use-container-float == true {
     .left {
       float: left;
@@ -43,6 +48,7 @@
     }
   }
 
+  // Left and Right Text Aligned Containers
   @if $use-container-text-align == true {
     .text-left {
       text-align: left;
@@ -54,6 +60,17 @@
 
     .text-center {
       text-align: center;
+    }
+  }
+
+  // Syntax Highlighting
+  @if $use-syntax-highlighting == true {
+    pre code {
+      @each $selector, $color in $syntax-highlighting {
+        #{$selector} {
+          color: #{$color};
+        }
+      }
     }
   }
 }
