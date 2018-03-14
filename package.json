@@ -18,7 +18,14 @@
     "build:slides": "npm run build:slides-dev && csso build/mdss-slides.css -o build/mdss-slides.min.css",
     "build:bundle": "npm run build:bundle-dev && csso build/mdss.css -o build/mdss.min.css",
     "build:all": "npm run build:print && npm run build:screen && npm run build:slides && npm run build:bundle",
-    "build": "npm run build:bundle"
+    "build": "npm run build:bundle",
+    "postinstall": "node scripts/install"
+  },
+  "bin": "bin/mdss.js",
+  "dependencies": {
+    "commander": "^2.15.0",
+    "copy": "^0.3.1",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "csso": "^3.5.0",
