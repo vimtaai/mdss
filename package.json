@@ -19,7 +19,7 @@
     "build:bundle": "npm run build:bundle-dev && csso build/mdss.css -o build/mdss.min.css",
     "build:all": "npm run build:print && npm run build:screen && npm run build:slides && npm run build:bundle",
     "build": "npm run build:bundle",
-    "postinstall": "npm run build" 
+    "postinstall": "npm run build"
   },
   "bin": "bin/mdss.js",
   "dependencies": {
@@ -28,7 +28,7 @@
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
-    "csso": "^3.5.0",
+    "csso-cli": "^1.1.0",
     "node-sass": "^4.7.2"
   }
 }
