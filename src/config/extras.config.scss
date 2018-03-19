@@ -39,13 +39,15 @@ $syntax-highlighting: (
 );
 
 // Syntax Highlighting for Pandoc
-// $syntax-selector-comment: ".co, .do";
-// $syntax-selector-keyword: ".kw, .cf, .dt";
-// $syntax-selector-literal: ".li";
-// $syntax-selector-string: ".st, .vs";
-// $syntax-selector-placeholder: ".sc";
-// $syntax-selector-number: ".nu, .dv";
-// $syntax-selector-function: ".fu";
-// $syntax-selector-regexp: ".ss";
-// $syntax-selector-tagname: ".kw";
-// $syntax-selector-attribute: ".ot";
+// $syntax-highlighting: (
+//   ".co, .do": $color-brown,   // Comments
+//   ".kw, .cf, .dt": $color-blue,    // Keywords
+//   ".li": $color-blue,    // Literals (e.g. null, true, false)
+//   ".st, .vs": $color-purple,   // Strings
+//   ".sc": $color-violet,    // String placeholders (e.g. ${})
+//   ".nu, .dv": $color-purple,   // Numbers
+//   ".ss": $color-violet,   // Regular expressions
+//   ".fu": $color-green,     // Function/Class names
+//   ".kw": $color-blue,  // HTML/XML tag names
+//   ".ot": $color-green  // HTML/XML attribute names
+// );
