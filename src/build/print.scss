@@ -1,9 +1,9 @@
 @import "mixins/helpers";
 
-@import "config/external";
-@import "config/shared";
-@import "config/extras";
-@import "config/print";
+@import "external.config";
+@import "shared.config";
+@import "extras.config";
+@import "print.config";
 
 @import "media/print/root";
 @import "media/print/block";

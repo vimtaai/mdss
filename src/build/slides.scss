@@ -1,9 +1,9 @@
 @import "mixins/helpers";
 
-@import "config/external";
-@import "config/shared";
-@import "config/extras";
-@import "config/slides";
+@import "external.config";
+@import "shared.config";
+@import "extras.config";
+@import "slides.config";
 
 @import "media/slides/root";
 @import "media/slides/block";

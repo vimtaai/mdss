@@ -1,8 +1,8 @@
 $BUNDLEBUILD: true;
 
-@import "config/external";
-@import "config/shared";
-@import "config/extras";
+@import "external.config";
+@import "shared.config";
+@import "extras.config";
 
 @import "mixins/helpers";
 

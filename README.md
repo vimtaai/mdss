@@ -8,7 +8,7 @@
 
 **MDSS** is a CSS stylesheet to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media. MDSS also supports **printing Markdown as slides** by setting the page orientation to landscape when printing.
 
-To create a production build run the `npm run build:bundle` command. This will create a *combined* stylesheet with both *screen*, *print* and *slides* styles. Individual builds for each media type can be created with the `npm run build:screen`, `npm run build:print` and `npm run build:slides` commands. The `npm run build:all` command creates all four files. Development versions (non-compressed, non-optimized) are also available by putting the `-dev` suffix to any build command.
+To create a production build run the `npm run build:bundle` command. This will create a *combined* stylesheet with both *screen*, *print* and *slides* styles. Individual builds for each media type can be created with the `npm run build:screen`, `npm run build:print` and `npm run build:slides` commands. The `npm run build:all` command creates all four files. Development versions (non-compressed, non-optimized) are also available by putting the `:dev` suffix to any build command.
 
 ```bash
 npm run build:bundle # optimized for all three media

@@ -1,9 +1,9 @@
 @import "mixins/helpers";
 
-@import "config/external";
-@import "config/shared";
-@import "config/extras";
-@import "config/screen";
+@import "external.config";
+@import "shared.config";
+@import "extras.config";
+@import "screen.config";
 
 @import "media/screen/root";
 @import "media/screen/block";
