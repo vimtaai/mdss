@@ -99,7 +99,7 @@ function buildCommand(options) {
   media.forEach(function (type) {
     const inputFileName = `${type == `bundle` ? `index` : type}.scss`;
     const inputFile = path.join(mdssDir, 'src', 'entry', inputFileName);
-    const outputFileName = `mdss${type == `bundle` ? `` : `-${type}`}${dev ? `` : `.min`}.scss`;
+    const outputFileName = `mdss${type == `bundle` ? `` : `-${type}`}${dev ? `` : `.min`}.css`;
     const outputFile = path.join(localDir, outputDir, outputFileName);
 
     console.log(`> ${inputFile} -> ${outputFile}`);
