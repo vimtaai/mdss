@@ -10,8 +10,8 @@
 @import "media/print/inline";
 @import "media/print/extras";
 
-@import "build/generic";
-@import "build/shared";
+@import "entry/generic";
+@import "entry/shared";
 
 @mixin print {
   @include generic;

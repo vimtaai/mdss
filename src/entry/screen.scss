@@ -10,8 +10,8 @@
 @import "media/screen/inline";
 @import "media/screen/extras";
 
-@import "build/generic";
-@import "build/shared";
+@import "entry/generic";
+@import "entry/shared";
 
 @mixin screen {
   @include generic;

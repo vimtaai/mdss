@@ -6,18 +6,18 @@ $BUNDLEBUILD: true;
 
 @import "mixins/helpers";
 
-@import "build/shared";
+@import "entry/shared";
 
 @media screen {
-  @import "build/screen";
+  @import "entry/screen";
 }
 
 @media print and (orientation: portrait) {
-  @import "build/print";
+  @import "entry/print";
 }
 
 @media print and (orientation: landscape) {
-  @import "build/slides";
+  @import "entry/slides";
 }
 
 @include shared;

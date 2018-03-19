@@ -10,8 +10,8 @@
 @import "media/slides/inline";
 @import "media/slides/extras";
 
-@import "build/generic";
-@import "build/shared";
+@import "entry/generic";
+@import "entry/shared";
 
 @mixin slides {
   @include generic;
