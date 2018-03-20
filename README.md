@@ -125,9 +125,11 @@ pandoc -s path/to/source/file.md -c path/to/mdss/mdss.min.css -o path/to/output/
 
 To create PDF it is recommended to convert to HTML first and use the browsers build in printing dialog to save the result as PDF. Using the printer of the browser will automatically apply the print styles for a bundled build.
 
+Visual Studio Code has an extension called [Markdown PDF](https://github.com/yzane/vscode-markdown-pdf) that supports converting Markdown files to PDF. You can set **MDSS** as the stylehsheet for output documents (`markdown-pdf.styles` setting). To avoid conflict with the default stylesheet set the `markdown-pdf.includeDefaultStyles` setting to `false`.
+
 ## Prerequisites
 
-**Note.** You need to have [Node.js](https://nodejs.org) installed on your computer to create your own builds.
+You need to have [Node.js](https://nodejs.org) installed on your computer to create your own builds.
 
 ## Contributing
 
