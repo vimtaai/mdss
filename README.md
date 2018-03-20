@@ -4,43 +4,48 @@
 
 ## About
 
-**MDSS** is a CSS stylesheet to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media. MDSS also supports *printing Markdown as slides* by setting the page orientation to landscape when printing.
+**MDSS** is a CSS stylesheet to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media. **MDSS** also supports printing Markdown as slides by setting the page orientation to landscape when printing.
 
 ## Extras
 
 The stylesheets include several visual extras by default in addition to standard Markdown elements. All extras can be enabled or disabled for a single build. Extras include the following:
 
-- Automatic numbering of specified elements (e.g. headings) **(all media)**
-- Replace horizontal rules/thematic breaks with page breaks **(print, slides)**
-- Automatic page breaks before specified elements **(print)**
-- Avoid page breaks after specified elements **(print)**
-- Automatic URL insertion after links **(print, slides)**
+- Automatic nested numbering of headings **(available: all media; default: level 1 and 2 heading)**
+- Automatic numbering of specified elements (e.g. images, tables) **(available: all media; default: no elements)**
+- Automatic URL insertion after links **(available: print, slides; default: enabled)**
+- Replace horizontal rules/thematic breaks with page breaks **(available: print, slides; default: enabled)**
+- Automatic page breaks before specified elements **(available: print; default: level 2 heading)**
+- Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
 
-**MDSS** is created with automatic syntax highlighting in mind and is compatible with syntax highlighting libraries such as *[highlight.js](https://highlightjs.org/)*. The configuration includes options to use the built in syntax highlighting theme with most of syntax highlighters.
+## Syntax Highlighting
+
+**MDSS** is created with automatic syntax highlighting in mind and is compatible with syntax highlighting libraries such as _[highlight.js](https://highlightjs.org/)_. The configuration includes options to use the built in syntax highlighting theme with most of syntax highlighters.
+
+Custom syntax highlighting colors can be set for a specific highlighter. There are options to assign colors to snytax highlighting CSS selectors. The default build is configured to work with _highlight.js_ with the `classPrefix: ''` option. If you use _highlight.js_ then **MDSS** can function as a _highlight.js_ style. An alternative configuration is also included in config file's comments to use **MDSS** with _pandoc_'s default syntax highlighter.
 
 ## Markdown Extensions
 
-Various Markdown Extensions that extend the capabilities of the CommonMark compliant Markdown are also supported. In the configuration you can select what extensions should your build support. Supported extensions include:
+Various Markdown Extensions that extend the capabilities of the CommonMark compliant Markdown are also supported. In the configuration files you can select what extensions should your build support. Supported extensions include:
 
 - Containers
-  + Flex containers
-  + Aligned containers
-  + Containers with text align
-  + Custom, colored containers
+  + Flex containers **(default: enabled)**
+  + Floated containers **(default: enabled)**
+  + Containers with text align **(default: enabled)**
+  + Custom, colored containers **(default: error, warning, success, info classes)**
 - Definition lists
 - Tables
 
-To use these features you need a compiler that supports transforming their syntax (e.g. *pandoc* or *markdown-it*).
+To use these features you need a compiler that supports transforming their syntax (e.g. _pandoc_ or _markdown-it_).
 
 ## Basic Usage
 
-To create your own bundle of **MDSS** you have to clone this repository, edit the configuration a create a new build.
+To create your own build of **MDSS** you have to clone this repository, edit the configuration a create a new bundle.
 
 ```bash
 git clone https://github.com/vimtaai/mdss
 ```
 
-To create a bundled build run the `npm run build` command. This will create a *combined* stylesheet with both *screen*, *print* and *slides* styles. Individual builds for each media type can be created with `npm run build:all`. This command creates all four stylesheet files.
+To create a bundled, minified build run the `npm run build` command. This will create a combined stylesheet with both _screen_, _print_ and _slides_ styles. Individual builds for each media type can be created with `npm run build:all`. This command creates four stylesheet files, one for each media and one bundled build.
 
 ```bash
 npm run build
@@ -48,7 +53,7 @@ npm run build
 npm run build:all
 ```
 
-Bundled builds should be included in HTML documents as simple stylesheets as they include media queries. To use **MDSS** only to format different media individually set the `media` property of the `link` tag.
+Bundles should be included in HTML documents as simple stylesheets as they include media queries. To use **MDSS** only to format each media individually set the `media` property of the `link` tag.
 
 ```html
 <!-- All purpose -->
@@ -67,7 +72,7 @@ Most visual aspects (like color, sizes, spacing) can be configured. The `src/con
 
 You can also enable/disable all extra features using the `src/config/extras.config.scss` file. External resources (e.g. fonts) can be imported by adding them to the `src/config/external.config.scss`.
 
-**MDSS** supports defining a root selector for styling (`src/config/shared.config.scss`). If set only elements inside the root selector get affected by the stylesheet. By default there is no root selector thus the entire document gets formatted.
+**MDSS** supports defining a root selector for styling (`src/config/shared.config.scss`). If set, only elements inside the root selector get affected by the stylesheet. By default there is no root selector thus the entire document gets formatted.
 
 Configuration files include the following options:
 
@@ -113,7 +118,7 @@ The CLI tool has several options. To see all options see the help of the command
 
 ### Using with pandoc
 
-**MDSS** works well with document converters such as *[pandoc](https://pandoc.org/)*. To create standalone HTML pages that are formatted with **MDSS** you have to link it in the output document of the *pandoc* conversion.
+**MDSS** works well with document converters such as _[pandoc](https://pandoc.org/)_. To create standalone HTML pages that are formatted with **MDSS** you have to link it in the output document of the _pandoc_ conversion.
 
 ```bash
 pandoc -s path/to/source/file.md -c path/to/mdss/mdss.min.css -o path/to/output/file.html
@@ -123,9 +128,9 @@ pandoc -s path/to/source/file.md -c path/to/mdss/mdss.min.css -o path/to/output/
 
 ### Creating PDF files
 
-To create PDF it is recommended to convert to HTML first and use the browsers build in printing dialog to save the result as PDF. Using the printer of the browser will automatically apply the print styles for a bundled build.
+To create PDF it is recommended to convert to HTML first and use the browser's built in printing dialog to save the result as PDF. Using the printer of the browser will automatically apply the print styles for a bundled build.
 
-Visual Studio Code has an extension called [Markdown PDF](https://github.com/yzane/vscode-markdown-pdf) that supports converting Markdown files to PDF. You can set **MDSS** as the stylehsheet for output documents (`markdown-pdf.styles` setting). To avoid conflict with the default stylesheet set the `markdown-pdf.includeDefaultStyles` setting to `false`.
+Visual Studio Code has an extension called [Markdown PDF](https://github.com/yzane/vscode-markdown-pdf) that supports converting Markdown files to PDF. You can set an **MDSS** build for print media as the stylesheet for output documents (`markdown-pdf.styles` setting). To avoid conflict with the default stylesheet set the `markdown-pdf.includeDefaultStyles` setting to `false`.
 
 ## Prerequisites
 
