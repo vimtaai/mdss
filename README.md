@@ -48,6 +48,8 @@ git clone https://github.com/vimtaai/mdss
 To create a bundled, minified build run the `npm run build` command. This will create a combined stylesheet with both _screen_, _print_ and _slides_ styles. Individual builds for each media type can be created with `npm run build:all`. This command creates four stylesheet files, one for each media and one bundled build.
 
 ```bash
+npm install
+
 npm run build
 # or
 npm run build:all
