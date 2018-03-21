@@ -1,6 +1,6 @@
 {
   "name": "mdss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stylesheets for displaying and printing Markdown documents",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
