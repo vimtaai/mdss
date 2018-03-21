@@ -3,8 +3,10 @@
 @mixin screen-extras {
   // Tables
   @if $use-table == true {
-    th, td {
-      padding: $spacing-medium $spacing-large;
+    table {
+      th, td {
+        padding: $spacing-medium $spacing-large;
+      }
     }
   }
 }

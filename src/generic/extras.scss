@@ -59,13 +59,17 @@
 
   // Tables
   @if $use-table == true {
-    thead {
-      border-bottom: solid $root-font-color 1px;
-      font-family: $heading-font;
-    }
+    table {
+      margin: $spacing-medium 0;
 
-    th, td {
-      padding: $spacing-small $spacing-medium;
+      thead {
+        border-bottom: solid $root-font-color 1px;
+        font-family: $heading-font;
+      }
+  
+      th, td {
+        padding: $spacing-small $spacing-medium;
+      }
     }
   }
 
