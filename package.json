@@ -12,7 +12,7 @@
   "scripts": {
     "build:all": "node bin/mdss build --all",
     "build:all:dev": "node bin/mdss build --all --dev",
-    "build": "npm run build:bundle",
+    "build": "node bin/mdss build",
     "prepublish": "npm run build:all && npm run build:all:dev",
     "postinstall": "npm run build:all"
   },

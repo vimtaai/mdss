@@ -61,10 +61,11 @@
   @if $use-table == true {
     thead {
       border-bottom: solid $root-font-color 1px;
+      font-family: $heading-font;
     }
 
     th, td {
-      padding: $spacing-medium $spacing-large;
+      padding: $spacing-small $spacing-medium;
     }
   }
 

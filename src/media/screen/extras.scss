@@ -1,5 +1,10 @@
 @import "mixins/components";
 
 @mixin screen-extras {
-  
+  // Tables
+  @if $use-table == true {
+    th, td {
+      padding: $spacing-medium $spacing-large;
+    }
+  }
 }

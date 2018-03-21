@@ -3,15 +3,16 @@
   @if $use-table == true {
     table {
       border-collapse: collapse;
+      display: inline-table;
 
       thead {
         color: $color-primary;
         font-weight: bold;
         text-transform: uppercase;
+      }
 
-        th {
-          text-align: left;
-        }
+      td, th {
+        text-align: left;
       }
     }
   }
