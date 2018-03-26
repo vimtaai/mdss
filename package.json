@@ -1,6 +1,6 @@
 {
   "name": "mdss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stylesheets for displaying and printing Markdown documents",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "build:all": "node bin/mdss build --all",
     "build:all:dev": "node bin/mdss build --all --dev",
     "build": "node bin/mdss build",
-    "prepublish": "npm run build:all && npm run build:all:dev",
+    "prepare": "npm run build:all && npm run build:all:dev",
     "postinstall": "npm run build:all"
   },
   "dependencies": {
