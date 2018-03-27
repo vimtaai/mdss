@@ -4,4 +4,9 @@
     page-break-inside: avoid;
     white-space: pre-wrap;
   }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
 }
