@@ -1,4 +1,5 @@
 @mixin print-extras {
+  // Manual Page Break
   @if $page-break-manual == true {
     hr {
       visibility: hidden;
@@ -6,12 +7,14 @@
     }
   }
 
+  // Automatic Page Break Before
   @each $element in $page-break-insert-before {
     #{$element} {
       page-break-before: always;
     }
   }
 
+  // Avoid Page Break After
   @each $nobreak-element in $page-break-avoid-after {
     @each $break-element in $page-break-insert-before {
       #{$nobreak-element} + #{$break-element} {
@@ -24,6 +27,7 @@
     }
   }
 
+  // Print Link URLs
   @if $print-link-urls == true {
     a[href^="http"]:after,
     a[href^="ftp"]:after,

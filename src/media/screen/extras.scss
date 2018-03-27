@@ -1,6 +1,13 @@
 @import "mixins/components";
 
 @mixin screen-extras {
+  // Manual Page Break
+  @if $page-break-manual == true {
+    hr {
+      display: none;
+    }
+  }
+
   // Tables
   @if $use-table == true {
     table {

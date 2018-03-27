@@ -13,7 +13,7 @@ The stylesheets include several visual extras by default in addition to standard
 - Automatic nested numbering of headings **(available: all media; default: level 1 and 2 heading)**
 - Automatic numbering of specified elements (e.g. images, tables) **(available: all media; default: no elements)**
 - Automatic URL insertion after links **(available: print, slides; default: enabled)**
-- Replace horizontal rules/thematic breaks with page breaks **(available: print, slides; default: enabled)**
+- Replace horizontal rules/thematic breaks with page breaks **(available: print; default: enabled; always enabled: slides)**
 - Automatic page breaks before specified elements **(available: print; default: level 2 heading)**
 - Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
 

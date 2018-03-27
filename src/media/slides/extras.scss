@@ -1,4 +1,5 @@
 @mixin slides-extras {
+  // Print Link URL
   @if $print-link-urls == true {
     a[href^="http"]:after,
     a[href^="ftp"]:after,
