@@ -1,5 +1,3 @@
-$BUNDLEBUILD: true;
-
 @import "external.config";
 @import "shared.config";
 @import "extras.config";
@@ -7,17 +5,41 @@ $BUNDLEBUILD: true;
 @import "mixins/helpers";
 
 @import "entry/shared";
+@import "entry/generic";
+@import "entry/screen";
+@import "entry/print";
+@import "entry/slides";
 
-@media screen {
-  @import "entry/screen";
-}
+@if $BUNDLE == true {
+  @if index($MEDIA, screen) != null {
+    @media screen {
+      @include screen;
+    }
+  }
 
-@media print and (orientation: portrait) {
-  @import "entry/print";
-}
+  @if index($MEDIA, print) != null {
+    @media print and (orientation: portrait) {
+      @include print;
+    }
+  }
 
-@media print and (orientation: landscape) {
-  @import "entry/slides";
+  @if index($MEDIA, slides) != null {
+    @media print and (orientation: landscape) {
+      @include slides;
+    }
+  }
+} @else {
+  @if ($MEDIA == screen) {
+    @include screen;
+  }
+
+  @if ($MEDIA == print) {
+    @include print;
+  }
+
+  @if ($MEDIA == slides) {
+    @include slides;
+  }
 }
 
 @include shared;

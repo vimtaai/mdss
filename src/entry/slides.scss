@@ -1,8 +1,3 @@
-@import "mixins/helpers";
-
-@import "external.config";
-@import "shared.config";
-@import "extras.config";
 @import "slides.config";
 
 @import "media/slides/root";
@@ -10,27 +5,10 @@
 @import "media/slides/inline";
 @import "media/slides/extras";
 
-@import "entry/generic";
-@import "entry/shared";
-
 @mixin slides {
   @include generic;
-  
   @include on-root { @include slides-root };
   @include slides-block;
   @include slides-inline;
   @include slides-extras;
-}
-
-@if $root-selector == "" {
-  @include slides;
-} @else {
-  #{$root-selector} {
-    @include slides;
-  }
-}
-
-@if variable-exists("BUNDLEBUILD") == false {
-  @include shared;
-  @include externals($external-imports);
 }

@@ -1,8 +1,3 @@
-@import "mixins/helpers";
-
-@import "external.config";
-@import "shared.config";
-@import "extras.config";
 @import "screen.config";
 
 @import "media/screen/root";
@@ -10,27 +5,10 @@
 @import "media/screen/inline";
 @import "media/screen/extras";
 
-@import "entry/generic";
-@import "entry/shared";
-
 @mixin screen {
   @include generic;
-  
   @include on-root { @include screen-root };
   @include screen-block;
   @include screen-inline;
   @include screen-extras;
-}
-
-@if $root-selector == "" {
-  @include screen;
-} @else {
-  #{$root-selector} {
-    @include screen;
-  }
-}
-
-@if variable-exists("BUNDLEBUILD") == false {
-  @include shared;
-  @include externals($external-imports);
 }

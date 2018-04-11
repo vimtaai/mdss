@@ -30,10 +30,13 @@ program
 program
   .command('build')
   .description('Generate custom MDSS stylesheets')
-  .option('--bundle', 'generate bundled stylesheet for all media (default)', false)
-  .option('--screen', 'generate only print stylesheet', false)
-  .option('--print', 'generate only print stylesheet', false)
-  .option('--slides', 'generate only slides stylesheet', false)
+  .option('--screen', 'generate print only stylesheet', false)
+  .option('--print', 'generate print only stylesheet', false)
+  .option('--slides', 'generate slides only stylesheet', false)
+  .option('--bundle', 'generate bundled stylesheet for selected media (default)', false)
+  .option('--without-screen', 'exclude screen styles from bundle', false)
+  .option('--without-print', 'exclude print styles from bundle', false)
+  .option('--without-slides', 'exclude slides styles from bundle', false)
   .option('-a --all', 'generate separate stylesheets for all media and bundle', false)
   .option('-d --dev', 'genereate uncompressed, development stylesheets', false)
   .action(buildCommand);
@@ -51,11 +54,7 @@ if (program.args.length === 0) {
   program.help();
 }
 
-// Script functions
-
-function helpCommand() {
-  program.help();
-}
+// Helper functions
 
 function help() {
   console.log('\n  Command help:\n');
@@ -63,18 +62,37 @@ function help() {
   console.log('    mdss customize --help')
 }
 
+function toCamelCase(parts) {
+  if (parts.length === 0) {
+    return '';
+  }
+
+  return parts[0] + parts.slice(1).map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('');
+}
+
+// Command functions
+
+function helpCommand() {
+  program.help();
+}
+
 function buildCommand(options) {
   console.log('Building MDSS...');
 
-  const mediaTypes = ['bundle', 'screen', 'print', 'slides'];
-  const media = options.all ? mediaTypes : mediaTypes.filter(type => options[type]);
-  if (media.length === 0) {
-    media.push('bundle');
-  }
   const dev = options.dev || false;
+  const mediaTypes = ['screen', 'print', 'slides'];
+  const bundleMedia = mediaTypes.filter(media => !options[toCamelCase(['without', media])]);
+  const buildTargets = ['bundle', ...mediaTypes];
+  const currentTargets = options.all ? mediaTypes : mediaTypes.filter(type => options[type]);
+  if (options.all || options.bundle || currentTargets.length === 0) {
+    currentTargets.push('bundle');
+  }
 
-  console.log(`Media:\t\t ${media.join()}`);
+  console.log(`Media:\t\t ${currentTargets.join(', ')}`);
   console.log(`Dev Mode:\t ${dev}`);
+  if (currentTargets.includes('bundle')) {
+    console.log(`Bundled Media:\t ${bundleMedia.join(', ')}`);
+  }
 
   let configDir, outputDir;
 
@@ -90,21 +108,23 @@ function buildCommand(options) {
   console.log(`Config Dir:\t ${configDir}`);
   console.log(`Output Dir:\t ${outputDir}`);
 
-  //console.log(`Input File:\t ${inputFile}`);
-  //console.log(`Output File:\t ${outputFile}`);
-
   mkdirp.sync(configDir);
   mkdirp.sync(outputDir);
 
-  media.forEach(function (type) {
-    const inputFileName = `${type == `bundle` ? `index` : type}.scss`;
-    const inputFile = path.join(mdssDir, 'src', 'entry', inputFileName);
-    const outputFileName = `mdss${type == `bundle` ? `` : `-${type}`}${dev ? `` : `.min`}.css`;
+  currentTargets.forEach(function (target) {
+    const media = (target == 'bundle') ? bundleMedia : target;
+    const sassCode = `
+      $BUNDLE: ${Array.isArray(media) ? true : false};
+      $MEDIA: ${Array.isArray(media) ? media.join(' ') : media};
+      @import "entry/index";
+    `;
+    const entryFile = path.join(mdssDir, 'src', 'entry', 'index.scss');
+    const outputFileName = `mdss${Array.isArray(media) ? `` : `-${media}`}${dev ? `` : `.min`}.css`;
     const outputFile = path.join(localDir, outputDir, outputFileName);
 
-    console.log(`> ${inputFile} -> ${outputFile}`);
+    console.log(`> ${entryFile} -> ${outputFile}`);
     const result = sass.renderSync({
-      file: inputFile,
+      data: sassCode,
       includePaths: [
         path.join(localDir, configDir), 
         path.join(mdssDir, 'src', 'config'),
