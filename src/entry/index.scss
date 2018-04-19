@@ -10,34 +10,35 @@
 @import "entry/print";
 @import "entry/slides";
 
-@if $BUNDLE == true {
-  @if index($MEDIA, screen) != null {
+@import "screen.config";
+@if index($MEDIA, screen) != null {
+  @if $BUNDLE == true {
     @media screen {
       @include screen;
     }
+  } @else {
+    @include screen;
   }
+}
 
-  @if index($MEDIA, print) != null {
+@import "print.config";
+@if index($MEDIA, print) != null {
+  @if $BUNDLE == true {
     @media print and (orientation: portrait) {
       @include print;
     }
+  } @else {
+    @include print;
   }
+}
 
-  @if index($MEDIA, slides) != null {
+@import "slides.config";
+@if index($MEDIA, slides) != null {
+  @if $BUNDLE == true {
     @media print and (orientation: landscape) {
       @include slides;
     }
-  }
-} @else {
-  @if ($MEDIA == screen) {
-    @include screen;
-  }
-
-  @if ($MEDIA == print) {
-    @include print;
-  }
-
-  @if ($MEDIA == slides) {
+  } @else {
     @include slides;
   }
 }

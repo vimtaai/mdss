@@ -118,6 +118,7 @@ function buildCommand(options) {
       $MEDIA: ${Array.isArray(media) ? media.join(' ') : media};
       @import "entry/index";
     `;
+    console.log('Bootstrap code: ' + sassCode);
     const entryFile = path.join(mdssDir, 'src', 'entry', 'index.scss');
     const outputFileName = `mdss${Array.isArray(media) ? `` : `-${media}`}${dev ? `` : `.min`}.css`;
     const outputFile = path.join(localDir, outputDir, outputFileName);
