@@ -4,9 +4,11 @@
 @import "media/print/extras";
 
 @mixin print {
-  @include generic;
-  @include on-root { @include print-root };
-  @include print-block;
-  @include print-inline;
-  @include print-extras;
+  @include root {
+    @include generic;
+    @include on-root { @include print-root };
+    @include print-block;
+    @include print-inline;
+    @include print-extras;
+  }
 }

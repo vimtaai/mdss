@@ -4,9 +4,11 @@
 @import "media/screen/extras";
 
 @mixin screen {
-  @include generic;
-  @include on-root { @include screen-root };
-  @include screen-block;
-  @include screen-inline;
-  @include screen-extras;
+  @include root {
+    @include generic;
+    @include on-root { @include screen-root };
+    @include screen-block;
+    @include screen-inline;
+    @include screen-extras;
+  }
 }

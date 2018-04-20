@@ -44,4 +44,6 @@
 }
 
 @include shared;
-@include externals($external-imports);
+@each $import in $external-imports {
+  @import url($import);
+}

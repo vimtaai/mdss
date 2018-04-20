@@ -1,9 +1,3 @@
-@mixin externals($urls) {
-  @each $url in $urls {
-    @import url($url);
-  }
-}
-
 @mixin font($font) {
   @if ($font != $root-font) {
     font-family: $font;
@@ -28,6 +22,16 @@
   }
 }
 
+@mixin root {
+  @if $root-selector == "" {
+    @content;
+  } @else {
+    #{$root-selector} {
+      @content;
+    }
+  }
+}
+
 @mixin on-root {
   @if $root-selector == "" {
     body {
@@ -38,14 +42,14 @@
   }
 }
 
-@mixin on-right-margin {
+@mixin to-right-margin {
   position: absolute;
   top: 0;
   left: calc(100% + #{$spacing-medium});
   @content;
 }
 
-@mixin on-left-margin {
+@mixin to-left-margin {
   position: absolute;
   top: 0;
   right: calc(100% + #{$spacing-medium});

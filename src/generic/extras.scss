@@ -32,7 +32,7 @@
     }
 
     #{$heading}:before {
-      @include on-left-margin {
+      @include to-left-margin {
         content: #{$label};
       }
     }
@@ -47,7 +47,7 @@
     }
 
     #{$element}:before {
-      @include on-right-margin {
+      @include to-right-margin {
         content: "(" counter(#{$element}) ")";
       }
     }

@@ -4,9 +4,11 @@
 @import "media/slides/extras";
 
 @mixin slides {
-  @include generic;
-  @include on-root { @include slides-root };
-  @include slides-block;
-  @include slides-inline;
-  @include slides-extras;
+  @include root {
+    @include generic;
+    @include on-root { @include slides-root };
+    @include slides-block;
+    @include slides-inline;
+    @include slides-extras;
+  }
 }
