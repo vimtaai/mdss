@@ -1,4 +1,6 @@
-# MDSS
+# MDSS 
+
+![NPM version 1.1.0](https://img.shields.io/badge/npm-1.1.0-blue.svg)
 
 > Stylesheets for displaying and printing Markdown documents
 
@@ -112,7 +114,7 @@ If you are using **MDSS** as an installed NPM package it is recommended to creat
   }
 }
 ```
-The CLI tool has several options. To see all options see the help of the command in the command line.
+The CLI tool has several options. It allows the creation of bundles that excludes a media type, thus you can create a bundle for any combination of media types. To see all options see the help of the command in the command line.
 
 ```bash
 ./node_modules/.bin/mdss --help
