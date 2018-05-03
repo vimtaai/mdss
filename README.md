@@ -6,9 +6,21 @@
 
 ## About
 
-**MDSS** is a CSS stylesheet to render [Markdown](https://en.wikipedia.org/wiki/Markdown) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media. **MDSS** also supports printing Markdown as slides by setting the page orientation to landscape when printing.
+**MDSS** is a CSS stylesheet to render [Markdown](https://daringfireball.net/projects/markdown/syntax) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media. **MDSS** also supports printing Markdown as slides by setting the page orientation to landscape when printing.
 
-## Extras
+## Features
+
+- Formatting HTML documents generated from Markdown
+- Fully customizable via variables, custom color palette
+- Responsive typography optimized for screens
+- Typography optimized for printing documents (portrait orientation)
+- Typography optimized for printing documents as slides (landscape orientation)
+- Extra features that can be enabled or disabled
+- Syntax highlighting support
+- Minified and uncompressed builds
+- CLI for integration into other projects
+
+### Extra Features
 
 The stylesheets include several visual extras by default in addition to standard Markdown elements. All extras can be enabled or disabled for a single build. Extras include the following:
 
@@ -19,13 +31,7 @@ The stylesheets include several visual extras by default in addition to standard
 - Automatic page breaks before specified elements **(available: print; default: level 2 heading)**
 - Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
 
-## Syntax Highlighting
-
-**MDSS** is created with automatic syntax highlighting in mind and is compatible with syntax highlighting libraries such as _[highlight.js](https://highlightjs.org/)_. The configuration includes options to use the built in syntax highlighting theme with most of syntax highlighters.
-
-Custom syntax highlighting colors can be set for a specific highlighter. There are options to assign colors to snytax highlighting CSS selectors. The default build is configured to work with _highlight.js_ with the `classPrefix: ''` option. If you use _highlight.js_ then **MDSS** can function as a _highlight.js_ style. An alternative configuration is also included in config file's comments to use **MDSS** with _pandoc_'s default syntax highlighter.
-
-## Markdown Extensions
+### Markdown Extensions
 
 Various Markdown Extensions that extend the capabilities of the CommonMark compliant Markdown are also supported. In the configuration files you can select what extensions should your build support. Supported extensions include:
 
@@ -39,9 +45,21 @@ Various Markdown Extensions that extend the capabilities of the CommonMark compl
 
 To use these features you need a compiler that supports transforming their syntax (e.g. _pandoc_ or _markdown-it_).
 
+### Syntax Highlighting
+
+**MDSS** is created with automatic syntax highlighting in mind and is compatible with syntax highlighting libraries such as _[highlight.js](https://highlightjs.org/)_. The configuration includes options to use the built in syntax highlighting theme with most of syntax highlighters.
+
+Custom syntax highlighting colors can be set for a specific highlighter. There are options to assign colors to syntax highlighting CSS selectors. The default build is configured to work with _highlight.js_ with the `classPrefix: ''` option. If you use _highlight.js_ then **MDSS** can function as a _highlight.js_ style. An alternative configuration is also included in config file's comments to use **MDSS** with _pandoc_'s default syntax highlighter.
+
 ## Basic Usage
 
-To create your own build of **MDSS** you have to clone this repository, edit the configuration a create a new bundle.
+To use the default bundled build of **MDSS** you don't even need a download, you can simply link the minified CSS from a CDN like [unpkg](https://unpkg.com/#/) or [jsdelivr](https://www.jsdelivr.com/). To apply **MDSS** for your HTML document link it in the `<head>` node as a simple stylesheet as it includes media queries. 
+
+```html
+<link rel="stylesheet" href="//unpkg.com/mdss">
+```
+
+To create your own build you have to clone this repository, edit the configuration a create a new bundle.
 
 ```bash
 git clone https://github.com/vimtaai/mdss
@@ -57,7 +75,7 @@ npm run build
 npm run build:all
 ```
 
-Bundles should be included in HTML documents as simple stylesheets as they include media queries. To use **MDSS** only to format each media individually set the `media` property of the `link` tag.
+To use **MDSS** only to format each media individually set the `media` property of the `link` tag.
 
 ```html
 <!-- All purpose -->
@@ -80,8 +98,8 @@ You can also enable/disable all extra features using the `src/config/extras.conf
 
 Configuration files include the following options:
 
-File            | Options
-----------------|--------------------------------------------
+File                   | Options
+-----------------------|--------------------------------------------
 `external.config.scss` | external imports (e.g. fonts)
 `extras.config.scss`   | enable/disable and configure extra features
 `print.config.scss`    | variables for print styles
@@ -104,7 +122,7 @@ npm install mdss
 ./node_modules/.bin/mdss build
 ```
 
-If you are using **MDSS** as an installed NPM package it is recommended to create your own scripts for your common build tasks.
+If you are using **MDSS** as an installed NPM package it is recommended to create your own NPM scripts for your common build tasks.
 
 ```json
 {
@@ -114,6 +132,7 @@ If you are using **MDSS** as an installed NPM package it is recommended to creat
   }
 }
 ```
+
 The CLI tool has several options. It allows the creation of bundles that excludes a media type, thus you can create a bundle for any combination of media types. To see all options see the help of the command in the command line.
 
 ```bash
@@ -132,9 +151,17 @@ pandoc -s path/to/source/file.md -c path/to/mdss/mdss.min.css -o path/to/output/
 
 ### Creating PDF files
 
-To create PDF it is recommended to convert to HTML first and use the browser's built in printing dialog to save the result as PDF. Using the printer of the browser will automatically apply the print styles for a bundled build.
+To create PDF documents formatted with **MDSS** it is recommended to convert to HTML first and use the browser's built in printing dialog to save the result as PDF. Using the printer of the browser will automatically apply the print styles for a bundled build.
 
-Visual Studio Code has an extension called [Markdown PDF](https://github.com/yzane/vscode-markdown-pdf) that supports converting Markdown files to PDF. You can set an **MDSS** build for print media as the stylesheet for output documents (`markdown-pdf.styles` setting). To avoid conflict with the default stylesheet set the `markdown-pdf.includeDefaultStyles` setting to `false`.
+Visual Studio Code has an extension called [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) that supports converting Markdown files to PDF. You can set an **MDSS** build for print media as the stylesheet for output documents (`markdown-pdf.styles` setting). To avoid conflict with the default stylesheet set the `markdown-pdf.includeDefaultStyles` setting to `false`. For an easy setup add the print stylesheet of **MDSS** from a CDN. The latest version of Markdown PDF uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to create PDF documents so the print media will be automatically applied to the output document.
+
+```json
+{
+  "markdown-pdf.styles": [
+    "https://unpkg.com/mdss"
+  ]
+}
+```
 
 ## Prerequisites
 

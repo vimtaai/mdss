@@ -17,25 +17,25 @@ $use-container-flex: true;
 $use-container-float: true;
 $use-container-text-align: true;
 $container-custom: (
-"error": $color-red,
-"warning": $color-yellow,
-"success": $color-green,
-"info": $color-blue
+  "error": $color-red,
+  "warning": $color-yellow,
+  "success": $color-green,
+  "info": $color-blue
 );
 
 // Syntax Highlighting
 $use-syntax-highlighting: true;
 $syntax-highlighting: (
-".comment": $color-brown,   // Comments
-".keyword": $color-blue,    // Keywords
-".literal": $color-blue,    // Literals (e.g. null, true, false)
-".string": $color-purple,   // Strings
-".subst": $color-violet,    // String placeholders (e.g. ${})
-".number": $color-purple,   // Numbers
-".regexp": $color-violet,   // Regular expressions
-".title": $color-green,     // Function/Class names
-".tag .name": $color-blue,  // HTML/XML tag names
-".tag .attr": $color-green  // HTML/XML attribute names
+  ".comment": $color-brown,   // Comments
+  ".keyword": $color-blue,    // Keywords
+  ".literal": $color-blue,    // Literals (e.g. null, true, false)
+  ".string": $color-purple,   // Strings
+  ".subst": $color-violet,    // String placeholders (e.g. ${})
+  ".number": $color-purple,   // Numbers
+  ".regexp": $color-violet,   // Regular expressions
+  ".title": $color-green,     // Function/Class names
+  ".tag .name": $color-blue,  // HTML/XML tag names
+  ".tag .attr": $color-green  // HTML/XML attribute names
 );
 
 // Syntax Highlighting for Pandoc

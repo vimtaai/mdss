@@ -22,6 +22,6 @@
     "csso": "^3.5.0",
     "jsonfile": "^4.0.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.9.0"
   }
 }
