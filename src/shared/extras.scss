@@ -30,6 +30,15 @@
     }
   }
 
+  // Sticky Containers
+  @if $use-container-sticky == true {
+    .sticky {
+      position: sticky;
+      top: 0;
+      z-index: 9;
+    }
+  }
+
   // Flex Containers
   @if $use-container-flex == true {
     .flex {
