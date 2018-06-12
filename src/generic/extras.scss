@@ -80,6 +80,14 @@
     }
   }
 
+  // Sticky Containers
+  @if $use-container-sticky == true {
+    .sticky {
+      background: $root-background;
+      padding: 0 $spacing-medium;
+    }
+  }
+
   // Left and Right Aligned Containers
   @if $use-container-float == true {
     .left {
