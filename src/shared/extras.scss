@@ -33,8 +33,9 @@
   // Flex Containers
   @if $use-container-flex == true {
     .flex {
-      display: flex;
       align-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
   }
