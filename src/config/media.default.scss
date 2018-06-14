@@ -1,0 +1,56 @@
+// Root Element
+$root-margin-x: auto !default;
+$root-margin-y: 0 !default;
+$root-max-width: 800px !default;
+$root-min-width: 350px !default;
+$root-background: $color-white !default;
+$root-font-color: $color-gray-dark !default;
+$root-font: $font-sans-serif !default;
+$root-font-size: 17px !default;
+$root-line-height: 1.67 !default;
+
+// Spacing
+$spacing-small: 0.2 * $root-font-size !default;
+$spacing-medium: 0.5 * $root-font-size !default;
+$spacing-large: 0.75 * $root-font-size !default;
+$spacing-huge: 1.5 * $root-font-size !default;
+
+// Headings
+$heading-font: $root-font !default;
+$heading-font-size: (2 * $root-font-size, 1.5 * $root-font-size, 1.2 * $root-font-size) !default;
+$heading-margin: (1.2 * $root-font-size, 1 * $root-font-size, 0) !default;
+
+// Paragraphs
+$paragraph-align: left !default;
+$paragraph-indent: 0 !default;
+$paragraph-margin: $spacing-large !default;
+
+// Blockquotes
+$quote-font: $root-font !default;
+$quote-font-size:  1.1 * $root-font-size !default;
+$quote-background: $root-background !default;
+$quote-font-color: $root-font-color !default;
+$quote-border-color: $color-primary !default;
+
+// Lists
+$ordered-list-style: decimal !default;
+$unordered-list-style: square !default;
+
+// Links
+$link-color: $color-primary !default;
+
+// Code
+$code-font: $font-monospace !default;
+$code-font-size: 14px !default;
+$code-background: $color-gray-light !default;
+$code-font-color: $color-gray-dark !default;
+$code-border-color: $color-gray-medium !default;
+
+// Border Radius
+$border-radius: 3px !default;
+
+// Transition
+$transition-duration: 250ms !default;
+
+// Cards
+$card-padding: $spacing-large !default;

@@ -1,7 +1,11 @@
 @import "external.config";
+@import "external.default";
 @import "shared.config";
+@import "shared.default";
 @import "extras.config";
+@import "extras.default";
 @import "custom.config";
+@import "media.default";
 
 @import "mixins/helpers";
 

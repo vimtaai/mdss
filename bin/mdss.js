@@ -171,6 +171,6 @@ function customizeCommand(options) {
   }
 
   console.log(`> ${path.join(mdssConfigDir, '*.scss')} -> ${configDir}`);
-  copy(path.join(mdssConfigDir, '*.scss'), configDir, function () {
+  copy(path.join(mdssConfigDir, '*.config.scss'), configDir, function () {
   });
 }

@@ -1,0 +1,23 @@
+// Colors
+$color-white: hsl(0, 0%, 100%) !default;
+$color-gray-light: hsl(215, 25%, 95%) !default;
+$color-gray-medium: hsl(215, 25%, 85%) !default;
+$color-gray-dark: hsl(215, 25%, 15%) !default;
+$color-black: hsl(0, 0%, 0%) !default;
+$color-red: hsl(0, 75%, 45%) !default;
+$color-green: hsl(150, 60%, 40%) !default;
+$color-blue: hsl(215, 60%, 45%) !default;
+$color-yellow: hsl(40, 90%, 50%) !default;
+$color-purple: hsl(280, 50%, 45%) !default;
+$color-violet: hsl(330, 60%, 50%) !default;
+$color-brown: hsl(25, 30%, 50%) !default;
+$color-primary: $color-blue !default;
+$color-accent: $color-green !default;
+
+// Fonts
+$font-serif: "Noticia Text", "Cambria", "Times New Roman", "Times", serif !default;
+$font-sans-serif: "Roboto Condensed", "Arial Narrow", "Arial", "Helvetica", sans-serif !default;
+$font-monospace: "Fira Mono", "Consolas", "Monaco", monospace !default;
+
+// Root Element Selector
+$root-selector: "" !default;

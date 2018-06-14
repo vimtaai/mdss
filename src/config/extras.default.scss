@@ -1,0 +1,40 @@
+// MDSS Extras
+$page-break-manual: true !default;
+$page-break-insert-before: h2 !default;
+$page-break-avoid-after: h1 !default;
+
+$numbered-headings: h2, h3 !default;
+$numbered-elements: () !default;
+
+$print-link-urls: true !default;
+
+// Markdown Extensions
+$use-definition-list: true !default;
+$use-table: true !default;
+
+// Markdown Containers
+$use-container-sticky: true !default;
+$use-container-flex: true !default;
+$use-container-float: true !default;
+$use-container-text-align: true !default;
+$container-custom: (
+  "error": $color-red,
+  "warning": $color-yellow,
+  "success": $color-green,
+  "info": $color-blue
+) !default;
+
+// Syntax Highlighting
+$use-syntax-highlighting: true !default;
+$syntax-highlighting: (
+  ".comment": $color-brown,
+  ".keyword": $color-blue,
+  ".literal": $color-blue,
+  ".string": $color-purple,
+  ".subst": $color-violet,
+  ".number": $color-purple,
+  ".regexp": $color-violet,
+  ".title": $color-green,
+  ".tag .name": $color-blue,
+  ".tag .attr": $color-green
+) !default;
