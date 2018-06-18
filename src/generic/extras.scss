@@ -4,7 +4,8 @@
   // Numbered Elements
   $counters: "";
 
-  @for $level from 1 through length($numbered-headings) {
+  $level: 1;
+  @while $level <= length($numbered-headings) {
     $heading: nth($numbered-headings, $level);
     $counters: #{$counters} #{$heading};
 
