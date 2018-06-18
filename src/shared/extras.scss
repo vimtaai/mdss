@@ -60,17 +60,32 @@
       @extend %flex;
 
       & > * {
+        box-sizing: border-box;
         display: block;
+        width: 100%;
       }
     }
 
     $number-names: ("two", "three", "four", "five", "six", "seven", "eight");
-    $column: 2;
-    @while $column <= $container-columns-max-count {
-      .#{nth($number-names, $column - 1)}.columns > * {
-        width: 95% / $column;
+    $space-between: 2 * $spacing-small;
+    @media screen and (min-width: $breakpoint-small) {
+      $column: 3;
+      @while $column <= $container-columns-max-count {
+        .#{nth($number-names, $column - 1)}.columns > * {
+          width: calc(#{100% / ceil($column / 2)} - #{($column - 1) * $space-between / $column});
+        }
+        $column: $column + 1;
       }
-      $column: $column + 1;
+    }
+
+    @media screen and (min-width: $breakpoint-large) {
+      $column: 2;
+      @while $column < $container-columns-max-count {
+        .#{nth($number-names, $column - 1)}.columns > * {
+            width: calc(#{100% / $column} - #{($column - 1) * $space-between / $column});
+        }
+        $column: $column + 1;
+      }
     }
   }
 

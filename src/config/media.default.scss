@@ -49,8 +49,12 @@ $code-border-color: $color-gray-medium !default;
 // Border Radius
 $border-radius: 3px !default;
 
+// Cards
+$card-padding: $spacing-large !default;
+
 // Transition
 $transition-duration: 250ms !default;
 
-// Cards
-$card-padding: $spacing-large !default;
+// Breakpoints
+$breakpoint-small: 550px !default;
+$breakpoint-large: 660px !default;
