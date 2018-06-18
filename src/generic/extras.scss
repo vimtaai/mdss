@@ -114,4 +114,16 @@
       );
     }
   }
+
+  @each $name, $color in $container-custom-inverted {
+    .#{$name} {
+      @include card(
+        $root-font,
+        $root-font-size,
+        $color-white,
+        $color,
+        $color
+      );
+    }
+  }
 }

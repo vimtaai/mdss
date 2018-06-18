@@ -25,6 +25,10 @@ $container-custom: (
   "success": $color-green,
   "info": $color-blue
 );
+$container-custom-inverted: (
+  "primary-inverted": $color-primary,
+  "accent-inverted": $color-accent
+);
 
 // Syntax Highlighting
 $use-syntax-highlighting: true;
