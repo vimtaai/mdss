@@ -13,10 +13,12 @@ $use-definition-list: true !default;
 $use-table: true !default;
 
 // Markdown Containers
-$use-container-sticky: true !default;
-$use-container-flex: true !default;
 $use-container-float: true !default;
 $use-container-text-align: true !default;
+$use-container-sticky: true !default;
+$use-container-flex: true !default;
+$use-container-columns: true !default;
+$container-columns-max-count: 4 !default;
 $container-custom: (
   "error": $color-red,
   "warning": $color-yellow,

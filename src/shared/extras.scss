@@ -39,13 +39,38 @@
     }
   }
 
+  // Flex base class
+  %flex {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   // Flex Containers
   @if $use-container-flex == true {
     .flex {
-      align-items: stretch;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      @extend %flex;
+    }
+  }
+
+  // Columns
+  @if $use-container-columns == true {
+    .columns {
+      @extend %flex;
+
+      & > * {
+        display: block;
+      }
+    }
+
+    $number-names: ("two", "three", "four", "five", "six", "seven", "eight");
+    $column: 2;
+    @while $column <= $container-columns-max-count {
+      .#{nth($number-names, $column - 1)}.columns > * {
+        width: 95% / $column;
+      }
+      $column: $column + 1;
     }
   }
 

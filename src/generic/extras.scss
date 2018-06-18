@@ -37,6 +37,8 @@
         content: #{$label};
       }
     }
+
+    $level: $level + 1;
   }
 
   @each $element in $numbered-elements {
