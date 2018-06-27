@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const package = require('../package.json');
+const packageInfo = require('../package.json');
 const fs = require('fs');
 const path = require('path');
 
 const program = require('commander');
-const sass = require('node-sass')
+const sass = require('node-sass');
 const csso = require('csso');
 const mkdirp = require('mkdirp');
 const copy = require('copy');
@@ -21,7 +21,7 @@ const defaultOutputDir = 'mdss/build';
 // Script description
 
 program
-  .version(package.version, '-v --version')
+  .version(packageInfo.version, '-v --version')
   .description('CLI for building and customizing MDSS')
   .usage('<command> [options]')
   .action(helpCommand)
@@ -56,13 +56,13 @@ if (program.args.length === 0) {
 
 // Helper functions
 
-function help() {
+function help () {
   console.log('\n  Command help:\n');
   console.log('    mdss build --help');
-  console.log('    mdss customize --help')
+  console.log('    mdss customize --help');
 }
 
-function toCamelCase(parts) {
+function toCamelCase (parts) {
   if (parts.length === 0) {
     return '';
   }
@@ -72,17 +72,16 @@ function toCamelCase(parts) {
 
 // Command functions
 
-function helpCommand() {
+function helpCommand () {
   program.help();
 }
 
-function buildCommand(options) {
+function buildCommand (options) {
   console.log('Building MDSS...');
 
   const dev = options.dev || false;
   const mediaTypes = ['screen', 'print', 'slides'];
   const bundleMedia = mediaTypes.filter(media => !options[toCamelCase(['without', media])]);
-  const buildTargets = ['bundle', ...mediaTypes];
   const currentTargets = options.all ? mediaTypes : mediaTypes.filter(type => options[type]);
   if (options.all || options.bundle || currentTargets.length === 0) {
     currentTargets.push('bundle');
@@ -112,13 +111,12 @@ function buildCommand(options) {
   mkdirp.sync(outputDir);
 
   currentTargets.forEach(function (target) {
-    const media = (target == 'bundle') ? bundleMedia : target;
+    const media = (target === 'bundle') ? bundleMedia : target;
     const sassCode = `
-      $BUNDLE: ${Array.isArray(media) ? true : false};
+      $BUNDLE: ${Array.isArray(media)};
       $MEDIA: ${Array.isArray(media) ? media.join(' ') : media};
       @import "entry/index";
     `;
-    //console.log('Bootstrap code: ' + sassCode);
     const entryFile = path.join(mdssDir, 'src', 'entry', 'index.scss');
     const outputFileName = `mdss${Array.isArray(media) ? `` : `-${media}`}${dev ? `` : `.min`}.css`;
     const outputFile = path.join(localDir, outputDir, outputFileName);
@@ -127,7 +125,7 @@ function buildCommand(options) {
     const result = sass.renderSync({
       data: sassCode,
       includePaths: [
-        path.join(localDir, configDir), 
+        path.join(localDir, configDir),
         path.join(mdssDir, 'src', 'config'),
         path.join(mdssDir, 'src')
       ],
@@ -144,7 +142,7 @@ function buildCommand(options) {
   });
 }
 
-function customizeCommand(options) {
+function customizeCommand (options) {
   console.log(`Setting up MDSS for customization...`);
 
   const configDir = path.join(localDir, options.configDir);
@@ -160,9 +158,9 @@ function customizeCommand(options) {
   if (fs.existsSync('mdss.json')) {
     fs.unlinkSync('mdss.json');
   }
-  
+
   if (options.configDir !== defaultConfigDir || options.outputDir !== defaultOutputDir) {
-    console.log(`> config -> mdss.json`)
+    console.log(`> config -> mdss.json`);
     const config = {
       configDir: options.configDir,
       outputDir: options.outputDir

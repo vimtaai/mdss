@@ -1,6 +1,8 @@
 # MDSS 
 
-![NPM version 1.1.0](https://img.shields.io/badge/npm-1.1.0-blue.svg)
+[![NPM version 1.2.0](https://img.shields.io/badge/npm-1.2.0-blue.svg)](https://www.npmjs.com/package/mdss)
+[![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![MIT license](https://img.shields.io/badge/license-MIT-green.svg)
 
 > Stylesheets for displaying and printing Markdown documents
 
@@ -17,6 +19,7 @@
 - Typography optimized for printing documents as slides (landscape orientation)
 - Extra features that can be enabled or disabled
 - Syntax highlighting support
+- Custom styles using defined variables
 - Minified and uncompressed builds
 - CLI for integration into other projects
 
@@ -35,13 +38,15 @@ The stylesheets include several visual extras by default in addition to standard
 
 Various Markdown Extensions that extend the capabilities of the CommonMark compliant Markdown are also supported. In the configuration files you can select what extensions should your build support. Supported extensions include:
 
+- Tables
+- Definition lists
 - Containers
   + Flex containers **(default: enabled)**
+  + Columned containers **(default: 2-4 columns enabled)**
   + Floated containers **(default: enabled)**
   + Containers with text align **(default: enabled)**
-  + Custom, colored containers **(default: error, warning, success, info classes)**
-- Definition lists
-- Tables
+  + Sticky containers **(default: enabled)**
+  + Custom, colored containers (light and dark background) **(default: error, warning, success, info with light background, primary and accent for both light and dark background)**
 
 To use these features you need a compiler that supports transforming their syntax (e.g. _pandoc_ or _markdown-it_).
 
@@ -56,7 +61,7 @@ Custom syntax highlighting colors can be set for a specific highlighter. There a
 To use the default bundled build of **MDSS** you don't even need a download, you can simply link the minified CSS from a CDN like [unpkg](https://unpkg.com/#/) or [jsdelivr](https://www.jsdelivr.com/). To apply **MDSS** for your HTML document link it in the `<head>` node as a simple stylesheet as it includes media queries. 
 
 ```html
-<link rel="stylesheet" href="//unpkg.com/mdss">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdss@1.2">
 ```
 
 To create your own build you have to clone this repository, edit the configuration a create a new bundle.
@@ -100,6 +105,7 @@ Configuration files include the following options:
 
 File                   | Options
 -----------------------|--------------------------------------------
+`custom.config.scss`   | custom styles
 `external.config.scss` | external imports (e.g. fonts)
 `extras.config.scss`   | enable/disable and configure extra features
 `print.config.scss`    | variables for print styles
@@ -158,8 +164,9 @@ Visual Studio Code has an extension called [Markdown PDF](https://marketplace.vi
 ```json
 {
   "markdown-pdf.styles": [
-    "https://unpkg.com/mdss"
-  ]
+    "https://cdn.jsdelivr.net/npm/mdss"
+  ],
+  "markdown-pdf.includeDefaultStyles": false
 }
 ```
 
