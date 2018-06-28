@@ -20,6 +20,8 @@ $use-container-flex: true !default;
 $use-container-columns: true !default;
 $container-columns-max-count: 4 !default;
 $container-custom: (
+  "primary": $color-primary,
+  "accent": $color-accent,
   "error": $color-red,
   "warning": $color-yellow,
   "success": $color-green,
