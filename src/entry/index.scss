@@ -13,7 +13,6 @@
 @import "entry/generic";
 @import "entry/screen";
 @import "entry/print";
-@import "entry/slides";
 
 @import "screen.config";
 @if index($MEDIA, screen) != null {
@@ -34,17 +33,6 @@
     }
   } @else {
     @include print;
-  }
-}
-
-@import "slides.config";
-@if index($MEDIA, slides) != null {
-  @if $BUNDLE == true {
-    @media print and (orientation: landscape) {
-      @include slides;
-    }
-  } @else {
-    @include slides;
   }
 }
 

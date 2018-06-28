@@ -32,11 +32,9 @@ program
   .description('Generate custom MDSS stylesheets')
   .option('--screen', 'generate print only stylesheet', false)
   .option('--print', 'generate print only stylesheet', false)
-  .option('--slides', 'generate slides only stylesheet', false)
   .option('--bundle', 'generate bundled stylesheet for selected media (default)', false)
   .option('--without-screen', 'exclude screen styles from bundle', false)
   .option('--without-print', 'exclude print styles from bundle', false)
-  .option('--without-slides', 'exclude slides styles from bundle', false)
   .option('-a --all', 'generate separate stylesheets for all media and bundle', false)
   .option('-d --dev', 'genereate uncompressed, development stylesheets', false)
   .action(buildCommand);
@@ -80,7 +78,7 @@ function buildCommand (options) {
   console.log('Building MDSS...');
 
   const dev = options.dev || false;
-  const mediaTypes = ['screen', 'print', 'slides'];
+  const mediaTypes = ['screen', 'print'];
   const bundleMedia = mediaTypes.filter(media => !options[toCamelCase(['without', media])]);
   const currentTargets = options.all ? mediaTypes : mediaTypes.filter(type => options[type]);
   if (options.all || options.bundle || currentTargets.length === 0) {

@@ -1,6 +1,6 @@
 # MDSS 
 
-[![NPM version 1.2.0](https://img.shields.io/badge/npm-1.2.0-blue.svg)](https://www.npmjs.com/package/mdss)
+[![NPM version 2.0.0](https://img.shields.io/badge/npm-2.0.0-blue.svg)](https://www.npmjs.com/package/mdss)
 [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ![MIT license](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -8,7 +8,7 @@
 
 ## About
 
-**MDSS** is a CSS stylesheet to render [Markdown](https://daringfireball.net/projects/markdown/syntax) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media. **MDSS** also supports printing Markdown as slides by setting the page orientation to landscape when printing.
+**MDSS** is a CSS stylesheet to render [Markdown](https://daringfireball.net/projects/markdown/syntax) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media.
 
 ## Features
 
@@ -16,7 +16,6 @@
 - Fully customizable via variables, custom color palette
 - Responsive typography optimized for screens
 - Typography optimized for printing documents (portrait orientation)
-- Typography optimized for printing documents as slides (landscape orientation)
 - Extra features that can be enabled or disabled
 - Syntax highlighting support
 - Custom styles using defined variables
@@ -29,8 +28,8 @@ The stylesheets include several visual extras by default in addition to standard
 
 - Automatic nested numbering of headings **(available: all media; default: level 1 and 2 heading)**
 - Automatic numbering of specified elements (e.g. images, tables) **(available: all media; default: no elements)**
-- Automatic URL insertion after links **(available: print, slides; default: enabled)**
-- Replace horizontal rules/thematic breaks with page breaks **(available: print; default: enabled; always enabled: slides)**
+- Automatic URL insertion after links **(available: print; default: enabled)**
+- Replace horizontal rules/thematic breaks with page breaks **(available: print; default: enabled)**
 - Automatic page breaks before specified elements **(available: print; default: level 2 heading)**
 - Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
 
@@ -111,7 +110,6 @@ File                   | Options
 `print.config.scss`    | variables for print styles
 `screen.config.scss`   | variables for screen styles
 `shared.config.scss`   | colors, fonts and root selector
-`slides.config.scss`   | variables for screen styles
 
 ## Advanced Usage
 
