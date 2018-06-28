@@ -123,9 +123,8 @@ function buildCommand (options) {
     const result = sass.renderSync({
       data: sassCode,
       includePaths: [
-        path.join(localDir, configDir),
-        path.join(mdssDir, 'src', 'config'),
-        path.join(mdssDir, 'src')
+        path.join(mdssDir, 'src'),
+        path.join(mdssDir, 'src', 'config')
       ],
       outputStyle: 'expanded',
       outFile: outputFile

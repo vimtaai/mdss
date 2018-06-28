@@ -1,26 +1,3 @@
-@mixin button($background, $font-color) {
-  background: $background;
-  border: none;
-  border-radius: $border-radius;
-  color: $font-color;
-  display: inline-block;
-  font-size: $root-font-size;
-  font-style: normal;
-  font-weight: normal;
-  padding: $spacing-medium $spacing-large;
-  margin: $spacing-small 0; 
-  text-align: center;
-  transition: background $transition-duration;
-
-  &:hover {
-    background: darken($background, 5%);
-  }
-
-  &:active {
-    background: darken($background, 10%);
-  }
-}
-
 @mixin card($font, $font-size, $font-color, $background, $border-color) {
   @include font($font);
   @include font-size($font-size);
