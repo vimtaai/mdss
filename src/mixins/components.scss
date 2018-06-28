@@ -30,4 +30,6 @@
   border-left: solid $border-color $spacing-small;
   margin: $spacing-medium 0;
   padding: $card-padding;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
