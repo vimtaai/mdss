@@ -1,16 +1,17 @@
 // MDSS Extras
-$page-break-manual: true;
-$page-break-insert-before: h2;
-$page-break-avoid-after: h1;
-
 $numbered-headings: h2, h3;
 $numbered-elements: ();
 
 $print-link-urls: true;
 
+$page-break-manual: true;
+$page-break-insert-before: h2;
+$page-break-avoid-after: h1;
+
 // Markdown Extensions
-$use-definition-list: true;
 $use-table: true;
+$use-definition-list: true;
+$use-strikethrough: true;
 
 // Markdown Containers
 $use-container-float: true;

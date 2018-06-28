@@ -1,0 +1,7 @@
+@function rem($multiplier) {
+  @return $multiplier * $root-font-size;
+}
+
+@function column-width($column-count, $column-spacing) {
+  
+}

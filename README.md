@@ -15,7 +15,7 @@
 - Formatting HTML documents generated from Markdown
 - Fully customizable via variables, custom color palette
 - Responsive typography optimized for screens
-- Typography optimized for printing documents (portrait orientation)
+- Typography optimized for printing documents
 - Extra features that can be enabled or disabled
 - Syntax highlighting support
 - Custom styles using defined variables

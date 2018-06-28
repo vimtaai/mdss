@@ -1,3 +1,6 @@
+@import "helpers/mixins";
+@import "helpers/functions";
+
 @import "config/external.config";
 @import "external.config";
 
@@ -9,8 +12,6 @@
 
 @import "config/custom.config";
 @import "custom.config";
-
-@import "mixins/helpers";
 
 @import "entry/shared";
 @import "entry/generic";

@@ -1,60 +1,66 @@
 // Root Element
 $root-margin-x: auto;
 $root-margin-y: 0;
-$root-max-width: 800px;
+$root-max-width: 1010px;
 $root-min-width: 350px;
-$root-background: $color-white;
-$root-font-color: $color-gray-dark;
 $root-font: $font-sans-serif;
 $root-font-size: 17px;
+$root-font-color: $color-gray-dark;
+$root-background: $color-white;
 $root-line-height: 1.67;
 
 // Spacing
-$spacing-small: 0.2 * $root-font-size;
-$spacing-medium: 0.5 * $root-font-size;
-$spacing-large: 0.75 * $root-font-size;
-$spacing-huge: 1.5 * $root-font-size;
+$spacing-small: rem(0.2);
+$spacing-medium: rem(0.5);
+$spacing-large: rem(0.75);
+$spacing-huge: rem(2);
 
 // Headings
 $heading-font: $root-font;
-$heading-font-size: (2 * $root-font-size, 1.5 * $root-font-size, 1.2 * $root-font-size);
-$heading-margin: (1.2 * $root-font-size, 1 * $root-font-size, 0);
+$heading-font-size: (rem(2), rem(1.5), rem(1.2), rem(1.1));
+$heading-font-color: ($color-primary, $color-accent, $root-font-color, $root-font-color);
+$heading-font-weight: (bold, bold, bold, bold);
+$heading-margin: (rem(1.2), rem(1), 0, 0);
 
 // Paragraphs
-$paragraph-align: left;
+$paragraph-align: justify;
 $paragraph-indent: 0;
-$paragraph-margin: $spacing-large;
-
-// Blockquotes
-$quote-font: $root-font;
-$quote-font-size:  1.1 * $root-font-size;
-$quote-background: $root-background;
-$quote-font-color: $root-font-color;
-$quote-border-color: $color-primary;
+$paragraph-margin: $spacing-medium;
 
 // Lists
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
 // Links
-$link-color: $color-primary;
+$link-font: $root-font;
+$link-font-size: $root-font-size;
+$link-font-color: $root-font-color;
+$link-font-weight: normal;
+$link-background: $root-background;
+$link-border-color: $link-font-color;
+
+// Blockquotes
+$quote-font: $font-sans-serif;
+$quote-font-size: 13pt;
+$quote-font-color: $root-font-color;
+$quote-font-weight: normal;
+$quote-background: $root-background;
+$quote-border-color: $root-background;
 
 // Code
 $code-font: $font-monospace;
-$code-font-size: 14px;
+$code-font-size: 11pt;
+$code-font-color: $root-font-color;
+$code-font-weight: normal;
 $code-background: $color-gray-light;
-$code-font-color: $color-gray-dark;
 $code-border-color: $color-gray-medium;
 
 // Breakpoints
-$breakpoint-small: 550px;
-$breakpoint-large: 660px;
+$breakpoint-small: 210mm;
+$breakpoint-large: 270mm;
 
 // Border Radius
 $border-radius: 3px;
 
 // Cards
-$card-padding: $spacing-large;
-
-// Transition
-$transition-duration: 250ms;
+$card-padding: $spacing-medium;
