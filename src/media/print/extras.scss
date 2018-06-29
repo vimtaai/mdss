@@ -1,6 +1,6 @@
 @mixin print-extras {
   // Manual Page Break
-  @if $page-break-manual == true {
+  @if $page-break-manual {
     hr {
       visibility: hidden;
       page-break-after: always;
@@ -28,7 +28,7 @@
   }
 
   // Print Link URLs
-  @if $print-link-urls == true {
+  @if $print-link-urls {
     a[href^="http"]:after,
     a[href^="ftp"]:after,
     a[href^="scp"]:after,
@@ -38,7 +38,7 @@
   }
 
   // Columns
-  @if $use-container-columns == true {
+  @if $use-container-columns {
     $space-between: 2 * $spacing-small;
 
     .columns > * {

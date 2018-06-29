@@ -2,14 +2,14 @@
 
 @mixin screen-extras {
   // Manual Page Break
-  @if $page-break-manual == true {
+  @if $page-break-manual {
     hr {
       display: none;
     }
   }
 
   // Tables
-  @if $use-table == true {
+  @if $use-table {
     table {
       th, td {
         padding: $spacing-medium $spacing-large;
@@ -18,7 +18,7 @@
   }
 
   // Columns
-  @if $use-container-columns == true {
+  @if $use-container-columns {
     $space-between: 2 * $spacing-small;
 
     .columns > * {

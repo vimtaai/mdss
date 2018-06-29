@@ -61,7 +61,7 @@
   }
 
   // Tables
-  @if $use-table == true {
+  @if $use-table {
     table {
       margin: $spacing-medium 0;
 
@@ -77,14 +77,14 @@
   }
 
   // Definition Lists
-  @if $use-definition-list == true {
+  @if $use-definition-list {
     dd {
       margin-left: $spacing-huge;
     }
   }
 
   // Sticky Containers
-  @if $use-container-sticky == true {
+  @if $use-container-sticky {
     .sticky {
       background: $root-background;
       padding: $spacing-medium 0;
@@ -92,7 +92,7 @@
   }
 
   // Left and Right Aligned Containers
-  @if $use-container-float == true {
+  @if $use-container-float {
     .left {
       margin-right: $spacing-medium;
     }

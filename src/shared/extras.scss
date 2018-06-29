@@ -1,6 +1,6 @@
 @mixin shared-extras {
   // Tables
-  @if $use-table == true {
+  @if $use-table {
     table {
       border-collapse: collapse;
       display: inline-table;
@@ -19,7 +19,7 @@
   }
 
   // Definition Lists
-  @if $use-definition-list == true {
+  @if $use-definition-list {
     dt {
       display: block;
       font-weight: bold;
@@ -31,14 +31,14 @@
   }
 
   // Strikethrough
-  @if $use-strikethrough == true {
+  @if $use-strikethrough {
     s, del {
       text-decoration: line-through;
     }
   }
 
   // Sticky Containers
-  @if $use-container-sticky == true {
+  @if $use-container-sticky {
     .sticky {
       position: sticky;
       top: 0;
@@ -55,14 +55,14 @@
   }
 
   // Flex Containers
-  @if $use-container-flex == true {
+  @if $use-container-flex {
     .flex {
       @extend %flex;
     }
   }
 
   // Columns
-  @if $use-container-columns == true {
+  @if $use-container-columns {
     .columns {
       @extend %flex;
 
@@ -75,7 +75,7 @@
   }
 
   // Left and Right Aligned Containers
-  @if $use-container-float == true {
+  @if $use-container-float {
     .left {
       float: left;
     }
@@ -86,7 +86,7 @@
   }
 
   // Left and Right Text Aligned Containers
-  @if $use-container-text-align == true {
+  @if $use-container-text-align {
     .text-left {
       text-align: left;
     }
@@ -101,7 +101,7 @@
   }
 
   // Syntax Highlighting
-  @if $use-syntax-highlighting == true {
+  @if $use-syntax-highlighting {
     pre code {
       @each $selector, $color in $syntax-highlighting {
         #{$selector} {
