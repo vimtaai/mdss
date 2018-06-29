@@ -18,7 +18,7 @@ $spacing-huge: 24pt;
 // Headings
 $heading-font: $font-sans-serif;
 $heading-font-size: (20pt, 16pt, 14pt, 12pt);
-$heading-font-color: ($color-primary, $color-accent, $root-font-color);
+$heading-font-color: ($color-primary, $color-accent, $root-font-color, $root-font-color);
 $heading-font-weight: (bold, bold, bold, bold);
 $heading-margin: (20pt, 16pt, 12pt, 6pt);
 
@@ -30,14 +30,6 @@ $paragraph-margin: $spacing-medium;
 // Lists
 $ordered-list-style: decimal;
 $unordered-list-style: square;
-
-// Links
-$link-font: $root-font;
-$link-font-size: $root-font-size;
-$link-font-color: $root-font-color;
-$link-font-weight: bold;
-$link-background: $root-background;
-$link-border-color: $link-font-color;
 
 // Blockquotes
 $quote-font: $font-sans-serif;
@@ -54,6 +46,14 @@ $code-font-color: $root-font-color;
 $code-font-weight: normal;
 $code-background: $color-gray-light;
 $code-border-color: $color-gray-medium;
+
+// Links
+$link-font: $root-font;
+$link-font-size: $root-font-size;
+$link-font-color: $root-font-color;
+$link-font-weight: bold;
+$link-background: $root-background;
+$link-border-color: $link-font-color;
 
 // Breakpoints
 $breakpoint-small: 130mm;

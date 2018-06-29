@@ -1,10 +1,11 @@
 @mixin screen-inline {
+  // Links
   a {
     border-bottom: solid transparent 2px;
     transition: border-bottom-color $transition-duration;
 
     &:hover {
-      border-bottom-color: $color-primary;
+      border-bottom-color: $link-font-color;
     }
   }
 }

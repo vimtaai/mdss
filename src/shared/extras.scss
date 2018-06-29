@@ -30,6 +30,13 @@
     }
   }
 
+  // Strikethrough
+  @if $use-strikethrough == true {
+    s, del {
+      text-decoration: line-through;
+    }
+  }
+
   // Sticky Containers
   @if $use-container-sticky == true {
     .sticky {

@@ -1,14 +1,26 @@
 @mixin shared-inline {
+  // Links
   a {
     text-decoration: none;
   }
+  
+  // Inline code
+  code {
+    overflow-wrap: break-word;
+  }
 
+  // Images
   img {
     max-width: 100%;
     vertical-align: middle;
   }
 
-  code {
-    overflow-wrap: break-word;
+  // Emphasis
+  b, strong {
+    font-weight: bold;
+  }
+
+  i, em {
+    font-style: italic;
   }
 }

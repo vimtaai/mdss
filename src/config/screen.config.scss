@@ -31,14 +31,6 @@ $paragraph-margin: $spacing-medium;
 $ordered-list-style: decimal;
 $unordered-list-style: square;
 
-// Links
-$link-font: $root-font;
-$link-font-size: $root-font-size;
-$link-font-color: $root-font-color;
-$link-font-weight: normal;
-$link-background: $root-background;
-$link-border-color: $link-font-color;
-
 // Blockquotes
 $quote-font: $font-sans-serif;
 $quote-font-size: 13pt;
@@ -54,6 +46,14 @@ $code-font-color: $root-font-color;
 $code-font-weight: normal;
 $code-background: $color-gray-light;
 $code-border-color: $color-gray-medium;
+
+// Links
+$link-font: $root-font;
+$link-font-size: $root-font-size;
+$link-font-color: $root-font-color;
+$link-font-weight: normal;
+$link-background: $root-background;
+$link-border-color: $link-font-color;
 
 // Breakpoints
 $breakpoint-small: 210mm;

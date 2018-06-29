@@ -1,34 +1,22 @@
 @import "helpers/components";
 
 @mixin generic-block {
-  h1, h2, h3, h4, h5, h6 {
-    @include font($heading-font);
-  }
-
-  @for $level from 1 through length($heading-font-size) {
+  // Headings
+  @for $level from 1 through 6 {
     h#{$level} {
-      @include font-size(nth($heading-font-size, $level));
-      
-      margin: nth($heading-margin, $level) 0;
+      @include font($heading-font);
+
+      @if ($level <= length($heading-font-size)) {
+        @include font-size(nth($heading-font-size, $level));
+        @include font-color(nth($heading-font-color, $level));
+       
+        font-weight: nth($heading-font-weight, $level);
+        margin: nth($heading-margin, $level) 0;
+      }
     }
   }
 
-  blockquote, pre, ol, ul {
-    margin: $spacing-medium 0;
-  }
-
-  blockquote {
-    @include card(
-      $quote-font, 
-      $quote-font-color, 
-      $quote-font-size, 
-      $quote-background, 
-      $quote-border-color
-    );
-
-    padding: $spacing-medium $spacing-huge;
-  }
-
+  // Paragraphs
   p {
     margin: $paragraph-margin 0;
     text-align: $paragraph-align;
@@ -38,28 +26,38 @@
     }
   }
 
-  ol {
-    list-style: $ordered-list-style;
-  }
-
+  // lists
   ul {
     list-style: $unordered-list-style;
+    margin: $spacing-medium 0;
+  }
+  
+  ol {
+    list-style: $ordered-list-style;
+    margin: $spacing-medium 0;
   }
 
   li {
     text-align: $paragraph-align;
     margin: $spacing-small 0;
   }
-
-  code {
-    @include font($code-font);
-    @include font-size($code-font-size);
-    @include font-color($code-font-color);
-    @include background($code-background);
-    
-    border-radius: $border-radius;
+  
+  // Blockquotes
+  blockquote {
+    @include card(
+      $quote-font, 
+      $quote-font-color, 
+      $quote-font-size, 
+      $quote-background, 
+      $quote-border-color
+    );
+      
+    font-weight: $quote-font-weight;
+    margin: $spacing-medium 0;
+    padding: $spacing-medium $spacing-huge;
   }
 
+  // Code blocks
   pre {
     @include card(
       $code-font,
@@ -68,8 +66,12 @@
       $code-background,
       $code-border-color
     );
+
+    font-weight: $code-font-weight;
+    margin: $spacing-medium 0;
   }
 
+  // Horizontal break
   hr {
     margin: $spacing-large 0;
   }

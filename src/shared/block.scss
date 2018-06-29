@@ -1,19 +1,10 @@
 @mixin shared-block {
+  // Headings
   h1 {
     text-transform: uppercase;
   }
 
-  blockquote p,
-  ol p,
-  ul p {
-    display: inline;
-    text-indent: 0;
-  }
-
-  blockquote {
-    text-transform: uppercase;
-  }
-
+  // Paragraphs
   p {
     text-indent: 0;
 
@@ -26,20 +17,40 @@
     }
   }
 
+  // Lists
   ol, ul {
     ol, ul {
       margin-top: 0;
       margin-bottom: 0;
     }
+
+    p {
+      display: inline;
+      text-indent: 0;
+    }
   }
 
-  pre code {
-    background: none;
-    border: none;
-    display: block;
-    padding: 0;
+  // Blockquotes
+  blockquote {
+    text-transform: uppercase;
+
+    p {
+      display: inline;
+      text-indent: 0;
+    }
   }
 
+  // Code blocks
+  pre {
+    code {
+      background: none;
+      border: none;
+      display: block;
+      padding: 0;
+    }
+  }
+
+  // Horizontal break
   hr {
     background: $color-gray-medium;
     border: none;

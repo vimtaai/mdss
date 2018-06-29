@@ -1,8 +1,4 @@
 @mixin screen-block {
-  h1 {
-    @include font-color($color-primary);
-  }
-
   pre {
     overflow-x: auto;
     white-space: pre;

@@ -1,9 +1,23 @@
 @mixin generic-inline {
+  // Links
   a {
-    color: $link-font-color;
+    @include font($link-font);
+    @include font-size($link-font-size);
+    @include font-color($link-font-color);
+    @include background($link-background);
+
+    font-weight: $link-font-weight;
   }
 
+  // Inline code
   code {
+    @include font($code-font);
+    @include font-size($code-font-size);
+    @include font-color($code-font-color);
+    @include background($code-background);
+    
+    border-radius: $border-radius;
+    font-weight: $code-font-weight;
     padding: $spacing-small;
   }
 }
