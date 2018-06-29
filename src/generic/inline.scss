@@ -3,9 +3,9 @@
   a {
     @include font($link-font);
     @include font-size($link-font-size);
-    @include font-color($link-font-color);
     @include background($link-background);
-
+    
+    color: $link-font-color;
     font-weight: $link-font-weight;
   }
 
