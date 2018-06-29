@@ -39,6 +39,13 @@
     }
   }
 
+  // Sticky Containers
+  @if $use-container-sticky {
+    .sticky {
+      position: static;
+    }
+  }
+
   // Columns
   @if $use-container-columns {
     $space-between: 2 * $spacing-small;

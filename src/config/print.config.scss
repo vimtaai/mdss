@@ -1,26 +1,26 @@
 // Root Element
-$root-margin-x: 2cm;
+$root-margin-x: 1.2cm;
 $root-margin-y: 0;
 $root-max-width: 100%;
 $root-min-width: 0;
 $root-font: $font-serif;
-$root-font-size: 12pt;
+$root-font-size: 11pt;
 $root-font-color: $color-black;
 $root-background: $color-white;
-$root-line-height: 1.41;
+$root-line-height: 1.5;
 
 // Spacing
 $spacing-small: 3pt;
-$spacing-medium: 12pt;
-$spacing-large: 18pt;
+$spacing-medium: 6pt;
+$spacing-large: 12pt;
 $spacing-huge: 24pt;
 
 // Headings
 $heading-font: $font-sans-serif;
-$heading-font-size: (20pt, 16pt, 14pt, 12pt);
-$heading-font-color: ($color-primary, $color-accent, $root-font-color, $root-font-color);
+$heading-font-size: (17pt, 14pt, 12pt, 11pt);
+$heading-font-color: ($color-primary, $root-font-color, $root-font-color, $root-font-color);
 $heading-font-weight: (bold, bold, bold, bold);
-$heading-margin: (20pt, 16pt, 12pt, 6pt);
+$heading-margin: (18pt, 16pt, 12pt, 12pt);
 
 // Paragraphs
 $paragraph-align: justify;
@@ -46,6 +46,7 @@ $code-font-color: $root-font-color;
 $code-font-weight: normal;
 $code-background: $color-gray-light;
 $code-border-color: $color-gray-medium;
+$code-line-height: 1.25;
 
 // Links
 $link-font: $root-font;

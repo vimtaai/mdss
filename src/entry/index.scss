@@ -18,6 +18,11 @@
 @import "entry/screen";
 @import "entry/print";
 
+@include shared;
+@each $import in $external-imports {
+  @import url($import);
+}
+
 @import "config/screen.config";
 @import "screen.config";
 @if index($MEDIA, screen) != null {
@@ -40,9 +45,4 @@
   } @else {
     @include print;
   }
-}
-
-@include shared;
-@each $import in $external-imports {
-  @import url($import);
 }

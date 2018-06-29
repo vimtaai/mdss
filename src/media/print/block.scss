@@ -1,12 +1,14 @@
 @mixin print-block {
+  // Paragraphs
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  // Code blocks
   pre {
     overflow-x: hidden;
     page-break-inside: avoid;
     white-space: pre-wrap;
-  }
-
-  p {
-    orphans: 3;
-    widows: 3;
   }
 }
