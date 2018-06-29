@@ -58,7 +58,7 @@
 
     @media print and (min-width: $breakpoint-large) {
       $column: 2;
-      @while $column < $container-columns-max-count {
+      @while $column <= $container-columns-max-count {
         .#{nth($number-names, $column - 1)}.columns > * {
           width: calc(#{100% / $column} - #{2 * $space-between});
         }
