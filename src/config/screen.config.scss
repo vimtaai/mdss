@@ -1,8 +1,4 @@
-// Root Element
-$root-margin-x: auto;
-$root-margin-y: 0;
-$root-max-width: 910px;
-$root-min-width: 350px;
+// Root typgraphy
 $root-font: $font-sans-serif;
 $root-font-size: 17px;
 $root-font-color: $color-gray-dark;
@@ -14,6 +10,12 @@ $spacing-small: rem(0.25);
 $spacing-medium: rem(0.5);
 $spacing-large: rem(1);
 $spacing-huge: rem(2);
+
+// Root dimensions
+$root-margin-x: $spacing-large;
+$root-margin-y: $spacing-large;
+$root-max-width: 910px;
+$root-min-width: 350px;
 
 // Headings
 $heading-font: $root-font;
@@ -57,8 +59,8 @@ $link-background: $root-background;
 $link-border-color: $link-font-color;
 
 // Breakpoints
-$breakpoint-small: 210mm;
-$breakpoint-large: 270mm;
+$breakpoint-small: 550px;
+$breakpoint-large: 660px;
 
 // Border Radius
 $border-radius: 3px;

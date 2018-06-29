@@ -1,19 +1,21 @@
-// Root Element
-$root-margin-x: 1.2cm;
-$root-margin-y: 0;
-$root-max-width: 100%;
-$root-min-width: 0;
+// Root typography
 $root-font: $font-serif;
 $root-font-size: 11pt;
 $root-font-color: $color-black;
 $root-background: $color-white;
-$root-line-height: 1.5;
+$root-line-height: 1.67;
 
 // Spacing
 $spacing-small: 3pt;
 $spacing-medium: 6pt;
 $spacing-large: 12pt;
 $spacing-huge: 24pt;
+
+// Root dimensions
+$root-margin-x: 1.2cm;
+$root-margin-y: 0;
+$root-max-width: 100%;
+$root-min-width: 0;
 
 // Headings
 $heading-font: $font-sans-serif;
