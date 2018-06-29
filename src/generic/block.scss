@@ -11,7 +11,7 @@
         @include font-color(nth($heading-font-color, $level));
        
         font-weight: nth($heading-font-weight, $level);
-        margin: nth($heading-margin, $level) 0 0 0;
+        margin: nth($heading-margin, $level) 0;
       }
     }
   }

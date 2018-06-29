@@ -19,10 +19,10 @@ $root-min-width: 0;
 
 // Headings
 $heading-font: $font-sans-serif;
-$heading-font-size: (17pt, 14pt, 12pt, 11pt);
+$heading-font-size: (17pt, 14pt, 13pt, 12pt);
 $heading-font-color: ($color-primary, $root-font-color, $root-font-color, $root-font-color);
 $heading-font-weight: (bold, bold, bold, bold);
-$heading-margin: (18pt, 16pt, 12pt, 12pt);
+$heading-margin: (6pt, 14pt, 8pt, 6pt);
 
 // Paragraphs
 $paragraph-align: justify;
@@ -43,7 +43,7 @@ $quote-border-color: $root-background;
 
 // Code
 $code-font: $font-monospace;
-$code-font-size: 11pt;
+$code-font-size: 10pt;
 $code-font-color: $root-font-color;
 $code-font-weight: normal;
 $code-background: $color-gray-light;

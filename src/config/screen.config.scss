@@ -19,10 +19,10 @@ $root-min-width: 350px;
 
 // Headings
 $heading-font: $root-font;
-$heading-font-size: (rem(2), rem(1.3), rem(1.2), rem(1.1));
+$heading-font-size: (rem(1.5), rem(1.25), rem(1.1), rem(1));
 $heading-font-color: ($color-primary, $root-font-color, $root-font-color, $root-font-color);
 $heading-font-weight: (bold, bold, bold, bold);
-$heading-margin: (rem(2), rem(1.5), rem(1), rem(1));
+$heading-margin: (rem(0.5), rem(1.3), rem(1), rem(0.5));
 
 // Paragraphs
 $paragraph-align: justify;
@@ -48,7 +48,7 @@ $code-font-color: $root-font-color;
 $code-font-weight: normal;
 $code-background: $color-gray-light;
 $code-border-color: $color-gray-medium;
-$code-line-height: $root-line-height;
+$code-line-height: 1.5;
 
 // Links
 $link-font: $root-font;
