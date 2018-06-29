@@ -29,10 +29,10 @@
 
   // Print Link URLs
   @if $print-link-urls {
-    a[href^="http"]:after,
-    a[href^="ftp"]:after,
-    a[href^="scp"]:after,
-    a[href^="ssh"]:after {
+    a[href^="http"]::after,
+    a[href^="ftp"]::after,
+    a[href^="scp"]::after,
+    a[href^="ssh"]::after {
       content: " <" attr(href) ">";
       hyphens: none;
       overflow-wrap: break-word;

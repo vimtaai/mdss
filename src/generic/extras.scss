@@ -32,7 +32,7 @@
       counter-reset: #{$counter-resets};
     }
 
-    #{$heading}:before {
+    #{$heading}::before {
       @include to-left-margin {
         content: #{$label};
       }
@@ -49,7 +49,7 @@
       counter-increment: #{$element};
     }
 
-    #{$element}:before {
+    #{$element}::before {
       @include to-right-margin {
         content: "(" counter(#{$element}) ")";
       }
