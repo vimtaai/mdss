@@ -63,7 +63,7 @@
   // Tables
   @if $use-table {
     table {
-      margin: $spacing-medium 0;
+      margin: $spacing-medium auto;
 
       thead {
         border-bottom: solid $root-font-color 1px;
