@@ -1,34 +1,37 @@
 @mixin print-extras {
   // Manual Page Break
-  @if $page-break-manual {
+  @if $enable-page-break-manual {
     hr {
       visibility: hidden;
       page-break-after: always;
     }
   }
 
-  // Automatic Page Break Before
-  @each $element in $page-break-insert-before {
-    #{$element} {
-      page-break-before: always;
-    }
-  }
-
-  // Avoid Page Break After
-  @each $nobreak-element in $page-break-avoid-after {
-    @each $break-element in $page-break-insert-before {
-      #{$nobreak-element} + #{$break-element} {
-        page-break-before: avoid;
+  // Automatic Page Break
+  @if $enable-page-break-auto {
+    // Insert before elements
+    @each $insert-element in $page-break-auto-insert-before {
+      #{$insert-element} {
+        page-break-before: always;
       }
     }
 
-    #{$nobreak-element} {
-      page-break-after: avoid;
+    // Avoid after element
+    @each $avoid-element in $page-break-auto-avoid-after {
+      @each $insert-element in $page-break-auto-insert-before {
+        #{$avoid-element} + #{$insert-element} {
+          page-break-before: avoid;
+        }
+      }
+
+      #{$avoid-element} {
+        page-break-after: avoid;
+      }
     }
   }
 
   // Print Link URLs
-  @if $print-link-urls {
+  @if $enable-print-urls {
     a[href^="http"]::after,
     a[href^="ftp"]::after,
     a[href^="scp"]::after,
@@ -40,7 +43,7 @@
   }
 
   // Sticky Containers
-  @if $use-container-sticky {
+  @if $enable-container-sticky {
     .sticky {
       position: static;
     }

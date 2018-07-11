@@ -1,61 +1,61 @@
 // MDSS Extras
-$numbered-headings: h2, h3;
-$numbered-elements: ();
-
-$print-link-urls: true;
-
-$page-break-manual: true;
-$page-break-insert-before: h2;
-$page-break-avoid-after: h1;
+$enable-auto-numbering: true;
+  $auto-numbering-headings: h2, h3;
+  $auto-numbering-elements: ();
+$enable-print-urls: true;
+$enable-page-break-manual: true;
+$enable-page-break-auto: true;
+  $page-break-auto-insert-before: h2;
+  $page-break-auto-avoid-after: h1;
 
 // Markdown Extensions
-$use-table: true;
-$table-striped-background: $color-gray-light;
-$use-definition-list: true;
-$use-strikethrough: true;
+$enable-tables: true;
+  $tables-stripe-background: $color-gray-light;
+$enable-definition-list: true;
+$enable-strikethrough: true;
 
 // Markdown Containers
-$use-container-float: true;
-$use-container-text-align: true;
-$use-container-sticky: true;
-$use-container-flex: true;
-$use-container-columns: true;
-$container-columns-max-count: 4;
-$use-container-custom: true;
-$container-custom: (
-  "primary": $color-primary,
-  "accent": $color-accent
-);
-$container-custom-inverted: (
-  "primary-inverted": $color-primary,
-  "accent-inverted": $color-accent
-);
+$enable-container-float: true;
+$enable-container-align: true;
+$enable-container-sticky: true;
+$enable-container-flex: true;
+$enable-container-columns: true;
+  $container-columns-max-count: 4;
+$enable-container-card: true;
+  $container-card-light-list: (
+    "primary": $color-primary,
+    "accent": $color-accent
+  );
+  $container-card-dark-list: (
+    "primary-inverted": $color-primary,
+    "accent-inverted": $color-accent
+  );
 
 // Syntax Highlighting
-$use-syntax-highlighting: true;
-$syntax-highlighting: (
-  ".hljs-comment": $color-brown,        // Comments
-  ".hljs-keyword": $color-blue,         // Keywords
-  ".hljs-literal": $color-blue,         // Literals (e.g. null, true, false)
-  ".hljs-string": $color-purple,        // Strings
-  ".hljs-subst": $color-violet,         // String placeholders (e.g. ${})
-  ".hljs-number": $color-purple,        // Numbers
-  ".hljs-regexp": $color-violet,        // Regular expressions
-  ".hljs-title": $color-green,          // Function/Class names
-  ".hljs-tag .hljs-name": $color-blue,  // HTML/XML tag names
-  ".hljs-tag .hljs-attr": $color-green  // HTML/XML attribute names
-);
+$enable-syntax-highlighting: true;
+  $syntax-highlighting-colors: (
+    ".hljs-comment": $color-brown,        // Comments
+    ".hljs-keyword": $color-blue,         // Keywords
+    ".hljs-literal": $color-blue,         // Literals (e.g. null, true, false)
+    ".hljs-string": $color-purple,        // Strings
+    ".hljs-subst": $color-violet,         // String placeholders (e.g. ${})
+    ".hljs-number": $color-purple,        // Numbers
+    ".hljs-regexp": $color-violet,        // Regular expressions
+    ".hljs-title": $color-green,          // Function/Class names
+    ".hljs-tag .hljs-name": $color-blue,  // HTML/XML tag names
+    ".hljs-tag .hljs-attr": $color-green  // HTML/XML attribute names
+  );
 
-// Syntax Highlighting for Pandoc
-// $syntax-highlighting: (
-//   ".co, .do": $color-brown,      // Comments
-//   ".kw, .cf, .dt": $color-blue,  // Keywords
-//   ".li": $color-blue,            // Literals (e.g. null, true, false)
-//   ".st, .vs": $color-purple,     // Strings
-//   ".sc": $color-violet,          // String placeholders (e.g. ${})
-//   ".nu, .dv": $color-purple,     // Numbers
-//   ".ss": $color-violet,          // Regular expressions
-//   ".fu": $color-green,           // Function/Class names
-//   ".kw": $color-blue,            // HTML/XML tag names
-//   ".ot": $color-green            // HTML/XML attribute names
-// );
+  // Syntax Highlighting for Pandoc
+  // $syntax-highlighting-colors: (
+  //   ".co, .do": $color-brown,      // Comments
+  //   ".kw, .cf, .dt": $color-blue,  // Keywords
+  //   ".li": $color-blue,            // Literals (e.g. null, true, false)
+  //   ".st, .vs": $color-purple,     // Strings
+  //   ".sc": $color-violet,          // String placeholders (e.g. ${})
+  //   ".nu, .dv": $color-purple,     // Numbers
+  //   ".ss": $color-violet,          // Regular expressions
+  //   ".fu": $color-green,           // Function/Class names
+  //   ".kw": $color-blue,            // HTML/XML tag names
+  //   ".ot": $color-green            // HTML/XML attribute names
+  // );

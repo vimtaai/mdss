@@ -5,20 +5,20 @@
   $counters: "";
 
   $level: 1;
-  @while $level <= length($numbered-headings) {
-    $heading: nth($numbered-headings, $level);
+  @while $level <= length($auto-numbering-headings) {
+    $heading: nth($auto-numbering-headings, $level);
     $counters: #{$counters} #{$heading};
 
     $counter-resets: "";
-    @if $level < length($numbered-headings) {
-      @for $i from $level + 1 through length($numbered-headings) {
-        $counter-resets: #{$counter-resets} #{nth($numbered-headings, $i)}
+    @if $level < length($auto-numbering-headings) {
+      @for $i from $level + 1 through length($auto-numbering-headings) {
+        $counter-resets: #{$counter-resets} #{nth($auto-numbering-headings, $i)}
       }
     }
 
     $label: "";
     @for $i from 1 through $level {
-      $label: #{$label} counter(#{nth($numbered-headings, $i)});
+      $label: #{$label} counter(#{nth($auto-numbering-headings, $i)});
       @if ($i != $level) {
         $label: #{$label} '"."'
       } @else {
@@ -41,7 +41,7 @@
     $level: $level + 1;
   }
 
-  @each $element in $numbered-elements {
+  @each $element in $auto-numbering-elements {
     $counters: #{$counters} #{$element};
 
     #{$element} {
@@ -61,7 +61,7 @@
   }
 
   // Tables
-  @if $use-table {
+  @if $enable-tables {
     table {
       margin: $spacing-medium auto;
 
@@ -77,14 +77,14 @@
   }
 
   // Definition Lists
-  @if $use-definition-list {
+  @if $enable-definition-list {
     dd {
       margin-left: $spacing-huge;
     }
   }
 
   // Sticky Containers
-  @if $use-container-sticky {
+  @if $enable-container-sticky {
     .sticky {
       background: $root-background;
       padding: $spacing-medium 0;
@@ -92,7 +92,7 @@
   }
 
   // Left and Right Aligned Containers
-  @if $use-container-float {
+  @if $enable-container-float {
     .left {
       margin-right: $spacing-medium;
     }
@@ -103,7 +103,7 @@
   }
 
   // Custom Containers (Cards)
-  @each $name, $color in $container-custom {
+  @each $name, $color in $container-card-light-list {
     .#{$name} {
       @include card(
         $root-font,
@@ -115,7 +115,7 @@
     }
   }
 
-  @each $name, $color in $container-custom-inverted {
+  @each $name, $color in $container-card-dark-list {
     .#{$name} {
       @include card(
         $root-font,
@@ -128,7 +128,7 @@
   }
 
   // Columns
-  @if $use-container-columns {
+  @if $enable-container-columns {
     $column-spacing: 2 * $spacing-small;
 
     .columns > * {

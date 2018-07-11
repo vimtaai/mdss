@@ -1,6 +1,6 @@
 @mixin shared-extras {
   // Tables
-  @if $use-table {
+  @if $enable-tables {
     table {
       border-collapse: collapse;
 
@@ -11,7 +11,7 @@
       }
 
       tr:nth-child(even) {
-        background: $table-striped-background;
+        background: $tables-stripe-background;
       }
 
       td, th {
@@ -21,7 +21,7 @@
   }
 
   // Definition Lists
-  @if $use-definition-list {
+  @if $enable-definition-list {
     dt {
       display: block;
       font-weight: bold;
@@ -33,14 +33,14 @@
   }
 
   // Strikethrough
-  @if $use-strikethrough {
+  @if $enable-strikethrough {
     s, del {
       text-decoration: line-through;
     }
   }
 
   // Sticky Containers
-  @if $use-container-sticky {
+  @if $enable-container-sticky {
     .sticky {
       position: sticky;
       top: 0;
@@ -56,7 +56,7 @@
   }
 
   // Flex Containers
-  @if $use-container-flex {
+  @if $enable-container-flex {
     .flex {
       @extend %flex;
       justify-content: space-around;
@@ -64,7 +64,7 @@
   }
 
   // Columns
-  @if $use-container-columns {
+  @if $enable-container-columns {
     .columns {
       @extend %flex;
 
@@ -77,7 +77,7 @@
   }
 
   // Left and Right Aligned Containers
-  @if $use-container-float {
+  @if $enable-container-float {
     .float.left {
       float: left;
     }
@@ -88,7 +88,7 @@
   }
 
   // Left and Right Text Aligned Containers
-  @if $use-container-text-align {
+  @if $enable-container-align {
     .left.align,
     .left.align p {
       text-align: left;
@@ -106,7 +106,7 @@
   }
 
   // Columns
-  @if $use-container-columns {
+  @if $enable-container-columns {
     $column-count: 2;
     @while $column-count <= $container-columns-max-count {
       .#{number($column-count)}.columns > *:nth-child(#{$column-count}n + 1) {
@@ -122,9 +122,9 @@
   }
 
   // Syntax Highlighting
-  @if $use-syntax-highlighting {
+  @if $enable-syntax-highlighting {
     pre code {
-      @each $selector, $color in $syntax-highlighting {
+      @each $selector, $color in $syntax-highlighting-colors {
         #{$selector} {
           color: #{$color};
         }

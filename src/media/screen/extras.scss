@@ -2,14 +2,14 @@
 
 @mixin screen-extras {
   // Manual Page Break
-  @if $page-break-manual {
+  @if $enable-page-break-manual {
     hr {
       display: none;
     }
   }
 
   // Tables
-  @if $use-table {
+  @if $enable-tables {
     table {
       th, td {
         padding: $spacing-medium $spacing-large;
