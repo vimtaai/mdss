@@ -139,11 +139,21 @@
       margin: $column-spacing;
     }
 
-    @media (min-width: $breakpoint-small) {
-      $column-count: 3;
+    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
+      $column-count: 2;
       @while $column-count <= $container-columns-max {
+        $actual-column-count: ceil($column-count / 2);
+
         .#{number($column-count)}.columns > * {
-          width: column-width(ceil($column-count / 2), $column-spacing);
+          width: column-width($actual-column-count, $column-spacing);
+
+          &:nth-child(#{$actual-column-count}n + 1) {
+            margin-left: 0;
+          }
+
+          &:nth-child(#{$actual-column-count}n) {
+            margin-right: 0;
+          }
         }
 
         $column-count: $column-count + 1;
@@ -155,6 +165,14 @@
       @while $column-count <= $container-columns-max {
         .#{number($column-count)}.columns > * {
           width: column-width($column-count, $column-spacing);
+
+          &:nth-child(#{$column-count}n + 1) {
+            margin-left: 0;
+          }
+
+          &:nth-child(#{$column-count}n) {
+            margin-right: 0;
+          }
         }
         
         $column-count: $column-count + 1;
