@@ -3,13 +3,17 @@
   @if $use-table {
     table {
       border-collapse: collapse;
-      display: inline-table;
-      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
 
       thead {
         color: $color-primary;
         font-weight: bold;
         text-transform: uppercase;
+      }
+
+      tr:nth-child(even) {
+        background: $table-striped-background;
       }
 
       td, th {
@@ -87,16 +91,32 @@
 
   // Left and Right Text Aligned Containers
   @if $use-container-text-align {
-    .text-left {
+    .text-left,
+    .text-left p {
       text-align: left;
     }
 
-    .text-right {
+    .text-right,
+    .text-right p {
       text-align: right;
     }
 
-    .text-center {
+    .text-center,
+    .text-center p {
       text-align: center;
+    }
+  }
+
+  // Columns
+  @if $use-container-columns {
+    .columns > * {
+      &:first-child {
+        margin-left: 0;
+      }
+    
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 

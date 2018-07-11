@@ -102,6 +102,38 @@
     }
   }
 
+  // Columns
+  @if $use-container-columns {
+    $column-spacing: 2 * $spacing-small;
+
+    .columns > * {
+      margin: $column-spacing;
+    }
+
+    $number-names: ("two", "three", "four", "five", "six", "seven", "eight");
+    @media (min-width: $breakpoint-small) {
+      $column-count: 3;
+      @while $column-count <= $container-columns-max-count {
+        .#{nth($number-names, $column-count - 1)}.columns > * {
+          width: column-width(ceil($column-count / 2), $column-spacing);
+        }
+
+        $column-count: $column-count + 1;
+      }
+    }
+
+    @media (min-width: $breakpoint-large) {
+      $column-count: 2;
+      @while $column-count <= $container-columns-max-count {
+        .#{nth($number-names, $column-count - 1)}.columns > * {
+          width: column-width($column-count, $column-spacing);
+        }
+        
+        $column-count: $column-count + 1;
+      }
+    }
+  }
+
   // Custom Containers (Cards)
   @each $name, $color in $container-custom {
     .#{$name} {

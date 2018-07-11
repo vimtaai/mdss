@@ -75,7 +75,7 @@ function helpCommand () {
 }
 
 function buildCommand (options) {
-  console.log('Building MDSS...');
+  console.log('Building MDSS...\n');
 
   const dev = options.dev || false;
   const mediaTypes = ['screen', 'print'];
@@ -90,6 +90,7 @@ function buildCommand (options) {
   if (currentTargets.includes('bundle')) {
     console.log(`Bundled Media:\t ${bundleMedia.join(', ')}`);
   }
+  console.log();
 
   let configDir, outputDir;
 
@@ -98,12 +99,13 @@ function buildCommand (options) {
     configDir = defaultConfigDir;
     outputDir = defaultOutputDir;
   } else {
-    console.log(`> mdss.json ->`);
+    console.log(`[READ] mdss.json`);
     ({configDir, outputDir} = jsonfile.readFileSync('mdss.json'));
   }
 
   console.log(`Config Dir:\t ${configDir}`);
   console.log(`Output Dir:\t ${outputDir}`);
+  console.log();
 
   mkdirp.sync(configDir);
   mkdirp.sync(outputDir);
@@ -119,7 +121,7 @@ function buildCommand (options) {
     const outputFileName = `mdss${Array.isArray(media) ? `` : `-${media}`}${dev ? `` : `.min`}.css`;
     const outputFile = path.join(localDir, outputDir, outputFileName);
 
-    console.log(`> ${entryFile} -> ${outputFile}`);
+    console.log(`[CREATE] ${outputFile}`);
     const result = sass.renderSync({
       data: sassCode,
       includePaths: [
@@ -151,13 +153,13 @@ function customizeCommand (options) {
   mkdirp.sync(configDir);
   mkdirp.sync(outputDir);
 
-  console.log(`> unlink mdss.json`);
+  console.log(`[DELETE] mdss.json`);
   if (fs.existsSync('mdss.json')) {
     fs.unlinkSync('mdss.json');
   }
 
   if (options.configDir !== defaultConfigDir || options.outputDir !== defaultOutputDir) {
-    console.log(`> config -> mdss.json`);
+    console.log(`[CREATE] mdss.json`);
     const config = {
       configDir: options.configDir,
       outputDir: options.outputDir

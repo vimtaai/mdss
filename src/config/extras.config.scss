@@ -10,16 +10,23 @@ $page-break-avoid-after: h1;
 
 // Markdown Extensions
 $use-table: true;
+$table-striped-background: $color-gray-light;
 $use-definition-list: true;
 $use-strikethrough: true;
 
 // Markdown Containers
 $use-container-float: true;
+
 $use-container-text-align: true;
+
 $use-container-sticky: true;
+
 $use-container-flex: true;
+
 $use-container-columns: true;
 $container-columns-max-count: 4;
+
+$use-container-custom: true;
 $container-custom: (
   "primary": $color-primary,
   "accent": $color-accent
