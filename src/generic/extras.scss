@@ -141,7 +141,7 @@
 
     @media (min-width: $breakpoint-small) {
       $column-count: 3;
-      @while $column-count <= $container-columns-max-count {
+      @while $column-count <= $container-columns-max {
         .#{number($column-count)}.columns > * {
           width: column-width(ceil($column-count / 2), $column-spacing);
         }
@@ -152,7 +152,7 @@
 
     @media (min-width: $breakpoint-large) {
       $column-count: 2;
-      @while $column-count <= $container-columns-max-count {
+      @while $column-count <= $container-columns-max {
         .#{number($column-count)}.columns > * {
           width: column-width($column-count, $column-spacing);
         }

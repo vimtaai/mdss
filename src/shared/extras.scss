@@ -108,7 +108,7 @@
   // Columns
   @if $enable-container-columns {
     $column-count: 2;
-    @while $column-count <= $container-columns-max-count {
+    @while $column-count <= $container-columns-max {
       .#{number($column-count)}.columns > *:nth-child(#{$column-count}n + 1) {
         margin-left: 0;
       }
