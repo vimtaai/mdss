@@ -53,13 +53,13 @@
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   // Flex Containers
   @if $use-container-flex {
     .flex {
       @extend %flex;
+      justify-content: space-around;
     }
   }
 
@@ -78,43 +78,46 @@
 
   // Left and Right Aligned Containers
   @if $use-container-float {
-    .left {
+    .float.left {
       float: left;
     }
 
-    .right {
+    .float.right {
       float: right;
     }
   }
 
   // Left and Right Text Aligned Containers
   @if $use-container-text-align {
-    .text-left,
-    .text-left p {
+    .left.align,
+    .left.align p {
       text-align: left;
     }
 
-    .text-right,
-    .text-right p {
+    .right.align,
+    .right.align p {
       text-align: right;
     }
 
-    .text-center,
-    .text-center p {
+    .center.align,
+    .center.align p {
       text-align: center;
     }
   }
 
   // Columns
   @if $use-container-columns {
-    .columns > * {
-      &:first-child {
+    $column-count: 2;
+    @while $column-count <= $container-columns-max-count {
+      .#{number($column-count)}.columns > *:nth-child(#{$column-count}n + 1) {
         margin-left: 0;
       }
-    
-      &:last-child {
+
+      .#{number($column-count)}.columns > *:nth-child(#{$column-count}n) {
         margin-right: 0;
       }
+      
+      $column-count: $column-count + 1;
     }
   }
 

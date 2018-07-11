@@ -6,8 +6,6 @@
 
   // Paragraphs
   p {
-    text-indent: 0;
-
     &:first-child {
       margin-top: 0;
     }
@@ -30,7 +28,6 @@
 
     p {
       display: inline;
-      text-indent: 0;
     }
   }
 
@@ -40,7 +37,6 @@
 
     p {
       display: inline;
-      text-indent: 0;
     }
   }
 

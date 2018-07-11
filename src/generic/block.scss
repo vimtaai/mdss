@@ -20,10 +20,6 @@
   p {
     margin: $paragraph-margin 0;
     text-align: $paragraph-align;
-
-    & + p {
-      text-indent: $paragraph-indent;
-    }
   }
 
   // lists
