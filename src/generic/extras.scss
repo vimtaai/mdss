@@ -2,62 +2,64 @@
 
 @mixin generic-extras {
   // Numbered Elements
-  $counters: "";
+  @if $enable-auto-numbering {
+    $counters: "";
 
-  $level: 1;
-  @while $level <= length($auto-numbering-headings) {
-    $heading: nth($auto-numbering-headings, $level);
-    $counters: #{$counters} #{$heading};
+    $level: 1;
+    @while $level <= length($auto-numbering-headings) {
+      $heading: nth($auto-numbering-headings, $level);
+      $counters: #{$counters} #{$heading};
 
-    $counter-resets: "";
-    @if $level < length($auto-numbering-headings) {
-      @for $i from $level + 1 through length($auto-numbering-headings) {
-        $counter-resets: #{$counter-resets} #{nth($auto-numbering-headings, $i)}
+      $counter-resets: "";
+      @if $level < length($auto-numbering-headings) {
+        @for $i from $level + 1 through length($auto-numbering-headings) {
+          $counter-resets: #{$counter-resets} #{nth($auto-numbering-headings, $i)}
+        }
+      }
+
+      $label: "";
+      @for $i from 1 through $level {
+        $label: #{$label} counter(#{nth($auto-numbering-headings, $i)});
+        @if ($i != $level) {
+          $label: #{$label} '"."'
+        } @else {
+          $label: #{$label} '"\00a0"'
+        }
+      }
+
+      #{$heading} {
+        position: relative;
+        counter-increment: #{$heading};
+        counter-reset: #{$counter-resets};
+      }
+
+      #{$heading}::before {
+        @include to-left-margin {
+          content: #{$label};
+        }
+      }
+
+      $level: $level + 1;
+    }
+
+    @each $element in $auto-numbering-elements {
+      $counters: #{$counters} #{$element};
+
+      #{$element} {
+        position: relative;
+        counter-increment: #{$element};
+      }
+
+      #{$element}::before {
+        @include to-right-margin {
+          content: "(" counter(#{$element}) ")";
+        }
       }
     }
 
-    $label: "";
-    @for $i from 1 through $level {
-      $label: #{$label} counter(#{nth($auto-numbering-headings, $i)});
-      @if ($i != $level) {
-        $label: #{$label} '"."'
-      } @else {
-        $label: #{$label} '"\00a0"'
-      }
+    @include on-root {
+      counter-reset: #{$counters};
     }
-
-    #{$heading} {
-      position: relative;
-      counter-increment: #{$heading};
-      counter-reset: #{$counter-resets};
-    }
-
-    #{$heading}::before {
-      @include to-left-margin {
-        content: #{$label};
-      }
-    }
-
-    $level: $level + 1;
-  }
-
-  @each $element in $auto-numbering-elements {
-    $counters: #{$counters} #{$element};
-
-    #{$element} {
-      position: relative;
-      counter-increment: #{$element};
-    }
-
-    #{$element}::before {
-      @include to-right-margin {
-        content: "(" counter(#{$element}) ")";
-      }
-    }
-  }
-
-  @include on-root {
-    counter-reset: #{$counters};
   }
 
   // Tables
@@ -103,27 +105,29 @@
   }
 
   // Custom Containers (Cards)
-  @each $name, $color in $container-card-light-list {
-    .#{$name} {
-      @include card(
-        $root-font,
-        $root-font-size,
-        $root-font-color,
-        desaturate(lighten($color, 45%), 25%),
-        $color
-      );
+  @if $enable-container-card {
+    @each $name, $color in $container-card-light-list {
+      .#{$name} {
+        @include card(
+          $root-font,
+          $root-font-size,
+          $root-font-color,
+          desaturate(lighten($color, 45%), 25%),
+          $color
+        );
+      }
     }
-  }
 
-  @each $name, $color in $container-card-dark-list {
-    .#{$name} {
-      @include card(
-        $root-font,
-        $root-font-size,
-        $color-white,
-        $color,
-        $color
-      );
+    @each $name, $color in $container-card-dark-list {
+      .#{$name} {
+        @include card(
+          $root-font,
+          $root-font-size,
+          $color-white,
+          $color,
+          $color
+        );
+      }
     }
   }
 
