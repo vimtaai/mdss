@@ -139,6 +139,12 @@
       margin: $column-spacing;
     }
 
+    @media (max-width: $breakpoint-small - 1) {
+      .columns > * {
+        margin: $column-spacing 0;
+      }
+    }
+
     @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
