@@ -4,7 +4,9 @@
   @include font-color($font-color);
   @include background($background);
 
-  border-left: solid $border-color $spacing-small;
+  @if ($border-color != none) {
+    border-left: solid $border-color $spacing-small;
+  }
   margin: $spacing-medium 0;
   padding: $card-padding;
   break-inside: avoid;
