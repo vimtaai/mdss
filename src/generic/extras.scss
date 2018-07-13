@@ -85,14 +85,6 @@
     }
   }
 
-  // Sticky Containers
-  @if $enable-container-sticky {
-    .sticky {
-      background: $root-background;
-      padding: $spacing-medium 0;
-    }
-  }
-
   // Left and Right Aligned Containers
   @if $enable-container-float {
     .left {
@@ -101,33 +93,6 @@
 
     .right {
       margin-left: $spacing-medium;
-    }
-  }
-
-  // Custom Containers (Cards)
-  @if $enable-container-card {
-    @each $name, $color in $container-card-light-list {
-      .#{$name} {
-        @include card(
-          $root-font,
-          $root-font-size,
-          $root-font-color,
-          desaturate(lighten($color, 45%), 25%),
-          $color
-        );
-      }
-    }
-
-    @each $name, $color in $container-card-dark-list {
-      .#{$name} {
-        @include card(
-          $root-font,
-          $root-font-size,
-          $color-white,
-          $color,
-          none
-        );
-      }
     }
   }
 
@@ -183,6 +148,41 @@
         
         $column-count: $column-count + 1;
       }
+    }
+  }
+
+  // Custom Containers (Cards)
+  @if $enable-container-card {
+    @each $name, $color in $container-card-light-list {
+      .#{$name} {
+        @include card(
+          $root-font,
+          $root-font-size,
+          $root-font-color,
+          desaturate(lighten($color, 45%), 25%),
+          $color
+        );
+      }
+    }
+
+    @each $name, $color in $container-card-dark-list {
+      .#{$name} {
+        @include card(
+          $root-font,
+          $root-font-size,
+          $color-white,
+          $color,
+          none
+        );
+      }
+    }
+  }
+
+  // Sticky Containers
+  @if $enable-container-sticky {
+    .sticky {
+      background: $root-background;
+      padding: $spacing-medium 0;
     }
   }
 }

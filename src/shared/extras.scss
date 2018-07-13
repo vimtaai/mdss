@@ -39,12 +39,32 @@
     }
   }
 
-  // Sticky Containers
-  @if $enable-container-sticky {
-    .sticky {
-      position: sticky;
-      top: 0;
-      z-index: 9;
+  // Left and Right Text Aligned Containers
+  @if $enable-container-align {
+    .left.align,
+    .left.align p {
+      text-align: left;
+    }
+
+    .right.align,
+    .right.align p {
+      text-align: right;
+    }
+
+    .center.align,
+    .center.align p {
+      text-align: center;
+    }
+  }
+
+  // Left and Right Aligned Containers
+  @if $enable-container-float {
+    .float.left {
+      float: left;
+    }
+
+    .float.right {
+      float: right;
     }
   }
 
@@ -76,32 +96,12 @@
     }
   }
 
-  // Left and Right Aligned Containers
-  @if $enable-container-float {
-    .float.left {
-      float: left;
-    }
-
-    .float.right {
-      float: right;
-    }
-  }
-
-  // Left and Right Text Aligned Containers
-  @if $enable-container-align {
-    .left.align,
-    .left.align p {
-      text-align: left;
-    }
-
-    .right.align,
-    .right.align p {
-      text-align: right;
-    }
-
-    .center.align,
-    .center.align p {
-      text-align: center;
+  // Sticky Containers
+  @if $enable-container-sticky {
+    .sticky {
+      position: sticky;
+      top: 0;
+      z-index: 9;
     }
   }
 
