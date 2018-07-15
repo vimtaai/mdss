@@ -28,9 +28,9 @@ The stylesheets include several visual extras by default in addition to standard
 
 - Automatic nested numbering of headings **(available: all media; default: level 1 and 2 heading)**
 - Automatic numbering of specified elements (e.g. images, tables) **(available: all media; default: no elements)**
-- Automatic URL insertion after links **(available: print; default: enabled)**
+- Automatic URL insertion after links **(available: print; default: disabled)**
 - Replace horizontal rules/thematic breaks with page breaks **(available: print; default: enabled)**
-- Automatic page breaks before specified elements **(available: print; default: level 2 heading)**
+- Automatic page breaks before specified elements **(available: print; default: no elements)**
 - Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
 
 ### Markdown Extensions
@@ -41,12 +41,13 @@ Various Markdown Extensions that extend the capabilities of the CommonMark compl
 - Definition lists
 - Strikethrough
 - Containers
+  + Containers with text align **(default: enabled)**
+  + Floated containers **(default: enabled)**
+  + Non-printing containers **(default: enabled)**
   + Flex containers **(default: enabled)**
   + Columned containers **(default: 2-4 columns enabled)**
-  + Floated containers **(default: enabled)**
-  + Containers with text align **(default: enabled)**
-  + Sticky containers **(default: enabled)**
-  + Custom, colored containers (light and dark background) **(default: error, warning, success, info with light background, primary and accent for both light and dark background)**
+  + Custom, colored containers (light and dark background) **(default: primary and accent for both light and dark background)**
+  + Sticky containers **(default: disabled)**
 
 To use these features you need a compiler that supports transforming their syntax (e.g. _pandoc_ or _markdown-it_).
 

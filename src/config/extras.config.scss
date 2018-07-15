@@ -2,10 +2,10 @@
 $enable-auto-numbering: true;
   $auto-numbering-headings: h2, h3;
   $auto-numbering-elements: ();
-$enable-print-urls: true;
+$enable-print-urls: false;
 $enable-page-break-manual: true;
 $enable-page-break-auto: true;
-  $page-break-auto-insert-before: h2;
+  $page-break-auto-insert-before: ();
   $page-break-auto-avoid-after: h1;
 
 // Markdown Extensions
@@ -17,7 +17,7 @@ $enable-strikethrough: true;
 // Markdown Containers
 $enable-container-align: true;
 $enable-container-float: true;
-$enable-container-sticky: true;
+$enable-container-no-print: true;
 $enable-container-flex: true;
 $enable-container-columns: true;
   $container-columns-max: 4;
@@ -30,6 +30,7 @@ $enable-container-card: true;
     "primary-inverted": $color-primary,
     "accent-inverted": $color-accent
   );
+$enable-container-sticky: false;
 
 // Syntax Highlighting
 $enable-syntax-highlighting: true;
