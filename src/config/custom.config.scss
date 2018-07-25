@@ -1,9 +1,17 @@
-@mixin custom {
-  // You can put your custom (S)CSS code here.
-  // You can use any variable declared in the other configuration files
-
+// You can put your custom (S)CSS code here.
+// You can use any variable declared in the other configuration files
+@mixin custom-generic {
+  // Styles here will be applied to both screen and print
   
+}
 
-  // End of custom styles
+@mixin custom-screen {
+  // Styles here will be applied only to screen
+
+}
+
+@mixin custom-print {
+  // Styles here will be applied only to print
+  
 }
 
