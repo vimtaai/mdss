@@ -71,14 +71,12 @@ To create your own build you have to clone this repository, edit the configurati
 git clone https://github.com/vimtaai/mdss
 ```
 
-To create a bundled, minified build run the `npm run build` command. This will create a combined stylesheet with both _screen_ and _print_ styles. Individual builds for each media type can be created with `npm run build:all`. This command creates four stylesheet files, one for each media and one bundled build.
+To create a bundled, minified build run the `npm run build` command. This will create three stylesheet files, one for each media and one bundled build for both _screen_ and _print_.
 
 ```bash
 npm install
 
 npm run build
-# or
-npm run build:all
 ```
 
 To use **MDSS** only to format each media individually set the `media` property of the `link` tag.

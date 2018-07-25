@@ -10,12 +10,9 @@
   "bugs": "https://github.com/vimtaai/mdss/issues",
   "homepage": "https://github.com/vimtaai/mdss#readme",
   "scripts": {
-    "build": "node bin/mdss build",
-    "build:dev": "node bin/mdss build --dev",
-    "build:all": "node bin/mdss build --all",
-    "build:all:dev": "node bin/mdss build --all --dev",
-    "prepare": "npm run build:all && npm run build:all:dev",
-    "postinstall": "npm run build:all"
+    "build": "node bin/mdss build --all",
+    "build:dev": "node bin/mdss build --dev --all",
+    "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
     "commander": "^2.15.1",
