@@ -4,17 +4,6 @@
     text-transform: uppercase;
   }
 
-  // Paragraphs
-  p {
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   // Lists
   ol, ul {
     ol, ul {

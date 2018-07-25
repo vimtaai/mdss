@@ -104,16 +104,22 @@
       margin: $column-spacing;
     }
 
+    // Small
     @media (max-width: $breakpoint-small - 1) {
       .columns > * {
         margin: $column-spacing 0;
       }
     }
 
+    // Medium
     @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
-        $actual-column-count: ceil($column-count / 2);
+        $actual-column-count: $column-count;
+        
+        @if ($column-count > 2) {
+          $actual-column-count: ceil($column-count / 2);
+        }
 
         .#{number($column-count)}.columns > * {
           width: column-width($actual-column-count, $column-spacing);
@@ -131,6 +137,7 @@
       }
     }
 
+    // Large
     @media (min-width: $breakpoint-large) {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
