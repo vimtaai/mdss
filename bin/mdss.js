@@ -15,8 +15,8 @@ const mdssDir = path.join(__dirname, '..');
 const mdssConfigDir = path.join(mdssDir, 'src', 'config');
 const localDir = path.resolve();
 
-const defaultConfigDir = 'mdss/config';
-const defaultOutputDir = 'mdss/build';
+const defaultConfigDir = path.join(localDir, 'mdss', 'config');
+const defaultOutputDir = path.join(localDir, 'mdss', 'build');
 
 // Script description
 
@@ -41,6 +41,7 @@ program
 
 program
   .command('customize')
+  .alias('configure')
   .description('Set up MDSS for customization')
   .option('-c --config-dir <dir>', 'set configuration directory', defaultConfigDir)
   .option('-o --output-dir <dir>', 'set output directory', defaultOutputDir)
@@ -117,7 +118,6 @@ function buildCommand (options) {
       $MEDIA: ${Array.isArray(media) ? media.join(' ') : media};
       @import "entry/index";
     `;
-    const entryFile = path.join(mdssDir, 'src', 'entry', 'index.scss');
     const outputFileName = `mdss${Array.isArray(media) ? `` : `-${media}`}${dev ? `` : `.min`}.css`;
     const outputFile = path.join(localDir, outputDir, outputFileName);
 
@@ -125,8 +125,8 @@ function buildCommand (options) {
     const result = sass.renderSync({
       data: sassCode,
       includePaths: [
-        path.join(mdssDir, 'src'),
-        path.join(mdssDir, 'src', 'config')
+        configDir,
+        path.join(mdssDir, 'src')
       ],
       outputStyle: 'expanded',
       outFile: outputFile
