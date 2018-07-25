@@ -55,3 +55,29 @@
   right: calc(100% + #{$spacing-medium});
   @content;
 }
+
+@mixin full-background($background) {
+  background: $background;
+  display: block;
+  padding: $spacing-medium 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    background: $background;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50vw;
+  }
+
+  &::before {
+    right: 100%;
+  }
+
+  &::after {
+    left: 100%;
+  }
+}

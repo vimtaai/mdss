@@ -1,5 +1,6 @@
 @function number($number) {
   $number-names: ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
+
   @return nth($number-names, $number);
 }
 
@@ -12,4 +13,8 @@
   $space-per-column: #{2 * ($column-count - 1) / ($column-count) * $column-spacing};
 
   @return calc(#{$full-width} - #{$space-per-column});
+}
+
+@function root-margin() {
+  @return calc(50% - #{$root-max-width / 2} + #{$root-margin-x});
 }

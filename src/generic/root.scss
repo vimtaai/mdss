@@ -1,14 +1,17 @@
 @mixin generic-root {
   background: $root-background;
-  box-sizing: border-box;
   color: $root-font-color;
   font-family: $root-font;
   font-size: $root-font-size;
   line-height: $root-line-height;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: $root-margin-y root-margin();
   min-width: $root-min-width;
+  
+  @if (unit($root-max-width) == unit($root-margin-x)) {
+    @media (max-width: #{$root-max-width + (2 * $root-margin-x)}) {
+      padding: $root-margin-y $root-margin-x;
+    }
+  }
 
   > * {
     max-width: $root-max-width;
