@@ -36,15 +36,15 @@
   // Blockquotes
   blockquote {
     @include card(
-      $quote-font, 
-      $quote-font-size, 
-      $quote-font-color, 
-      $quote-background, 
+      $quote-font,
+      $quote-font-size,
+      $quote-font-color,
+      $quote-font-weight,
+      $quote-font-style,
+      $quote-background,
       $quote-border-color
     );
-      
-    font-style: $quote-font-style;
-    font-weight: $quote-font-weight;
+    
     margin: $spacing-medium 0;
     padding: $spacing-medium $spacing-huge;
   }
@@ -55,12 +55,12 @@
       $code-font,
       $code-font-size,
       $code-font-color,
+      $code-font-weight,
+      $code-font-style,
       $code-background,
       $code-border-color
     );
 
-    font-style: $code-font-style;
-    font-weight: $code-font-weight;
     line-height: $code-line-height;
     margin: $spacing-medium 0;
   }

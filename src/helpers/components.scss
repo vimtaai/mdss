@@ -1,7 +1,9 @@
-@mixin card($font, $font-size, $font-color, $background, $border-color) {
+@mixin card($font, $font-size, $font-color, $font-weight, $font-style, $background, $border-color) {
   @include font($font);
   @include font-size($font-size);
   @include font-color($font-color);
+  @include font-weight($font-weight);
+  @include font-style($font-style);
   @include background($background);
 
   @if ($border-color != none) {

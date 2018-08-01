@@ -16,6 +16,18 @@
   }
 }
 
+@mixin font-weight($weight) {
+  @if ($weight != normal) {
+    font-weight: $weight;
+  }
+}
+
+@mixin font-style($style) {
+  @if ($style != normal) {
+    font-weight: $style;
+  }
+}
+
 @mixin background($background) {
   @if ($background != $root-background) {
     background: $background;
