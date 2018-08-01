@@ -48,7 +48,7 @@ $code-font-color: $root-font-color;
 $code-font-weight: normal;
 $code-font-style: normal;
 $code-background: $color-gray-light;
-$code-border-color: $color-gray-medium;
+$code-border-color: none;
 $code-line-height: 1.5;
 
 // Links
@@ -66,6 +66,3 @@ $breakpoint-large: 660px;
 
 // Border Radius
 $border-radius: 3px;
-
-// Cards
-$card-padding: $spacing-medium;

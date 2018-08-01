@@ -68,7 +68,7 @@
       margin: $spacing-medium auto;
 
       thead {
-        border-bottom: solid $root-font-color 1px;
+        border-bottom: solid $color-primary 2px;
         @include font($heading-font);
       }
   
@@ -160,20 +160,18 @@
 
   // Custom Containers (Cards)
   @if $enable-container-card {
-    @each $name, $color in $container-card-light-list {
-      .#{$name} {
+    @each $name, $color in $container-card-list {
+      .#{$name}.card {
         @include card(
           $root-font,
           $root-font-size,
           $root-font-color,
-          desaturate(lighten($color, 45%), 25%),
+          none,
           $color
         );
       }
-    }
 
-    @each $name, $color in $container-card-dark-list {
-      .#{$name} {
+      .#{$name}.dark.card {
         @include card(
           $root-font,
           $root-font-size,
@@ -190,6 +188,13 @@
     .sticky {
       background: $root-background;
       padding: $spacing-medium 0;
+    }
+  }
+
+  // Syntax Highlighting
+  @if $enable-syntax-highlighting {
+    .hljs {
+      padding: $spacing-large;
     }
   }
 }

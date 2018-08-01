@@ -5,10 +5,16 @@
   @include background($background);
 
   @if ($border-color != none) {
-    border-left: solid $border-color $spacing-small;
+    border: solid $border-color 2px;
   }
-  margin: $spacing-medium 0;
-  padding: $card-padding;
+  
+  border-radius: $border-radius;
   break-inside: avoid;
+  margin: $spacing-medium 0;
+  padding: $spacing-large;
   page-break-inside: avoid;
+
+  p {
+    margin: 0;
+  }
 }
