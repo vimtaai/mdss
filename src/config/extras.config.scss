@@ -36,15 +36,15 @@ $enable-container-sticky: false;
 $enable-syntax-highlighting: true;
   $syntax-highlighting-colors: (
     ".hljs-comment": $color-brown,        // Comments
-    ".hljs-keyword": $color-blue,         // Keywords
+    ".hljs-keyword, .hljs-built_in": $color-blue,         // Keywords
     ".hljs-literal": $color-blue,         // Literals (e.g. null, true, false)
     ".hljs-string": $color-purple,        // Strings
     ".hljs-subst": $color-violet,         // String placeholders (e.g. ${})
     ".hljs-number": $color-purple,        // Numbers
     ".hljs-regexp": $color-violet,        // Regular expressions
     ".hljs-title": $color-green,          // Function/Class names
-    ".hljs-tag .hljs-name": $color-blue,  // HTML/XML tag names
-    ".hljs-tag .hljs-attr": $color-green  // HTML/XML attribute names
+    ".hljs-tag, .hljs-name": $color-blue, // HTML/XML tag names
+    ".hljs-attr": $color-green            // HTML/XML attribute names
   );
 
   // Syntax Highlighting for Pandoc

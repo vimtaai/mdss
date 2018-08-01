@@ -1,18 +1,18 @@
 // Colors
 $color-white: hsl(0, 0%, 100%);
-$color-gray-light: hsl(215, 25%, 95%);
-$color-gray-medium: hsl(215, 25%, 85%);
+$color-gray-light: hsla(215, 25%, 0%, 0.05);
+$color-gray-medium: hsla(215, 25%, 0%, 0.2);
 $color-gray-dark: hsl(215, 25%, 15%);
 $color-black: hsl(0, 0%, 0%);
 $color-red: hsl(0, 75%, 45%);
-$color-green: hsl(150, 60%, 40%);
-$color-blue: hsl(215, 60%, 45%);
-$color-yellow: hsl(40, 90%, 50%);
-$color-purple: hsl(280, 50%, 45%);
-$color-violet: hsl(330, 60%, 50%);
-$color-brown: hsl(25, 30%, 50%);
-$color-primary: $color-blue;
-$color-accent: $color-brown;
+$color-green: hsl(150, 60%, 45%);
+$color-blue: hsl(200, 70%, 45%);
+$color-yellow: hsl(50, 90%, 45%);
+$color-purple: hsl(280, 40%, 45%);
+$color-violet: hsl(330, 50%, 45%);
+$color-brown: hsl(20, 40%, 45%);
+$color-primary: hsl(215, 50%, 40%);
+$color-accent: hsl(215, 20%, 45%);
 
 // Fonts
 $font-serif: "Noticia Text", "Cambria", "Times New Roman", "Times", serif;

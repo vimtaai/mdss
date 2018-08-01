@@ -37,12 +37,13 @@
   blockquote {
     @include card(
       $quote-font, 
-      $quote-font-color, 
       $quote-font-size, 
+      $quote-font-color, 
       $quote-background, 
       $quote-border-color
     );
       
+    font-style: $quote-font-style;
     font-weight: $quote-font-weight;
     margin: $spacing-medium 0;
     padding: $spacing-medium $spacing-huge;
@@ -58,6 +59,7 @@
       $code-border-color
     );
 
+    font-style: $code-font-style;
     font-weight: $code-font-weight;
     line-height: $code-line-height;
     margin: $spacing-medium 0;

@@ -6,6 +6,7 @@
     @include background($link-background);
     
     color: $link-font-color;
+    font-style: $link-font-style;
     font-weight: $link-font-weight;
   }
 
@@ -17,6 +18,7 @@
     @include background($code-background);
     
     border-radius: $border-radius;
+    font-style: $code-font-style;
     font-weight: $code-font-weight;
     padding: $spacing-small;
   }
