@@ -3,7 +3,7 @@ $root-font: $font-serif;
 $root-font-size: 11pt;
 $root-font-color: $color-black;
 $root-background: $color-white;
-$root-line-height: 1.67;
+$root-line-height: 1.41;
 
 // Spacing
 $spacing-small: 3pt;
@@ -22,7 +22,7 @@ $heading-font: $font-sans-serif;
 $heading-font-size: (17pt, 14pt, 13pt, 12pt);
 $heading-font-color: ($color-primary, $root-font-color, $root-font-color, $root-font-color);
 $heading-font-weight: (bold, bold, bold, bold);
-$heading-margin: (6pt, 14pt, 8pt, 6pt);
+$heading-margin: (16pt, 14pt, 8pt, 6pt);
 
 // Paragraphs
 $paragraph-align: justify;
@@ -33,29 +33,32 @@ $ordered-list-style: decimal;
 $unordered-list-style: square;
 
 // Blockquotes
-$quote-font: $font-sans-serif;
+$quote-font: $font-serif;
 $quote-font-size: 13pt;
-$quote-font-color: $root-font-color;
-$quote-font-weight: bold;
+$quote-font-color: $color-primary;
+$quote-font-weight: normal;
+$quote-font-style: italic;
 $quote-background: $root-background;
-$quote-border-color: $root-background;
+$quote-border-color: transparent;
 
 // Code
 $code-font: $font-monospace;
 $code-font-size: 10pt;
 $code-font-color: $root-font-color;
 $code-font-weight: normal;
+$code-font-style: normal;
 $code-background: $color-gray-light;
 $code-border-color: $color-gray-medium;
-$code-line-height: 1.25;
+$code-line-height: 1.5;
 
 // Links
 $link-font: $root-font;
 $link-font-size: $root-font-size;
 $link-font-color: $root-font-color;
 $link-font-weight: bold;
+$link-font-style: normal;
 $link-background: $root-background;
-$link-border-color: $link-font-color;
+$link-border-color: transparent;
 
 // Breakpoints
 $breakpoint-small: 130mm;
