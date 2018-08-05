@@ -1,7 +1,7 @@
 # MDSS 
 
 [![NPM version 2.0.0](https://img.shields.io/badge/npm-2.0.0-blue.svg)](https://www.npmjs.com/package/mdss)
-[![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![JavaScript Semi-Standard Style](https://img.shields.io/badge/code_style-semi-standard-brightgreen.svg)](https://standardjs.com)
 ![MIT license](https://img.shields.io/badge/license-MIT-green.svg)
 
 > Stylesheets for displaying and printing Markdown documents

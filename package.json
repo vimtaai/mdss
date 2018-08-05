@@ -14,12 +14,10 @@
     "build:dev": "node bin/mdss build --dev --all",
     "prepare": "npm run build && npm run build:dev"
   },
-  "dependencies": {
-    "commander": "^2.15.1",
-    "copy": "^0.3.2",
+  "devDependencies": {
+    "commander": "^2.17.0",
     "csso": "^3.5.1",
-    "jsonfile": "^4.0.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.2"
   }
 }
