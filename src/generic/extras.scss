@@ -161,6 +161,20 @@
   // Custom Containers (Cards)
   @if $enable-container-card {
     @each $name, $color in $container-card-list {
+      $light-color: $color-white;
+      $dark-color: $root-font-color;
+
+      @if lightness($root-font-color) > 50 {
+        $light-color: $root-font-color;
+        $dark-color: $color-black;
+      }
+
+      $font-color: $light-color;
+    
+      @if lightness($color) > 50 {
+        $font-color: $dark-color;
+      }
+
       .#{$name}.card {
         @include card(
           $root-font,
@@ -177,7 +191,7 @@
         @include card(
           $root-font,
           $root-font-size,
-          $color-white,
+          $font-color,
           normal,
           normal,
           $color,

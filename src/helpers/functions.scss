@@ -14,7 +14,3 @@
 
   @return calc(#{$full-width} - #{$space-per-column});
 }
-
-@function root-margin() {
-  @return calc(50% - #{$root-max-width / 2} + #{$root-margin-x});
-}
