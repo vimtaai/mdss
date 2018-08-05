@@ -13,10 +13,12 @@
   border-radius: $border-radius;
   break-inside: avoid;
   margin: $spacing-medium 0;
+  overflow: auto;
   padding: $spacing-large;
   page-break-inside: avoid;
 
-  p {
+  p:first-child,
+  p:last-child {
     margin: 0;
   }
 }
