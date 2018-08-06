@@ -125,10 +125,20 @@ function commandBuild (options) {
         path.join(mdssDir, 'src')
       ],
       outputStyle: 'expanded',
-      outFile: outputFile
+      outFile: outputFile,
+      sourceMap: true
     });
 
-    const css = (config.dev ? result.css : csso.minify(result.css).css);
+    let css;
+
+    if (config.dev) {
+      css = result.css;
+      console.log(`[CREATE] ${outputFile}.map`);
+      fs.writeFileSync(outputFile + '.map', result.map);
+    } else {
+      const minified = csso.minify(result.css);
+      css = minified.css;
+    }
     fs.writeFileSync(outputFile, css);
   }
 }
