@@ -32,6 +32,7 @@ The stylesheets include several visual extras by default in addition to standard
 - Replace horizontal rules/thematic breaks with page breaks **(available: print; default: enabled)**
 - Automatic page breaks before specified elements **(available: print; default: no elements)**
 - Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
+- Print only formatted area **(available: print, default: disabled)**
 
 ### Markdown Extensions
 
@@ -96,13 +97,13 @@ Most visual aspects (like color, sizes, spacing) can be configured. The `src/con
 
 You can also enable/disable all extra features using the `src/config/extras.config.scss` file. External resources (e.g. fonts) can be imported by adding them to the `src/config/external.config.scss`.
 
-**MDSS** supports defining a root selector for styling (`src/config/shared.config.scss`). If set, only elements inside the root selector get affected by the stylesheet. By default there is no root selector thus the entire document gets formatted.
+**MDSS** supports defining a root selector for styling (`src/config/shared.config.scss`). If set, only elements inside the root selector get affected by the stylesheet. By default there is no root selector thus the entire document gets formatted. You can also configure the stylesheet to print only the content of the root selector.
 
 Configuration files include the following options:
 
 File                   | Options
 -----------------------|--------------------------------------------
-`custom.config.scss`   | custom styles
+`custom.config.scss`   | custom styles for each media
 `external.config.scss` | external imports (e.g. fonts)
 `extras.config.scss`   | enable/disable and configure extra features
 `print.config.scss`    | variables for print styles
@@ -111,7 +112,7 @@ File                   | Options
 
 ## Advanced Usage
 
-**MDSS** also comes with a CLI tool that allows advanced usage with more options. The CLI tool is included as the NPM package's `bin` command. You can use the CLI tool with a cloned repository or with an NPM install.
+**MDSS** comes with a CLI tool that allows advanced usage with more options. The CLI tool is included as the NPM package's `bin` command. You can use the CLI tool with a cloned repository or with an NPM install.
 
 ```bash
 # With git clone

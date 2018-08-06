@@ -12,4 +12,10 @@
     @include print-extras;
     @include custom-print;
   }
+
+  @if $print-only-root and $root-selector != "" {    
+    body * {
+      visibility: hidden;
+    }
+  }
 }
