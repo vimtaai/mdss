@@ -1,68 +1,68 @@
 // Root typgraphy
-$root-font: $font-sans-serif;
-$root-font-size: 18px;
-$root-font-color: $color-gray-dark;
-$root-background: $color-white;
-$root-line-height: 1.67;
+$root-font            : $font-sans-serif;
+$root-font-size       : 18px;
+$root-font-color      : $color-gray-dark;
+$root-background      : $color-white;
+$root-line-height     : 1.67;
 
 // Spacing
-$spacing-small: rem(0.25);
-$spacing-medium: rem(0.5);
-$spacing-large: rem(1);
-$spacing-huge: rem(2);
+$spacing-small        : rem(0.25);
+$spacing-medium       : rem(0.5);
+$spacing-large        : rem(1);
+$spacing-huge         : rem(2);
 
 // Root dimensions
-$root-margin-x: $spacing-large;
-$root-margin-y: $spacing-large;
-$root-max-width: 910px;
-$root-min-width: 350px;
+$root-margin-x        : $spacing-large;
+$root-margin-y        : $spacing-large;
+$root-max-width       : 910px;
+$root-min-width       : 350px;
 
 // Headings
-$heading-font: $root-font;
-$heading-font-size: (rem(1.75), rem(1.5), rem(1.2), rem(1));
-$heading-font-color: ($color-primary, $root-font-color, $root-font-color, $root-font-color);
-$heading-font-weight: (bold, bold, bold, bold);
-$heading-margin: (rem(1.5), rem(1.2), rem(0.5), rem(0.2));
+$heading-font         : $root-font;
+$heading-font-size    : (rem(1.75), rem(1.5), rem(1.2), rem(1));
+$heading-font-color   : ($color-primary, $root-font-color, $root-font-color, $root-font-color);
+$heading-font-weight  : (bold, bold, bold, bold);
+$heading-margin       : (rem(1.5), rem(1.2), rem(0.5), rem(0.2));
 
 // Paragraphs
-$paragraph-align: left;
-$paragraph-margin: $spacing-medium;
+$paragraph-align      : left;
+$paragraph-margin     : $spacing-medium;
 
 // Lists
-$ordered-list-style: decimal;
-$unordered-list-style: square;
+$ordered-list-style   : decimal;
+$unordered-list-style : square;
 
 // Blockquotes
-$quote-font: $font-serif;
-$quote-font-size: rem(1.1);
-$quote-font-color: $color-primary;
-$quote-font-weight: normal;
-$quote-font-style: italic;
-$quote-background: $root-background;
-$quote-border-color: none;
+$quote-font           : $font-serif;
+$quote-font-size      : rem(1.1);
+$quote-font-color     : $color-primary;
+$quote-font-weight    : normal;
+$quote-font-style     : italic;
+$quote-background     : $root-background;
+$quote-border-color   : none;
 
 // Code
-$code-font: $font-monospace;
-$code-font-size: rem(0.85);
-$code-font-color: $root-font-color;
-$code-font-weight: normal;
-$code-font-style: normal;
-$code-background: $color-gray-light;
-$code-border-color: $color-gray-medium;
-$code-line-height: 1.5;
+$code-font            : $font-monospace;
+$code-font-size       : rem(0.85);
+$code-font-color      : $root-font-color;
+$code-font-weight     : normal;
+$code-font-style      : normal;
+$code-background      : $color-gray-light;
+$code-border-color    : $color-gray-medium;
+$code-line-height     : 1.5;
 
 // Links
-$link-font: $root-font;
-$link-font-size: $root-font-size;
-$link-font-color: $color-primary;
-$link-font-weight: normal;
-$link-font-style: normal;
-$link-background: $root-background;
-$link-border-color: $link-font-color;
+$link-font            : $root-font;
+$link-font-size       : $root-font-size;
+$link-font-color      : $color-primary;
+$link-font-weight     : normal;
+$link-font-style      : normal;
+$link-background      : $root-background;
+$link-border-color    : $link-font-color;
 
 // Breakpoints
-$breakpoint-small: 550px;
-$breakpoint-large: 660px;
+$breakpoint-small     : 550px;
+$breakpoint-large     : 660px;
 
 // Border Radius
 $border-radius: 3px;
