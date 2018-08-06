@@ -84,11 +84,11 @@
 
   // Left and Right Aligned Containers
   @if $enable-container-float {
-    .left {
+    .left.floated {
       margin-right: $spacing-medium;
     }
 
-    .right {
+    .right.floated {
       margin-left: $spacing-medium;
     }
   }

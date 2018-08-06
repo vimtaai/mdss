@@ -41,29 +41,29 @@
 
   // Left and Right Text Aligned Containers
   @if $enable-container-align {
-    .left.align,
-    .left.align p {
+    .left.aligned,
+    .left.aligned p {
       text-align: left;
     }
 
-    .right.align,
-    .right.align p {
+    .right.aligned,
+    .right.aligned p {
       text-align: right;
     }
 
-    .center.align,
-    .center.align p {
+    .center.aligned,
+    .center.aligned p {
       text-align: center;
     }
   }
 
   // Left and Right Floated Containers
   @if $enable-container-float {
-    .float.left {
+    .left.floated {
       float: left;
     }
 
-    .float.right {
+    .right.floated {
       float: right;
     }
   }
