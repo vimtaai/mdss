@@ -24,7 +24,7 @@
 
 @mixin font-style($style) {
   @if ($style != normal) {
-    font-weight: $style;
+    font-style: $style;
   }
 }
 

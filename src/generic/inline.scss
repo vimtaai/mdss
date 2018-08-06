@@ -3,11 +3,11 @@
   a {
     @include font($link-font);
     @include font-size($link-font-size);
+    @include font-style($link-font-style);
+    @include font-weight($link-font-weight);
     @include background($link-background);
     
     color: $link-font-color;
-    font-style: $link-font-style;
-    font-weight: $link-font-weight;
   }
 
   // Inline code
@@ -15,11 +15,11 @@
     @include font($code-font);
     @include font-size($code-font-size);
     @include font-color($code-font-color);
+    @include font-style($code-font-style);
+    @include font-weight($code-font-weight);
     @include background($code-background);
     
     border-radius: $border-radius;
-    font-style: $code-font-style;
-    font-weight: $code-font-weight;
     padding: $spacing-small;
   }
 }

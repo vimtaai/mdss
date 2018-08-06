@@ -1,5 +1,3 @@
-@import "helpers/components";
-
 @mixin generic-block {
   // Headings
   @for $level from 1 through 6 {
@@ -9,8 +7,8 @@
       @if ($level <= length($heading-font-size)) {
         @include font-size(nth($heading-font-size, $level));
         @include font-color(nth($heading-font-color, $level));
+        @include font-weight(nth($heading-font-weight, $level));
        
-        font-weight: nth($heading-font-weight, $level);
         margin: nth($heading-margin, $level) 0;
       }
     }
@@ -35,15 +33,12 @@
   
   // Blockquotes
   blockquote {
-    @include card(
-      $quote-font,
-      $quote-font-size,
-      $quote-font-color,
-      $quote-font-weight,
-      $quote-font-style,
-      $quote-background,
-      $quote-border-color
-    );
+    @include font($quote-font);
+    @include font-size($quote-font-size);
+    @include font-color($quote-font-color);
+    @include font-weight($quote-font-weight);
+    @include font-style($quote-font-style);
+    @include background($quote-background);
     
     margin: $spacing-medium 0;
     padding: $spacing-medium $spacing-huge;
@@ -51,18 +46,16 @@
 
   // Code blocks
   pre {
-    @include card(
-      $code-font,
-      $code-font-size,
-      $code-font-color,
-      $code-font-weight,
-      $code-font-style,
-      $code-background,
-      $code-border-color
-    );
+    @include font($code-font);
+    @include font-size($code-font-size);
+    @include font-color($code-font-color);
+    @include font-weight($code-font-weight);
+    @include font-style($code-font-style);
+    @include background($code-background);
 
     line-height: $code-line-height;
     margin: $spacing-medium 0;
+    padding: $spacing-large;
   }
 
   // Horizontal break

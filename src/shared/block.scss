@@ -1,5 +1,9 @@
 @mixin shared-block {
   // Headings
+  h1, h2, h3, h4, h5, h6 {
+    position: relative;
+  }
+
   h1, h2 {
     text-transform: uppercase;
   }
@@ -29,6 +33,9 @@
 
   // Code blocks
   pre {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    
     code {
       background: none;
       border: none;

@@ -96,6 +96,19 @@
     }
   }
 
+  // Custom containers (cards)
+  .card {
+    overflow: auto;
+    
+    p:first-of-type {
+      margin-top: 0;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
   // Sticky Containers
   @if $enable-container-sticky {
     .sticky {

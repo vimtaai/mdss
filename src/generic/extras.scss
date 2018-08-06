@@ -1,5 +1,3 @@
-@import "helpers/components";
-
 @mixin generic-extras {
   // Numbered Elements
   @if $enable-auto-numbering {
@@ -28,7 +26,6 @@
       }
 
       #{$heading} {
-        position: relative;
         counter-increment: #{$heading};
         counter-reset: #{$counter-resets};
       }
@@ -160,6 +157,14 @@
 
   // Custom Containers (Cards)
   @if $enable-container-card {
+    .card {
+      border-radius: $border-radius;
+      break-inside: avoid;
+      margin: $spacing-medium 0;
+      padding: $spacing-large;
+      page-break-inside: avoid;
+    }
+
     @each $name, $color in $container-card-list {
       $light-color: $color-white;
       $dark-color: $root-font-color;
@@ -175,28 +180,13 @@
         $font-color: $dark-color;
       }
 
-      .#{$name}.card {
-        @include card(
-          $root-font,
-          $root-font-size,
-          $root-font-color,
-          normal,
-          normal,
-          none,
-          $color
-        );
+      .#{$name}.outline.card {
+        border: solid $color 2px;
       }
 
-      .#{$name}.dark.card {
-        @include card(
-          $root-font,
-          $root-font-size,
-          $font-color,
-          normal,
-          normal,
-          $color,
-          none
-        );
+      .#{$name}.card:not(.outline) {
+        @include font-color($font-color);
+        @include background($color);
       }
     }
   }
