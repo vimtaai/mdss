@@ -8,7 +8,9 @@
   min-width: $root-min-width;
   
   @if (unit($root-max-width) == unit($root-margin-x)) {
-    @media (max-width: #{$root-max-width + (2 * $root-margin-x)}) {
+    $max-width: #{$root-max-width + (2 * $root-margin-x) + rem(3)};
+
+    @media (max-width: $max-width) {
       padding: $root-margin-y $root-margin-x;
     }
   }

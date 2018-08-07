@@ -57,14 +57,14 @@
 @mixin to-right-margin {
   position: absolute;
   top: 0;
-  left: calc(100% + #{$spacing-medium});
+  left: calc(100% + #{$root-margin-x});
   @content;
 }
 
 @mixin to-left-margin {
   position: absolute;
   top: 0;
-  right: calc(100% + #{$spacing-medium});
+  right: calc(100% + #{$root-margin-x});
   @content;
 }
 

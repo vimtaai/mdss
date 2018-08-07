@@ -1,12 +1,12 @@
 // MDSS Extras
 $enable-auto-numbering            : true;
-  $auto-numbering-headings        : h2, h3;
+  $auto-numbering-headings        : (h2, h3);
   $auto-numbering-elements        : ();
 $enable-print-urls                : false;
 $enable-page-break-manual         : true;
 $enable-page-break-auto           : true;
   $page-break-auto-insert-before  : ();
-  $page-break-auto-avoid-after    : h1;
+  $page-break-auto-avoid-after    : (h1);
 
 // Markdown Extensions
 $enable-tables: true;
