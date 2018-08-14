@@ -101,6 +101,13 @@
       margin: $column-spacing;
     }
 
+    @if $enable-container-card {
+      .columns > .card {
+        margin-left: $column-spacing;
+        margin-right: $column-spacing;
+      }
+    }
+
     // Small
     @media (max-width: $breakpoint-small - 1) {
       .columns > * {

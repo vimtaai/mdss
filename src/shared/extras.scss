@@ -97,15 +97,17 @@
   }
 
   // Custom containers (cards)
-  .card {
-    overflow: auto;
-    
-    p:first-of-type {
-      margin-top: 0;
-    }
+  @if $enable-container-card {
+    .card {
+      overflow: hidden;
+      
+      p:first-of-type {
+        margin-top: 0;
+      }
 
-    p:last-of-type {
-      margin-bottom: 0;
+      p:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 
