@@ -26,7 +26,7 @@ const csso = require('csso') // Minifying tool
 async function build (program) {
   console.log(`Building MDSS...\n`)
 
-  const config = {}
+  // Command line options
   const options = {
     dev: program.dev || false,
     target: {
@@ -47,6 +47,9 @@ async function build (program) {
   const targets = Object.keys(options.target).filter(target => options.target[target])
   const bundle = Object.keys(options.bundle).filter(media => options.bundle[media])
 
+  // Configuration
+  const config = {}
+
   try {
     await access(configFilePath, fs.constants.R_OK)
 
@@ -66,6 +69,7 @@ async function build (program) {
   config.configAbsolutePath = path.resolve(config.configPath)
   config.outputAbsolutePath = path.resolve(config.outputPath)
 
+  // Info output
   console.log(`Config Path:\t ${config.configPath}`)
   console.log(`Output Path:\t ${config.outputPath}\n`)
 
@@ -85,6 +89,7 @@ async function build (program) {
   console.log(`Config Dir:\t ${config.configPath}`)
   console.log(`Output Dir:\t ${config.outputPath}\n`)
 
+  // Building
   mkdir(config.outputAbsolutePath)
 
   for (const target of targets) {
