@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
 const path = require('path')
 const program = require('commander')
 
@@ -51,7 +50,7 @@ async function build (program) {
   const config = {}
 
   try {
-    await access(configFilePath, fs.constants.R_OK)
+    await access(configFilePath)
 
     console.log(`[READ] mdss.json\n`)
 
@@ -80,7 +79,7 @@ async function build (program) {
   console.log(`Dev Mode:\t ${options.dev}\n`)
 
   try {
-    await access(config.configAbsolutePath, fs.constants.W_OK)
+    await access(config.configAbsolutePath)
   } catch (err) {
     console.error(`[ERROR] Config dir not found. Did you forget to run "mdss customize"? Exiting.`)
     return
@@ -115,18 +114,14 @@ async function build (program) {
       sourceMap: true
     })
 
-    let css
-
     if (options.dev) {
-      css = result.css
+      await write(outputFilePath, result.css)
       console.log(`[CREATE] ${outputFilePath}.map`)
       await write(outputFilePath + '.map', result.map)
     } else {
       const minified = csso.minify(result.css)
-      css = minified.css
+      await write(outputFilePath, minified.css)
     }
-
-    await write(outputFilePath, css)
   }
 }
 

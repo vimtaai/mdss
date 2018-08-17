@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
 const path = require('path')
 const program = require('commander')
 
@@ -26,7 +25,7 @@ async function customize (program) {
 
   // Customizing
   try {
-    await access(configFilePath, fs.constants.W_OK)
+    await access(configFilePath)
 
     console.log(`[DELETE] mdss.json`)
 
