@@ -10,6 +10,19 @@
 
 **MDSS** is a CSS stylesheet to render [Markdown](https://daringfireball.net/projects/markdown/syntax) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media.
 
+## :sparkles: New in Version 2
+
+- New, reworked default design
+- Reworked configuration files
+- Reworked container classes
+- New container classes
+- Responsive behaviour for columned layouts
+- Highlight.js classes are default for syntax highlighting
+- Presets for different outputs
+- Slides are no longer a media (moved to presets)
+- Reworked CLI tool
+- Cleaner code
+
 ## Features
 
 - Formatting HTML documents generated from Markdown
