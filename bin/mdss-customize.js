@@ -18,11 +18,13 @@ program
 async function customize (program) {
   console.log(`Setting up MDSS for customization...\n`)
 
+  // Command line options
   const options = {
     configPath: program.configPath,
     outputPath: program.outputPath
   }
 
+  // Customizing
   try {
     await access(configFilePath, fs.constants.W_OK)
 
