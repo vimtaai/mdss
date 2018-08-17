@@ -1,4 +1,4 @@
 {
-  "configDir": "src/config",
-  "outputDir": "build"
+  "configPath": "src/config",
+  "outputPath": "build"
 }
