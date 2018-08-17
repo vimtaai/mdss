@@ -1,8 +1,8 @@
 # MDSS 
 
 [![NPM version 2.0.0](https://img.shields.io/badge/npm-2.0.0-blue.svg)](https://www.npmjs.com/package/mdss)
-[![JavaScript Semi-Standard Style](https://img.shields.io/badge/code_style-semi-standard-brightgreen.svg)](https://standardjs.com)
-![MIT license](https://img.shields.io/badge/license-MIT-green.svg)
+[![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 > Stylesheets for displaying and printing Markdown documents
 
@@ -122,6 +122,7 @@ bin/mdss.js build
 
 # With NPM install
 npm install mdss
+./node_modules/.bin/mdss customize
 ./node_modules/.bin/mdss build
 ```
 
@@ -131,7 +132,7 @@ If you are using **MDSS** as an installed NPM package it is recommended to creat
 {
   "scripts": {
     "build-mdss": "mdss build",
-    "build-mdss-dev": "mdss build -d"
+    "build-mdss:dev": "mdss build -d"
   }
 }
 ```
@@ -140,6 +141,8 @@ The CLI tool has several options. It allows the creation of bundles that exclude
 
 ```bash
 ./node_modules/.bin/mdss --help
+./node_modules/.bin/mdss build --help
+./node_modules/.bin/mdss customize --help
 ```
 
 ### Using with pandoc
