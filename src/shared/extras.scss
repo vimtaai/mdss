@@ -41,6 +41,10 @@
 
   // Left and Right Text Aligned Containers
   @if $enable-container-align {
+    .aligned {
+      overflow: hidden;
+    }
+
     .left.aligned,
     .left.aligned p {
       text-align: left;
@@ -101,11 +105,11 @@
     .card {
       overflow: hidden;
       
-      p:first-of-type {
+      :first-child {
         margin-top: 0;
       }
 
-      p:last-of-type {
+      :last-child {
         margin-bottom: 0;
       }
     }
@@ -114,6 +118,7 @@
   // Sticky Containers
   @if $enable-container-sticky {
     .sticky {
+      overflow: hidden;
       position: sticky;
       top: 0;
       z-index: 9;

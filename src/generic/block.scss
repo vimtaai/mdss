@@ -9,26 +9,30 @@
         @include font-color(nth($heading-font-color, $level));
         @include font-weight(nth($heading-font-weight, $level));
        
-        margin: nth($heading-margin, $level) 0;
+        margin-bottom: nth($heading-margin, $level);
+        margin-top: nth($heading-margin, $level);
       }
     }
   }
 
   // Paragraphs
   p {
-    margin: $paragraph-margin 0;
+    margin-bottom: $paragraph-margin;
+    margin-top: $paragraph-margin;
     text-align: $paragraph-align;
   }
 
   // lists
   ul {
     list-style: $unordered-list-style;
-    margin: $spacing-medium 0;
+    margin-bottom: $spacing-medium;
+    margin-top: $spacing-medium;
   }
   
   ol {
     list-style: $ordered-list-style;
-    margin: $spacing-medium 0;
+    margin-bottom: $spacing-medium;
+    margin-top: $spacing-medium;
   }
   
   // Blockquotes
@@ -40,7 +44,8 @@
     @include font-style($quote-font-style);
     @include background($quote-background);
     
-    margin: $spacing-medium 0;
+    margin-bottom: $spacing-medium;
+    margin-top: $spacing-medium;
     padding: $spacing-medium $spacing-huge;
   }
 
@@ -54,12 +59,14 @@
     @include background($code-background);
 
     line-height: $code-line-height;
-    margin: $spacing-medium 0;
+    margin-bottom: $spacing-medium;
+    margin-top: $spacing-medium;
     padding: $spacing-large;
   }
 
   // Horizontal break
   hr {
-    margin: $spacing-large 0;
+    margin-bottom: $spacing-large;
+    margin-top: $spacing-large;
   }
 }

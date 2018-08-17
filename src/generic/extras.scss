@@ -101,17 +101,11 @@
       margin: $column-spacing;
     }
 
-    @if $enable-container-card {
-      .columns > .card {
-        margin-left: $column-spacing;
-        margin-right: $column-spacing;
-      }
-    }
-
     // Small
     @media (max-width: $breakpoint-small - 1) {
       .columns > * {
-        margin: $column-spacing 0;
+        margin-bottom: $column-spacing;
+        margin-top: $column-spacing;
       }
     }
 
@@ -167,7 +161,8 @@
     .card {
       border-radius: $border-radius;
       break-inside: avoid;
-      margin: $spacing-medium 0;
+      margin-bottom: $spacing-medium;
+      margin-top: $spacing-medium;
       padding: $spacing-large;
       page-break-inside: avoid;
     }
