@@ -20,7 +20,7 @@ $root-min-width       : 0;
 // Headings
 $heading-font         : $font-sans-serif;
 $heading-font-size    : (17pt, 14pt, 13pt, 12pt);
-$heading-font-color   : ($color-primary, $root-font-color, $root-font-color, $root-font-color);
+$heading-font-color   : ($color-primary, $color-accent, $root-font-color, $root-font-color);
 $heading-font-weight  : (bold, bold, bold, bold);
 $heading-margin       : (16pt, 14pt, 8pt, 6pt);
 

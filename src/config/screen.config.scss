@@ -20,7 +20,7 @@ $root-min-width       : 350px;
 // Headings
 $heading-font         : $root-font;
 $heading-font-size    : (rem(1.75), rem(1.5), rem(1.2), rem(1));
-$heading-font-color   : ($color-primary, $root-font-color, $root-font-color, $root-font-color);
+$heading-font-color   : ($color-primary, $color-accent, $root-font-color, $root-font-color);
 $heading-font-weight  : (bold, bold, bold, bold);
 $heading-margin       : (rem(1.5), rem(1.2), rem(0.5), rem(0.2));
 
