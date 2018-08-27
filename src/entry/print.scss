@@ -1,9 +1,15 @@
+@import "media/print/page";
 @import "media/print/root";
 @import "media/print/block";
 @import "media/print/inline";
 @import "media/print/extras";
 
 @mixin print {
+  @page {
+    @include print-page;
+    @include custom-page;
+  }
+
   @include root {
     @include generic;
     @include on-root { @include print-root };
