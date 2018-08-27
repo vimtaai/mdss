@@ -15,9 +15,9 @@
     "prepare": "npm run build && npm run build:dev"
   },
   "devDependencies": {
-    "commander": "^2.17.0",
+    "commander": "^2.17.1",
     "csso": "^3.5.1",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.9.2"
+    "node-sass": "^4.9.3"
   }
 }
