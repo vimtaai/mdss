@@ -97,18 +97,6 @@
   @if $enable-container-columns {
     $column-spacing: 2 * $spacing-small;
 
-    .columns > * {
-      margin: $column-spacing;
-    }
-
-    // Small
-    @media (max-width: $breakpoint-small - 1) {
-      .columns > * {
-        margin-bottom: $column-spacing;
-        margin-top: $column-spacing;
-      }
-    }
-
     // Medium
     @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
       $column-count: 2;
@@ -121,14 +109,6 @@
 
         .#{number($column-count)}.columns > * {
           width: column-width($actual-column-count, $column-spacing);
-
-          &:nth-child(#{$actual-column-count}n + 1) {
-            margin-left: 0;
-          }
-
-          &:nth-child(#{$actual-column-count}n) {
-            margin-right: 0;
-          }
         }
 
         $column-count: $column-count + 1;
@@ -141,14 +121,6 @@
       @while $column-count <= $container-columns-max {
         .#{number($column-count)}.columns > * {
           width: column-width($column-count, $column-spacing);
-
-          &:nth-child(#{$column-count}n + 1) {
-            margin-left: 0;
-          }
-
-          &:nth-child(#{$column-count}n) {
-            margin-right: 0;
-          }
         }
         
         $column-count: $column-count + 1;
@@ -159,11 +131,12 @@
   // Custom Containers (Cards)
   @if $enable-container-card {
     .card {
+      border: solid transparent 1px;
       border-radius: $border-radius;
       break-inside: avoid;
       margin-bottom: $spacing-medium;
       margin-top: $spacing-medium;
-      padding: $spacing-large;
+      padding: $spacing-medium $spacing-large;
       page-break-inside: avoid;
     }
 
@@ -183,7 +156,7 @@
       }
 
       .#{$name}.outline.card {
-        border: solid $color 2px;
+        border-color: $color;
       }
 
       .#{$name}.card:not(.outline) {

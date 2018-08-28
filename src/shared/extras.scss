@@ -77,13 +77,17 @@
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   // Flex Containers
   @if $enable-container-flex {
     .flex {
       @extend %flex;
-      justify-content: space-around;
+
+      .evenly.aligned {
+        justify-content: space-evenly;
+      }
     }
   }
 
@@ -95,6 +99,8 @@
       & > * {
         box-sizing: border-box;
         display: block;
+        margin-left: 0;
+        margin-right: 0;
         width: 100%;
       }
     }
