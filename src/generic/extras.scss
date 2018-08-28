@@ -157,10 +157,11 @@
 
       .#{$name}.outline.card {
         border-color: $color;
+        color: $root-font-color;
       }
 
       .#{$name}.card:not(.outline) {
-        @include font-color($font-color);
+        color: $font-color;
         @include background($color);
       }
     }

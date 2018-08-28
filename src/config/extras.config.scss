@@ -24,7 +24,8 @@ $enable-container-columns         : true;
 $enable-container-card            : true;
   $container-card-list            : (
     "primary" : $color-primary,
-    "accent"  : $color-accent
+    "accent"  : $color-accent,
+    "gray"    : $color-gray-medium
   );
 $enable-container-sticky          : true;
 
