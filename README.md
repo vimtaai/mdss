@@ -12,14 +12,14 @@
 
 ## :sparkles: New in Version 2
 
-- New, reworked default design
+- Reworked default design
 - Reworked configuration files
 - Reworked container classes
 - New container classes
-- Responsive behaviour for columned layouts
-- Highlight.js classes are default for syntax highlighting
-- Presets for different outputs
-- Slides are no longer a media (moved to presets)
+- Responsive behavior for columned layouts
+- Highlight.js classes are now default for syntax highlighting
+- Presets for different kinds of outputs (coming soon)
+- Slides are no longer a default media (moved to presets)
 - Reworked CLI tool
 - Cleaner code
 
@@ -31,16 +31,16 @@
 - Typography optimized for printing documents
 - Extra features that can be enabled or disabled
 - Syntax highlighting support
-- Custom styles using defined variables
-- Minified and uncompressed builds
-- CLI for integration into other projects
+- Custom styles using pre-defined variables
+- Minified and uncompressed (development) builds
+- CLI tool for integration into other projects
 
 ### Extra Features
 
 The stylesheets include several visual extras by default in addition to standard Markdown elements. All extras can be enabled or disabled for a single build. Extras include the following:
 
-- Automatic nested numbering of headings **(available: all media; default: level 1 and 2 heading)**
-- Automatic numbering of specified elements (e.g. images, tables) **(available: all media; default: no elements)**
+- Automatic nested numbering of headings **(available: both media; default: level 1 and 2 heading)**
+- Automatic numbering of specified elements (e.g. images, tables) **(available: both media; default: no elements)**
 - Automatic URL insertion after links **(available: print; default: disabled)**
 - Replace horizontal rules/thematic breaks with page breaks **(available: print; default: enabled)**
 - Automatic page breaks before specified elements **(available: print; default: no elements)**
@@ -60,26 +60,26 @@ Various Markdown Extensions that extend the capabilities of the CommonMark compl
   + Non-printing containers **(default: enabled)**
   + Flex containers **(default: enabled)**
   + Columned containers **(default: 2-4 columns enabled)**
-  + Custom, colored containers (light and dark background) **(default: primary and accent for both light and dark background)**
-  + Sticky containers **(default: disabled)**
+  + Custom, colored containers (light and dark background) **(default: primary, accent and gray colors)**
+  + Sticky containers **(default: enabled)**
 
-To use these features you need a compiler that supports transforming their syntax (e.g. _pandoc_ or _markdown-it_).
+To use these features you need a Markdown compiler that supports transforming their syntax (e.g. _pandoc_ or _markdown-it_).
 
 ### Syntax Highlighting
 
 **MDSS** is created with automatic syntax highlighting in mind and is compatible with syntax highlighting libraries such as _[highlight.js](https://highlightjs.org/)_. The configuration includes options to use the built in syntax highlighting theme with most of syntax highlighters.
 
-Custom syntax highlighting colors can be set for a specific highlighter. There are options to assign colors to syntax highlighting CSS selectors. The default build is configured to work with _highlight.js_ with the `classPrefix: ''` option. If you use _highlight.js_ then **MDSS** can function as a _highlight.js_ style. An alternative configuration is also included in config file's comments to use **MDSS** with _pandoc_'s default syntax highlighter.
+Custom syntax highlighting colors can be set for a specific highlighter. There are options to assign colors to syntax highlighting CSS selectors. The default build is configured to work with _highlight.js_. If you use _highlight.js_ then **MDSS** can function as a _highlight.js_ style so there is no need for another theme. An alternative configuration is also included in config file's comments to use **MDSS** with _pandoc_'s default syntax highlighter.
 
 ## Basic Usage
 
-To use the default bundled build of **MDSS** you don't even need a download, you can simply link the minified CSS from a CDN like [unpkg](https://unpkg.com/#/) or [jsdelivr](https://www.jsdelivr.com/). To apply **MDSS** for your HTML document link it in the `<head>` node as a simple stylesheet as it includes media queries. 
+To use the default bundle build of **MDSS** you don't even need a download, you can simply link the minified CSS from a CDN like [jsdelivr](https://www.jsdelivr.com/) or [unpkg](https://unpkg.com/#/). To apply **MDSS** for your HTML document link it in the `<head>` node as a simple stylesheet as it includes media queries. 
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdss@1.2">
 ```
 
-To create your own build you have to clone this repository, edit the configuration a create a new bundle.
+To create your own build you can clone this repository, edit the configuration a create a new bundle.
 
 ```bash
 git clone https://github.com/vimtaai/mdss
@@ -89,7 +89,6 @@ To create a bundled, minified build run the `npm run build` command. This will c
 
 ```bash
 npm install
-
 npm run build
 ```
 
@@ -100,13 +99,13 @@ To use **MDSS** only to format each media individually set the `media` property 
 <link rel="stylesheet" href="mdss.min.css">
 <!-- Screen only -->
 <link rel="stylesheet" href="mdss-screen.min.css" media="screen">
-<!-- Printing only -->
+<!-- Print only -->
 <link rel="stylesheet" href="mdss-print.min.css" media="print">
 ```
 
 ### Configuration
 
-Most visual aspects (like color, sizes, spacing) can be configured. The `src/config` folder contains all the options to be modified the rest of the code uses the variables declared here. You can configure each media type individually.
+Most visual aspects (like color, sizes, spacing) can be configured. The `src/config` folder contains all the options to be modified, the rest of the code uses the variables declared here. You can configure each media type individually.
 
 You can also enable/disable all extra features using the `src/config/extras.config.scss` file. External resources (e.g. fonts) can be imported by adding them to the `src/config/external.config.scss`.
 
@@ -131,7 +130,7 @@ File                   | Options
 # With git clone
 git clone https://github.com/vimtaai/mdss
 cd mdss
-bin/mdss.js build
+./bin/mdss.js build
 
 # With NPM install
 npm install mdss
@@ -150,7 +149,7 @@ If you are using **MDSS** as an installed NPM package it is recommended to creat
 }
 ```
 
-The CLI tool has several options. It allows the creation of bundles that excludes a media type, thus you can create a bundle for any combination of media types. To see all options see the help of the command in the command line.
+The CLI tool has several options. It allows the creation of bundles that excludes a media type. To see all options see the help of the command in the command line.
 
 ```bash
 ./node_modules/.bin/mdss --help
@@ -185,7 +184,7 @@ Visual Studio Code has an extension called [Markdown PDF](https://marketplace.vi
 
 ## Prerequisites
 
-You need to have [Node.js](https://nodejs.org) installed on your computer to create your own builds.
+You need to have [Node.js](https://nodejs.org) installed on your computer to create your own bundles.
 
 ## Contributing
 
