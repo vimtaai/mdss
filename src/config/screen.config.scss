@@ -1,6 +1,6 @@
 // Root typgraphy
 $root-font            : $font-sans-serif;
-$root-font-size       : 18px;
+$root-font-size       : 16px;
 $root-font-color      : $color-gray-dark;
 $root-background      : $color-white;
 $root-line-height     : 1.67;
@@ -18,8 +18,8 @@ $root-max-width       : 910px;
 $root-min-width       : 350px;
 
 // Headings
-$heading-font         : $root-font;
-$heading-font-size    : (rem(1.75), rem(1.5), rem(1.2), rem(1));
+$heading-font         : $font-condensed;
+$heading-font-size    : (rem(1.75), rem(1.4), rem(1.2), rem(1));
 $heading-font-color   : ($color-primary, $color-accent, $root-font-color, $root-font-color);
 $heading-font-weight  : (bold, bold, bold, bold);
 $heading-margin       : (rem(1.5), rem(1.2), rem(0.5), rem(0.2));
@@ -64,5 +64,6 @@ $link-border-color    : $link-font-color;
 $breakpoint-small     : 550px;
 $breakpoint-large     : 660px;
 
-// Border Radius
-$border-radius: 3px;
+// Borders
+$border-width         : 1px;
+$border-radius        : 3px;

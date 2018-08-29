@@ -2,7 +2,10 @@
   // Manual Page Break
   @if $enable-page-break-manual {
     hr {
-      display: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      visibility: hidden;
     }
   }
 

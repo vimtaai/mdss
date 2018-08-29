@@ -1,7 +1,7 @@
 @mixin screen-inline {
   // Links
   p a {
-    border-bottom: solid transparent 1px;
+    border-bottom: solid transparent $border-width;
     padding-bottom: 2px;
     transition: border-bottom-color $transition-duration;
 

@@ -65,7 +65,7 @@
       margin: $spacing-medium auto;
 
       thead {
-        border-bottom: solid $color-primary 2px;
+        border-bottom: solid $color-primary $border-width;
         @include font($heading-font);
       }
   
@@ -131,7 +131,7 @@
   // Custom Containers (Cards)
   @if $enable-container-card {
     .card {
-      border: solid transparent 1px;
+      border: solid transparent $border-width;
       border-radius: $border-radius;
       break-inside: avoid;
       margin-bottom: $spacing-medium;
