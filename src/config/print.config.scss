@@ -40,6 +40,7 @@ $quote-font-weight    : normal;
 $quote-font-style     : italic;
 $quote-background     : $root-background;
 $quote-border-color   : none;
+$qoute-line-height    : $root-line-height;
 
 // Code
 $code-font            : $font-monospace;
@@ -57,8 +58,6 @@ $link-font-size       : $root-font-size;
 $link-font-color      : $root-font-color;
 $link-font-weight     : bold;
 $link-font-style      : normal;
-$link-background      : $root-background;
-$link-border-color    : transparent;
 
 // Breakpoints
 $breakpoint-small     : 130mm;

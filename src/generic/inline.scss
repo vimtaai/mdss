@@ -5,7 +5,6 @@
     @include font-size($link-font-size);
     @include font-style($link-font-style);
     @include font-weight($link-font-weight);
-    @include background($link-background);
     
     color: $link-font-color;
   }

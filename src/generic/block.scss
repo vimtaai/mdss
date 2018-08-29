@@ -44,6 +44,7 @@
     @include font-style($quote-font-style);
     @include background($quote-background);
     
+    line-height: $quote-line-height;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
     padding: $spacing-medium $spacing-huge;
