@@ -44,6 +44,8 @@
     @include font-style($quote-font-style);
     @include background($quote-background);
     
+    border: solid $quote-border-color $border-width;
+    border-radius: $border-radius;
     line-height: $quote-line-height;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
@@ -59,6 +61,8 @@
     @include font-style($code-font-style);
     @include background($code-background);
 
+    border: solid $code-border-color $border-width;
+    border-radius: $border-radius;
     line-height: $code-line-height;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;

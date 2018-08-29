@@ -39,7 +39,7 @@ $quote-font-color     : $color-primary;
 $quote-font-weight    : normal;
 $quote-font-style     : italic;
 $quote-background     : $root-background;
-$quote-border-color   : none;
+$quote-border-color   : $color-primary;
 $quote-line-height    : $root-line-height;
 
 // Code
@@ -49,7 +49,7 @@ $code-font-color      : $root-font-color;
 $code-font-weight     : normal;
 $code-font-style      : normal;
 $code-background      : $color-gray-light;
-$code-border-color    : $color-gray-medium;
+$code-border-color    : transparent;
 $code-line-height     : 1.5;
 
 // Links
