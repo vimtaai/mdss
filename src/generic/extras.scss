@@ -138,31 +138,34 @@
       margin-top: $spacing-medium;
       padding: $spacing-medium $spacing-large;
       page-break-inside: avoid;
+
+      &.outline {
+        border-color: $root-font-color;
+        color: $root-font-color;
+      }
     }
 
     @each $name, $color in $container-card-list {
-      $light-color: $color-white;
-      $dark-color: $root-font-color;
-
-      @if lightness($root-font-color) > 50 {
-        $light-color: $root-font-color;
-        $dark-color: $color-black;
-      }
-
-      $font-color: $light-color;
-    
-      @if lightness($color) > 50 {
-        $font-color: $dark-color;
-      }
-
       .#{$name}.outline.card {
         border-color: $color;
-        color: $root-font-color;
       }
 
       .#{$name}.card:not(.outline) {
-        color: $font-color;
         @include background($color);
+
+        @if lightness($color) > 50 { // light background
+          @if lightness($root-font-color) > 50 {
+            color: $color-black;
+          } @else {
+            color: $root-font-color;
+          }
+        } @else { // dark background
+          @if lightness($root-font-color) > 50 {
+            color: $root-font-color;
+          } @else {
+            color: $color-white;
+          }
+        }
       }
     }
   }
