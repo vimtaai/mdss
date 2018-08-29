@@ -1,7 +1,7 @@
 // Colors
 $color-white          : hsl(0, 0%, 100%);
-$color-gray-light     : hsla(215, 25%, 5%, 0.05);
-$color-gray-medium    : hsla(215, 25%, 5%, 0.2);
+$color-gray-light     : hsl(215, 25%, 95%);
+$color-gray-medium    : hsl(215, 15%, 85%);
 $color-gray-dark      : hsl(215, 25%, 15%);
 $color-black          : hsl(0, 0%, 0%);
 $color-red            : hsl(0, 75%, 45%);
@@ -16,9 +16,8 @@ $color-accent         : hsl(215, 10%, 50%);
 
 // Fonts
 $font-serif           : "Noticia Text", "Cambria", "Times New Roman", "Times", serif;
-$font-sans-serif      : "Roboto", "Arial", "Helvetica", sans-serif;
-$font-condensed       : "Roboto Condensed", "Arial Narrow", "HelveticaNeue-CondensedBold", sans-serif;
-$font-monospace       : "Roboto Mono", "Consolas", "Monaco", monospace;
+$font-sans-serif      : "Fira Sans Extra Condensed", "Arial Narrow", "HelveticaNeue", sans-serif;
+$font-monospace       : "Fira Mono", "Consolas", "Monaco", monospace;
 
 // Root Element Selector
 $root-selector        : "";

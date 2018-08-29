@@ -65,11 +65,17 @@
       margin: $spacing-medium auto;
 
       thead {
-        border-bottom: solid $color-primary $border-width;
+        $last-heading: length($heading-font-size);
         @include font($heading-font);
+        @include font-color(nth($heading-font-color, $last-heading));
+        @include font-size(nth($heading-font-size, $last-heading));
+        @include font-weight(nth($heading-font-weight, $last-heading));
+        
+        border-bottom: solid $color-primary $border-width;
       }
   
       th, td {
+        font-weight: inherit;
         padding: $spacing-small $spacing-medium;
       }
     }
