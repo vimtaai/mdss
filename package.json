@@ -14,7 +14,7 @@
     "build:dev": "node bin/mdss.js build --dev --all",
     "prepare": "npm run build && npm run build:dev"
   },
-  "devDependencies": {
+  "dependencies": {
     "commander": "^2.17.1",
     "csso": "^3.5.1",
     "mkdirp": "^0.5.1",
