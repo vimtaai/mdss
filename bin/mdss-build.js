@@ -17,6 +17,8 @@ program
   .option('--without-print', 'exclude print styles from bundle')
   .option('-a --all', 'generate separate stylesheets for all media and bundle')
   .option('-d --dev', 'genereate uncompressed, development stylesheets')
+  .option('-c --config-path [path]', 'path to the configuration directory')
+  .option('-o --output-path [path]', 'path to the output directory')
   .parse(process.argv)
 
 const sass = require('node-sass') // Build tool
@@ -47,23 +49,19 @@ async function build (program) {
   const bundle = Object.keys(options.bundle).filter(media => options.bundle[media])
 
   // Configuration
-  const config = {}
+  const config = {
+    configPath: program.configPath || defaultConfigPath,
+    outputPath: program.outputPath || defaultOutputPath
+  }
 
   try {
     await access(configFilePath)
-
     console.log(`[READ] mdss.json\n`)
-
     const configFileContents = await read(configFilePath, 'utf-8')
     const configFileData = JSON.parse(configFileContents)
     config.configPath = configFileData.configPath
     config.outputPath = configFileData.outputPath
-  } catch (err) {
-    console.log(`[INFO] No config file available, using default build config.\n`)
-
-    config.configPath = defaultConfigPath
-    config.outputPath = defaultOutputPath
-  }
+  } catch (_) {}
 
   config.configAbsolutePath = path.resolve(config.configPath)
   config.outputAbsolutePath = path.resolve(config.outputPath)
@@ -71,7 +69,6 @@ async function build (program) {
   // Info output
   console.log(`Config Path:\t ${config.configPath}`)
   console.log(`Output Path:\t ${config.outputPath}\n`)
-
   console.log(`Target:\t\t ${targets.join(', ')}`)
   if (options.target.bundle) {
     console.log(`Bundled Media:\t ${bundle.join(', ')}`)
@@ -103,6 +100,7 @@ async function build (program) {
     const outputFilePath = path.join(config.outputAbsolutePath, outputFileName)
 
     console.log(`[CREATE] ${outputFilePath}`)
+
     const result = sass.renderSync({
       data: sassCode,
       includePaths: [

@@ -10,8 +10,8 @@
   "bugs": "https://github.com/vimtaai/mdss/issues",
   "homepage": "https://github.com/vimtaai/mdss#readme",
   "scripts": {
-    "build": "node bin/mdss.js build --all",
-    "build:dev": "node bin/mdss.js build --dev --all",
+    "build": "node bin/mdss.js build --all --config-path src/config --output-path build",
+    "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path build",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
