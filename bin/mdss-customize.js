@@ -10,8 +10,8 @@ const sourcePath = path.resolve(__dirname, '..')
 const configFilePath = path.resolve('mdss.json')
 
 program
-  .option('-c --config-path <dir>', 'set configuration directory', defaultConfigPath)
-  .option('-o --output-path <dir>', 'set output directory', defaultOutputPath)
+  .option('-c --config-path <dir>', 'set configuration directory path', defaultConfigPath)
+  .option('-o --output-path <dir>', 'set output directory path', defaultOutputPath)
   .parse(process.argv)
 
 async function customize (program) {

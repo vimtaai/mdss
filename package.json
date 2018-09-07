@@ -1,6 +1,6 @@
 {
   "name": "mdss",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Stylesheets for displaying and printing Markdown documents",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
@@ -10,12 +10,12 @@
   "bugs": "https://github.com/vimtaai/mdss/issues",
   "homepage": "https://github.com/vimtaai/mdss#readme",
   "scripts": {
-    "build": "node bin/mdss.js build --all",
-    "build:dev": "node bin/mdss.js build --dev --all",
+    "build": "node bin/mdss.js build --all --config-path src/config --output-path build",
+    "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path build",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
-    "commander": "^2.17.1",
+    "commander": "^2.18.0",
     "csso": "^3.5.1",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.9.3"

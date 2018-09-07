@@ -1,6 +1,6 @@
 # MDSS 
 
-[![NPM version 2.0.3](https://img.shields.io/badge/npm-2.0.3-blue.svg)](https://www.npmjs.com/package/mdss)
+[![NPM version 2.1.0](https://img.shields.io/badge/npm-2.1.0-blue.svg)](https://www.npmjs.com/package/mdss)
 [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
