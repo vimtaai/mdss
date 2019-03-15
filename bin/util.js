@@ -2,20 +2,20 @@ const fs = require("fs");
 const util = require("util");
 const mkdirp = require("mkdirp");
 
-const access = util.promisify(fs.access);
-const copy = util.promisify(fs.copyFile);
-const mkdir = util.promisify(mkdirp);
-const read = util.promisify(fs.readFile);
+const accessFile = util.promisify(fs.access);
+const copyFile = util.promisify(fs.copyFile);
+const createDir = util.promisify(mkdirp);
+const readFile = util.promisify(fs.readFile);
 const readDir = util.promisify(fs.readdir);
-const unlink = util.promisify(fs.unlink);
-const write = util.promisify(fs.writeFile);
+const deleteFile = util.promisify(fs.unlink);
+const writeFile = util.promisify(fs.writeFile);
 
 module.exports = {
-  access,
-  copy,
-  mkdir,
-  read,
+  accessFile,
+  copyFile,
+  createDir,
+  readFile,
   readDir,
-  unlink,
-  write
+  deleteFile,
+  writeFile
 };
