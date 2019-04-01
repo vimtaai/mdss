@@ -45,8 +45,7 @@ Various Markdown Extensions that extend the capabilities of the [CommonMark](htt
   - Containers with text align **(default: enabled)**
   - Floated containers **(default: enabled)**
   - Non-printing containers **(default: enabled)**
-  - Flex containers **(default: enabled)**
-  - Columned containers **(default: 2-4 columns enabled)**
+  - Columned containers **(default: enabled, evenly aligned, 2-4 columns)**
   - Custom, colored containers (light and dark background) **(default: primary, accent and gray colors)**
   - Sticky containers **(default: enabled)**
 

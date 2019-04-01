@@ -106,7 +106,7 @@
     $column-spacing: 2 * $spacing-small;
 
     // Medium
-    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
+    @include viewport-medium {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
         $actual-column-count: $column-count;
@@ -133,7 +133,7 @@
     }
 
     // Large
-    @media (min-width: $breakpoint-large) {
+    @include viewport-large {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
         .#{number($column-count)}.columns > * {
