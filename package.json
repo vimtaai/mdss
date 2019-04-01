@@ -10,14 +10,22 @@
   "bugs": "https://github.com/vimtaai/mdss/issues",
   "homepage": "https://github.com/vimtaai/mdss#readme",
   "scripts": {
-    "build": "node bin/mdss.js build --all --config-path src/config --output-path build",
-    "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path build",
+    "build": "node bin/mdss.js build --all --config-dir src/config --output-dir dist",
+    "build:dev": "node bin/mdss.js build --dev --all --config-dir src/config --output-dir dist",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
-    "commander": "^2.18.0",
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
     "csso": "^3.5.1",
-    "mkdirp": "^0.5.1",
-    "node-sass": "^4.9.3"
+    "fs-extra": "^7.0.1",
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-problems": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
   }
 }
