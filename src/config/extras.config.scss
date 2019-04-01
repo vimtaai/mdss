@@ -29,10 +29,10 @@ $enable-container-card            : true;
 $enable-container-sticky          : true;
 
 // Page Options in Print
-$enable-page-numbering            : true;
+$enable-page-numbering            : false;
   $page-numbering-location        : center;
   $page-numbering-format          : "{#} / {##}";
-$enable-page-headers              : true;
+$enable-page-headers              : false;
   $page-headers-left              : "";
   $page-headers-center            : "";
   $page-headers-right             : "";
