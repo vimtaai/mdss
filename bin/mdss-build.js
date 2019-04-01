@@ -29,6 +29,7 @@ async function build(args) {
     configDir: args.configDir || defaultConfigDir,
     outputDir: args.outputDir || defaultOutputDir,
     devMode: args.dev || false,
+    nodeModules: args.nodeModules || false,
     media: {
       bundle: args.all || args.bundle || (!args.screen && !args.print),
       screen: args.all || args.screen,
@@ -78,9 +79,15 @@ async function build(args) {
     const result = {};
 
     try {
+      const includePaths = [options.configDir, mdssSrcDir];
+
+      if (options.nodeModules) {
+        includePaths.push("node_modules");
+      }
+
       result.build = sass.renderSync({
         data: sassCode,
-        includePaths: [options.configDir, mdssSrcDir],
+        includePaths,
         outputStyle: "expanded",
         outFile: outputFilePath,
         sourceMap: true
