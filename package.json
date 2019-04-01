@@ -1,10 +1,10 @@
 {
   "name": "mdss",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Stylesheets for displaying and printing Markdown documents",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
-  "main": "build/mdss.min.css",
+  "main": "dist/mdss.min.css",
   "bin": "bin/mdss.js",
   "repository": "github:vimtaai/mdss",
   "bugs": "https://github.com/vimtaai/mdss/issues",
