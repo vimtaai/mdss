@@ -28,6 +28,15 @@ $enable-container-card            : true;
   );
 $enable-container-sticky          : true;
 
+// Page Options in Print
+$enable-page-numbering            : true;
+  $page-numbering-location        : center;
+  $page-numbering-format          : "{#} / {##}";
+$enable-page-headers              : true;
+  $page-headers-left              : "";
+  $page-headers-center            : "";
+  $page-headers-right             : "";
+
 // Syntax Highlighting
 $enable-syntax-highlighting       : true;
   $syntax-highlighting-colors     : (

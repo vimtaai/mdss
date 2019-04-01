@@ -26,3 +26,14 @@
 
   @return calc(#{$full-width} - #{$space-per-column});
 }
+
+@function numbering($str, $idx, $end, $rep) {
+  @return '"' + str-slice($str, 1, $idx - 1) + '" ' + $rep + ' "' +
+    str-slice($str, $end) + '"';
+}
+
+@function numbering-both($str, $idx1, $end1, $rep1, $idx2, $end2, $rep2) {
+  @return '"' + str-slice($str, 1, $idx1 - 1) + '" ' + $rep1 + ' "' +
+    str-slice($str, $end1, $idx2 - 1) + '" ' + $rep2 + ' "' +
+    str-slice($str, $end2) + '"';
+}

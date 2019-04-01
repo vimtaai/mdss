@@ -55,4 +55,86 @@
       position: static;
     }
   }
+
+  // Page numbering
+  @if $enable-page-numbering {
+    $page-placeholder: "{#}";
+    $pages-placeholder: "{##}";
+    $location: "@bottom-" + $page-numbering-location;
+    $format: $page-numbering-format;
+
+    $page-index: str-index($format, $page-placeholder);
+    $page-end: -1;
+    @if ($page-index != null) {
+      $page-end: $page-index + str-length($page-placeholder);
+    }
+
+    $pages-index: str-index($format, $pages-placeholder);
+    $pages-end: -1;
+    @if ($pages-index != null) {
+      $pages-end: $pages-index + str-length($pages-placeholder);
+    }
+
+    $numbering: "";
+    @if $pages-index == null and $page-index != null {
+      $numbering: numbering($format, $page-index, $page-end, counter(page));
+    } @else if $pages-index != null and $page-index == null {
+      $numbering: numbering($format, $pages-index, $pages-end, counter(pages));
+    } @else {
+      @if $page-index > $pages-index {
+        $numbering: numbering-both(
+          $format,
+          $pages-index,
+          $pages-end,
+          counter(pages),
+          $page-index,
+          $page-end,
+          counter(page)
+        );
+      } @else if $page-index < $pages-index {
+        $numbering: numbering-both(
+          $format,
+          $page-index,
+          $page-end,
+          counter(page),
+          $pages-index,
+          $pages-end,
+          counter(pages)
+        );
+      }
+    }
+
+    @page {
+      @if ($page-numbering-location == left) {
+        @bottom-left {
+          content: #{$numbering};
+        }
+      } @else if ($page-numbering-location == center) {
+        @bottom-center {
+          content: #{$numbering};
+        }
+      } @else if ($page-numbering-location == right) {
+        @bottom-right {
+          content: #{$numbering};
+        }
+      }
+    }
+  }
+
+  // Page headers
+  @if $enable-page-headers {
+    @page {
+      @top-left {
+        content: $page-headers-left;
+      }
+
+      @top-center {
+        content: $page-headers-center;
+      }
+
+      @top-right {
+        content: $page-headers-right;
+      }
+    }
+  }
 }
