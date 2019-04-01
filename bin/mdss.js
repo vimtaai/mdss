@@ -3,10 +3,10 @@
 const program = require("commander");
 
 program
-  .description("CLI for building and customizing MDSS")
+  .description("CLI for creating MDSS stylesheets")
   .usage("<command> [options]")
-  .command("build", "Generate custom MDSS stylesheets")
+  .command("build", "Generate MDSS stylesheets")
   .alias("b")
-  .command("customize", "Set up MDSS for customization")
-  .alias("c")
+  .command("init", "Set up MDSS for customization")
+  .alias("i")
   .parse(process.argv);
