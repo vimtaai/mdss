@@ -171,6 +171,10 @@
       }
     }
 
+    a.card {
+      font-weight: normal;
+    }
+
     @each $name, $color in $container-card-list {
       .#{$name}.outline.card {
         border-color: $color;

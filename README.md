@@ -33,6 +33,7 @@ The stylesheets include several visual extras by default in addition to standard
 - Automatic page breaks before specified elements **(available: print; default: no elements)**
 - Avoid page breaks after specified elements **(available: print; default: level 1 heading)**
 - Print only formatted area **(available: print, default: disabled)**
+- Page counters and page headers **(availale: print -if rendering engines supports margin boxes-, default: disabled)**
 
 ### Markdown Extensions
 
