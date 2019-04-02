@@ -9,7 +9,7 @@ $enable-page-break-auto           : true;
   $page-break-auto-avoid-after    : (h1);
 
 // Markdown Extensions
-$enable-tables: true;
+$enable-tables                    : true;
   $tables-stripe-background       : $color-gray-light;
 $enable-definition-list           : true;
 $enable-strikethrough             : true;
