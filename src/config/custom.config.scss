@@ -19,3 +19,8 @@
   // Styles here will be applied in print to the @page directive
 
 }
+
+@mixin custom-final {
+  // Styles here will be applied "as-is" after all other styles
+  
+}
