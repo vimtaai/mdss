@@ -1,27 +1,28 @@
-const chalk = require("chalk");
-
 const { name } = require("../../package.json");
+const { blue, bold, green, red, yellow } = require("kleur");
 
-function createLogger(levelTypes) {
-  const logger = { enabled: true };
-  for (const { level, color, alwaysShow = false } of levelTypes) {
-    logger[level] = function(event, message = "") {
-      if (alwaysShow || this.enabled) {
-        const eventString = chalk[color](event.padEnd(16));
-        // eslint-disable-next-line no-console
-        console.log(chalk.bold(name), eventString, message);
-      }
-    };
+const logger = {
+  enabled: true,
+  log(color, event, message, alwaysShow = false) {
+    if (this.enabled || alwaysShow) {
+      // eslint-disable-next-line no-console
+      console.log(bold(name), color(event.padEnd(16)), message || "");
+    }
+  },
+  success(event, message) {
+    this.log(green, event, message);
+  },
+  warning(event, message) {
+    this.log(yellow, event, message);
+  },
+  info(event, message) {
+    this.log(blue, event, message);
+  },
+  error(event, message, err) {
+    this.log(red, event, message, true);
+    this.log(yellow, "error-info", err.message, true);
   }
-  return logger;
-}
-
-const logger = createLogger([
-  { level: "info", color: "blue" },
-  { level: "error", color: "red", alwaysShow: true },
-  { level: "warning", color: "yellow" },
-  { level: "success", color: "green" }
-]);
+};
 
 module.exports = {
   logger
