@@ -14,7 +14,8 @@
         background: $tables-stripe-background;
       }
 
-      td, th {
+      td,
+      th {
         text-align: left;
       }
     }
@@ -34,7 +35,8 @@
 
   // Strikethrough
   @if $enable-strikethrough {
-    s, del {
+    s,
+    del {
       text-decoration: line-through;
     }
   }
@@ -77,24 +79,21 @@
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  // Flex Containers
-  @if $enable-container-flex {
-    .flex {
-      @extend %flex;
-
-      .evenly.aligned {
-        justify-content: space-evenly;
-      }
-    }
+    justify-content: flex-start;
   }
 
   // Columns
   @if $enable-container-columns {
     .columns {
       @extend %flex;
+
+      &.evenly.aligned {
+        justify-content: space-evenly;
+
+        & > * {
+          width: auto;
+        }
+      }
 
       & > * {
         box-sizing: border-box;
@@ -110,7 +109,7 @@
   @if $enable-container-card {
     .card {
       overflow: hidden;
-      
+
       :first-child {
         margin-top: 0;
       }

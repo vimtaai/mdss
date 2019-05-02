@@ -9,7 +9,7 @@ $enable-page-break-auto           : true;
   $page-break-auto-avoid-after    : (h1);
 
 // Markdown Extensions
-$enable-tables: true;
+$enable-tables                    : true;
   $tables-stripe-background       : $color-gray-light;
 $enable-definition-list           : true;
 $enable-strikethrough             : true;
@@ -18,7 +18,6 @@ $enable-strikethrough             : true;
 $enable-container-align           : true;
 $enable-container-float           : true;
 $enable-container-no-print        : true;
-$enable-container-flex            : true;
 $enable-container-columns         : true;
   $container-columns-max          : 4;
 $enable-container-card            : true;
@@ -28,6 +27,15 @@ $enable-container-card            : true;
     "gray"    : $color-gray-medium
   );
 $enable-container-sticky          : true;
+
+// Page Options in Print
+$enable-page-numbering            : false;
+  $page-numbering-location        : center;
+  $page-numbering-format          : "{#} / {##}";
+$enable-page-headers              : false;
+  $page-headers-left              : "";
+  $page-headers-center            : "";
+  $page-headers-right             : "";
 
 // Syntax Highlighting
 $enable-syntax-highlighting       : true;

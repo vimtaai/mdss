@@ -1,26 +1,38 @@
 @mixin shared-block {
   // Headings
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     position: relative;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     text-transform: uppercase;
   }
 
   // Lists
-  ol, ul {
-    ol, ul {
+  ol,
+  ul {
+    ol,
+    ul {
       margin-top: 0;
       margin-bottom: 0;
     }
-    
+
     li {
       margin: 0;
     }
 
-    p {
-      display: inline;
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -28,9 +40,13 @@
   blockquote {
     margin-left: 0;
     margin-right: 0;
-    
-    p {
-      display: inline;
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -38,7 +54,7 @@
   pre {
     break-inside: avoid;
     page-break-inside: avoid;
-    
+
     code {
       background: none;
       border: none;

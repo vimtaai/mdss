@@ -1,3 +1,25 @@
 @mixin print-page {
+  @top-left {
+    content: "";
+  }
 
+  @top-center {
+    content: "";
+  }
+
+  @top-right {
+    content: "";
+  }
+
+  @bottom-left {
+    content: "";
+  }
+
+  @bottom-center {
+    content: "";
+  }
+
+  @bottom-right {
+    content: "";
+  }
 }
