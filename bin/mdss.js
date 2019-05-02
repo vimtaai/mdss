@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const program = require("commander");
+const program = require('commander')
+
+// Script description
 
 program
-  .description("CLI for creating MDSS stylesheets")
-  .usage("<command> [options]")
-  .command("build", "Generate MDSS stylesheets")
-  .alias("b")
-  .command("init", "Set up MDSS for customization")
-  .alias("i")
-  .parse(process.argv);
+  .description('CLI for building and customizing MDSS')
+  .usage('<command> [options]')
+  .command('build', 'Generate custom MDSS stylesheets').alias('b')
+  .command('customize', 'Set up MDSS for customization').alias('c')
+  .parse(process.argv)

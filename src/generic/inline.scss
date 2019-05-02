@@ -5,7 +5,7 @@
     @include font-size($link-font-size);
     @include font-style($link-font-style);
     @include font-weight($link-font-weight);
-
+    
     color: $link-font-color;
   }
 
@@ -17,7 +17,7 @@
     @include font-style($code-font-style);
     @include font-weight($code-font-weight);
     @include background($code-background);
-
+    
     border-radius: $border-radius;
     padding: $spacing-small;
   }

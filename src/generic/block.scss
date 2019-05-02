@@ -6,7 +6,7 @@
 
       @if ($level <= length($heading-font-size)) {
         @include font-color(nth($heading-font-color, $level));
-
+        
         font-size: (nth($heading-font-size, $level));
         font-weight: (nth($heading-font-weight, $level));
         margin-bottom: nth($heading-margin, $level);
@@ -28,13 +28,13 @@
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
   }
-
+  
   ol {
     list-style: $ordered-list-style;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
   }
-
+  
   // Blockquotes
   blockquote {
     @include font($quote-font);
@@ -43,7 +43,7 @@
     @include font-weight($quote-font-weight);
     @include font-style($quote-font-style);
     @include background($quote-background);
-
+    
     border: solid $quote-border-color $border-width;
     border-radius: $border-radius;
     line-height: $quote-line-height;

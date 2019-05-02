@@ -6,7 +6,7 @@
   line-height: $root-line-height;
   padding: $root-margin-y calc(50% - #{$root-max-width / 2} + #{$root-margin-x});
   min-width: $root-min-width;
-
+  
   @if (unit($root-max-width) == unit($root-margin-x)) {
     $max-width: #{$root-max-width + (2 * $root-margin-x) + rem(3)};
 

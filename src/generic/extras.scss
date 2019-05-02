@@ -11,8 +11,7 @@
       $counter-resets: "";
       @if $level < length($auto-numbering-headings) {
         @for $i from $level + 1 through length($auto-numbering-headings) {
-          $counter-resets: #{$counter-resets}
-            #{nth($auto-numbering-headings, $i)};
+          $counter-resets: #{$counter-resets} #{nth($auto-numbering-headings, $i)}
         }
       }
 
@@ -20,9 +19,9 @@
       @for $i from 1 through $level {
         $label: #{$label} counter(#{nth($auto-numbering-headings, $i)});
         @if ($i != $level) {
-          $label: #{$label} '"."';
+          $label: #{$label} '"."'
         } @else {
-          $label: #{$label} '"\00a0"';
+          $label: #{$label} '"\00a0"'
         }
       }
 
@@ -71,12 +70,11 @@
         @include font-color(nth($heading-font-color, $last-heading));
         @include font-size(nth($heading-font-size, $last-heading));
         @include font-weight(nth($heading-font-weight, $last-heading));
-
+        
         border-bottom: solid $color-primary $border-width;
       }
-
-      th,
-      td {
+  
+      th, td {
         font-weight: inherit;
         padding: $spacing-small $spacing-medium;
       }
@@ -106,26 +104,17 @@
     $column-spacing: 2 * $spacing-small;
 
     // Medium
-    @include viewport-medium {
+    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
         $actual-column-count: $column-count;
-
+        
         @if ($column-count > 2) {
           $actual-column-count: ceil($column-count / 2);
         }
 
         .#{number($column-count)}.columns > * {
-          margin: $column-spacing;
           width: column-width($actual-column-count, $column-spacing);
-
-          &:nth-child(#{$actual-column-count}n + 1) {
-            margin-left: 0;
-          }
-
-          &:nth-child(#{$actual-column-count}n) {
-            margin-right: 0;
-          }
         }
 
         $column-count: $column-count + 1;
@@ -133,22 +122,13 @@
     }
 
     // Large
-    @include viewport-large {
+    @media (min-width: $breakpoint-large) {
       $column-count: 2;
       @while $column-count <= $container-columns-max {
         .#{number($column-count)}.columns > * {
-          margin: $column-spacing;
           width: column-width($column-count, $column-spacing);
-
-          &:nth-child(#{$column-count}n + 1) {
-            margin-left: 0;
-          }
-
-          &:nth-child(#{$column-count}n) {
-            margin-right: 0;
-          }
         }
-
+        
         $column-count: $column-count + 1;
       }
     }
@@ -171,10 +151,6 @@
       }
     }
 
-    a.card {
-      font-weight: normal;
-    }
-
     @each $name, $color in $container-card-list {
       .#{$name}.outline.card {
         border-color: $color;
@@ -183,15 +159,13 @@
       .#{$name}.card:not(.outline) {
         @include background($color);
 
-        @if lightness($color) > 50 {
-          // light background
+        @if lightness($color) > 50 { // light background
           @if lightness($root-font-color) > 50 {
             color: $color-black;
           } @else {
             color: $root-font-color;
           }
-        } @else {
-          // dark background
+        } @else { // dark background
           @if lightness($root-font-color) > 50 {
             color: $root-font-color;
           } @else {

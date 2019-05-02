@@ -1,16 +1,5 @@
 @function number($number) {
-  $number-names: (
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten"
-  );
+  $number-names: ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
 
   @return nth($number-names, $number);
 }
@@ -21,19 +10,7 @@
 
 @function column-width($column-count, $column-spacing) {
   $full-width: #{100% / $column-count};
-  $space-per-column: #{2 * ($column-count - 1) / ($column-count) *
-    $column-spacing};
+  $space-per-column: #{2 * ($column-count - 1) / ($column-count) * $column-spacing};
 
   @return calc(#{$full-width} - #{$space-per-column});
-}
-
-@function numbering($str, $idx, $end, $rep) {
-  @return '"' + str-slice($str, 1, $idx - 1) + '" ' + $rep + ' "' +
-    str-slice($str, $end) + '"';
-}
-
-@function numbering-both($str, $idx1, $end1, $rep1, $idx2, $end2, $rep2) {
-  @return '"' + str-slice($str, 1, $idx1 - 1) + '" ' + $rep1 + ' "' +
-    str-slice($str, $end1, $idx2 - 1) + '" ' + $rep2 + ' "' +
-    str-slice($str, $end2) + '"';
 }
