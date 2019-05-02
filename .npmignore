@@ -1,6 +1,0 @@
-# editor config
-.vscode
-# dependencies
-node_modules
-# version control
-.git

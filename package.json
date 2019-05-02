@@ -2,13 +2,19 @@
   "name": "mdss",
   "version": "3.0.0",
   "description": "Responsive stylesheets for displaying and printing Markdown documents",
-  "type": "module",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
-  "main": "dist/mdss.min.css",
-  "bin": "bin/mdss.js",
   "repository": "github:vimtaai/mdss",
+  "type": "module",
+  "bin": "bin/mdss.js",
+  "browser": "dist/mdss.min.css",
+  "files": [
+    "/src",
+    "/bin",
+    "/dist"
+  ],
   "scripts": {
+    "lint": "eslint bin/**.js",
     "build": "node bin/mdss.js build --all --config-dir src/config --output-dir dist",
     "build:dev": "node bin/mdss.js build --dev --all --config-dir src/config --output-dir dist",
     "prepare": "npm run build && npm run build:dev"
