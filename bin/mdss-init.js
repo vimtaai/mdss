@@ -35,8 +35,7 @@ async function init(args) {
     await fse.ensureDir(path.resolve(options.configDir));
   } catch (error) {
     const message = `Could not create config dir ${options.configDir}.`;
-    logger.error(`config-dir`, message);
-    logger.warning(`error-info`, error.message);
+    logger.error(`config-dir`, message, error);
     return;
   }
 
@@ -44,8 +43,7 @@ async function init(args) {
     await fse.ensureDir(path.resolve(options.outputDir));
   } catch (error) {
     const message = `Could not create output dir ${options.outputDir}.`;
-    logger.error(`output-dir`, message);
-    logger.warning(`error-info`, error.message);
+    logger.error(`output-dir`, message, error);
     return;
   }
 
@@ -54,8 +52,7 @@ async function init(args) {
     logger.success(`copy`, `${mdssConfigDir} -> ${options.configDir}`);
   } catch (error) {
     const message = `Could not copy config files to ${options.configDir}.`;
-    logger.error(`copy`, message);
-    logger.warning(`error-info`, error.message);
+    logger.error(`copy`, message, error);
   }
 }
 

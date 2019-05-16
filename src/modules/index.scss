@@ -1,0 +1,53 @@
+@import "helpers/functions";
+@import "helpers/mixins";
+
+@import "shared/imports";
+@import "shared/fonts";
+@import "shared/colors";
+@import "shared/animations.scss";
+@import "config/modules";
+
+// CommonMark module
+@import "modules/commonmark/typography";
+@import "modules/commonmark/boxes";
+
+// Main entry point for all modules
+@mixin entry {
+  // CommonMark module
+  @if ($module-commonmark-enabled) {
+    @include commonmark-typography;
+    @include commonmark-boxes;
+  }
+}
+
+// CommmonMark module config (screen)
+@import "config/commonmark/spacing.screen";
+@import "config/commonmark/typography.screen";
+@import "config/commonmark/boxes.screen";
+
+// Screen media main code
+@if (index($MEDIA, screen) != null) {
+  @if $BUNDLE {
+    @media screen {
+      @include entry;
+    }
+  } @else {
+    @include entry;
+  }
+}
+
+// CommonMark module config (print)
+@import "config/commonmark/spacing.print";
+@import "config/commonmark/typography.print";
+@import "config/commonmark/boxes.print";
+
+// Screen media main code
+@if (index($MEDIA, print) != null) {
+  @if $BUNDLE {
+    @media print {
+      @include entry;
+    }
+  } @else {
+    @include entry;
+  }
+}

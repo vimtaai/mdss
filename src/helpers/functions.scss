@@ -1,39 +1,35 @@
-@function number($number) {
-  $number-names: (
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten"
-  );
-
-  @return nth($number-names, $number);
-}
-
 @function rem($multiplier) {
-  @return $multiplier * $root-font-size;
+  @return $multiplier * $scaling-base;
 }
 
-@function column-width($column-count, $column-spacing) {
-  $full-width: #{100% / $column-count};
-  $space-per-column: #{2 * ($column-count - 1) / ($column-count) *
-    $column-spacing};
-
-  @return calc(#{$full-width} - #{$space-per-column});
+@function lighter($color) {
+  @return lighten($color, 40%);
 }
 
-@function numbering($str, $idx, $end, $rep) {
-  @return '"' + str-slice($str, 1, $idx - 1) + '" ' + $rep + ' "' +
-    str-slice($str, $end) + '"';
+@function darker($color) {
+  @return darken($color, 15%);
 }
 
-@function numbering-both($str, $idx1, $end1, $rep1, $idx2, $end2, $rep2) {
-  @return '"' + str-slice($str, 1, $idx1 - 1) + '" ' + $rep1 + ' "' +
-    str-slice($str, $end1, $idx2 - 1) + '" ' + $rep2 + ' "' +
-    str-slice($str, $end2) + '"';
+@function repeat($string, $n) {
+  $result: "";
+  @for $i from 1 through $n {
+    $result: $result + $string;
+  }
+  @return $result;
+}
+
+@function add($a, $b) {
+  @if $a == null or $b == null {
+    @return null;
+  } @else {
+    @return $a + $b;
+  }
+}
+
+@function substract($a, $b) {
+  @if $a == null or $b == null {
+    @return null;
+  } @else {
+    @return $a + $b;
+  }
 }

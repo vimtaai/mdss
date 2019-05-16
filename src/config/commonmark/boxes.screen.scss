@@ -1,0 +1,129 @@
+// Root element
+$root-max-width             : 1141px;
+
+$root-background            : $color-white;
+$root-border-all            : null;
+$root-border-radius         : null;
+$root-padding-x             : $spacing-huge;
+$root-padding-y             : $spacing-huge;
+
+$root-border-top            : null;
+$root-border-bottom         : null;
+$root-border-left           : null;
+$root-border-right          : null;
+$root-padding-top           : null;
+$root-padding-right         : null;
+$root-padding-left          : null;
+$root-padding-bottom        : null;
+
+// Headings (h1, [h2], [h3], [h4], [h5], [h6])
+$heading-background         : null, null, null, null; 
+$heading-border-all         : null, null, null, null;
+$heading-border-radius      : null, null, null, null;
+$heading-padding-x          : null, null, null, null;
+$heading-padding-y          : null, null, null, null;
+
+$heading-border-top         : null, null, null, null;
+$heading-border-bottom      : null, null, null, null;
+$heading-border-left        : null, null, null, null;
+$heading-border-right       : null, null, null, null;
+$heading-padding-top        : null, null, null, null;
+$heading-padding-bottom     : null, null, null, null;
+$heading-padding-left       : null, null, null, null;
+$heading-padding-right      : null, null, null, null;
+
+// Paragraphs (p)
+$paragraph-background       : null;
+$paragraph-border-all       : null;
+$paragraph-border-radius    : null;
+$paragraph-padding-x        : null;
+$paragraph-padding-y        : null;
+
+$paragraph-border-top       : null;
+$paragraph-border-bottom    : null;
+$paragraph-border-left      : null;
+$paragraph-border-right     : null;
+$paragraph-padding-top      : null;
+$paragraph-padding-bottom   : null;
+$paragraph-padding-left     : null;
+$paragraph-padding-right    : null;
+
+// Blockquotes (blockquote)
+$blockquote-background      : null;
+$blockquote-border-all      : null;
+$blockquote-border-radius   : null;
+$blockquote-padding-x       : null;
+$blockquote-padding-y       : null;
+
+$blockquote-border-top       : null;
+$blockquote-border-bottom    : null;
+$blockquote-border-left      : null;
+$blockquote-border-right     : null;
+$blockquote-padding-top      : null;
+$blockquote-padding-bottom   : null;
+$blockquote-padding-left     : null;
+$blockquote-padding-right    : null;
+
+// List (nesting level 1, [2], [3], [...])
+$list-background            : null, null, null;
+$list-border-all            : null, null, null;
+$list-border-radius         : null, null, null;
+$list-padding-x             : 0, 0, 0;
+$list-padding-y             : 0, 0, 0;
+
+$list-border-top            : null, null, null;
+$list-border-bottom         : null, null, null;
+$list-border-left           : null, null, null;
+$list-border-right          : null, null, null;
+$list-padding-top           : null, null, null;
+$list-padding-bottom        : null, null, null;
+$list-padding-left          : null, null, null;
+$list-padding-right         : null, null, null;
+
+// Code blocks (pre code)
+$code-block-background      : $color-gray-dark;
+$code-block-border-all      : solid $color-black 1px;
+$code-block-border-radius   : $spacing-small;
+$code-block-padding-x       : $spacing-small;
+$code-block-padding-y       : $spacing-tiny;
+
+$code-block-border-top      : null;
+$code-block-border-bottom   : null;
+$code-block-border-left     : null;
+$code-block-border-right    : null;
+$code-block-padding-top     : null;
+$code-block-padding-bottom  : null;
+$code-block-padding-left    : null;
+$code-block-padding-right   : null;
+
+// Inline code (code)
+$inline-code-background     : $code-block-background;
+$inline-code-border-all     : $code-block-border-all;
+$inline-code-border-radius  : $code-block-border-radius;
+$inline-code-padding-x      : $spacing-small;
+$inline-code-padding-y      : $spacing-tiny;
+
+$inline-code-border-top     : null;
+$inline-code-border-bottom  : null;
+$inline-code-border-left    : null;
+$inline-code-border-right   : null;
+$inline-code-padding-top    : null;
+$inline-code-padding-bottom : null;
+$inline-code-padding-left   : null;
+$inline-code-padding-right  : null;
+
+// Links (a, [a:hover])
+$link-background            : null, lighter($color-primary);
+$link-border-all            : null, null;
+$link-border-radius         : $spacing-small, null;
+$link-padding-x             : $spacing-small, null;
+$link-padding-y             : $spacing-tiny, null;
+
+$link-border-top            : null, null;
+$link-border-bottom         : null, null;
+$link-border-left           : null, null;
+$link-border-right          : null, null;
+$link-padding-top           : null, null;
+$link-padding-bottom        : null, null;
+$link-padding-left          : null, null;
+$link-padding-right         : null, null;

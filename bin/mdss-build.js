@@ -50,8 +50,7 @@ async function build(args) {
     await fse.access(options.configDir);
   } catch (error) {
     const message = `Config dir not found. Did you forget to run \`npx mdss init\`?`;
-    logger.error(`config-dir`, message);
-    logger.warning(`error-info`, error.message);
+    logger.error(`config-dir`, message, error);
     return;
   }
 
@@ -59,8 +58,7 @@ async function build(args) {
     await fse.ensureDir(options.outputDir);
   } catch (error) {
     const message = `Could not create output dir \`${options.outputDir}\`.`;
-    logger.error(`output-dir`, message);
-    logger.warning(`error-info`, error);
+    logger.error(`output-dir`, message, error);
     return;
   }
 
@@ -68,8 +66,8 @@ async function build(args) {
     const isBundle = media === "bundle";
     const sassCode = `
       $BUNDLE: ${isBundle};
-      $MEDIA: ${isBundle ? "screen print" : media};
-      @import "entry/index";
+      $MEDIA: ${isBundle ? "screen, print" : media};
+      @import "modules/index";
     `;
 
     const mediaSuffix = isBundle ? `` : `-${media}`;
@@ -94,8 +92,7 @@ async function build(args) {
       });
     } catch (error) {
       const message = `Could not compile stylesheet for media \`${media}\`.`;
-      logger.error(`compile`, message);
-      logger.warning(`error-info`, error.message);
+      logger.error(`compile`, message, error);
       return;
     }
 
@@ -112,8 +109,7 @@ async function build(args) {
       }
     } catch (error) {
       const message = `Could not write output file \`${outputFilePath}\`.`;
-      logger.error(`write`, message);
-      logger.warning(`error-info`, error.message);
+      logger.error(`write`, message, error);
       return;
     }
   }

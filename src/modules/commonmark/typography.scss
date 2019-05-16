@@ -1,0 +1,137 @@
+@mixin commonmark-typography {
+  body {
+    color: $root-font-color;
+    font-family: $root-font-family;
+    font-size: $root-font-size;
+    font-style: $root-font-style;
+    font-weight: $root-font-weight;
+    text-align: $root-text-align;
+  }
+
+  $levels-of-heading: length($heading-font-family);
+  @for $level from 1 through $levels-of-heading {
+    h#{$level} {
+      color: nth($heading-font-color, $level);
+      font-family: nth($heading-font-family, $level);
+      font-size: nth($heading-font-size, $level);
+      font-style: nth($heading-font-style, $level);
+      font-weight: nth($heading-font-weight, $level);
+      line-height: nth($heading-line-height, $level);
+      margin-bottom: nth($heading-spacing-after, $level);
+      margin-left: add(
+        nth($heading-indent-left, $level),
+        nth($heading-indent-hanging, $level)
+      );
+      margin-right: nth($heading-indent-right, $level);
+      margin-top: nth($heading-spacing-before, $level);
+      text-indent: substract(
+        nth($heading-indent-first-line, $level),
+        nth($heading-indent-hanging, $level)
+      );
+    }
+  }
+
+  p {
+    color: $paragraph-font-color;
+    font-family: $paragraph-font-family;
+    font-size: $paragraph-font-size;
+    font-style: $paragraph-font-style;
+    font-weight: $paragraph-font-weight;
+    line-height: $paragraph-line-height;
+    margin-bottom: $paragraph-spacing-after;
+    margin-left: add($paragraph-indent-left, $paragraph-indent-hanging);
+    margin-right: $paragraph-indent-right;
+    margin-top: $paragraph-spacing-before;
+    text-indent: substract(
+      $paragraph-indent-first-line,
+      $paragraph-indent-hanging
+    );
+  }
+
+  blockquote {
+    color: $blockquote-font-color;
+    font-family: $blockquote-font-family;
+    font-size: $blockquote-font-size;
+    font-style: $blockquote-font-style;
+    font-weight: $blockquote-font-weight;
+    line-height: $blockquote-line-height;
+    margin-bottom: $blockquote-spacing-after;
+    margin-left: add($blockquote-indent-left, $blockquote-indent-hanging);
+    margin-right: $blockquote-indent-right;
+    margin-top: $blockquote-spacing-before;
+    text-indent: substract(
+      $blockquote-indent-first-line,
+      $blockquote-indent-hanging
+    );
+  }
+
+  $levels-of-lists: length($list-font-family);
+  @for $level from 1 through $levels-of-lists {
+    #{repeat("ol ", $level)},
+    #{repeat("ul ", $level)} {
+      color: nth($list-font-color, $level);
+      font-family: nth($list-font-family, $level);
+      font-size: nth($list-font-size, $level);
+      font-style: nth($list-font-style, $level);
+      font-weight: nth($list-font-weight, $level);
+      line-height: nth($list-line-height, $level);
+      margin-bottom: nth($list-spacing-after, $level);
+      margin-left: nth($list-indent-left, $level);
+      margin-right: nth($list-indent-right, $level);
+      margin-top: nth($list-spacing-before, $level);
+    }
+
+    #{repeat("ol ", $level)} {
+      list-style: nth($list-ordered-style, $level);
+    }
+
+    #{repeat("ul ", $level)} {
+      list-style: nth($list-unordered-style, $level);
+    }
+  }
+
+  pre code {
+    color: $code-block-font-color;
+    font-family: $code-block-font-family;
+    font-size: $code-block-font-size;
+    font-style: $code-block-font-style;
+    font-weight: $code-block-font-weight;
+    line-height: $code-block-line-height;
+    margin-bottom: $code-block-spacing-after;
+    margin-left: $code-block-indent-left;
+    margin-right: $code-block-indent-right;
+    margin-top: $code-block-spacing-before;
+  }
+
+  code {
+    color: $inline-code-font-color;
+    font-family: $inline-code-font-family;
+    font-size: $inline-code-font-size;
+    font-style: $inline-code-font-style;
+    font-weight: $inline-code-font-weight;
+    text-decoration: $inline-code-text-decoration;
+  }
+
+  a {
+    color: nth($link-font-color, 1);
+    display: inline-block;
+    font-family: nth($link-font-family, 1);
+    font-size: nth($link-font-size, 1);
+    font-style: nth($link-font-style, 1);
+    font-weight: nth($link-font-weight, 1);
+    text-decoration: nth($link-text-decoration, 1);
+    transition: all $animation-fast;
+
+    $has-link-hover-styles: length($link-font-family) > 1;
+    @if ($has-link-hover-styles) {
+      &:hover {
+        color: nth($link-font-color, 2);
+        font-family: nth($link-font-family, 2);
+        font-size: nth($link-font-size, 2);
+        font-style: nth($link-font-style, 2);
+        font-weight: nth($link-font-weight, 2);
+        text-decoration: nth($link-text-decoration, 2);
+      }
+    }
+  }
+}

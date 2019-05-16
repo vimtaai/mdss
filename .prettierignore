@@ -1,0 +1,4 @@
+# output files
+/dist
+# config files
+/src/config

@@ -1,9 +1,0 @@
-@mixin print-root {
-  position: absolute;
-  top: 0;
-  visibility: visible;
-
-  * {
-    visibility: visible;
-  }
-}

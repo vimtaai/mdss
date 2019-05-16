@@ -1,0 +1,106 @@
+// Root element
+$root-font-family             : $font-serif;
+$root-font-color              : $color-black;
+$root-font-size               : 12pt;
+$root-font-weight             : 400;
+$root-font-style              : normal;
+
+$root-line-height             : 1;
+$root-text-align              : left;
+
+// Headings (h1, [h2], [h3], [h4], [h5], [h6])
+$heading-font-family          : $font-condensed, $font-condensed, $font-condensed, $font-condensed;
+$heading-font-color           : $color-primary, $color-secondary, null, null;
+$heading-font-size            : 24pt, 18pt, 14pt, 12pt;
+$heading-font-weight          : 700, 700, 700, 700;
+$heading-font-style           : null, null, null, null;
+
+$heading-spacing-before       : null, null, null, null;
+$heading-spacing-after        : $spacing-large, $spacing-large, $spacing-medium, $spacing-medium;
+$heading-indent-left          : null, null, null, null;
+$heading-indent-right         : null, null, null, null;
+$heading-indent-first-line    : null, null, null, null;
+$heading-indent-hanging       : null, null, null, null;
+$heading-line-height          : null, null, null, null;
+$heading-text-align           : null, null, null, null;
+
+// Paragraphs (p)
+$paragraph-font-family        : null;
+$paragraph-font-color         : null;
+$paragraph-font-size          : null;
+$paragraph-font-weight        : null;
+$paragraph-font-style         : null;
+
+$paragraph-spacing-before     : null;
+$paragraph-spacing-after      : $spacing-medium;
+$paragraph-indent-left        : null;
+$paragraph-indent-right       : null;
+$paragraph-indent-first-line  : null;
+$paragraph-indent-hanging     : null;
+$paragraph-line-height        : 1.618;
+$paragraph-text-align         : null;
+
+// Blockquotes (blockquote)
+$blockquote-font-family       : null;
+$blockquote-font-color        : $color-primary;
+$blockquote-font-size         : 14pt;
+$blockquote-font-weight       : null;
+$blockquote-font-style        : italic;
+
+$blockquote-spacing-before    : $spacing-large;
+$blockquote-spacing-after     : $blockquote-spacing-before;
+$blockquote-indent-left       : $spacing-medium;
+$blockquote-indent-right      : $blockquote-indent-left;
+$blockquote-indent-first-line : null;
+$blockquote-indent-hanging    : null;
+$blockquote-line-height       : 1.414;
+$blockquote-text-align        : null;
+
+// List (nesting level 1, [2], [3], [...])
+$list-font-family             : null, null, null;
+$list-font-color              : null, null, null;
+$list-font-size               : null, null, null;
+$list-font-weight             : null, null, null;
+$list-font-style              : null, null, null;
+
+$list-spacing-before          : $spacing-medium, null, null;
+$list-spacing-after           : $list-spacing-before, null, null;
+$list-indent-left             : $spacing-large, $spacing-large, $spacing-large;
+$list-indent-right            : null, null, null;
+$list-line-height             : 1.414, 1.414, 1.414;
+$list-text-align              : null, null, null;
+
+$list-ordered-style           : decimal, lower-latin, lower-roman;
+$list-unordered-style         : square, disc, circle;
+
+// Code blocks (pre code)
+$code-block-font-family       : $font-monospace;
+$code-block-font-color        : null;
+$code-block-font-size         : 11pt;
+$code-block-font-weight       : null;
+$code-block-font-style        : null;
+
+$code-block-spacing-before    : $spacing-medium;
+$code-block-spacing-after     : $code-block-spacing-before;
+$code-block-indent-left       : null;
+$code-block-indent-right      : null;
+$code-block-line-height       : 1.414;
+$code-block-text-align        : null;
+
+// Inline code (code)
+$inline-code-font-family     : $code-block-font-family;
+$inline-code-font-color      : $code-block-font-color;
+$inline-code-font-size       : $code-block-font-size;
+$inline-code-font-weight     : $code-block-font-weight;
+$inline-code-font-style      : $code-block-font-style;
+$inline-code-text-decoration : null;
+$inline-code-text-transform  : null;
+
+// Links (a, [a:hover])
+$link-font-family            : null;
+$link-font-color             : $root-font-color;
+$link-font-size              : null;
+$link-font-weight            : 700;
+$link-font-style             : null;
+$link-text-decoration        : none;
+$link-text-transform         : null;

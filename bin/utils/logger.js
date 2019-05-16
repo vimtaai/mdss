@@ -20,7 +20,8 @@ const logger = {
   },
   error(event, message, err) {
     this.log(red, event, message, true);
-    this.log(yellow, "error-info", err.message, true);
+    const errInfo = `"${err.message}" in file ${err.file} in line ${err.line}.`;
+    this.log(yellow, "error-info", errInfo, true);
   }
 };
 

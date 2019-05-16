@@ -1,0 +1,153 @@
+@mixin commonmark-boxes {
+  body {
+    background: $root-background;
+    border: $root-border-all;
+    border-bottom: $root-border-bottom;
+    border-left: $root-border-left;
+    border-radius: $root-border-radius;
+    border-right: $root-border-right;
+    border-top: $root-border-top;
+    max-width: $root-max-width;
+    padding: $root-padding-y $root-padding-x;
+    padding-bottom: $root-padding-bottom;
+    padding-left: $root-padding-left;
+    padding-right: $root-padding-right;
+    padding-top: $root-padding-top;
+  }
+
+  $levels-of-heading: length($heading-background);
+  @for $level from 1 through $levels-of-heading {
+    h#{$level} {
+      background: nth($heading-background, $level);
+      border: nth($heading-border-all, $level);
+      border-bottom: nth($heading-border-bottom, $level);
+      border-left: nth($heading-border-left, $level);
+      border-radius: nth($heading-border-radius, $level);
+      border-right: nth($heading-border-right, $level);
+      border-top: nth($heading-border-top, $level);
+      padding: nth($heading-padding-y, $level) nth($heading-padding-x, $level);
+      padding-bottom: nth($heading-padding-bottom, $level);
+      padding-left: nth($heading-padding-left, $level);
+      padding-right: nth($heading-padding-right, $level);
+      padding-top: nth($heading-padding-top, $level);
+    }
+  }
+
+  p {
+    background: $paragraph-background;
+    border: $paragraph-border-all;
+    border-bottom: $paragraph-border-bottom;
+    border-left: $paragraph-border-left;
+    border-radius: $paragraph-border-radius;
+    border-right: $paragraph-border-right;
+    border-top: $paragraph-border-top;
+    padding: $paragraph-padding-y $paragraph-padding-x;
+    padding-bottom: $paragraph-padding-bottom;
+    padding-left: $paragraph-padding-left;
+    padding-right: $paragraph-padding-right;
+    padding-top: $paragraph-padding-top;
+  }
+
+  blockquote {
+    background: $blockquote-background;
+    border: $blockquote-border-all;
+    border-bottom: $blockquote-border-bottom;
+    border-left: $blockquote-border-left;
+    border-radius: $blockquote-border-radius;
+    border-right: $blockquote-border-right;
+    border-top: $blockquote-border-top;
+    padding: $blockquote-padding-y $blockquote-padding-x;
+    padding-bottom: $blockquote-padding-bottom;
+    padding-left: $blockquote-padding-left;
+    padding-right: $blockquote-padding-right;
+    padding-top: $blockquote-padding-top;
+  }
+
+  $levels-of-lists: length($list-background);
+  @for $level from 1 through $levels-of-lists {
+    #{repeat("ol ", $level)},
+    #{repeat("ul ", $level)} {
+      background: nth($list-background, $level);
+      border: nth($list-border-all, $level);
+      border-bottom: nth($list-border-bottom, $level);
+      border-left: nth($list-border-left, $level);
+      border-radius: nth($list-border-radius, $level);
+      border-right: nth($list-border-right, $level);
+      border-top: nth($list-border-top, $level);
+      padding: nth($list-padding-y, $level) nth($list-padding-x, $level);
+      padding-bottom: nth($list-padding-bottom, $level);
+      padding-left: nth($list-padding-left, $level);
+      padding-right: nth($list-padding-right, $level);
+      padding-top: nth($list-padding-top, $level);
+    }
+  }
+
+  pre {
+    background: $code-block-background;
+    border: $code-block-border-all;
+    border-bottom: $code-block-border-bottom;
+    border-left: $code-block-border-left;
+    border-radius: $code-block-border-radius;
+    border-right: $code-block-border-right;
+    border-top: $code-block-border-top;
+    padding: $code-block-padding-y $code-block-padding-x;
+    padding-bottom: $code-block-padding-bottom;
+    padding-left: $code-block-padding-left;
+    padding-right: $code-block-padding-right;
+    padding-top: $code-block-padding-top;
+
+    code {
+      background: none;
+      border: none;
+      padding: none;
+    }
+  }
+
+  code {
+    background: $inline-code-background;
+    border: $inline-code-border-all;
+    border-bottom: $inline-code-border-bottom;
+    border-left: $inline-code-border-left;
+    border-radius: $inline-code-border-radius;
+    border-right: $inline-code-border-right;
+    border-top: $inline-code-border-top;
+    padding: $inline-code-padding-y $inline-code-padding-x;
+    padding-bottom: $inline-code-padding-bottom;
+    padding-left: $inline-code-padding-left;
+    padding-right: $inline-code-padding-right;
+    padding-top: $inline-code-padding-top;
+  }
+
+  a {
+    background: nth($link-background, 1);
+    border: nth($link-border-all, 1);
+    border-bottom: nth($link-border-bottom, 1);
+    border-left: nth($link-border-left, 1);
+    border-radius: nth($link-border-radius, 1);
+    border-right: nth($link-border-right, 1);
+    border-top: nth($link-border-top, 1);
+    padding: nth($link-padding-y, 1) nth($link-padding-x, 1);
+    padding-bottom: nth($link-padding-bottom, 1);
+    padding-left: nth($link-padding-left, 1);
+    padding-right: nth($link-padding-right, 1);
+    padding-top: nth($link-padding-top, 1);
+
+    $has-link-hover-styles: length($link-font-family) > 1;
+    @if ($has-link-hover-styles) {
+      &:hover {
+        background: nth($link-background, 2);
+        border: nth($link-border-all, 2);
+        border-bottom: nth($link-border-bottom, 2);
+        border-left: nth($link-border-left, 2);
+        border-radius: nth($link-border-radius, 2);
+        border-right: nth($link-border-right, 2);
+        border-top: nth($link-border-top, 2);
+        padding: nth($link-padding-y, 2) nth($link-padding-x, 2);
+        padding-bottom: nth($link-padding-bottom, 2);
+        padding-left: nth($link-padding-left, 2);
+        padding-right: nth($link-padding-right, 2);
+        padding-top: nth($link-padding-top, 2);
+      }
+    }
+  }
+}
