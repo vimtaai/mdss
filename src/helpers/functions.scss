@@ -3,7 +3,7 @@
 }
 
 @function lighter($color) {
-  @return lighten($color, 40%);
+  @return lighten($color, 45%);
 }
 
 @function darker($color) {

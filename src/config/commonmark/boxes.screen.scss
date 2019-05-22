@@ -116,8 +116,8 @@ $inline-code-padding-right  : null;
 $link-background            : null, lighter($color-primary);
 $link-border-all            : null, null;
 $link-border-radius         : $spacing-small, null;
-$link-padding-x             : $spacing-small, null;
-$link-padding-y             : $spacing-tiny, null;
+$link-padding-x             : $spacing-tiny, null;
+$link-padding-y             : null, null;
 
 $link-border-top            : null, null;
 $link-border-bottom         : null, null;
