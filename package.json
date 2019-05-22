@@ -18,6 +18,8 @@
     "prettier": "prettier --write ./{bin,src}/**/*.{js,scss}",
     "build": "node bin/mdss.js build --all --config-dir src/config --output-dir dist",
     "build:dev": "node bin/mdss.js build --dev --all --config-dir src/config --output-dir dist",
+    "watch": "watch \"npm run build\" src",
+    "watch:dev": "watch \"npm run build:dev\" src",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
@@ -31,6 +33,7 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-problems": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "watch": "^1.0.2"
   }
 }
