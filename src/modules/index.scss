@@ -2,6 +2,7 @@
 @import "helpers/mixins";
 
 @import "shared/imports";
+@import "shared/root";
 @import "shared/fonts";
 @import "shared/colors";
 @import "shared/animations.scss";
@@ -13,10 +14,12 @@
 
 // Main entry point for all modules
 @mixin entry {
-  // CommonMark module
-  @if ($module-commonmark-enabled) {
-    @include commonmark-typography;
-    @include commonmark-boxes;
+  @include set-root {
+    // CommonMark module
+    @if ($module-commonmark-enabled) {
+      @include commonmark-typography;
+      @include commonmark-boxes;
+    }
   }
 }
 

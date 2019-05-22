@@ -1,0 +1,19 @@
+@mixin set-root {
+  @if $root-selector != null {
+    #{$root-selector} {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin root {
+  @if $root-selector != null {
+    @content;
+  } @else {
+    body {
+      @content;
+    }
+  }
+}

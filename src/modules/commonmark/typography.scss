@@ -1,5 +1,5 @@
 @mixin commonmark-typography {
-  body {
+  @include root {
     color: $root-font-color;
     font-family: $root-font-family;
     font-size: $root-font-size;
