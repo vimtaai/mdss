@@ -7,7 +7,11 @@
     border-radius: $root-border-radius;
     border-right: $root-border-right;
     border-top: $root-border-top;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
     max-width: $root-max-width;
+    min-width: $root-min-width;
     padding: $root-padding-y $root-padding-x;
     padding-bottom: $root-padding-bottom;
     padding-left: $root-padding-left;

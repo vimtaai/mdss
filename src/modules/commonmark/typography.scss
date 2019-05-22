@@ -111,6 +111,7 @@
     font-weight: $inline-code-font-weight;
     line-height: normal;
     text-decoration: $inline-code-text-decoration;
+    white-space: nowrap;
   }
 
   a {
@@ -136,5 +137,9 @@
         text-decoration: nth($link-text-decoration, 2);
       }
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 }

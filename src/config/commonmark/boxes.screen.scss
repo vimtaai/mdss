@@ -1,11 +1,12 @@
 // Root element
 $root-max-width             : 1141px;
+$root-min-width             : 300px;
 
 $root-background            : $color-white;
 $root-border-all            : null;
 $root-border-radius         : null;
-$root-padding-x             : $spacing-huge;
-$root-padding-y             : $spacing-huge;
+$root-padding-x             : $spacing-medium;
+$root-padding-y             : $spacing-medium;
 
 $root-border-top            : null;
 $root-border-bottom         : null;
