@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "lint": "eslint bin/**.js",
+    "prettier": "prettier --write ./{bin,src}/**/*.{js,scss}",
     "build": "node bin/mdss.js build --all --config-dir src/config --output-dir dist",
     "build:dev": "node bin/mdss.js build --dev --all --config-dir src/config --output-dir dist",
     "prepare": "npm run build && npm run build:dev"

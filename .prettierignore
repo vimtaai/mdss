@@ -1,4 +1,4 @@
 # output files
-/dist
+dist
 # config files
-/src/config
+src/config
