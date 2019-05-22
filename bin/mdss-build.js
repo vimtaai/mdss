@@ -8,7 +8,7 @@ const csso = require("csso");
 
 const { defaultConfigDir, defaultOutputDir } = require("./utils/constants");
 const { mdssSrcDir } = require("./utils/constants");
-const { logger } = require("./utils/logger");
+const { cli } = require("./cli-out");
 
 program
   .option("-s --screen", "generate screen only stylesheet")
@@ -23,7 +23,7 @@ program
   .parse(process.argv);
 
 async function build(args) {
-  logger.enabled = !args.quiet;
+  cli.enabled = !args.quiet;
 
   const options = {
     configDir: args.configDir || defaultConfigDir,
@@ -41,16 +41,16 @@ async function build(args) {
     target => options.media[target]
   );
 
-  logger.info(`config-dir`, options.configDir);
-  logger.info(`output-dir`, options.outputDir);
-  logger.info(`target-media`, options.mediaList.join(", "));
-  logger.info(`dev-mode`, options.devMode);
+  cli.info(`config-dir`, options.configDir);
+  cli.info(`output-dir`, options.outputDir);
+  cli.info(`target-media`, options.mediaList.join(", "));
+  cli.info(`dev-mode`, options.devMode);
 
   try {
     await fse.access(options.configDir);
   } catch (error) {
     const message = `Config dir not found. Did you forget to run \`npx mdss init\`?`;
-    logger.error(`config-dir`, message, error);
+    cli.error(`config-dir`, message, error);
     return;
   }
 
@@ -58,7 +58,7 @@ async function build(args) {
     await fse.ensureDir(options.outputDir);
   } catch (error) {
     const message = `Could not create output dir \`${options.outputDir}\`.`;
-    logger.error(`output-dir`, message, error);
+    cli.error(`output-dir`, message, error);
     return;
   }
 
@@ -92,24 +92,24 @@ async function build(args) {
       });
     } catch (error) {
       const message = `Could not compile stylesheet for media \`${media}\`.`;
-      logger.error(`compile`, message, error);
+      cli.error(`compile`, message, error);
       return;
     }
 
     try {
       if (options.devMode) {
         await fse.outputFile(outputFilePath, result.build.css);
-        logger.success(`create`, `${outputFilePath}`);
+        cli.success(`create`, `${outputFilePath}`);
         await fse.outputFile(`${outputFilePath}.map`, result.build.map);
-        logger.success(`create`, `${outputFilePath}.map`);
+        cli.success(`create`, `${outputFilePath}.map`);
       } else {
         const minified = csso.minify(result.build.css);
         await fse.outputFile(outputFilePath, minified.css);
-        logger.success(`create`, `${outputFilePath}`);
+        cli.success(`create`, `${outputFilePath}`);
       }
     } catch (error) {
       const message = `Could not write output file \`${outputFilePath}\`.`;
-      logger.error(`write`, message, error);
+      cli.error(`write`, message, error);
       return;
     }
   }

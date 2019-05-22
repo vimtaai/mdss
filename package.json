@@ -22,15 +22,14 @@
   "dependencies": {
     "commander": "^2.20.0",
     "csso": "^3.5.1",
-    "fs-extra": "^7.0.1",
-    "kleur": "^3.0.3",
+    "fs-extra": "^8.0.1",
     "sass": "^1.20.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-prettier": "^4.3.0",
     "eslint-config-problems": "^2.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.17.0"
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.1"
   }
 }
