@@ -3,7 +3,7 @@
 const program = require("commander");
 const path = require("path");
 const fse = require("fs-extra");
-const sass = require("node-sass");
+const sass = require("sass");
 const csso = require("csso");
 
 const { defaultConfigDir, defaultOutputDir } = require("./utils/constants");
