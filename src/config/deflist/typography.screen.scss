@@ -1,0 +1,52 @@
+// Data term (dt)
+$data-term-font-family                 : null;
+$data-term-font-color                  : null;
+$data-term-font-size                   : null;
+$data-term-font-weight                 : 700;
+$data-term-font-style                  : null;
+$data-term-text-decoration             : null;
+$data-term-text-transform              : null;
+
+$data-term-spacing-before              : null;
+$data-term-spacing-after               : $spacing-small;
+$data-term-indent-left                 : null;
+$data-term-indent-right                : null;
+$data-term-line-height                 : $paragraph-line-height;
+$data-term-text-align                  : null;
+
+// Data description (dd)
+$data-description-font-family          : null;
+$data-description-font-color           : null;
+$data-description-font-size            : null;
+$data-description-font-weight          : null;
+$data-description-font-style           : null;
+$data-description-text-decoration      : null;
+$data-description-text-transform       : null;
+
+$data-description-spacing-before       : null;
+$data-description-spacing-after        : $paragraph-spacing-after;
+$data-description-indent-left          : $spacing-large;
+$data-description-indent-right         : null;
+$data-description-line-height          : $paragraph-line-height;
+$data-description-text-align           : null;
+
+// Definition list (dl)
+$deflist-enable-table-layout           : true;
+
+  // Data term in table layout (dt)
+  $data-term-max-width                   : 200px;
+  $data-term-table-spacing-before        : null;
+  $data-term-table-spacing-after         : $data-term-spacing-after;
+  $data-term-table-indent-left           : null;
+  $data-term-table-indent-right          : null;
+  $data-term-table-line-height           : $data-term-line-height;
+  $data-term-table-text-align            : right;
+
+  // Data description in table layout (dd)
+  $data-description-table-spacing-before : null;
+  $data-description-table-spacing-after  : $data-description-spacing-after;
+  $data-description-table-indent-left    : null;
+  $data-description-table-indent-right   : null;
+  $data-description-table-line-height    : $data-description-line-height;
+  $data-description-table-text-align     : null;
+

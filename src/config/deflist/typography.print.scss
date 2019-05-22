@@ -1,0 +1,34 @@
+// Definition list (dl)
+$definition-list-format          : "table"; // ["newline", "table"]
+
+// Data term (dt)
+$data-term-font-family           : null;
+$data-term-font-color            : null;
+$data-term-font-size             : null;
+$data-term-font-weight           : 700;
+$data-term-font-style            : null;
+$data-term-text-decoration       : null;
+$data-term-text-transform        : null;
+
+$data-term-spacing-before        : null;
+$data-term-spacing-after         : $spacing-small;
+$data-term-indent-left           : null;
+$data-term-indent-right          : null;
+$data-term-line-height           : $paragraph-line-height;
+$data-term-text-align            : right;
+
+// Data description (dd)
+$data-description-font-family     : null;
+$data-description-font-color      : null;
+$data-description-font-size       : null;
+$data-description-font-weight     : null;
+$data-description-font-style      : null;
+$data-description-text-decoration : null;
+$data-description-text-transform  : null;
+
+$data-description-spacing-before  : null;
+$data-description-spacing-after   : $paragraph-spacing-after;
+$data-description-indent-left     : $spacing-large;
+$data-description-indent-right    : null;
+$data-description-line-height     : $paragraph-line-height;
+$data-description-text-align      : null;

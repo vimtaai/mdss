@@ -122,7 +122,8 @@
     font-weight: nth($link-font-weight, 1);
     line-height: normal;
     text-decoration: nth($link-text-decoration, 1);
-    transition: all $animation-fast;
+    transition: background $animation-fast, color $animation-fast,
+      border $animation-fast;
 
     $has-link-hover-styles: length($link-font-family) > 1;
     @if ($has-link-hover-styles) {

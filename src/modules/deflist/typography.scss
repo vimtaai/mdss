@@ -1,0 +1,66 @@
+@mixin deflist-typography {
+  dl {
+    display: block;
+
+    @if $deflist-enable-table-layout {
+      @include media-large-up {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+    }
+
+    dt {
+      color: $data-term-font-color;
+      display: block;
+      font-family: $data-term-font-family;
+      font-size: $data-term-font-size;
+      font-style: $data-term-font-style;
+      font-weight: $data-term-font-weight;
+      line-height: $data-term-line-height;
+      margin-bottom: $data-term-spacing-after;
+      margin-left: $data-term-indent-left;
+      margin-right: $data-term-indent-right;
+      margin-top: $data-term-spacing-before;
+      text-align: $data-term-text-align;
+
+      @if $deflist-enable-table-layout {
+        @include media-large-up {
+          grid-column-start: 1;
+          line-height: $data-term-table-line-height;
+          margin-bottom: $data-term-table-spacing-after;
+          margin-left: $data-term-table-indent-left;
+          margin-right: $data-term-table-indent-right;
+          margin-top: $data-term-table-spacing-before;
+          max-width: $data-term-max-width;
+          text-align: $data-term-table-text-align;
+        }
+      }
+    }
+
+    dd {
+      color: $data-description-font-color;
+      display: block;
+      font-family: $data-description-font-family;
+      font-size: $data-description-font-size;
+      font-style: $data-description-font-style;
+      font-weight: $data-description-font-weight;
+      line-height: $data-description-line-height;
+      margin-bottom: $data-description-spacing-after;
+      margin-left: $data-description-indent-left;
+      margin-right: $data-description-indent-right;
+      margin-top: $data-description-spacing-before;
+
+      @if $deflist-enable-table-layout {
+        @include media-large-up {
+          grid-column-start: 2;
+          line-height: $data-description-table-line-height;
+          margin-bottom: $data-description-table-spacing-after;
+          margin-left: $data-description-table-indent-left;
+          margin-right: $data-description-table-indent-right;
+          margin-top: $data-description-table-spacing-before;
+          text-align: $data-description-table-text-align;
+        }
+      }
+    }
+  }
+}

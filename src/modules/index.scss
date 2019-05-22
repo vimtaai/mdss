@@ -1,32 +1,48 @@
 @import "helpers/functions";
 @import "helpers/mixins";
+@import "helpers/breakpoints";
 
+// Module import congfiguration
+@import "config/modules";
+
+// Shared configuration
 @import "shared/imports";
 @import "shared/root";
 @import "shared/fonts";
 @import "shared/colors";
-@import "shared/animations.scss";
-@import "config/modules";
 
-// CommonMark module
+// CommonMark module configuration
 @import "modules/commonmark/typography";
 @import "modules/commonmark/boxes";
+
+// Deflist module configuration
+@import "modules/deflist/typography";
 
 // Main entry point for all modules
 @mixin entry {
   @include set-root {
     // CommonMark module
-    @if ($module-commonmark-enabled) {
+    @if $module-commonmark-enabled {
       @include commonmark-typography;
       @include commonmark-boxes;
     }
+    // Deflist module
+    @if $module-deflist-enabled {
+      @include deflist-typography;
+    }
   }
 }
+
+// Generic configuration (screen)
+@import "config/generic/breakpoints.screen.scss";
+@import "config/generic/animations.screen.scss";
 
 // CommmonMark module config (screen)
 @import "config/commonmark/spacing.screen";
 @import "config/commonmark/typography.screen";
 @import "config/commonmark/boxes.screen";
+// Deflist module config (screen)
+@import "config/deflist/typography.screen";
 
 // Screen media main code
 @if (index($MEDIA, screen) != null) {
@@ -39,10 +55,16 @@
   }
 }
 
+// Generic configuration (print)
+@import "config/generic/breakpoints.print.scss";
+@import "config/generic/animations.print.scss";
+
 // CommonMark module config (print)
 @import "config/commonmark/spacing.print";
 @import "config/commonmark/typography.print";
 @import "config/commonmark/boxes.print";
+// Deflist module config (screen)
+@import "config/deflist/typography.print";
 
 // Screen media main code
 @if (index($MEDIA, print) != null) {
