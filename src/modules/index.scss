@@ -1,3 +1,27 @@
+// Main entry point for all modules
+@mixin entry {
+  @include set-root {
+    // CommonMark module
+    @if $module-commonmark-enabled {
+      @include commonmark-typography;
+      @include commonmark-boxes;
+    }
+    // Deflist module
+    @if $module-deflist-enabled {
+      @include deflist-typography;
+      @include deflist-boxes;
+    }
+    // Print Extras module
+    @if $module-print-extras-enabled {
+      @include media-print {
+        @include print-extras-links;
+        @include print-extras-page-breaks;
+        @include print-extras-page-margins;
+      }
+    }
+  }
+}
+
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/media";
@@ -22,33 +46,12 @@
 // Print Extras module
 @import "modules/print-extras/links";
 @import "modules/print-extras/page-breaks";
-
-// Main entry point for all modules
-@mixin entry {
-  @include set-root {
-    // CommonMark module
-    @if $module-commonmark-enabled {
-      @include commonmark-typography;
-      @include commonmark-boxes;
-    }
-    // Deflist module
-    @if $module-deflist-enabled {
-      @include deflist-typography;
-      @include deflist-boxes;
-    }
-    // Print Extras module
-    @if $module-print-extras-enabled {
-      @include media-print {
-        @include print-extras-links;
-        @include print-extras-page-breaks;
-      }
-    }
-  }
-}
+@import "modules/print-extras/page-margins";
 
 // Print Extras module config
 @import "config/print-extras/links";
 @import "config/print-extras/page-breaks";
+@import "config/print-extras/page-margins";
 
 // Generic configuration (screen)
 @import "config/generic/breakpoints.screen.scss";

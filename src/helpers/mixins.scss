@@ -17,3 +17,9 @@
     }
   }
 }
+
+@mixin page {
+  @page {
+    @content;
+  }
+}
