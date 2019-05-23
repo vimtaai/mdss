@@ -22,6 +22,8 @@
       margin-right: $data-term-indent-right;
       margin-top: $data-term-spacing-before;
       text-align: $data-term-text-align;
+      text-decoration: $data-term-text-decoration;
+      text-transform: $data-term-text-transform;
 
       @if $deflist-enable-table-layout {
         @include media-large-up {
