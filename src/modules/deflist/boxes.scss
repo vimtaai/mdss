@@ -1,0 +1,46 @@
+@mixin deflist-boxes {
+  dl {
+    background: $deflist-background;
+    border: $deflist-border-all;
+    border-bottom: $deflist-border-bottom;
+    border-left: $deflist-border-left;
+    border-radius: $deflist-border-radius;
+    border-right: $deflist-border-right;
+    border-top: $deflist-border-top;
+    padding: $deflist-padding-y $deflist-padding-x;
+    padding-bottom: $deflist-padding-bottom;
+    padding-left: $deflist-padding-left;
+    padding-right: $deflist-padding-right;
+    padding-top: $deflist-padding-top;
+
+    dt {
+      background: $data-term-background;
+      border: $data-term-border-all;
+      border-bottom: $data-term-border-bottom;
+      border-left: $data-term-border-left;
+      border-radius: $data-term-border-radius;
+      border-right: $data-term-border-right;
+      border-top: $data-term-border-top;
+      padding: $data-term-padding-y $data-term-padding-x;
+      padding-bottom: $data-term-padding-bottom;
+      padding-left: $data-term-padding-left;
+      padding-right: $data-term-padding-right;
+      padding-top: $data-term-padding-top;
+    }
+
+    dd {
+      background: $data-description-background;
+      border: $data-description-border-all;
+      border-bottom: $data-description-border-bottom;
+      border-left: $data-description-border-left;
+      border-radius: $data-description-border-radius;
+      border-right: $data-description-border-right;
+      border-top: $data-description-border-top;
+      padding: $data-description-padding-y $data-description-padding-x;
+      padding-bottom: $data-description-padding-bottom;
+      padding-left: $data-description-padding-left;
+      padding-right: $data-description-padding-right;
+      padding-top: $data-description-padding-top;
+    }
+  }
+}
