@@ -4,6 +4,8 @@ $root-font-color              : $color-black;
 $root-font-size               : 12pt;
 $root-font-weight             : 400;
 $root-font-style              : normal;
+$root-text-decoration         : null;
+$root-text-transform          : null;
 
 $root-line-height             : 1;
 $root-text-align              : left;
@@ -11,9 +13,11 @@ $root-text-align              : left;
 // Headings (h1, [h2], [h3], [h4], [h5], [h6])
 $heading-font-family          : $font-condensed, $font-condensed, $font-condensed, $font-condensed;
 $heading-font-color           : $color-primary, $color-secondary, null, null;
-$heading-font-size            : 24pt, 18pt, 14pt, 12pt;
+$heading-font-size            : 18pt, 16pt, 13pt, 12pt;
 $heading-font-weight          : 400, 400, 400, 400;
 $heading-font-style           : null, null, null, null;
+$heading-text-decoration      : null, null, null, null;
+$heading-text-transform       : null, null, null, null;
 
 $heading-spacing-before       : null, null, null, null;
 $heading-spacing-after        : $spacing-large, $spacing-large, $spacing-medium, $spacing-medium;
@@ -30,6 +34,8 @@ $paragraph-font-color         : null;
 $paragraph-font-size          : null;
 $paragraph-font-weight        : null;
 $paragraph-font-style         : null;
+$paragraph-text-decoration    : null;
+$paragraph-text-transform     : null;
 
 $paragraph-spacing-before     : null;
 $paragraph-spacing-after      : $spacing-medium;
@@ -46,6 +52,8 @@ $blockquote-font-color        : $color-primary;
 $blockquote-font-size         : 14pt;
 $blockquote-font-weight       : null;
 $blockquote-font-style        : italic;
+$blockquote-text-decoration   : null;
+$blockquote-text-transform    : null;
 
 $blockquote-spacing-before    : $spacing-large;
 $blockquote-spacing-after     : $blockquote-spacing-before;
@@ -62,6 +70,8 @@ $list-font-color              : null, null, null;
 $list-font-size               : null, null, null;
 $list-font-weight             : null, null, null;
 $list-font-style              : null, null, null;
+$list-text-decoration         : null, null, null;
+$list-text-transform          : null, null, null;
 
 $list-spacing-before          : $spacing-medium, 0, 0;
 $list-spacing-after           : $spacing-medium, 0, 0;
@@ -79,6 +89,8 @@ $code-block-font-color        : null;
 $code-block-font-size         : 11pt;
 $code-block-font-weight       : null;
 $code-block-font-style        : normal;
+$code-block-text-decoration   : null;
+$code-block-text-transform    : null;
 
 $code-block-spacing-before    : $spacing-medium;
 $code-block-spacing-after     : $code-block-spacing-before;
@@ -93,8 +105,8 @@ $inline-code-font-color      : $code-block-font-color;
 $inline-code-font-size       : $code-block-font-size;
 $inline-code-font-weight     : $code-block-font-weight;
 $inline-code-font-style      : $code-block-font-style;
-$inline-code-text-decoration : null;
-$inline-code-text-transform  : null;
+$inline-code-text-decoration : $code-block-text-decoration;
+$inline-code-text-transform  : $code-block-text-transform;
 
 // Links (a, a:hover)
 $link-font-family            : null, null;

@@ -6,6 +6,8 @@
     font-style: $root-font-style;
     font-weight: $root-font-weight;
     text-align: $root-text-align;
+    text-decoration: $root-text-decoration;
+    text-transform: $root-text-transform;
   }
 
   $levels-of-heading: length($heading-font-family);
@@ -24,10 +26,13 @@
       );
       margin-right: nth($heading-indent-right, $level);
       margin-top: nth($heading-spacing-before, $level);
+      text-align: nth($heading-text-align, $level);
+      text-decoration: nth($heading-text-decoration, $level);
       text-indent: substract(
         nth($heading-indent-first-line, $level),
         nth($heading-indent-hanging, $level)
       );
+      text-transform: nth($heading-text-transform, $level);
     }
   }
 
@@ -42,10 +47,13 @@
     margin-left: add($paragraph-indent-left, $paragraph-indent-hanging);
     margin-right: $paragraph-indent-right;
     margin-top: $paragraph-spacing-before;
+    text-align: $paragraph-text-align;
+    text-decoration: $paragraph-text-decoration;
     text-indent: substract(
       $paragraph-indent-first-line,
       $paragraph-indent-hanging
     );
+    text-transform: $paragraph-text-transform;
   }
 
   blockquote {
@@ -59,10 +67,13 @@
     margin-left: add($blockquote-indent-left, $blockquote-indent-hanging);
     margin-right: $blockquote-indent-right;
     margin-top: $blockquote-spacing-before;
+    text-align: $blockquote-text-align;
+    text-decoration: $blockquote-text-decoration;
     text-indent: substract(
       $blockquote-indent-first-line,
       $blockquote-indent-hanging
     );
+    text-transform: $blockquote-text-transform;
   }
 
   $levels-of-lists: length($list-font-family);
@@ -79,6 +90,9 @@
       margin-left: nth($list-indent-left, $level);
       margin-right: nth($list-indent-right, $level);
       margin-top: nth($list-spacing-before, $level);
+      text-align: nth($list-text-align, $level);
+      text-decoration: nth($list-text-decoration, $level);
+      text-transform: nth($list-text-transform, $level);
     }
 
     #{repeat("ol ", $level)} {
@@ -102,6 +116,9 @@
       margin-left: $code-block-indent-left;
       margin-right: $code-block-indent-right;
       margin-top: $code-block-spacing-before;
+      text-align: $code-block-text-align;
+      text-decoration: $code-block-text-decoration;
+      text-transform: $code-block-text-transform;
 
       @include media-print {
         white-space: pre-wrap;
@@ -117,6 +134,7 @@
     font-weight: $inline-code-font-weight;
     line-height: normal;
     text-decoration: $inline-code-text-decoration;
+    text-transform: $inline-code-text-transform;
     white-space: pre;
   }
 
@@ -129,6 +147,7 @@
     font-weight: nth($link-font-weight, 1);
     line-height: normal;
     text-decoration: nth($link-text-decoration, 1);
+    text-transform: nth($link-text-transform, 1);
     transition: background $animation-fast, color $animation-fast,
       border $animation-fast;
 
@@ -141,6 +160,7 @@
         font-style: nth($link-font-style, 2);
         font-weight: nth($link-font-weight, 2);
         text-decoration: nth($link-text-decoration, 2);
+        text-transform: nth($link-text-transform, 2);
       }
     }
   }
