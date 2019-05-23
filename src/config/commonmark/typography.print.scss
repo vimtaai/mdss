@@ -12,7 +12,7 @@ $root-text-align              : left;
 $heading-font-family          : $font-condensed, $font-condensed, $font-condensed, $font-condensed;
 $heading-font-color           : $color-primary, $color-secondary, null, null;
 $heading-font-size            : 24pt, 18pt, 14pt, 12pt;
-$heading-font-weight          : 700, 700, 700, 700;
+$heading-font-weight          : 400, 400, 400, 400;
 $heading-font-style           : null, null, null, null;
 
 $heading-spacing-before       : null, null, null, null;
@@ -63,9 +63,9 @@ $list-font-size               : null, null, null;
 $list-font-weight             : null, null, null;
 $list-font-style              : null, null, null;
 
-$list-spacing-before          : $spacing-medium, null, null;
-$list-spacing-after           : $list-spacing-before, null, null;
-$list-indent-left             : $spacing-large, $spacing-large, $spacing-large;
+$list-spacing-before          : $spacing-medium, 0, 0;
+$list-spacing-after           : $spacing-medium, 0, 0;
+$list-indent-left             : $spacing-huge, $spacing-huge, $spacing-huge;
 $list-indent-right            : null, null, null;
 $list-line-height             : 1.414, 1.414, 1.414;
 $list-text-align              : null, null, null;
@@ -78,7 +78,7 @@ $code-block-font-family       : $font-monospace;
 $code-block-font-color        : null;
 $code-block-font-size         : 11pt;
 $code-block-font-weight       : null;
-$code-block-font-style        : null;
+$code-block-font-style        : normal;
 
 $code-block-spacing-before    : $spacing-medium;
 $code-block-spacing-after     : $code-block-spacing-before;
@@ -96,11 +96,11 @@ $inline-code-font-style      : $code-block-font-style;
 $inline-code-text-decoration : null;
 $inline-code-text-transform  : null;
 
-// Links (a, [a:hover])
-$link-font-family            : null;
-$link-font-color             : $root-font-color;
-$link-font-size              : null;
-$link-font-weight            : 700;
-$link-font-style             : null;
-$link-text-decoration        : none;
-$link-text-transform         : null;
+// Links (a, a:hover)
+$link-font-family            : null, null;
+$link-font-color             : $root-font-color, null;
+$link-font-size              : null, null;
+$link-font-weight            : 700, null;
+$link-font-style             : null, null;
+$link-text-decoration        : none, null;
+$link-text-transform         : null, null;

@@ -1,3 +1,15 @@
+@mixin media-screen() {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin media-print() {
+  @media print {
+    @content;
+  }
+}
+
 @mixin media-medium-up() {
   @media (min-width: $breakpoint-small + 1) {
     @content;

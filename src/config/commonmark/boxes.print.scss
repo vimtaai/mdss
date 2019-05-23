@@ -113,18 +113,18 @@ $inline-code-padding-bottom : null;
 $inline-code-padding-left   : null;
 $inline-code-padding-right  : null;
 
-// Links (a, [a:hover])
-$link-background            : null;
-$link-border-all            : null;
-$link-border-radius         : null;
-$link-padding-x             : null;
-$link-padding-y             : null;
+// Links (a, a:hover)
+$link-background            : null, null;
+$link-border-all            : null, null;
+$link-border-radius         : null, null;
+$link-padding-x             : null, null;
+$link-padding-y             : null, null;
 
-$link-border-top            : null;
-$link-border-bottom         : dotted $link-font-color 1px;
-$link-border-left           : null;
-$link-border-right          : null;
-$link-padding-top           : null;
-$link-padding-bottom        : null;
-$link-padding-left          : null;
-$link-padding-right         : null;
+$link-border-top            : null, null;
+$link-border-bottom         : dotted $link-font-color 1px, null;
+$link-border-left           : null, null;
+$link-border-right          : null, null;
+$link-padding-top           : null, null;
+$link-padding-bottom        : null, null;
+$link-padding-left          : null, null;
+$link-padding-right         : null, null;

@@ -11,7 +11,7 @@ $root-text-align              : left;
 $heading-font-family          : $font-condensed, $font-condensed, $font-condensed, $font-condensed;
 $heading-font-color           : $color-primary, $color-secondary, null, null;
 $heading-font-size            : rem(3), rem(2), rem(1.5), rem(1);
-$heading-font-weight          : 700, 700, 700, 700;
+$heading-font-weight          : 400, 400, 400, 400;
 $heading-font-style           : null, null, null, null;
 
 $heading-spacing-before       : null, null, null, null;
@@ -63,7 +63,7 @@ $list-font-weight             : null, null, null;
 $list-font-style              : null, null, null;
 
 $list-spacing-before          : $spacing-medium, 0, 0;
-$list-spacing-after           : $list-spacing-before, 0, 0;
+$list-spacing-after           : $spacing-medium, 0, 0;
 $list-indent-left             : $spacing-huge, $spacing-huge, $spacing-huge;
 $list-indent-right            : null, null, null;
 $list-line-height             : 1.414, 1.414, 1.414;
@@ -95,7 +95,7 @@ $inline-code-font-style      : $code-block-font-style;
 $inline-code-text-decoration : null;
 $inline-code-text-transform  : null;
 
-// Links (a, [a:hover])
+// Links (a, a:hover)
 $link-font-family            : null, null;
 $link-font-color             : $color-primary, darker($color-primary);
 $link-font-size              : null, null;

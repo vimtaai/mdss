@@ -8,8 +8,6 @@
     border-right: $root-border-right;
     border-top: $root-border-top;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
     max-width: $root-max-width;
     min-width: $root-min-width;
     padding: $root-padding-y $root-padding-x;
@@ -17,6 +15,11 @@
     padding-left: $root-padding-left;
     padding-right: $root-padding-right;
     padding-top: $root-padding-top;
+
+    @include media-screen {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   $levels-of-heading: length($heading-background);
@@ -99,6 +102,10 @@
     padding-left: $code-block-padding-left;
     padding-right: $code-block-padding-right;
     padding-top: $code-block-padding-top;
+
+    @include media-screen {
+      overflow-x: auto;
+    }
 
     code {
       background: none;
