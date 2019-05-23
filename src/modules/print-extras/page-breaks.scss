@@ -1,0 +1,48 @@
+@mixin print-extras-page-breaks {
+  @if $automatic-page-break-after {
+    @each $page-break-before-selector in $automatic-page-break-before {
+      #{$page-break-before-selector} {
+        break-before: page;
+
+        @if (index($hide-page-break-element, $page-break-before-selector)) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @if $automatic-page-break-after {
+    @each $page-break-after-selector in $automatic-page-break-after {
+      #{$page-break-after-selector} {
+        break-after: page;
+
+        @if (index($hide-page-break-element, $page-break-after-selector)) {
+          height: 0;
+          visibility: hidden;
+          width: 0;
+        }
+      }
+    }
+  }
+
+  @if $prevent-page-break-before {
+    @each $page-break-before-selector in $prevent-page-break-before {
+      #{$page-break-before-selector} {
+        break-before: avoid-page;
+      }
+    }
+  }
+
+  @if $prevent-page-break-after {
+    @each $page-break-after-selector in $prevent-page-break-after {
+      #{$page-break-after-selector} {
+        break-after: avoid-page;
+      }
+    }
+  }
+
+  p {
+    orphans: $orphans;
+    widows: $widows;
+  }
+}

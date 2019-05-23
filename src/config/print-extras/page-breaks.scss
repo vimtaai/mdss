@@ -1,0 +1,12 @@
+// Automatic page breaks
+$automatic-page-break-before : h1;
+$automatic-page-break-after  : hr;
+$hide-page-break-element     : hr;
+
+// Prevent page breaks
+$prevent-page-break-before   : null;
+$prevent-page-break-after    : h1, h2, h3, h4;
+
+// Orphans and widows
+$orphans                     : 3;
+$widows                      : 3;

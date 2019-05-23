@@ -6,17 +6,22 @@
 @import "config/modules";
 
 // Shared configuration
-@import "shared/imports";
-@import "shared/root";
-@import "shared/fonts";
-@import "shared/colors";
+@import "config/shared/imports";
+@import "config/shared/root";
+@import "config/shared/fonts";
+@import "config/shared/colors";
 
-// CommonMark module configuration
+// CommonMark module
 @import "modules/commonmark/typography";
 @import "modules/commonmark/boxes";
 
-// Deflist module configuration
+// Deflist module
 @import "modules/deflist/typography";
+@import "modules/deflist/boxes";
+
+// Print Extras module
+@import "modules/print-extras/links";
+@import "modules/print-extras/page-breaks";
 
 // Main entry point for all modules
 @mixin entry {
@@ -29,9 +34,21 @@
     // Deflist module
     @if $module-deflist-enabled {
       @include deflist-typography;
+      @include deflist-boxes;
+    }
+    // Print Extras module
+    @if $module-print-extras-enabled {
+      @include media-print {
+        @include print-extras-links;
+        @include print-extras-page-breaks;
+      }
     }
   }
 }
+
+// Print Extras module config
+@import "config/print-extras/links";
+@import "config/print-extras/page-breaks";
 
 // Generic configuration (screen)
 @import "config/generic/breakpoints.screen.scss";
@@ -43,6 +60,7 @@
 @import "config/commonmark/boxes.screen";
 // Deflist module config (screen)
 @import "config/deflist/typography.screen";
+@import "config/deflist/boxes.screen";
 
 // Screen media main code
 @if (index($MEDIA, screen) != null) {
@@ -65,6 +83,7 @@
 @import "config/commonmark/boxes.print";
 // Deflist module config (screen)
 @import "config/deflist/typography.print";
+@import "config/deflist/boxes.print";
 
 // Screen media main code
 @if (index($MEDIA, print) != null) {
