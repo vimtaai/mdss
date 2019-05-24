@@ -15,9 +15,9 @@
   ],
   "scripts": {
     "lint": "eslint bin/**.js",
-    "prettier": "prettier --write ./{bin,src}/**/*.{js,scss}",
-    "build": "node bin/mdss.js build --all --config-dir src/config --output-dir dist",
-    "build:dev": "node bin/mdss.js build --dev --all --config-dir src/config --output-dir dist",
+    "prettier": "prettier -w ./{bin,src}/**/*.{js,scss}",
+    "build": "node bin/mdss.js build -a -c src/config -o dist -n",
+    "build:dev": "node bin/mdss.js build -d -a -c src/config -o dist -n",
     "watch": "watch \"npm run build\" src",
     "watch:dev": "watch \"npm run build:dev\" src",
     "prepare": "npm run build && npm run build:dev"
@@ -26,6 +26,7 @@
     "commander": "^2.20.0",
     "csso": "^3.5.1",
     "fs-extra": "^8.0.1",
+    "normalize.css": "^8.0.1",
     "sass": "^1.20.1"
   },
   "devDependencies": {
