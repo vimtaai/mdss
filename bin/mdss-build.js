@@ -18,6 +18,7 @@ program
   .option("-d --dev", "genereate uncompressed, development stylesheets")
   .option("-c --config-path [path]", "path to the configuration directory", defaults.configPath)
   .option("-o --output-path [path]", "path to the output directory", defaults.outputPath)
+  .option("-q --quiet", "omit console output")
   .parse(process.argv);
 
 async function build(program) {
@@ -39,6 +40,10 @@ async function build(program) {
     configPath: program.configPath,
     outputPath: program.outputPath
   };
+
+  if (program.quiet) {
+    logger.disable();
+  }
 
   try {
     await access(mdss.configFile);

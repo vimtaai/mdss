@@ -11,6 +11,7 @@ const { defaults, mdss } = require("./utils/constants");
 program
   .option("-c --config-path <dir>", "set configuration directory path", defaults.configPath)
   .option("-o --output-path <dir>", "set output directory path", defaults.outputPath)
+  .option("-q --quiet", "omit console output")
   .parse(process.argv);
 
 async function customize(program) {
@@ -20,7 +21,9 @@ async function customize(program) {
     outputPath: program.outputPath
   };
 
-  console.log(JSON.stringify(config));
+  if (program.quiet) {
+    logger.disable();
+  }
 
   // Customizing
   try {
