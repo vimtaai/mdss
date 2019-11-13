@@ -65,7 +65,7 @@ $code-margin          : $paragraph-margin;
 $link-font            : $root-font;
 $link-font-size       : $root-font-size;
 $link-font-color      : $color-primary;
-$link-font-weight     : normal;
+$link-font-weight     : bold;
 $link-font-style      : normal;
 
 // Breakpoints
@@ -73,5 +73,9 @@ $breakpoint-small     : 550px;
 $breakpoint-large     : 660px;
 
 // Borders
-$border-width         : 1px;
+$border-width-100     : 1px;
+$border-width-200     : 2px;
+$border-width-300     : 4px;
+$border-width-400     : 6px;
+
 $border-radius        : 3px;

@@ -71,7 +71,7 @@
     @include font-style($quote-font-style);
     @include background($quote-background);
 
-    border: solid $quote-border-color $border-width;
+    border: solid $quote-border-color $border-width-300;
     border-radius: $border-radius;
     line-height: $quote-line-height;
     margin: $quote-margin 0;
@@ -87,7 +87,7 @@
     @include font-style($code-font-style);
     @include background($code-background);
 
-    border: solid $code-border-color $border-width;
+    border: solid $code-border-color $border-width-100;
     border-radius: $border-radius;
     break-inside: avoid;
     line-height: $code-line-height;

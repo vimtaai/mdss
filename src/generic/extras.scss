@@ -72,7 +72,7 @@
       @include font-weight(nth($heading-font-weight, $last-heading));
 
       color: $color-primary;
-      border-bottom: solid $color-primary $border-width;
+      border-bottom: solid $color-primary $border-width-200;
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -213,7 +213,7 @@
 
   // Custom Containers (Cards)
   .card {
-    border: solid transparent $border-width;
+    border: solid transparent $border-width-100;
     border-radius: $border-radius;
     break-inside: avoid;
     margin-bottom: $paragraph-margin;
