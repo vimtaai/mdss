@@ -30,7 +30,7 @@ async function customize(program) {
 
   try {
     if (config.configPath !== defaults.configPath || config.outputPath !== defaults.outputPath) {
-      logger.await(`mdss.json`);
+      logger.await(`Creating mdss.json...`);
 
       const configFileData = {
         configPath: posix.normalize(config.configPath),
@@ -47,7 +47,7 @@ async function customize(program) {
   }
 
   try {
-    logger.await(`${config.configPath}`);
+    logger.await(`Creating ${config.configPath}...`);
     ensureDir(resolve(config.configPath));
     logger.created(`${config.configPath}\n`);
   } catch {
@@ -56,7 +56,7 @@ async function customize(program) {
   }
 
   try {
-    logger.await(`${config.outputPath}`);
+    logger.await(`Creating ${config.outputPath}...`);
     ensureDir(resolve(config.outputPath));
     logger.created(`${config.outputPath}\n`);
   } catch (err) {
@@ -75,7 +75,7 @@ async function customize(program) {
     const configFileFrom = posix.join(mdss.configPath, configFile);
     const configFileTo = posix.join(config.configPath, configFile);
 
-    logger.await(`${posix.join(configFileTo)}`);
+    logger.await(`Creating ${configFileTo}...`);
     await copy(resolve(configFileFrom), resolve(configFileTo));
     logger.created(`${configFileTo}\n`);
   }

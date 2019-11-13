@@ -89,7 +89,7 @@ async function build(program) {
       const outputFileName = `mdss${suffix}${options.dev ? `` : `.min`}.css`;
       const outputFilePath = posix.join(config.outputPath, outputFileName);
 
-      logger.await(`${outputFilePath}`);
+      logger.await(`Creating ${outputFilePath}...`);
       const result = sass.renderSync({
         data: sassCode,
         includePaths: [resolve(config.configPath), resolve(mdss.sourcePath)],
