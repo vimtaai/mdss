@@ -35,11 +35,11 @@ $enable-syntax-highlighting       : true;
     ".token.comment"                     : $color-brown,  // Comments
     ".token.keyword"                     : $color-blue,   // Keywords
     ".token.constant, .token.boolean"    : $color-blue,   // Literals (e.g. null, true, false)
-    ".token.string, .token.char"         : $color-purple, // Strings
-    ".token.interpolation"               : $color-violet, // String placeholders (e.g. ${})
-    ".token.number"                      : $color-purple, // Numbers
-    ".token.regex"                       : $color-violet, // Regular expressions
-    ".token.function, .token.class-name" : $color-green,  // Function/Class names
+    ".token.string, .token.char"         : $color-violet, // Strings
+    ".token.interpolation"               : $color-indigo, // String placeholders (e.g. ${})
+    ".token.number"                      : $color-violet, // Numbers
+    ".token.regex"                       : $color-indigo, // Regular expressions
+    ".token.function, .token.class-name" : $color-forest, // Function/Class names
     ".token.tag, .token.attr-name"       : $color-blue,   // HTML/XML tag names
     ".token.attr"                        : $color-green   // HTML/XML attribute names
   );
