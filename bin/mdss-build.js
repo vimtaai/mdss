@@ -2,9 +2,9 @@
 
 const path = require("path");
 const program = require("commander");
+const { access, mkdirp, readFile, writeFile } = require("fs-extra");
 
 const { defaultConfigPath, defaultOutputPath } = require("./constants");
-const { access, mkdir, read, write } = require("./helpers");
 
 const sourcePath = path.resolve(__dirname, "..");
 const configFilePath = path.resolve("mdss.json");
@@ -24,7 +24,7 @@ program
   .option("-o --output-path [path]", "path to the output directory")
   .parse(process.argv);
 
-const sass = require("node-sass"); // Build tool
+const sass = require("sass"); // Build tool
 const csso = require("csso"); // Minifying tool
 
 async function build(program) {
@@ -68,7 +68,7 @@ async function build(program) {
   try {
     await access(configFilePath);
     console.log(`[READ] mdss.json\n`);
-    const configFileContents = await read(configFilePath, "utf-8");
+    const configFileContents = await readFile(configFilePath, "utf-8");
     const configFileData = JSON.parse(configFileContents);
     config.configPath = configFileData.configPath;
     config.outputPath = configFileData.outputPath;
@@ -99,7 +99,7 @@ async function build(program) {
   console.log(`Output Dir:\t ${config.outputPath}\n`);
 
   // Building
-  mkdir(config.outputAbsolutePath);
+  mkdirp(config.outputAbsolutePath);
 
   for (const target of targets) {
     const media = target === "bundle" ? bundle : target;
@@ -123,12 +123,12 @@ async function build(program) {
     });
 
     if (options.dev) {
-      await write(outputFilePath, result.css);
+      await writeFile(outputFilePath, result.css);
       console.log(`[CREATE] ${outputFilePath}.map`);
-      await write(outputFilePath + ".map", result.map);
+      await writeFile(outputFilePath + ".map", result.map);
     } else {
       const minified = csso.minify(result.css);
-      await write(outputFilePath, minified.css);
+      await writeFile(outputFilePath, minified.css);
     }
   }
 }

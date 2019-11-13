@@ -2,9 +2,9 @@
 
 const path = require("path");
 const program = require("commander");
+const { access, copy, mkdir, readDir, unlink, write } = require("fs-extra");
 
 const { defaultConfigPath, defaultOutputPath } = require("./constants");
-const { access, copy, mkdir, readDir, unlink, write } = require("./helpers");
 
 const sourcePath = path.resolve(__dirname, "..");
 const configFilePath = path.resolve("mdss.json");
