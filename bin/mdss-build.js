@@ -1,134 +1,116 @@
 #!/usr/bin/env node
 
-const path = require("path");
 const program = require("commander");
-const { access, mkdirp, readFile, writeFile } = require("fs-extra");
+const sass = require("sass");
+const csso = require("csso");
 
-const { defaultConfigPath, defaultOutputPath } = require("./constants");
+const { resolve, posix } = require("path");
+const { access, ensureDir, readFile, writeFile } = require("fs-extra");
 
-const sourcePath = path.resolve(__dirname, "..");
-const configFilePath = path.resolve("mdss.json");
+const { logger } = require("./utils/logger");
+const { defaults, mdss } = require("./utils/constants");
 
 program
   .option("-s --screen", "generate print only stylesheet")
   .option("-p --print", "generate print only stylesheet")
-  .option(
-    "-b --bundle",
-    "generate bundled stylesheet for selected media (default)"
-  )
-  .option("--without-screen", "exclude screen styles from bundle")
-  .option("--without-print", "exclude print styles from bundle")
+  .option("-b --bundle", "generate bundled stylesheet for selected media (default)")
   .option("-a --all", "generate separate stylesheets for all media and bundle")
   .option("-d --dev", "genereate uncompressed, development stylesheets")
-  .option("-c --config-path [path]", "path to the configuration directory")
-  .option("-o --output-path [path]", "path to the output directory")
+  .option("-c --config-path [path]", "path to the configuration directory", defaults.configPath)
+  .option("-o --output-path [path]", "path to the output directory", defaults.outputPath)
   .parse(process.argv);
 
-const sass = require("sass"); // Build tool
-const csso = require("csso"); // Minifying tool
-
 async function build(program) {
-  console.log(`Building MDSS...\n`);
-
   // Command line options
   const options = {
     dev: program.dev || false,
     target: {
-      bundle: program.all || program.bundle,
+      bundle: program.all || program.bundle || (!program.screen && !program.print),
       screen: program.all || program.screen,
       print: program.all || program.print
-    },
-    bundle: {
-      screen: !program.withoutScreen,
-      print: !program.withoutPrint
     }
   };
 
-  if (
-    !options.target.bundle &&
-    !options.target.screen &&
-    !options.target.print
-  ) {
-    options.target.bundle = true;
-  }
-
-  const targets = Object.keys(options.target).filter(
-    target => options.target[target]
-  );
-  const bundle = Object.keys(options.bundle).filter(
-    media => options.bundle[media]
-  );
+  const bundle = ["print", "screen"];
+  const targets = Object.keys(options.target).filter(target => options.target[target]);
 
   // Configuration
   const config = {
-    configPath: program.configPath || defaultConfigPath,
-    outputPath: program.outputPath || defaultOutputPath
+    configPath: program.configPath,
+    outputPath: program.outputPath
   };
 
   try {
-    await access(configFilePath);
-    console.log(`[READ] mdss.json\n`);
-    const configFileContents = await readFile(configFilePath, "utf-8");
+    await access(mdss.configFile);
+
+    logger.info(`Using config in mdss.json\n`);
+
+    const configFileContents = await readFile(mdss.configFile, "utf-8");
     const configFileData = JSON.parse(configFileContents);
+
     config.configPath = configFileData.configPath;
     config.outputPath = configFileData.outputPath;
-  } catch (_) {}
-
-  config.configAbsolutePath = path.resolve(config.configPath);
-  config.outputAbsolutePath = path.resolve(config.outputPath);
+  } catch {}
 
   // Info output
-  console.log(`Config Path:\t ${config.configPath}`);
-  console.log(`Output Path:\t ${config.outputPath}\n`);
-  console.log(`Target:\t\t ${targets.join(", ")}`);
+  logger.info(`Config Path:\t ${config.configPath}\n`);
+  logger.info(`Output Path:\t ${config.outputPath}\n`);
+  logger.info(`Target:\t\t ${targets.join(", ")}\n`);
   if (options.target.bundle) {
-    console.log(`Bundled Media:\t ${bundle.join(", ")}`);
+    logger.info(`Bundled Media:\t ${bundle.join(", ")}`);
   }
-  console.log(`Dev Mode:\t ${options.dev}\n`);
+  logger.info(`Dev Mode:\t\t ${options.dev}\n`);
 
+  // Checking if config exists
   try {
-    await access(config.configAbsolutePath);
+    await access(config.configPath);
   } catch (err) {
-    console.error(
-      `[ERROR] Config dir not found. Did you forget to run "mdss customize"? Exiting.`
-    );
+    logger.error(`Config dir not found. Did you forget to run "mdss init"? Exiting.`);
     return;
   }
 
-  console.log(`Config Dir:\t ${config.configPath}`);
-  console.log(`Output Dir:\t ${config.outputPath}\n`);
-
   // Building
-  mkdirp(config.outputAbsolutePath);
+  try {
+    ensureDir(config.outputPath);
+  } catch {
+    logger.error(`Could not create output folder. Exiting.`);
+    return;
+  }
 
   for (const target of targets) {
-    const media = target === "bundle" ? bundle : target;
-    const sassCode = `
+    try {
+      const media = target === "bundle" ? bundle : target;
+      const sassCode = `
       $BUNDLE: ${Array.isArray(media)};
       $MEDIA: ${Array.isArray(media) ? media.join(" ") : media};
       @import "entry/index";
     `;
-    const suffix = Array.isArray(media) ? `` : `-${media}`;
-    const outputFileName = `mdss${suffix}${options.dev ? `` : `.min`}.css`;
-    const outputFilePath = path.join(config.outputAbsolutePath, outputFileName);
+      const suffix = Array.isArray(media) ? `` : `-${media}`;
+      const outputFileName = `mdss${suffix}${options.dev ? `` : `.min`}.css`;
+      const outputFilePath = posix.join(config.outputPath, outputFileName);
 
-    console.log(`[CREATE] ${outputFilePath}`);
+      logger.await(`${outputFilePath}`);
+      const result = sass.renderSync({
+        data: sassCode,
+        includePaths: [resolve(config.configPath), resolve(mdss.sourcePath)],
+        outputStyle: "expanded",
+        outFile: outputFilePath,
+        sourceMap: true
+      });
 
-    const result = sass.renderSync({
-      data: sassCode,
-      includePaths: [config.configAbsolutePath, path.join(sourcePath, "src")],
-      outputStyle: "expanded",
-      outFile: outputFilePath,
-      sourceMap: true
-    });
-
-    if (options.dev) {
-      await writeFile(outputFilePath, result.css);
-      console.log(`[CREATE] ${outputFilePath}.map`);
-      await writeFile(outputFilePath + ".map", result.map);
-    } else {
-      const minified = csso.minify(result.css);
-      await writeFile(outputFilePath, minified.css);
+      if (options.dev) {
+        await writeFile(outputFilePath, result.css);
+        logger.created(`${outputFilePath}\n`);
+        await writeFile(outputFilePath + ".map", result.map);
+        logger.created(`${outputFilePath}.map\n`);
+      } else {
+        const minified = csso.minify(result.css);
+        await writeFile(outputFilePath, minified.css);
+        logger.created(`${outputFilePath}\n`);
+      }
+    } catch {
+      logger.error(`Could not create output for \`${target}\`. Exiting`);
+      return;
     }
   }
 }

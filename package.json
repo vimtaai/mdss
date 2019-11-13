@@ -13,14 +13,15 @@
     "/bin"
   ],
   "scripts": {
-    "build": "node bin/mdss.js build --all --config-path src/config --output-path build",
-    "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path build",
+    "build": "node bin/mdss.js build --all --config-path src/config --output-path dist",
+    "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path dist",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
     "commander": "^4.0.1",
     "csso": "^4.0.2",
     "fs-extra": "^8.1.0",
-    "sass": "^1.23.3"
+    "sass": "^1.23.3",
+    "signale": "^1.4.0"
   }
 }

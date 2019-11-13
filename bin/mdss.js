@@ -2,8 +2,6 @@
 
 const program = require("commander");
 
-// Script description
-
 program
   .description("CLI for building and customizing MDSS")
   .usage("<command> [options]")
