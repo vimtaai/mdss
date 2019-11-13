@@ -101,9 +101,29 @@
   }
 
   // Strikethrough
-  s,
   del {
+    background: lighter($color-red, 3);
+    border-radius: $border-radius;
+    color: darker($color-red, 3);
+    padding: $spacing-small;
     text-decoration: line-through;
+  }
+
+  // Insert
+  ins {
+    background: lighter($color-green, 3);
+    border-radius: $border-radius;
+    color: darker($color-green, 3);
+    padding: $spacing-small;
+    text-decoration: none;
+  }
+
+  // Highlight
+  mark {
+    background: lighter($color-accent, 3);
+    border-radius: $border-radius;
+    color: darker($color-accent, 3);
+    padding: $spacing-small;
   }
 
   // Left and Right Aligned Containers

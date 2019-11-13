@@ -14,3 +14,13 @@
 
   @return calc(#{$full-width} - #{$space-per-column});
 }
+
+@function lighter($color, $level) {
+  $offset: $level * 10;
+  @return lighten($color, $offset);
+}
+
+@function darker($color, $level) {
+  $offset: $level * 10;
+  @return darken($color, $offset);
+}
