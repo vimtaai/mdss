@@ -1,6 +1,8 @@
-# dependencies
-node_modules
-# output files
-build
 # editor config
 .vscode
+
+# dependencies
+node_modules
+
+# output files
+dist

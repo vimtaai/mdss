@@ -1,27 +1,12 @@
 # MDSS 
 
-[![NPM version 2.1.0](https://img.shields.io/badge/npm-2.1.0-blue.svg)](https://www.npmjs.com/package/mdss)
-[![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Version][badge-version]](https://www.npmjs.com/package/mdss)
+[![License][badge-license]](https://github.com/vimtaai/mdss/blob/master/LICENSE.md)
+[![Code style][badge-style]](https://github.com/prettier/prettier)
 
-> Stylesheets for displaying and printing Markdown documents
-
-## About
+> Responsive stylesheets for displaying and printing Markdown documents
 
 **MDSS** is a CSS stylesheet to render [Markdown](https://daringfireball.net/projects/markdown/syntax) documents beautifully both in browsers and in print. You can create your own separate builds for screen and print or a single build for both media.
-
-## :sparkles: New in Version 2
-
-- Reworked default design
-- Reworked configuration files
-- Reworked container classes
-- New container classes
-- Responsive behavior for columned layouts
-- Highlight.js classes are now default for syntax highlighting
-- Presets for different kinds of outputs (coming soon)
-- Slides are no longer a default media (moved to presets)
-- Reworked CLI tool
-- Cleaner code
 
 ## Features
 
@@ -113,14 +98,14 @@ You can also enable/disable all extra features using the `src/config/extras.conf
 
 Configuration files include the following options:
 
-File                   | Options
------------------------|--------------------------------------------
-`custom.config.scss`   | custom styles for each media
-`external.config.scss` | external imports (e.g. fonts)
-`extras.config.scss`   | enable/disable and configure extra features
-`print.config.scss`    | variables for print styles
-`screen.config.scss`   | variables for screen styles
-`shared.config.scss`   | colors, fonts and root selector
+| File                   | Options                                     |
+| ---------------------- | ------------------------------------------- |
+| `custom.config.scss`   | custom styles for each media                |
+| `external.config.scss` | external imports (e.g. fonts)               |
+| `extras.config.scss`   | enable/disable and configure extra features |
+| `print.config.scss`    | variables for print styles                  |
+| `screen.config.scss`   | variables for screen styles                 |
+| `shared.config.scss`   | colors, fonts and root selector             |
 
 ## Advanced Usage
 

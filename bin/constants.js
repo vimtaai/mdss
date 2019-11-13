@@ -1,7 +1,7 @@
-const defaultConfigPath = 'mdss/config'
-const defaultOutputPath = 'mdss/build'
+const defaultConfigPath = "mdss/config";
+const defaultOutputPath = "mdss/dist";
 
 module.exports = {
   defaultConfigPath,
   defaultOutputPath
-}
+};
