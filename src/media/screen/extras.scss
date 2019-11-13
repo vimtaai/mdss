@@ -10,11 +10,10 @@
   }
 
   // Tables
-  @if $enable-tables {
-    table {
-      th, td {
-        padding: $spacing-medium $spacing-large;
-      }
+  table {
+    th,
+    td {
+      padding: $spacing-medium $spacing-large;
     }
   }
 }

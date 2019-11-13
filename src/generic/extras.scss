@@ -11,7 +11,7 @@
       $counter-resets: "";
       @if $level < length($auto-numbering-headings) {
         @for $i from $level + 1 through length($auto-numbering-headings) {
-          $counter-resets: #{$counter-resets} #{nth($auto-numbering-headings, $i)}
+          $counter-resets: #{$counter-resets} #{nth($auto-numbering-headings, $i)};
         }
       }
 
@@ -19,9 +19,9 @@
       @for $i from 1 through $level {
         $label: #{$label} counter(#{nth($auto-numbering-headings, $i)});
         @if ($i != $level) {
-          $label: #{$label} '"."'
+          $label: #{$label} '"."';
         } @else {
-          $label: #{$label} '"\00a0"'
+          $label: #{$label} '"\00a0"';
         }
       }
 
@@ -60,127 +60,112 @@
   }
 
   // Tables
-  @if $enable-tables {
-    table {
-      margin: $spacing-medium auto;
+  table {
+    margin: $spacing-medium auto;
 
-      thead {
-        $last-heading: length($heading-font-size);
-        @include font($heading-font);
-        @include font-color(nth($heading-font-color, $last-heading));
-        @include font-size(nth($heading-font-size, $last-heading));
-        @include font-weight(nth($heading-font-weight, $last-heading));
-        
-        border-bottom: solid $color-primary $border-width;
-      }
-  
-      th, td {
-        font-weight: inherit;
-        padding: $spacing-small $spacing-medium;
-      }
+    thead {
+      $last-heading: length($heading-font-size);
+      @include font($heading-font);
+      @include font-color(nth($heading-font-color, $last-heading));
+      @include font-size(nth($heading-font-size, $last-heading));
+      @include font-weight(nth($heading-font-weight, $last-heading));
+
+      border-bottom: solid $color-primary $border-width;
+    }
+
+    th,
+    td {
+      font-weight: inherit;
+      padding: $spacing-small $spacing-medium;
     }
   }
 
   // Definition Lists
-  @if $enable-definition-list {
-    dd {
-      margin-left: $spacing-huge;
-    }
+  dd {
+    margin-left: $spacing-huge;
   }
 
   // Left and Right Aligned Containers
-  @if $enable-container-float {
-    .left.floated {
-      margin-right: $spacing-medium;
-    }
+  .left.floated {
+    margin-right: $spacing-medium;
+  }
 
-    .right.floated {
-      margin-left: $spacing-medium;
-    }
+  .right.floated {
+    margin-left: $spacing-medium;
   }
 
   // Columns
-  @if $enable-container-columns {
-    $column-spacing: 2 * $spacing-small;
+  $column-spacing: 2 * $spacing-small;
 
-    // Medium
-    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
-      $column-count: 2;
-      @while $column-count <= $container-columns-max {
-        $actual-column-count: $column-count;
-        
-        @if ($column-count > 2) {
-          $actual-column-count: ceil($column-count / 2);
-        }
+  // Medium
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
+    $column-count: 2;
+    @while $column-count <= $container-columns-max {
+      $actual-column-count: $column-count;
 
-        .#{number($column-count)}.columns > * {
-          width: column-width($actual-column-count, $column-spacing);
-        }
-
-        $column-count: $column-count + 1;
+      @if ($column-count > 2) {
+        $actual-column-count: ceil($column-count / 2);
       }
+
+      .#{number($column-count)}.columns > * {
+        width: column-width($actual-column-count, $column-spacing);
+      }
+
+      $column-count: $column-count + 1;
     }
+  }
 
-    // Large
-    @media (min-width: $breakpoint-large) {
-      $column-count: 2;
-      @while $column-count <= $container-columns-max {
-        .#{number($column-count)}.columns > * {
-          width: column-width($column-count, $column-spacing);
-        }
-        
-        $column-count: $column-count + 1;
+  // Large
+  @media (min-width: $breakpoint-large) {
+    $column-count: 2;
+    @while $column-count <= $container-columns-max {
+      .#{number($column-count)}.columns > * {
+        width: column-width($column-count, $column-spacing);
       }
+
+      $column-count: $column-count + 1;
     }
   }
 
   // Custom Containers (Cards)
-  @if $enable-container-card {
-    .card {
-      border: solid transparent $border-width;
-      border-radius: $border-radius;
-      break-inside: avoid;
-      margin-bottom: $spacing-medium;
-      margin-top: $spacing-medium;
-      padding: $spacing-medium $spacing-large;
-      page-break-inside: avoid;
+  .card {
+    border: solid transparent $border-width;
+    border-radius: $border-radius;
+    break-inside: avoid;
+    margin-bottom: $spacing-medium;
+    margin-top: $spacing-medium;
+    padding: $spacing-medium $spacing-large;
+    page-break-inside: avoid;
 
-      &.outline {
-        border-color: $root-font-color;
-        color: $root-font-color;
-      }
-    }
-
-    @each $name, $color in $container-card-list {
-      .#{$name}.outline.card {
-        border-color: $color;
-      }
-
-      .#{$name}.card:not(.outline) {
-        @include background($color);
-
-        @if lightness($color) > 50 { // light background
-          @if lightness($root-font-color) > 50 {
-            color: $color-black;
-          } @else {
-            color: $root-font-color;
-          }
-        } @else { // dark background
-          @if lightness($root-font-color) > 50 {
-            color: $root-font-color;
-          } @else {
-            color: $color-white;
-          }
-        }
-      }
+    &.outline {
+      border-color: $root-font-color;
+      color: $root-font-color;
     }
   }
 
-  // Sticky Containers
-  @if $enable-container-sticky {
-    .sticky {
-      background: $root-background;
-      padding: $spacing-medium 0;
+  @each $name, $color in $container-card-list {
+    .#{$name}.outline.card {
+      border-color: $color;
+    }
+
+    .#{$name}.card:not(.outline) {
+      @include background($color);
+
+      @if lightness($color) > 50 {
+        // light background
+        @if lightness($root-font-color) > 50 {
+          color: $color-black;
+        } @else {
+          color: $root-font-color;
+        }
+      } @else {
+        // dark background
+        @if lightness($root-font-color) > 50 {
+          color: $root-font-color;
+        } @else {
+          color: $color-white;
+        }
+      }
     }
   }
 

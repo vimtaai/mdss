@@ -77,8 +77,8 @@ async function build(program) {
   // Building
   try {
     ensureDir(config.outputPath);
-  } catch {
-    logger.error(`Could not create output folder. Exiting.`);
+  } catch (err) {
+    logger.error(`Could not create output folder. Exiting.`, err);
     return;
   }
 
@@ -113,8 +113,8 @@ async function build(program) {
         await writeFile(outputFilePath, minified.css);
         logger.created(`${outputFilePath}\n`);
       }
-    } catch {
-      logger.error(`Could not create output for \`${target}\`. Exiting`);
+    } catch (err) {
+      logger.error(`Could not create output for \`${target}\`. Exiting`, err);
       return;
     }
   }

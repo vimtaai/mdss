@@ -43,16 +43,7 @@
   }
 
   // Non printing container
-  @if $enable-container-no-print {
-    .no.print {
-      display: none;
-    }
-  }
-
-  // Sticky Containers
-  @if $enable-container-sticky {
-    .sticky {
-      position: static;
-    }
+  .no.print {
+    display: none;
   }
 }
