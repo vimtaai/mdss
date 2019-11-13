@@ -61,6 +61,7 @@
 
   // Tables
   table {
+    border-collapse: collapse;
     margin: $spacing-medium auto;
 
     thead {
@@ -70,32 +71,95 @@
       @include font-size(nth($heading-font-size, $last-heading));
       @include font-weight(nth($heading-font-weight, $last-heading));
 
+      color: $color-primary;
       border-bottom: solid $color-primary $border-width;
+      font-weight: bold;
+      text-transform: uppercase;
     }
 
     th,
     td {
       font-weight: inherit;
       padding: $spacing-small $spacing-medium;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background: $tables-stripe-background;
     }
   }
 
   // Definition Lists
+  dt {
+    display: block;
+    font-weight: bold;
+  }
+
   dd {
+    display: block;
     margin-left: $spacing-huge;
   }
 
+  // Strikethrough
+  s,
+  del {
+    text-decoration: line-through;
+  }
+
   // Left and Right Aligned Containers
+  .aligned {
+    overflow: hidden;
+  }
+
+  .left.aligned,
+  .left.aligned p {
+    text-align: left;
+  }
+
+  .right.aligned,
+  .right.aligned p {
+    text-align: right;
+  }
+
+  .center.aligned,
+  .center.aligned p {
+    text-align: center;
+  }
+
+  // Left and Right Floated Containers
   .left.floated {
+    float: left;
     margin-right: $spacing-medium;
   }
 
   .right.floated {
+    float: right;
     margin-left: $spacing-medium;
+  }
+
+  // Flex Containers
+  .flex {
+    @include flex;
+
+    .evenly.aligned {
+      justify-content: space-evenly;
+    }
   }
 
   // Columns
   $column-spacing: 2 * $spacing-small;
+
+  .columns {
+    @include flex;
+
+    & > * {
+      box-sizing: border-box;
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
 
   // Medium
   @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
@@ -134,8 +198,17 @@
     break-inside: avoid;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
+    overflow: hidden;
     padding: $spacing-medium $spacing-large;
     page-break-inside: avoid;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
 
     &.outline {
       border-color: $root-font-color;
@@ -171,8 +244,12 @@
 
   // Syntax Highlighting
   @if $enable-syntax-highlighting {
-    .hljs {
-      padding: $spacing-large;
+    pre code {
+      @each $selector, $color in $syntax-highlighting-colors {
+        #{$selector} {
+          color: #{$color};
+        }
+      }
     }
   }
 }

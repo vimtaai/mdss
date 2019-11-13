@@ -5,8 +5,9 @@
     @include font-size($link-font-size);
     @include font-style($link-font-style);
     @include font-weight($link-font-weight);
-    
+
     color: $link-font-color;
+    text-decoration: none;
   }
 
   // Inline code
@@ -17,8 +18,25 @@
     @include font-style($code-font-style);
     @include font-weight($code-font-weight);
     @include background($code-background);
-    
+
     border-radius: $border-radius;
     padding: $spacing-small;
+    overflow-wrap: break-word;
+  }
+
+  // Images
+  img {
+    vertical-align: middle;
+  }
+
+  // Emphasis
+  b,
+  strong {
+    font-weight: bold;
+  }
+
+  i,
+  em {
+    font-style: italic;
   }
 }

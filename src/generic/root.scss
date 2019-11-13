@@ -1,12 +1,18 @@
 @mixin generic-root {
   background: $root-background;
+  box-sizing: border-box;
   color: $root-font-color;
   font-family: $root-font;
   font-size: $root-font-size;
   line-height: $root-line-height;
-  padding: $root-margin-y calc(50% - #{$root-max-width / 2} + #{$root-margin-x});
+  margin: 0;
   min-width: $root-min-width;
-  
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: $root-margin-y calc(50% - #{$root-max-width / 2} + #{$root-margin-x});
+  position: relative;
+  width: 100%;
+
   @if (unit($root-max-width) == unit($root-margin-x)) {
     $max-width: #{$root-max-width + (2 * $root-margin-x) + rem(3)};
 

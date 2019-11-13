@@ -6,13 +6,19 @@
 
       @if ($level <= length($heading-font-size)) {
         @include font-color(nth($heading-font-color, $level));
-        
+
         font-size: (nth($heading-font-size, $level));
         font-weight: (nth($heading-font-weight, $level));
         margin-bottom: nth($heading-margin, $level);
         margin-top: nth($heading-margin, $level);
+        position: relative;
       }
     }
+  }
+
+  h1,
+  h2 {
+    text-transform: uppercase;
   }
 
   // Paragraphs
@@ -23,18 +29,35 @@
   }
 
   // lists
+  ol,
+  ul {
+    ol,
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
   ul {
     list-style: $unordered-list-style;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
   }
-  
+
   ol {
     list-style: $ordered-list-style;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
   }
-  
+
   // Blockquotes
   blockquote {
     @include font($quote-font);
@@ -43,11 +66,13 @@
     @include font-weight($quote-font-weight);
     @include font-style($quote-font-style);
     @include background($quote-background);
-    
+
     border: solid $quote-border-color $border-width;
     border-radius: $border-radius;
     line-height: $quote-line-height;
     margin-bottom: $spacing-medium;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: $spacing-medium;
     padding: $spacing-medium $spacing-huge;
   }
@@ -63,14 +88,26 @@
 
     border: solid $code-border-color $border-width;
     border-radius: $border-radius;
+    break-inside: avoid;
     line-height: $code-line-height;
     margin-bottom: $spacing-medium;
     margin-top: $spacing-medium;
     padding: $spacing-large;
+    page-break-inside: avoid;
+
+    code {
+      background: none;
+      border: none;
+      display: block;
+      padding: 0;
+    }
   }
 
   // Horizontal break
   hr {
+    background: $color-gray-medium;
+    border: none;
+    clear: both;
     margin-bottom: $spacing-large;
     margin-top: $spacing-large;
   }

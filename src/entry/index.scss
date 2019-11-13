@@ -13,12 +13,10 @@
 @import "config/custom.config";
 @import "custom.config";
 
-@import "entry/shared";
 @import "entry/generic";
 @import "entry/screen";
 @import "entry/print";
 
-@include shared;
 @each $import in $external-imports {
   @import url($import);
 }
