@@ -62,7 +62,7 @@
   // Tables
   table {
     border-collapse: collapse;
-    margin: $spacing-medium auto;
+    margin: $paragraph-margin auto;
 
     thead {
       $last-heading: length($heading-font-size);
@@ -80,7 +80,7 @@
     th,
     td {
       font-weight: inherit;
-      padding: $spacing-small $spacing-medium;
+      padding: $spacing-200 $spacing-400;
       text-align: left;
     }
 
@@ -97,7 +97,7 @@
 
   dd {
     display: block;
-    margin-left: $spacing-huge;
+    margin-left: $spacing-700;
   }
 
   // Strikethrough
@@ -105,7 +105,7 @@
     background: lighter($color-red, 3);
     border-radius: $border-radius;
     color: darker($color-red, 3);
-    padding: $spacing-small;
+    padding: 0 $spacing-200;
     text-decoration: line-through;
   }
 
@@ -114,7 +114,7 @@
     background: lighter($color-green, 3);
     border-radius: $border-radius;
     color: darker($color-green, 3);
-    padding: $spacing-small;
+    padding: 0 $spacing-200;
     text-decoration: none;
   }
 
@@ -123,7 +123,7 @@
     background: lighter($color-accent, 3);
     border-radius: $border-radius;
     color: darker($color-accent, 3);
-    padding: $spacing-small;
+    padding: 0 $spacing-200;
   }
 
   // Left and Right Aligned Containers
@@ -149,12 +149,12 @@
   // Left and Right Floated Containers
   .left.floated {
     float: left;
-    margin-right: $spacing-medium;
+    margin-right: $spacing-500;
   }
 
   .right.floated {
     float: right;
-    margin-left: $spacing-medium;
+    margin-left: $spacing-500;
   }
 
   // Flex Containers
@@ -167,7 +167,7 @@
   }
 
   // Columns
-  $column-spacing: 2 * $spacing-small;
+  $column-spacing: 2 * $spacing-300;
 
   .columns {
     @include flex;
@@ -216,10 +216,10 @@
     border: solid transparent $border-width;
     border-radius: $border-radius;
     break-inside: avoid;
-    margin-bottom: $spacing-medium;
-    margin-top: $spacing-medium;
+    margin-bottom: $paragraph-margin;
+    margin-top: $paragraph-margin;
     overflow: hidden;
-    padding: $spacing-medium $spacing-large;
+    padding: $spacing-500 $spacing-700;
     page-break-inside: avoid;
 
     :first-child {

@@ -6,14 +6,19 @@ $root-background      : $color-white;
 $root-line-height     : 1.67;
 
 // Spacing
-$spacing-small        : rem(0.25);
-$spacing-medium       : rem(0.5);
-$spacing-large        : rem(1);
-$spacing-huge         : rem(2);
+$spacing-100          : 2px;
+$spacing-200          : 4px;
+$spacing-300          : 8px;
+$spacing-400          : 12px;
+$spacing-500          : 16px;
+$spacing-600          : 20px;
+$spacing-700          : 24px;
+$spacing-800          : 28px;
+$spacing-900          : 32px;
 
 // Root dimensions
-$root-margin-x        : $spacing-large;
-$root-margin-y        : $spacing-medium;
+$root-margin-x        : $spacing-600;
+$root-margin-y        : $spacing-300;
 $root-max-width       : 910px;
 $root-min-width       : 350px;
 
@@ -26,9 +31,10 @@ $heading-margin       : (rem(1.5), rem(1.2), rem(0.5), rem(0.2));
 
 // Paragraphs
 $paragraph-align      : left;
-$paragraph-margin     : $spacing-medium;
+$paragraph-margin     : $spacing-300;
 
 // Lists
+$list-margin          : $paragraph-margin;
 $ordered-list-style   : decimal;
 $unordered-list-style : square;
 
@@ -41,6 +47,8 @@ $quote-font-style     : italic;
 $quote-background     : $root-background;
 $quote-border-color   : transparent;
 $quote-line-height    : $root-line-height;
+$quote-margin         : $paragraph-margin;
+$quote-indent         : $spacing-700;
 
 // Code
 $code-font            : $font-monospace;
@@ -51,6 +59,7 @@ $code-font-style      : normal;
 $code-background      : $color-gray-light;
 $code-border-color    : transparent;
 $code-line-height     : 1.5;
+$code-margin          : $paragraph-margin;
 
 // Links
 $link-font            : $root-font;

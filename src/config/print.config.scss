@@ -6,10 +6,15 @@ $root-background      : $color-white;
 $root-line-height     : 1.41;
 
 // Spacing
-$spacing-small        : 3pt;
-$spacing-medium       : 6pt;
-$spacing-large        : 12pt;
-$spacing-huge         : 24pt;
+$spacing-100          : 1pt;
+$spacing-200          : 2pt;
+$spacing-300          : 4pt;
+$spacing-400          : 8pt;
+$spacing-500          : 12pt;
+$spacing-600          : 16pt;
+$spacing-700          : 20pt;
+$spacing-800          : 24pt;
+$spacing-900          : 28pt;
 
 // Root dimensions
 $root-margin-x        : 1.2cm;
@@ -26,9 +31,10 @@ $heading-margin       : (16pt, 14pt, 8pt, 6pt);
 
 // Paragraphs
 $paragraph-align      : justify;
-$paragraph-margin     : $spacing-medium;
+$paragraph-margin     : $spacing-400;
 
 // Lists
+$list-margin          : $paragraph-margin;
 $ordered-list-style   : decimal;
 $unordered-list-style : square;
 
@@ -41,6 +47,8 @@ $quote-font-style     : italic;
 $quote-background     : $root-background;
 $quote-border-color   : transparent;
 $qoute-line-height    : $root-line-height;
+$quote-margin         : $paragraph-margin;
+$quote-indent         : $spacing-700;
 
 // Code
 $code-font            : $font-monospace;
@@ -51,6 +59,7 @@ $code-font-style      : normal;
 $code-background      : $color-gray-light;
 $code-border-color    : transparent;
 $code-line-height     : 1.5;
+$code-margin          : $paragraph-margin;
 
 // Links
 $link-font            : $root-font;

@@ -52,14 +52,14 @@
 
   ul {
     list-style: $unordered-list-style;
-    margin-bottom: $spacing-medium;
-    margin-top: $spacing-medium;
+    margin-bottom: $list-margin;
+    margin-top: $list-margin;
   }
 
   ol {
     list-style: $ordered-list-style;
-    margin-bottom: $spacing-medium;
-    margin-top: $spacing-medium;
+    margin-bottom: $list-margin;
+    margin-top: $list-margin;
   }
 
   // Blockquotes
@@ -74,11 +74,8 @@
     border: solid $quote-border-color $border-width;
     border-radius: $border-radius;
     line-height: $quote-line-height;
-    margin-bottom: $spacing-medium;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: $spacing-medium;
-    padding: $spacing-medium $spacing-huge;
+    margin: $quote-margin 0;
+    padding: 0 0 0 $quote-indent;
   }
 
   // Code blocks
@@ -94,9 +91,8 @@
     border-radius: $border-radius;
     break-inside: avoid;
     line-height: $code-line-height;
-    margin-bottom: $spacing-medium;
-    margin-top: $spacing-medium;
-    padding: $spacing-large;
+    margin: $code-margin 0;
+    padding: $spacing-400;
     page-break-inside: avoid;
 
     code {
@@ -112,7 +108,7 @@
     background: $color-gray-medium;
     border: none;
     clear: both;
-    margin-bottom: $spacing-large;
-    margin-top: $spacing-large;
+    margin-bottom: $paragraph-margin;
+    margin-top: $paragraph-margin;
   }
 }

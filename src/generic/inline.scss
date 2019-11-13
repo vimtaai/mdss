@@ -20,7 +20,7 @@
     @include background($code-background);
 
     border-radius: $border-radius;
-    padding: $spacing-small;
+    padding: $spacing-100 $spacing-200;
     overflow-wrap: break-word;
   }
 
