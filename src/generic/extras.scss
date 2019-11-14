@@ -103,7 +103,7 @@
   // Strikethrough
   del {
     background: lighter($color-red, 3);
-    border-radius: $border-radius;
+    border-radius: $border-radius-100;
     color: darker($color-red, 3);
     padding: 0 $spacing-200;
     text-decoration: line-through;
@@ -112,7 +112,7 @@
   // Insert
   ins {
     background: lighter($color-green, 3);
-    border-radius: $border-radius;
+    border-radius: $border-radius-100;
     color: darker($color-green, 3);
     padding: 0 $spacing-200;
     text-decoration: none;
@@ -121,7 +121,7 @@
   // Highlight
   mark {
     background: lighter($color-accent, 3);
-    border-radius: $border-radius;
+    border-radius: $border-radius-100;
     color: darker($color-accent, 3);
     padding: 0 $spacing-200;
   }
@@ -214,7 +214,7 @@
   // Custom Containers (Cards)
   .card {
     border: solid transparent $border-width-100;
-    border-radius: $border-radius;
+    border-radius: $border-radius-200;
     break-inside: avoid;
     margin-bottom: $paragraph-margin;
     margin-top: $paragraph-margin;

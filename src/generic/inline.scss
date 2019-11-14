@@ -19,7 +19,7 @@
     @include font-weight($code-font-weight);
     @include background($code-background);
 
-    border-radius: $border-radius;
+    border-radius: $border-radius-100;
     padding: $spacing-100 $spacing-200;
     overflow-wrap: break-word;
   }

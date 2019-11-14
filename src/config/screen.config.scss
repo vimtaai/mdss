@@ -1,9 +1,17 @@
-// Root typgraphy
-$root-font            : $font-serif;
-$root-font-size       : 17px;
-$root-font-color      : $color-gray-dark;
-$root-background      : $color-white;
-$root-line-height     : 1.67;
+// Breakpoints
+$breakpoint-small     : 550px;
+$breakpoint-large     : 660px;
+
+// Borders
+$border-width-100     : 1px;
+$border-width-200     : 2px;
+$border-width-300     : 4px;
+$border-width-400     : 6px;
+
+$border-radius-100    : 3px;
+$border-radius-200    : 5px;
+$border-radius-300    : 7px;
+$border-radius-400    : 11px;
 
 // Spacing
 $spacing-100          : 2px;
@@ -21,6 +29,13 @@ $root-margin-x        : $spacing-600;
 $root-margin-y        : $spacing-300;
 $root-max-width       : 910px;
 $root-min-width       : 350px;
+
+// Root typgraphy
+$root-font            : $font-serif;
+$root-font-size       : 17px;
+$root-font-color      : $color-gray-dark;
+$root-background      : $color-white;
+$root-line-height     : 1.67;
 
 // Headings
 $heading-font         : $font-sans-serif;
@@ -67,15 +82,3 @@ $link-font-size       : $root-font-size;
 $link-font-color      : $color-primary;
 $link-font-weight     : bold;
 $link-font-style      : normal;
-
-// Breakpoints
-$breakpoint-small     : 550px;
-$breakpoint-large     : 660px;
-
-// Borders
-$border-width-100     : 1px;
-$border-width-200     : 2px;
-$border-width-300     : 4px;
-$border-width-400     : 6px;
-
-$border-radius        : 3px;

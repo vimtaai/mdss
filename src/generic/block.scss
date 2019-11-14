@@ -72,7 +72,6 @@
     @include background($quote-background);
 
     border: solid $quote-border-color $border-width-300;
-    border-radius: $border-radius;
     line-height: $quote-line-height;
     margin: $quote-margin 0;
     padding: 0 0 0 $quote-indent;
@@ -88,7 +87,7 @@
     @include background($code-background);
 
     border: solid $code-border-color $border-width-100;
-    border-radius: $border-radius;
+    border-radius: $border-radius-200;
     break-inside: avoid;
     line-height: $code-line-height;
     margin: $code-margin 0;
