@@ -1,0 +1,139 @@
+@mixin generic-utilities {
+  @if $enable-utilities {
+    // Left and Right Aligned Containers
+    .aligned {
+      overflow: hidden;
+    }
+
+    .left.aligned,
+    .left.aligned p {
+      text-align: left;
+    }
+
+    .right.aligned,
+    .right.aligned p {
+      text-align: right;
+    }
+
+    .center.aligned,
+    .center.aligned p {
+      text-align: center;
+    }
+
+    // Left and Right Floated Containers
+    .left.floated {
+      float: left;
+      margin-right: $spacing-500;
+    }
+
+    .right.floated {
+      float: right;
+      margin-left: $spacing-500;
+    }
+
+    // Flex Containers
+    .flex {
+      @include flex;
+
+      .evenly.aligned {
+        justify-content: space-evenly;
+      }
+    }
+
+    // Columns
+    $column-spacing: 2 * $spacing-300;
+
+    .columns {
+      @include flex;
+
+      & > * {
+        box-sizing: border-box;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+
+    // Medium
+    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
+      $column-count: 2;
+      @while $column-count <= $container-columns-max {
+        $actual-column-count: $column-count;
+
+        @if ($column-count > 2) {
+          $actual-column-count: ceil($column-count / 2);
+        }
+
+        .#{number($column-count)}.columns > * {
+          width: column-width($actual-column-count, $column-spacing);
+        }
+
+        $column-count: $column-count + 1;
+      }
+    }
+
+    // Large
+    @media (min-width: $breakpoint-large) {
+      $column-count: 2;
+      @while $column-count <= $container-columns-max {
+        .#{number($column-count)}.columns > * {
+          width: column-width($column-count, $column-spacing);
+        }
+
+        $column-count: $column-count + 1;
+      }
+    }
+
+    // Custom Containers (Cards)
+    .card {
+      border: solid transparent $border-width-100;
+      border-radius: $border-radius-200;
+      break-inside: avoid;
+      margin-bottom: $paragraph-margin;
+      margin-top: $paragraph-margin;
+      overflow: hidden;
+      padding: $spacing-500 $spacing-700;
+      page-break-inside: avoid;
+
+      :first-child {
+        margin-top: 0;
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
+
+      &.outline {
+        border-color: $root-font-color;
+        color: $root-font-color;
+      }
+    }
+
+    @each $name, $color in $container-card-list {
+      .#{$name}.outline.card {
+        border-color: $color;
+      }
+
+      .#{$name}.card:not(.outline) {
+        @include background($color);
+
+        @if lightness($color) > 50 {
+          // light background
+          @if lightness($root-font-color) > 50 {
+            color: $color-black;
+          } @else {
+            color: $root-font-color;
+          }
+        } @else {
+          // dark background
+          @if lightness($root-font-color) > 50 {
+            color: $root-font-color;
+          } @else {
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

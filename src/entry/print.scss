@@ -2,6 +2,7 @@
 @import "media/print/root";
 @import "media/print/block";
 @import "media/print/inline";
+@import "media/print/utilities";
 @import "media/print/extras";
 
 @mixin print {
@@ -12,14 +13,17 @@
 
   @include root {
     @include generic;
-    @include on-root { @include print-root };
+    @include on-root {
+      @include print-root;
+    }
     @include print-block;
     @include print-inline;
     @include print-extras;
+    @include print-utilities;
     @include custom-print;
   }
 
-  @if $print-only-root and $root-selector != "" {    
+  @if $print-only-root and $root-selector != "" {
     body * {
       visibility: hidden;
     }

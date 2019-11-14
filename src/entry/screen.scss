@@ -1,14 +1,18 @@
 @import "media/screen/root";
 @import "media/screen/block";
 @import "media/screen/inline";
+@import "media/screen/utilities";
 @import "media/screen/extras";
 
 @mixin screen {
   @include root {
     @include generic;
-    @include on-root { @include screen-root };
+    @include on-root {
+      @include screen-root;
+    }
     @include screen-block;
     @include screen-inline;
+    @include screen-utilities;
     @include screen-extras;
     @include custom-screen;
   }

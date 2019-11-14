@@ -1,12 +1,16 @@
 @import "generic/root";
 @import "generic/block";
 @import "generic/inline";
+@import "generic/utilities";
 @import "generic/extras";
 
 @mixin generic {
-  @include on-root { @include generic-root };
+  @include on-root {
+    @include generic-root;
+  }
   @include generic-block;
   @include generic-inline;
+  @include generic-utilities;
   @include generic-extras;
   @include custom-generic;
 }

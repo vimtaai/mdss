@@ -1,0 +1,8 @@
+@mixin print-utilities {
+  @if $enable-utilities {
+    // Non printing container
+    .no.print {
+      display: none;
+    }
+  }
+}

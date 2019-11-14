@@ -110,4 +110,45 @@
     margin-bottom: $paragraph-margin;
     margin-top: $paragraph-margin;
   }
+
+  // Tables
+  table {
+    border-collapse: collapse;
+    margin: $paragraph-margin auto;
+
+    thead {
+      $last-heading: length($heading-font-size);
+      @include font($heading-font);
+      @include font-color(nth($heading-font-color, $last-heading));
+      @include font-size(nth($heading-font-size, $last-heading));
+      @include font-weight(nth($heading-font-weight, $last-heading));
+
+      color: $color-primary;
+      border-bottom: solid $color-primary $border-width-200;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    th,
+    td {
+      font-weight: inherit;
+      padding: $spacing-200 $spacing-400;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background: $tables-stripe-background;
+    }
+  }
+
+  // Definition Lists
+  dt {
+    display: block;
+    font-weight: bold;
+  }
+
+  dd {
+    display: block;
+    margin-left: $spacing-700;
+  }
 }
