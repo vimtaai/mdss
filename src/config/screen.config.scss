@@ -1,3 +1,5 @@
+//// ! Base Config
+
 // Breakpoints
 $breakpoint-small     : 550px;
 $breakpoint-large     : 660px;
@@ -24,25 +26,35 @@ $spacing-700          : 24px;
 $spacing-800          : 28px;
 $spacing-900          : 32px;
 
+// Font sizes
+$font-size-100        : 14px;
+$font-size-200        : 17px;
+$font-size-300        : 18px;
+$font-size-400        : 20px;
+$font-size-500        : 24px;
+$font-size-600        : 30px;
+
+//// ! Element Config
+
 // Root dimensions
 $root-margin-x        : $spacing-600;
 $root-margin-y        : $spacing-300;
 $root-max-width       : 910px;
 $root-min-width       : 350px;
 
-// Root typgraphy
+// Root typography
 $root-font            : $font-serif;
-$root-font-size       : 17px;
+$root-font-size       : $font-size-200;
 $root-font-color      : $color-gray-dark;
 $root-background      : $color-white;
 $root-line-height     : 1.67;
 
 // Headings
 $heading-font         : $font-sans-serif;
-$heading-font-size    : (rem(1.75), rem(1.5), rem(1.2), rem(1.1));
-$heading-font-color   : ($color-primary, $color-accent, $root-font-color, $root-font-color);
-$heading-font-weight  : (500, 500, 500, 500);
-$heading-margin       : (rem(1.5), rem(1.2), rem(0.5), rem(0.2));
+$heading-font-size    : $font-size-600, $font-size-500, $font-size-400, $font-size-300;
+$heading-font-color   : $color-primary, $color-accent, $root-font-color, $root-font-color;
+$heading-font-weight  : 500, 500, 500, 500;
+$heading-margin       : $spacing-600, $spacing-500, $spacing-400, $spacing-400;
 
 // Paragraphs
 $paragraph-align      : left;
@@ -55,7 +67,7 @@ $unordered-list-style : square;
 
 // Blockquotes
 $quote-font           : $font-serif;
-$quote-font-size      : rem(1.1);
+$quote-font-size      : $font-size-300;
 $quote-font-color     : $color-primary;
 $quote-font-weight    : normal;
 $quote-font-style     : italic;
@@ -67,7 +79,7 @@ $quote-indent         : $spacing-700;
 
 // Code
 $code-font            : $font-monospace;
-$code-font-size       : rem(0.85);
+$code-font-size       : $font-size-100;
 $code-font-color      : $root-font-color;
 $code-font-weight     : normal;
 $code-font-style      : normal;
