@@ -67,22 +67,22 @@ $unordered-list-style : square;
 
 // Blockquotes
 $quote-font           : $font-serif;
-$quote-font-size      : $font-size-300;
+$quote-font-size      : null;
 $quote-font-color     : $color-primary;
-$quote-font-weight    : $font-weight-normal;
+$quote-font-weight    : null;
 $quote-font-style     : italic;
-$quote-background     : $root-background;
+$quote-background     : null;
 $quote-border-color   : transparent;
 $qoute-line-height    : $root-line-height;
-$quote-margin         : $paragraph-margin;
+$quote-margin         : $spacing-700;
 $quote-indent         : $spacing-700;
 
 // Code
 $code-font            : $font-monospace;
 $code-font-size       : $font-size-100;
-$code-font-color      : $root-font-color;
-$code-font-weight     : $font-weight-normal;
-$code-font-style      : normal;
+$code-font-color      : null;
+$code-font-weight     : null;
+$code-font-style      : null;
 $code-background      : $color-gray-light;
 $code-border-color    : transparent;
 $code-line-height     : 1.5;

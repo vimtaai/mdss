@@ -19,10 +19,12 @@ $color-gray           : hsl(0, 0%, 45%);
 
 // Theme colors
 $color-primary        : hsl(215, 30%, 45%);
-$color-accent         : hsl(215, 10%, 45%);
+$color-accent         : hsl(215, 15%, 45%);
+$color-muted          : $color-gray-medium;
+$color-strong         : $color-gray-dark;
 
 // Fonts
-$font-serif           : "Noticia Text", "Cambria", "Times New Roman", "Times", serif;
+$font-serif           : "Literata", "Cambria", "Times New Roman", "Times", serif;
 $font-sans-serif      : "Barlow Condensed", "Arial Narrow", "HelveticaNeue", sans-serif;
 $font-monospace       : "Fira Mono", "Consolas", "Monaco", monospace;
 

@@ -1,38 +1,38 @@
 // MDSS Extras
-$enable-auto-numbering           : true;
-  $auto-numbering-headings       : ();
-  $auto-numbering-elements       : ();
-$enable-print-urls               : false;
-$enable-page-break-manual        : true;
-$enable-page-break-auto          : true;
-  $page-break-auto-insert-before : ();
-  $page-break-auto-avoid-after   : (h1);
+$enable-auto-numbering                   : true;
+  $auto-numbering-headings               : ();
+  $auto-numbering-elements               : ();
+$enable-print-urls                       : false;
+$enable-page-break-manual                : true;
+$enable-page-break-auto                  : true;
+  $page-break-auto-insert-before         : ();
+  $page-break-auto-avoid-after           : (h1);
 
 // Utilities
-$enable-utilities                : true;
-  $utilities-colors              : (
-    "white"     : $color-white,
-    "gray"      : $color-gray,
-    "black"     : $color-black,
-    "red"       : $color-red,
-    "orange"    : $color-orange,
-    "yellow"    : $color-yellow,
-    "green"     : $color-green,
-    "forest"    : $color-forest,
-    "blue"      : $color-blue,
-    "purple"    : $color-purple,
-    "violet"    : $color-violet,
-    "brown"     : $color-brown,
-    "primary"   : $color-primary,
-    "accent"    : $color-accent
+$enable-utilities                        : true;
+  $utilities-colors                      : (
+    "white"                              : $color-white,
+    "gray"                               : $color-gray,
+    "black"                              : $color-black,
+    "red"                                : $color-red,
+    "orange"                             : $color-orange,
+    "yellow"                             : $color-yellow,
+    "green"                              : $color-green,
+    "forest"                             : $color-forest,
+    "blue"                               : $color-blue,
+    "purple"                             : $color-purple,
+    "violet"                             : $color-violet,
+    "brown"                              : $color-brown,
+    "primary"                            : $color-primary,
+    "accent"                             : $color-accent
   );
 
 // Components
-$enable-components               : true;
+$enable-components                       : true;
 
 // Syntax Highlighting
-$enable-syntax-highlighting      : true;
-  $syntax-highlighting-colors    : (
+$enable-syntax-highlighting              : true;
+  $syntax-highlighting-colors            : (
     ".token.comment"                     : $color-brown,  // Comments
     ".token.keyword"                     : $color-blue,   // Keywords
     ".token.constant, .token.boolean"    : $color-blue,   // Literals (e.g. null, true, false)

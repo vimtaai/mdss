@@ -4,6 +4,7 @@
     .card {
       @include font($font-sans-serif);
 
+      background: $color-muted;
       border: solid transparent $border-width-200;
       border-radius: $border-radius-300;
       break-inside: avoid;
@@ -14,7 +15,13 @@
       page-break-inside: avoid;
 
       &.outline {
+        background: none;
+        border-color: $color-strong;
         color: $root-font-color;
+      }
+
+      &.flat {
+        background: none;
       }
 
       :first-child {
@@ -30,6 +37,7 @@
     .chip {
       @include font($font-sans-serif);
 
+      background: $color-muted;
       border: solid transparent $border-width-100;
       border-radius: $border-radius-100;
       display: inline;
@@ -37,6 +45,16 @@
       font-weight: $font-weight-bold;
       overflow-wrap: break-word;
       padding: 0 $spacing-300;
+
+      &.outline {
+        background: none;
+        border-color: $color-strong;
+        color: $root-font-color;
+      }
+
+      &.flat {
+        background: none;
+      }
     }
 
     // Buttons
@@ -44,13 +62,24 @@
     button {
       @include font($font-sans-serif);
 
+      background: $color-muted;
       border: solid transparent $border-width-200;
       border-radius: $border-radius-200;
       display: inline-block;
       font-size: $font-size-200;
       font-weight: $font-weight-bold;
-      min-width: 2 * $spacing-900;
+      min-width: 5 * $spacing-500;
       padding: $spacing-300 $spacing-400;
+
+      &.outline {
+        background: none;
+        border-color: $color-strong;
+        color: $root-font-color;
+      }
+
+      &.flat {
+        background: none;
+      }
 
       &:hover {
         filter: brightness(110%);
