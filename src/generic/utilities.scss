@@ -55,6 +55,8 @@
       }
     }
 
+    $container-columns-max: 5;
+
     // Medium
     @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large - 1) {
       $column-count: 2;
@@ -85,54 +87,29 @@
       }
     }
 
-    // Custom Containers (Cards)
-    .card {
-      border: solid transparent $border-width-100;
-      border-radius: $border-radius-200;
-      break-inside: avoid;
-      margin-bottom: $paragraph-margin;
-      margin-top: $paragraph-margin;
-      overflow: hidden;
-      padding: $spacing-500 $spacing-700;
-      page-break-inside: avoid;
+    // Colors
+    @each $name, $color in $utilities-colors {
+      .#{$name} {
+        background: $color;
+        color: contrast-color($color, $color-white);
 
-      :first-child {
-        margin-top: 0;
-      }
+        &.outline {
+          border-color: darker($color, 1);
+          background: none;
+          color: darker($color, 1);
+        }
 
-      :last-child {
-        margin-bottom: 0;
-      }
-
-      &.outline {
-        border-color: $root-font-color;
-        color: $root-font-color;
+        &.flat {
+          border-color: transparent;
+          background: none;
+          color: darker($color, 1);
+        }
       }
     }
 
-    @each $name, $color in $container-card-list {
-      .#{$name}.outline.card {
-        border-color: $color;
-      }
-
-      .#{$name}.card:not(.outline) {
-        @include background($color);
-
-        @if lightness($color) > 50 {
-          // light background
-          @if lightness($root-font-color) > 50 {
-            color: $color-black;
-          } @else {
-            color: $root-font-color;
-          }
-        } @else {
-          // dark background
-          @if lightness($root-font-color) > 50 {
-            color: $root-font-color;
-          } @else {
-            color: $color-white;
-          }
-        }
+    @each $name, $color in $utilities-colors {
+      .#{$name}-text {
+        color: darker($color, 1);
       }
     }
   }

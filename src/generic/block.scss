@@ -67,11 +67,11 @@
     @include font($quote-font);
     @include font-size($quote-font-size);
     @include font-color($quote-font-color);
-    @include font-weight($quote-font-weight);
     @include font-style($quote-font-style);
     @include background($quote-background);
 
     border: solid $quote-border-color $border-width-300;
+    font-weight: $quote-font-weight;
     line-height: $quote-line-height;
     margin: $quote-margin 0;
     padding: 0 0 0 $quote-indent;
@@ -82,7 +82,6 @@
     @include font($code-font);
     @include font-size($code-font-size);
     @include font-color($code-font-color);
-    @include font-weight($code-font-weight);
     @include font-style($code-font-style);
     @include background($code-background);
 
@@ -121,11 +120,10 @@
       @include font($heading-font);
       @include font-color(nth($heading-font-color, $last-heading));
       @include font-size(nth($heading-font-size, $last-heading));
-      @include font-weight(nth($heading-font-weight, $last-heading));
 
       color: $color-primary;
       border-bottom: solid $color-primary $border-width-200;
-      font-weight: bold;
+      font-weight: nth($heading-font-weight, $last-heading);
       text-transform: uppercase;
     }
 
@@ -137,14 +135,14 @@
     }
 
     tr:nth-child(even) {
-      background: $tables-stripe-background;
+      background: $color-gray-light;
     }
   }
 
   // Definition Lists
   dt {
     display: block;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 
   dd {

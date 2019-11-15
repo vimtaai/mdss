@@ -16,12 +16,6 @@
   }
 }
 
-@mixin font-weight($weight) {
-  @if ($weight != normal) {
-    font-weight: $weight;
-  }
-}
-
 @mixin font-style($style) {
   @if ($style != normal) {
     font-style: $style;
@@ -34,7 +28,7 @@
   }
 }
 
-@mixin flex() {
+@mixin flex {
   align-items: stretch;
   display: flex;
   flex-wrap: wrap;

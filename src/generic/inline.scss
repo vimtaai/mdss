@@ -4,24 +4,23 @@
     @include font($link-font);
     @include font-size($link-font-size);
     @include font-style($link-font-style);
-    @include font-weight($link-font-weight);
 
     color: $link-font-color;
+    font-weight: $link-font-weight;
     text-decoration: none;
   }
 
   // Inline code
   code {
+    @include background($code-background);
     @include font($code-font);
     @include font-size($code-font-size);
     @include font-color($code-font-color);
     @include font-style($code-font-style);
-    @include font-weight($code-font-weight);
-    @include background($code-background);
 
     border-radius: $border-radius-100;
-    padding: $spacing-100 $spacing-200;
-    overflow-wrap: break-word;
+    font-weight: $code-font-weight;
+    padding: 0 $spacing-200;
   }
 
   // Images
@@ -32,7 +31,7 @@
   // Emphasis
   b,
   strong {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 
   i,
@@ -44,7 +43,7 @@
   del {
     background: lighter($color-red, 3);
     border-radius: $border-radius-100;
-    color: darker($color-red, 3);
+    color: darker($color-red, 2);
     padding: 0 $spacing-200;
     text-decoration: line-through;
   }
@@ -53,16 +52,16 @@
   ins {
     background: lighter($color-green, 3);
     border-radius: $border-radius-100;
-    color: darker($color-green, 3);
+    color: darker($color-green, 2);
     padding: 0 $spacing-200;
     text-decoration: none;
   }
 
   // Highlight
   mark {
-    background: lighter($color-blue, 3);
+    background: lighter($color-blue, 4);
     border-radius: $border-radius-100;
-    color: darker($color-blue, 3);
+    color: darker($color-blue, 2);
     padding: 0 $spacing-200;
   }
 }

@@ -1,0 +1,73 @@
+@mixin generic-components {
+  @if $enable-components {
+    // Cards
+    .card {
+      @include font($font-sans-serif);
+
+      border: solid transparent $border-width-200;
+      border-radius: $border-radius-300;
+      break-inside: avoid;
+      margin-bottom: $paragraph-margin;
+      margin-top: $paragraph-margin;
+      overflow: hidden;
+      padding: $spacing-500 $spacing-600;
+      page-break-inside: avoid;
+
+      &.outline {
+        color: $root-font-color;
+      }
+
+      :first-child {
+        margin-top: 0;
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Chips
+    .chip {
+      @include font($font-sans-serif);
+
+      border: solid transparent $border-width-100;
+      border-radius: $border-radius-100;
+      display: inline;
+      font-size: $font-size-100;
+      font-weight: $font-weight-bold;
+      overflow-wrap: break-word;
+      padding: 0 $spacing-300;
+    }
+
+    // Buttons
+    .button,
+    button {
+      @include font($font-sans-serif);
+
+      border: solid transparent $border-width-200;
+      border-radius: $border-radius-200;
+      display: inline-block;
+      font-size: $font-size-200;
+      font-weight: $font-weight-bold;
+      min-width: 2 * $spacing-900;
+      padding: $spacing-300 $spacing-400;
+
+      &:hover {
+        filter: brightness(110%);
+
+        &.flat {
+          background: $color-gray-light;
+          filter: brightness(100%);
+        }
+      }
+
+      &:active {
+        filter: brightness(90%);
+
+        &.flat {
+          background: $color-gray-light;
+        }
+      }
+    }
+  }
+}

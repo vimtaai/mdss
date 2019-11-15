@@ -2,6 +2,7 @@
 @import "media/print/root";
 @import "media/print/block";
 @import "media/print/inline";
+@import "media/print/components";
 @import "media/print/utilities";
 @import "media/print/extras";
 
@@ -19,6 +20,7 @@
     @include print-block;
     @include print-inline;
     @include print-extras;
+    @include print-components;
     @include print-utilities;
     @include custom-print;
   }

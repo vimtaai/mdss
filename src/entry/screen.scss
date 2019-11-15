@@ -1,6 +1,7 @@
 @import "media/screen/root";
 @import "media/screen/block";
 @import "media/screen/inline";
+@import "media/screen/components";
 @import "media/screen/utilities";
 @import "media/screen/extras";
 
@@ -12,6 +13,7 @@
     }
     @include screen-block;
     @include screen-inline;
+    @include screen-components;
     @include screen-utilities;
     @include screen-extras;
     @include custom-screen;

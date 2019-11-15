@@ -28,7 +28,7 @@ $spacing-900          : 32px;
 
 // Font sizes
 $font-size-100        : 14px;
-$font-size-200        : 17px;
+$font-size-200        : 16px;
 $font-size-300        : 18px;
 $font-size-400        : 20px;
 $font-size-500        : 24px;
@@ -39,7 +39,7 @@ $font-size-600        : 30px;
 // Root dimensions
 $root-margin-x        : $spacing-600;
 $root-margin-y        : $spacing-300;
-$root-max-width       : 910px;
+$root-max-width       : 960px;
 $root-min-width       : 350px;
 
 // Root typography
@@ -53,7 +53,7 @@ $root-line-height     : 1.67;
 $heading-font         : $font-sans-serif;
 $heading-font-size    : $font-size-600, $font-size-500, $font-size-400, $font-size-300;
 $heading-font-color   : $color-primary, $color-accent, $root-font-color, $root-font-color;
-$heading-font-weight  : 500, 500, 500, 500;
+$heading-font-weight  : $font-weight-bold, $font-weight-bold, $font-weight-bold, $font-weight-bold;
 $heading-margin       : $spacing-600, $spacing-500, $spacing-400, $spacing-400;
 
 // Paragraphs
@@ -69,7 +69,7 @@ $unordered-list-style : square;
 $quote-font           : $font-serif;
 $quote-font-size      : $font-size-300;
 $quote-font-color     : $color-primary;
-$quote-font-weight    : normal;
+$quote-font-weight    : $font-weight-normal;
 $quote-font-style     : italic;
 $quote-background     : $root-background;
 $quote-border-color   : transparent;
@@ -81,7 +81,7 @@ $quote-indent         : $spacing-700;
 $code-font            : $font-monospace;
 $code-font-size       : $font-size-100;
 $code-font-color      : $root-font-color;
-$code-font-weight     : normal;
+$code-font-weight     : $font-weight-normal;
 $code-font-style      : normal;
 $code-background      : $color-gray-light;
 $code-border-color    : transparent;
@@ -92,5 +92,5 @@ $code-margin          : $paragraph-margin;
 $link-font            : $root-font;
 $link-font-size       : $root-font-size;
 $link-font-color      : $color-primary;
-$link-font-weight     : bold;
+$link-font-weight     : $font-weight-bold;
 $link-font-style      : normal;

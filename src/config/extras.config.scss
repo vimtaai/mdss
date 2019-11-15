@@ -1,42 +1,52 @@
 // MDSS Extras
-$enable-auto-numbering                   : true;
-  $auto-numbering-headings               : ();
-  $auto-numbering-elements               : ();
-$enable-print-urls                       : false;
-$enable-page-break-manual                : true;
-$enable-page-break-auto                  : true;
-  $page-break-auto-insert-before         : ();
-  $page-break-auto-avoid-after           : (h1);
-
-// Markdown Extensions
-$tables-stripe-background                : $color-gray-light;
+$enable-auto-numbering           : true;
+  $auto-numbering-headings       : ();
+  $auto-numbering-elements       : ();
+$enable-print-urls               : false;
+$enable-page-break-manual        : true;
+$enable-page-break-auto          : true;
+  $page-break-auto-insert-before : ();
+  $page-break-auto-avoid-after   : (h1);
 
 // Utilities
-$enable-utilities                        : true;
-  $container-columns-max                 : 4;
-  $container-card-list                   : (
-    "primary"                            : $color-primary,
-    "accent"                             : $color-accent,
-    "gray"                               : $color-gray-medium
+$enable-utilities                : true;
+  $utilities-colors              : (
+    "white"     : $color-white,
+    "gray"      : $color-gray,
+    "black"     : $color-black,
+    "red"       : $color-red,
+    "orange"    : $color-orange,
+    "yellow"    : $color-yellow,
+    "green"     : $color-green,
+    "forest"    : $color-forest,
+    "blue"      : $color-blue,
+    "purple"    : $color-purple,
+    "violet"    : $color-violet,
+    "brown"     : $color-brown,
+    "primary"   : $color-primary,
+    "accent"    : $color-accent
   );
 
+// Components
+$enable-components               : true;
+
 // Syntax Highlighting
-$enable-syntax-highlighting              : true;
-  $syntax-highlighting-colors            : (
+$enable-syntax-highlighting      : true;
+  $syntax-highlighting-colors    : (
     ".token.comment"                     : $color-brown,  // Comments
     ".token.keyword"                     : $color-blue,   // Keywords
     ".token.constant, .token.boolean"    : $color-blue,   // Literals (e.g. null, true, false)
     ".token.string, .token.char"         : $color-violet, // Strings
-    ".token.interpolation"               : $color-indigo, // String placeholders (e.g. ${})
+    ".token.interpolation"               : $color-purple, // String placeholders (e.g. ${})
     ".token.number"                      : $color-violet, // Numbers
-    ".token.regex"                       : $color-indigo, // Regular expressions
+    ".token.regex"                       : $color-purple, // Regular expressions
     ".token.function, .token.class-name" : $color-forest, // Function/Class names
     ".token.tag, .token.attr-name"       : $color-blue,   // HTML/XML tag names
     ".token.attr"                        : $color-green   // HTML/XML attribute names
   );
 
   // Syntax Highlighting for HighlightJS
-  // $syntax-highlighting-colors         : (
+  // $syntax-highlighting-colors : (
   //   ".hljs-comment"                   : $color-brown,  // Comments
   //   ".hljs-keyword, .hljs-built_in"   : $color-blue,   // Keywords
   //   ".hljs-literal"                   : $color-blue,   // Literals (e.g. null, true, false)
@@ -50,7 +60,7 @@ $enable-syntax-highlighting              : true;
   // );
 
   // Syntax Highlighting for Pandoc
-  // $syntax-highlighting-colors         : (
+  // $syntax-highlighting-colors : (
   //   ".co, .do"                        : $color-brown,  // Comments
   //   ".kw, .cf, .dt"                   : $color-blue,   // Keywords
   //   ".li"                             : $color-blue,   // Literals (e.g. null, true, false)

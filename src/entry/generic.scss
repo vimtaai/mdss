@@ -1,6 +1,7 @@
 @import "generic/root";
 @import "generic/block";
 @import "generic/inline";
+@import "generic/components";
 @import "generic/utilities";
 @import "generic/extras";
 
@@ -10,6 +11,7 @@
   }
   @include generic-block;
   @include generic-inline;
+  @include generic-components;
   @include generic-utilities;
   @include generic-extras;
   @include custom-generic;

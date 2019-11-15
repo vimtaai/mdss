@@ -1,27 +1,33 @@
-// Colors
+// Base colors
 $color-white          : hsl(0, 0%, 100%);
 $color-gray-light     : hsl(215, 25%, 95%);
 $color-gray-medium    : hsl(215, 15%, 85%);
 $color-gray-dark      : hsl(215, 25%, 15%);
 $color-black          : hsl(0, 0%, 0%);
-$color-red            : hsl(350, 70%, 55%);
-$color-orange         : hsl(30, 80%, 55%);
-$color-yellow         : hsl(50, 80%, 60%);
-$color-lime           : hsl(70, 75%, 55%);
-$color-green          : hsl(125, 55%, 50%);
-$color-forest         : hsl(150, 60%, 40%);
-$color-blue           : hsl(210, 70%, 55%);
-$color-indigo         : hsl(245, 60%, 55%);
+
+// Color palette
+$color-red            : hsl(0, 80%, 60%);
+$color-orange         : hsl(30, 85%, 55%);
+$color-yellow         : hsl(50, 85%, 50%);
+$color-green          : hsl(100, 50%, 55%);
+$color-forest         : hsl(160, 75%, 30%);
+$color-blue           : hsl(210, 75%, 45%);
 $color-purple         : hsl(265, 60%, 45%);
-$color-violet         : hsl(330, 60%, 50%);
-$color-brown          : hsl(20, 50%, 50%);
+$color-violet         : hsl(330, 70%, 50%);
+$color-brown          : hsl(20, 55%, 50%);
+$color-gray           : hsl(0, 0%, 45%);
+
+// Theme colors
 $color-primary        : hsl(215, 30%, 45%);
-$color-accent         : hsl(215, 10%, 50%);
+$color-accent         : hsl(215, 10%, 45%);
 
 // Fonts
 $font-serif           : "Noticia Text", "Cambria", "Times New Roman", "Times", serif;
-$font-sans-serif      : "Fira Sans Extra Condensed", "Arial Narrow", "HelveticaNeue", sans-serif;
+$font-sans-serif      : "Barlow Condensed", "Arial Narrow", "HelveticaNeue", sans-serif;
 $font-monospace       : "Fira Mono", "Consolas", "Monaco", monospace;
+
+$font-weight-normal   : 400;
+$font-weight-bold     : 500;
 
 // Root Element Selector
 $root-selector        : "";
