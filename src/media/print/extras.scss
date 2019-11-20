@@ -1,24 +1,16 @@
 @mixin print-extras {
-  // Manual Page Break
-  @if $enable-page-break-manual {
-    hr {
-      visibility: hidden;
-      page-break-after: always;
-    }
-  }
-
   // Automatic Page Break
-  @if $enable-page-break-auto {
+  @if $enable-break-auto {
     // Insert before elements
-    @each $insert-element in $page-break-auto-insert-before {
+    @each $insert-element in $break-auto-insert-before {
       #{$insert-element} {
         page-break-before: always;
       }
     }
 
     // Avoid after element
-    @each $avoid-element in $page-break-auto-avoid-after {
-      @each $insert-element in $page-break-auto-insert-before {
+    @each $avoid-element in $break-auto-avoid-after {
+      @each $insert-element in $break-auto-insert-before {
         #{$avoid-element} + #{$insert-element} {
           page-break-before: avoid;
         }

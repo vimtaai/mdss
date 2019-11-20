@@ -3,10 +3,10 @@ $enable-auto-numbering                   : true;
   $auto-numbering-headings               : ();
   $auto-numbering-elements               : ();
 $enable-print-urls                       : false;
-$enable-page-break-manual                : true;
-$enable-page-break-auto                  : true;
-  $page-break-auto-insert-before         : ();
-  $page-break-auto-avoid-after           : (h1);
+$enable-break-manual                     : true;
+$enable-break-auto                       : true;
+  $break-auto-insert-before              : ();
+  $break-auto-avoid-after                : (h1);
 
 // Utilities
 $enable-utilities                        : true;

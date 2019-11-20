@@ -1,4 +1,14 @@
 @mixin generic-extras {
+  // Manual Page Break
+  @if $enable-break-manual {
+    hr {
+      visibility: hidden;
+      break-after: always;
+      page-break-after: always;
+      -webkit-column-break-after: always;
+    }
+  }
+
   // Numbered Elements
   @if $enable-auto-numbering {
     $counters: "";

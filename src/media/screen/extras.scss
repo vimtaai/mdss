@@ -1,6 +1,6 @@
 @mixin screen-extras {
   // Manual Page Break
-  @if $enable-page-break-manual {
+  @if $enable-break-manual {
     hr {
       height: 0;
       margin: 0;
