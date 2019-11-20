@@ -89,8 +89,8 @@ $code-line-height     : 1.5;
 $code-margin          : $paragraph-margin;
 
 // Links
-$link-font            : $root-font;
-$link-font-size       : $root-font-size;
+$link-font            : null;
+$link-font-size       : null;
 $link-font-color      : $root-font-color;
 $link-font-weight     : $font-weight-bold;
-$link-font-style      : normal;
+$link-font-style      : null;
