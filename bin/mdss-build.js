@@ -1,31 +1,37 @@
 #!/usr/bin/env node
 
-const path = require('path')
-const program = require('commander')
+import Commander from "commander";
+import Signale from "signale";
+import FsExtra from "fs-extra";
+import Sass from "sass";
+import Csso from "csso";
 
-const { defaultConfigPath, defaultOutputPath } = require('./constants')
-const { access, mkdir, read, write } = require('./helpers')
+import { join, resolve } from "path";
 
-const sourcePath = path.resolve(__dirname, '..')
-const configFilePath = path.resolve('mdss.json')
+import {
+  mdssSourcePath,
+  configFilePath,
+  defaultConfigPath,
+  defaultOutputPath,
+} from "./helpers/path.js";
+
+const program = new Commander.Command();
+const logger = new Signale.Signale({ scope: "mdss build", interactive: true });
 
 program
-  .option('-s --screen', 'generate print only stylesheet')
-  .option('-p --print', 'generate print only stylesheet')
-  .option('-b --bundle', 'generate bundled stylesheet for selected media (default)')
-  .option('--without-screen', 'exclude screen styles from bundle')
-  .option('--without-print', 'exclude print styles from bundle')
-  .option('-a --all', 'generate separate stylesheets for all media and bundle')
-  .option('-d --dev', 'genereate uncompressed, development stylesheets')
-  .option('-c --config-path [path]', 'path to the configuration directory')
-  .option('-o --output-path [path]', 'path to the output directory')
-  .parse(process.argv)
+  .option("-s --screen", "generate print only stylesheet")
+  .option("-p --print", "generate print only stylesheet")
+  .option("-b --bundle", "generate bundled stylesheet for both media (default)")
+  .option("--without-screen", "exclude screen styles from bundle")
+  .option("--without-print", "exclude print styles from bundle")
+  .option("-a --all", "generate separate stylesheets for all media and bundle")
+  .option("-d --dev", "genereate uncompressed, development stylesheets")
+  .option("-c --config-path [path]", "path to the configuration directory")
+  .option("-o --output-path [path]", "path to the output directory")
+  .parse(process.argv);
 
-const sass = require('node-sass') // Build tool
-const csso = require('csso') // Minifying tool
-
-async function build (program) {
-  console.log(`Building MDSS...\n`)
+async function build(program) {
+  console.log(`Building MDSS...\n`);
 
   // Command line options
   const options = {
@@ -33,94 +39,101 @@ async function build (program) {
     target: {
       bundle: program.all || program.bundle,
       screen: program.all || program.screen,
-      print: program.all || program.print
+      print: program.all || program.print,
     },
     bundle: {
       screen: !program.withoutScreen,
-      print: !program.withoutPrint
-    }
+      print: !program.withoutPrint,
+    },
+  };
+
+  if (
+    !options.target.bundle &&
+    !options.target.screen &&
+    !options.target.print
+  ) {
+    options.target.bundle = true;
   }
 
-  if (!options.target.bundle && !options.target.screen && !options.target.print) {
-    options.target.bundle = true
-  }
-
-  const targets = Object.keys(options.target).filter(target => options.target[target])
-  const bundle = Object.keys(options.bundle).filter(media => options.bundle[media])
+  const targets = Object.keys(options.target).filter(
+    (target) => options.target[target]
+  );
+  const bundle = Object.keys(options.bundle).filter(
+    (media) => options.bundle[media]
+  );
 
   // Configuration
   const config = {
     configPath: program.configPath || defaultConfigPath,
-    outputPath: program.outputPath || defaultOutputPath
-  }
+    outputPath: program.outputPath || defaultOutputPath,
+  };
 
   try {
-    await access(configFilePath)
-    console.log(`[READ] mdss.json\n`)
-    const configFileContents = await read(configFilePath, 'utf-8')
-    const configFileData = JSON.parse(configFileContents)
-    config.configPath = configFileData.configPath
-    config.outputPath = configFileData.outputPath
+    await FsExtra.access(configFilePath);
+    console.log(`[READ] mdss.json\n`);
+    const configFileContents = await FsExtra.readFile(configFilePath, "utf-8");
+    const configFileData = JSON.parse(configFileContents);
+    config.configPath = configFileData.configPath;
+    config.outputPath = configFileData.outputPath;
   } catch (_) {}
 
-  config.configAbsolutePath = path.resolve(config.configPath)
-  config.outputAbsolutePath = path.resolve(config.outputPath)
+  config.configAbsolutePath = resolve(config.configPath);
+  config.outputAbsolutePath = resolve(config.outputPath);
 
   // Info output
-  console.log(`Config Path:\t ${config.configPath}`)
-  console.log(`Output Path:\t ${config.outputPath}\n`)
-  console.log(`Target:\t\t ${targets.join(', ')}`)
+  console.log(`Config Path:\t ${config.configPath}`);
+  console.log(`Output Path:\t ${config.outputPath}\n`);
+  console.log(`Target:\t\t ${targets.join(", ")}`);
   if (options.target.bundle) {
-    console.log(`Bundled Media:\t ${bundle.join(', ')}`)
+    console.log(`Bundled Media:\t ${bundle.join(", ")}`);
   }
-  console.log(`Dev Mode:\t ${options.dev}\n`)
+  console.log(`Dev Mode:\t ${options.dev}\n`);
 
   try {
-    await access(config.configAbsolutePath)
+    await FsExtra.access(config.configAbsolutePath);
   } catch (err) {
-    console.error(`[ERROR] Config dir not found. Did you forget to run "mdss customize"? Exiting.`)
-    return
+    console.error(
+      `[ERROR] Config dir not found. Did you forget to run "mdss customize"? Exiting.`
+    );
+    return;
   }
 
-  console.log(`Config Dir:\t ${config.configPath}`)
-  console.log(`Output Dir:\t ${config.outputPath}\n`)
+  console.log(`Config Dir:\t ${config.configPath}`);
+  console.log(`Output Dir:\t ${config.outputPath}\n`);
 
   // Building
-  mkdir(config.outputAbsolutePath)
+  await FsExtra.ensureDir(config.outputAbsolutePath);
 
   for (const target of targets) {
-    const media = (target === 'bundle') ? bundle : target
+    const media = target === "bundle" ? bundle : target;
     const sassCode = `
       $BUNDLE: ${Array.isArray(media)};
-      $MEDIA: ${Array.isArray(media) ? media.join(' ') : media};
+      $MEDIA: ${Array.isArray(media) ? media.join(" ") : media};
       @import "entry/index";
-    `
-    const suffix = Array.isArray(media) ? `` : `-${media}`
-    const outputFileName = `mdss${suffix}${options.dev ? `` : `.min`}.css`
-    const outputFilePath = path.join(config.outputAbsolutePath, outputFileName)
+    `;
+    const suffix = Array.isArray(media) ? `` : `-${media}`;
+    const outputFileName = `mdss${suffix}${options.dev ? `` : `.min`}.css`;
+    const outputFilePath = join(config.outputAbsolutePath, outputFileName);
 
-    console.log(`[CREATE] ${outputFilePath}`)
+    console.log(`[CREATE] ${outputFilePath}`);
 
-    const result = sass.renderSync({
+    const result = Sass.renderSync({
       data: sassCode,
-      includePaths: [
-        config.configAbsolutePath,
-        path.join(sourcePath, 'src')
-      ],
-      outputStyle: 'expanded',
+      includePaths: [config.configAbsolutePath, join(mdssSourcePath, "src")],
+      outputStyle: "expanded",
       outFile: outputFilePath,
-      sourceMap: true
-    })
+      sourceMap: true,
+    });
 
     if (options.dev) {
-      await write(outputFilePath, result.css)
-      console.log(`[CREATE] ${outputFilePath}.map`)
-      await write(outputFilePath + '.map', result.map)
+      await FsExtra.writeFile(outputFilePath, result.css);
+      console.log(`[CREATE] ${outputFilePath}.map`);
+      await FsExtra.writeFile(outputFilePath + ".map", result.map);
     } else {
-      const minified = csso.minify(result.css)
-      await write(outputFilePath, minified.css)
+      const minified = Csso.minify(result.css);
+      await FsExtra.writeFile(outputFilePath, minified.css);
     }
   }
 }
 
-build(program)
+build(program);

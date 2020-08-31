@@ -1,62 +1,82 @@
 #!/usr/bin/env node
 
-const path = require('path')
-const program = require('commander')
+import Commander from "commander";
+import Signale from "signale";
+import FsExtra from "fs-extra";
 
-const { defaultConfigPath, defaultOutputPath } = require('./constants')
-const { access, copy, mkdir, readDir, unlink, write } = require('./helpers')
+import { join, resolve } from "path";
 
-const sourcePath = path.resolve(__dirname, '..')
-const configFilePath = path.resolve('mdss.json')
+import {
+  mdssSourcePath,
+  configFilePath,
+  defaultConfigPath,
+  defaultOutputPath,
+} from "./helpers/path.js";
+
+const program = new Commander.Command();
+const logger = new Signale.Signale({ scope: "mdss build", interactive: true });
 
 program
-  .option('-c --config-path <dir>', 'set configuration directory path', defaultConfigPath)
-  .option('-o --output-path <dir>', 'set output directory path', defaultOutputPath)
-  .parse(process.argv)
+  .option("-c --config-path <dir>", "set config dir path", defaultConfigPath)
+  .option("-o --output-path <dir>", "set output dir path", defaultOutputPath)
+  .parse(process.argv);
 
-async function customize (program) {
-  console.log(`Setting up MDSS for customization...\n`)
+async function customize(program) {
+  console.log(`Setting up MDSS for customization...\n`);
 
   // Command line options
   const options = {
     configPath: program.configPath,
-    outputPath: program.outputPath
-  }
+    outputPath: program.outputPath,
+  };
 
   // Customizing
   try {
-    await access(configFilePath)
+    await FsExtra.pathExists(configFilePath);
 
-    console.log(`[DELETE] mdss.json`)
+    console.log(`[DELETE] mdss.json`);
 
-    await unlink(configFilePath)
+    await unlink(configFilePath);
   } catch (err) {}
 
-  if (options.configPath !== defaultConfigPath || options.outputPath !== defaultOutputPath) {
-    console.log(`[CREATE] mdss.json`)
+  if (
+    options.configPath !== defaultConfigPath ||
+    options.outputPath !== defaultOutputPath
+  ) {
+    console.log(`[CREATE] mdss.json`);
 
     const configFileData = {
       configPath: options.configPath,
-      outputPath: options.outputPath
-    }
-    const configFileContents = JSON.stringify(configFileData, null, 2)
-    await write(configFilePath, configFileContents)
+      outputPath: options.outputPath,
+    };
+    const configFileContents = JSON.stringify(configFileData, null, 2);
+    await FsExtra.writeFile(configFilePath, configFileContents);
   }
 
-  mkdir(path.resolve(options.configPath))
-  mkdir(path.resolve(options.outputPath))
+  try {
+    await FsExtra.ensureDir(resolve(options.configPath));
+    await FsExtra.ensureDir(resolve(options.outputPath));
+  } catch {}
 
-  const sourceConfigPath = path.join(sourcePath, 'src', 'config')
-  const configFiles = await readDir(sourceConfigPath)
+  let configFiles;
+  let sourceConfigPath;
+  try {
+    sourceConfigPath = join(mdssSourcePath, "src", "config");
+    configFiles = await FsExtra.readdir(sourceConfigPath);
+  } catch {}
 
-  for (const configFile of configFiles) {
-    const configFileFrom = path.join(sourceConfigPath, configFile)
-    const configFileTo = path.resolve(options.configPath, configFile)
+  try {
+    for (const configFile of configFiles) {
+      const configFileFrom = join(sourceConfigPath, configFile);
+      const configFileTo = resolve(options.configPath, configFile);
 
-    console.log(`[CREATE] ${configFileTo}`)
+      console.log(`[CREATE] ${configFileTo}`);
 
-    await copy(configFileFrom, configFileTo)
+      await FsExtra.copy(configFileFrom, configFileTo);
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
 
-customize(program)
+customize(program);
