@@ -4,78 +4,98 @@ import Commander from "commander";
 import Signale from "signale";
 import FsExtra from "fs-extra";
 
-import { join, resolve } from "path";
+import { resolve } from "path";
 
 import {
-  mdssSourcePath,
-  configFilePath,
-  defaultConfigPath,
-  defaultOutputPath,
+  defaultConfigDir,
+  defaultOutputDir,
+  mdssConfigDir,
+  localConfigFile,
 } from "./helpers/path.js";
 
 const program = new Commander.Command();
-const logger = new Signale.Signale({ scope: "mdss build", interactive: true });
+const logger = new Signale.Signale({ scope: "mdss", interactive: true });
 
 program
-  .option("-c --config-path <dir>", "set config dir path", defaultConfigPath)
-  .option("-o --output-path <dir>", "set output dir path", defaultOutputPath)
+  .option("-c --config-path <dir>", "set config dir path")
+  .option("-o --output-path <dir>", "set output dir path")
+  .option("-q --quiet", "omit console output")
   .parse(process.argv);
 
 async function customize(program) {
-  console.log(`Setting up MDSS for customization...\n`);
+  if (program.quiet) {
+    logger.disable();
+  }
 
-  // Command line options
-  const options = {
-    configPath: program.configPath,
-    outputPath: program.outputPath,
-  };
+  const localConfigDir = program.configPath || defaultConfigDir;
+  const localOutputDir = program.outputPath || defaultOutputDir;
+  const hasCustomConfigDir = localConfigDir !== defaultConfigDir;
+  const hasCustomOutputDir = localOutputDir !== defaultOutputDir;
 
-  // Customizing
+  let configFileList = [];
+
   try {
-    await FsExtra.pathExists(configFilePath);
+    logger.await(`Checking for old config file (mdss.json)...`);
 
-    console.log(`[DELETE] mdss.json`);
+    const localConfigFileExists = await FsExtra.pathExists(localConfigFile);
 
-    await unlink(configFilePath);
-  } catch (err) {}
+    if (localConfigFileExists) {
+      logger.await(`Deleting old config file (mdss.json)...`);
 
-  if (
-    options.configPath !== defaultConfigPath ||
-    options.outputPath !== defaultOutputPath
-  ) {
-    console.log(`[CREATE] mdss.json`);
-
-    const configFileData = {
-      configPath: options.configPath,
-      outputPath: options.outputPath,
-    };
-    const configFileContents = JSON.stringify(configFileData, null, 2);
-    await FsExtra.writeFile(configFilePath, configFileContents);
+      await FsExtra.unlink(localConfigFile);
+    }
+  } catch {
+    logger.error(`Could not delete config file (mdss.json).`);
+    return;
   }
 
   try {
-    await FsExtra.ensureDir(resolve(options.configPath));
-    await FsExtra.ensureDir(resolve(options.outputPath));
-  } catch {}
+    if (hasCustomConfigDir || hasCustomOutputDir) {
+      logger.await(`Creating new config file (mdss.json)...`);
 
-  let configFiles;
-  let sourceConfigPath;
+      const configFileData = {
+        configPath: localConfigDir,
+        outputPath: localOutputDir,
+      };
+      const configFileContents = JSON.stringify(configFileData, null, 2);
+
+      await FsExtra.writeFile(localConfigFile, configFileContents);
+      logger.success(`Created ${localConfigFile}\n`);
+    }
+  } catch {
+    logger.error(`Could not create config file (mdss.json)`);
+    return;
+  }
+
   try {
-    sourceConfigPath = join(mdssSourcePath, "src", "config");
-    configFiles = await FsExtra.readdir(sourceConfigPath);
-  } catch {}
+    logger.await(`Creating config/output dir...`);
+
+    await FsExtra.ensureDir(resolve(localConfigDir));
+    await FsExtra.ensureDir(resolve(localOutputDir));
+  } catch {
+    logger.error(`Could not create config/output dir.`);
+    return;
+  }
 
   try {
-    for (const configFile of configFiles) {
-      const configFileFrom = join(sourceConfigPath, configFile);
-      const configFileTo = resolve(options.configPath, configFile);
+    configFileList = await FsExtra.readdir(mdssConfigDir);
+  } catch {
+    logger.error(`Could not get the list of config files.`);
+  }
 
-      console.log(`[CREATE] ${configFileTo}`);
+  try {
+    for (const configFile of configFileList) {
+      logger.await(`Copying ${configFile}...`);
+
+      const configFileFrom = resolve(mdssConfigDir, configFile);
+      const configFileTo = resolve(localConfigDir, configFile);
 
       await FsExtra.copy(configFileFrom, configFileTo);
+      logger.success(`Copied ${configFile}\n`);
     }
   } catch (err) {
-    console.log(err);
+    logger.error(`Could not copy config files.`);
+    return;
   }
 }
 
