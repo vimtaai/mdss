@@ -4,12 +4,15 @@
   "description": "Stylesheets for displaying and printing Markdown documents",
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "license": "MIT",
+  "repository": "github:vimtaai/mdss",
   "type": "module",
   "main": "build/mdss.min.css",
   "bin": "bin/mdss.js",
-  "repository": "github:vimtaai/mdss",
-  "bugs": "https://github.com/vimtaai/mdss/issues",
-  "homepage": "https://github.com/vimtaai/mdss#readme",
+  "files": [
+    "/src",
+    "/bin",
+    "/build"
+  ],
   "scripts": {
     "build": "node bin/mdss.js build --all --config-path src/config --output-path build",
     "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path build",
@@ -21,8 +24,5 @@
     "fs-extra": "^9.0.1",
     "sass": "^1.26.10",
     "signale": "^1.4.0"
-  },
-  "prettier": {
-    "printWidth": 100
   }
 }
