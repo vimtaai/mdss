@@ -12,7 +12,8 @@
   // Tables
   @if $enable-tables {
     table {
-      th, td {
+      th,
+      td {
         padding: $spacing-medium $spacing-large;
       }
     }

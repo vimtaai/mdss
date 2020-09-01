@@ -12,14 +12,16 @@
 
   @include root {
     @include generic;
-    @include on-root { @include print-root };
+    @include on-root {
+      @include print-root;
+    }
     @include print-block;
     @include print-inline;
     @include print-extras;
     @include custom-print;
   }
 
-  @if $print-only-root and $root-selector != "" {    
+  @if $print-only-root and $root-selector != "" {
     body * {
       visibility: hidden;
     }

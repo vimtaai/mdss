@@ -7,10 +7,10 @@ import FsExtra from "fs-extra";
 import { resolve } from "path";
 
 import {
-  defaultConfigDir,
-  defaultOutputDir,
   mdssConfigDir,
   localConfigFile,
+  defaultConfigDir,
+  defaultOutputDir,
 } from "./helpers/path.js";
 
 const program = new Commander.Command();

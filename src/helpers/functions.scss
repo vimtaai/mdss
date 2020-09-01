@@ -10,7 +10,6 @@
 
 @function column-width($column-count, $column-spacing) {
   $full-width: #{100% / $column-count};
-  $space-per-column: #{2 * ($column-count - 1) / ($column-count) * $column-spacing};
 
-  @return calc(#{$full-width} - #{$space-per-column});
+  @return calc(#{$full-width} - #{2 * $column-spacing});
 }

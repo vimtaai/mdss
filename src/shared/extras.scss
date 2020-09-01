@@ -14,7 +14,8 @@
         background: $tables-stripe-background;
       }
 
-      td, th {
+      td,
+      th {
         text-align: left;
       }
     }
@@ -34,7 +35,8 @@
 
   // Strikethrough
   @if $enable-strikethrough {
-    s, del {
+    s,
+    del {
       text-decoration: line-through;
     }
   }
@@ -77,7 +79,6 @@
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   // Flex Containers
@@ -96,11 +97,15 @@
     .columns {
       @extend %flex;
 
+      justify-content: flex-start;
+
+      &.evenly.aligned {
+        justify-content: space-evenly;
+      }
+
       & > * {
         box-sizing: border-box;
         display: block;
-        margin-left: 0;
-        margin-right: 0;
         width: 100%;
       }
     }
@@ -110,7 +115,7 @@
   @if $enable-container-card {
     .card {
       overflow: hidden;
-      
+
       :first-child {
         margin-top: 0;
       }

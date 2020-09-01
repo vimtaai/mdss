@@ -6,7 +6,9 @@
 @mixin screen {
   @include root {
     @include generic;
-    @include on-root { @include screen-root };
+    @include on-root {
+      @include screen-root;
+    }
     @include screen-block;
     @include screen-inline;
     @include screen-extras;

@@ -5,7 +5,9 @@
 
 @mixin shared {
   @include root {
-    @include on-root { @include shared-root };
+    @include on-root {
+      @include shared-root;
+    }
     @include shared-block;
     @include shared-inline;
     @include shared-extras;

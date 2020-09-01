@@ -4,7 +4,9 @@
 @import "generic/extras";
 
 @mixin generic {
-  @include on-root { @include generic-root };
+  @include on-root {
+    @include generic-root;
+  }
   @include generic-block;
   @include generic-inline;
   @include generic-extras;
