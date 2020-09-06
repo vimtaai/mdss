@@ -8,24 +8,21 @@ import Csso from "csso";
 
 import { resolve } from "path";
 
-import {
-  mdssSourceDir,
-  localConfigFile,
-  defaultConfigDir,
-  defaultOutputDir,
-} from "./helpers/path.js";
+import { defaultConfigDir, defaultOutputDir, defaultConfigFile } from "./helpers/constants.js";
+import { mdssConfigDir } from "./helpers/mdss-paths.js";
 
 const program = new Commander.Command();
-const logger = new Signale.Signale({ scope: "s", interactive: true });
+const logger = new Signale.Signale({ scope: "mdss", interactive: true });
 
 program
+  .option("-f --config-file <path>", "path to the configuration file")
+  .option("-c --config-path <path>", "path to the configuration directory")
+  .option("-o --output-path <path>", "path to the output directory")
   .option("-s --screen", "generate print only stylesheet")
   .option("-p --print", "generate print only stylesheet")
   .option("-b --bundle", "generate bundled stylesheet for both media (default)")
   .option("-a --all", "generate separate stylesheets for all media and bundle")
   .option("-d --dev", "genereate uncompressed, development stylesheets")
-  .option("-c --config-path [path]", "path to the configuration directory")
-  .option("-o --output-path [path]", "path to the output directory")
   .option("-q --quiet", "omit console output")
   .parse(process.argv);
 
@@ -34,73 +31,70 @@ async function build(program) {
     logger.disable();
   }
 
+  const configFile = program.configFile || defaultConfigFile;
   const isDevBuild = program.dev || false;
   const isOutputSelected = program.screen || program.print || program.bundle;
 
-  const targets = [];
-  if (program.all || program.screen) {
-    targets.push("screen");
-  }
-  if (program.all || program.print) {
-    targets.push("print");
-  }
-  if (program.all || program.bundle || !isOutputSelected) {
-    targets.push("bundle");
-  }
+  const targets = {
+    screen: program.all || program.screen,
+    print: program.all || program.print,
+    bundle: program.all || program.bundle || !isOutputSelected,
+  };
 
-  let localConfigDir = program.configPath || defaultConfigDir;
-  let localOutputDir = program.outputPath || defaultOutputDir;
+  let configDir = program.configPath || defaultConfigDir;
+  let outputDir = program.outputPath || defaultOutputDir;
 
   try {
-    const localConfigFileExists = await FsExtra.pathExists(localConfigFile);
+    logger.await(`Checking for config file \`${configFile}\`...`);
+    const configFileExists = await FsExtra.pathExists(configFile);
 
-    if (localConfigFileExists) {
-      logger.await(`Reading config file (mdss.json)...`);
+    if (configFileExists) {
+      logger.await(`Reading config file \`${configFile}\`...`);
 
-      const configFileContents = await FsExtra.readFile(localConfigFile, "utf-8");
+      const configFileContents = await FsExtra.readFile(configFile, "utf-8");
       const { configPath, outputPath } = JSON.parse(configFileContents);
 
-      localConfigDir = configPath;
-      localOutputDir = outputPath;
+      configDir = configPath;
+      outputDir = outputPath;
     }
-  } catch {
-    logger.error(`Could not read config file (mdss.json).`);
+  } catch (err) {
+    logger.error(`Could not read config file \`${configDir}\`.`, err);
     return;
   }
 
-  logger.info(`Config Path:\t ${localConfigDir}\n`);
-  logger.info(`Output Path:\t ${localOutputDir}\n`);
+  logger.info(`Config Path:\t ${configDir}\n`);
+  logger.info(`Output Path:\t ${outputDir}\n`);
   logger.info(`Targets:\t ${targets.join(", ")}\n`);
   logger.info(`Dev Mode:\t ${isDevBuild}\n`);
 
   try {
     logger.await(`Checking for config dir...`);
+    const configDirExists = await FsExtra.pathExists(configDir);
 
-    const localConfigDirExists = await FsExtra.pathExists(localConfigDir);
-
-    if (!localConfigDirExists) {
+    if (!configDirExists) {
       throw new Error(`Config dir not found`);
     }
-  } catch {
-    logger.error(`Config dir not found. Did you forget to run "mdss customize"?.`);
+  } catch (err) {
+    logger.error(`Config dir not found. Did you forget to run "mdss customize"?.\n`, err);
     return;
   }
 
   try {
     logger.await(`Checking for output dir...`);
-
-    await FsExtra.ensureDir(localOutputDir);
+    await FsExtra.ensureDir(outputDir);
   } catch {
-    logger.error(`Could not create output dir.`);
+    logger.error(`Could not create output dir \`${outputFile.dir}\`.\n`, err);
     return;
   }
 
   for (const target of targets) {
     try {
+      logger.await(`Generating output...`);
       const isBundleBuild = target === "bundle";
       const outputBasenameSuffix = isBundleBuild ? `` : `-${target}`;
       const outputBasename = `mdss${outputBasenameSuffix}${isDevBuild ? `` : `.min`}.css`;
-      const outputFile = resolve(localOutputDir, outputBasename);
+      const outputFile = resolve(outputDir, outputBasename);
+
       const sassCode = `
         $BUNDLE: ${isBundleBuild};
         $MEDIA: ${isBundleBuild ? "screen print" : target};
@@ -109,11 +103,13 @@ async function build(program) {
 
       const result = Sass.renderSync({
         data: sassCode,
-        includePaths: [resolve(localConfigDir), resolve(mdssSourceDir, "src")],
+        includePaths: [resolve(configDir), resolve(mdssConfigDir)],
         outputStyle: "expanded",
         outFile: outputFile,
         sourceMap: true,
       });
+
+      logger.await(`Writing output...`);
 
       if (isDevBuild) {
         await FsExtra.writeFile(outputFile, result.css);
@@ -123,9 +119,10 @@ async function build(program) {
         const minified = Csso.minify(result.css);
         await FsExtra.writeFile(outputFile, minified.css);
       }
+
       logger.success(`Created ${outputBasename}\n`);
     } catch (err) {
-      logger.error(`Could not create output file.`, err);
+      logger.error(`Could create output file \`${outputBasename}\`.\n`, err);
       return;
     }
   }

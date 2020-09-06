@@ -6,19 +6,16 @@ import FsExtra from "fs-extra";
 
 import { resolve } from "path";
 
-import {
-  mdssConfigDir,
-  localConfigFile,
-  defaultConfigDir,
-  defaultOutputDir,
-} from "./helpers/path.js";
+import { defaultConfigFile, defaultConfigDir, defaultOutputDir } from "./helpers/constants.js";
+import { mdssConfigDir } from "./helpers/mdss-paths.js";
 
 const program = new Commander.Command();
 const logger = new Signale.Signale({ scope: "mdss", interactive: true });
 
 program
-  .option("-c --config-path <dir>", "set config dir path")
-  .option("-o --output-path <dir>", "set output dir path")
+  .option("-f --config-file <path>", "set config file path")
+  .option("-c --config-path <path>", "set config dir path")
+  .option("-o --output-path <path>", "set output dir path")
   .option("-q --quiet", "omit console output")
   .parse(process.argv);
 
@@ -27,74 +24,74 @@ async function customize(program) {
     logger.disable();
   }
 
-  const localConfigDir = program.configPath || defaultConfigDir;
-  const localOutputDir = program.outputPath || defaultOutputDir;
-  const hasCustomConfigDir = localConfigDir !== defaultConfigDir;
-  const hasCustomOutputDir = localOutputDir !== defaultOutputDir;
-
-  let configFileList = [];
+  const configFile = program.configFile || defaultConfigFile;
+  const configDir = program.configPath || defaultConfigDir;
+  const outputDir = program.outputPath || defaultOutputDir;
+  const isConfigDirCustom = configDir !== defaultConfigDir;
+  const isOutputDirCustom = outputDir !== defaultOutputDir;
 
   try {
-    logger.await(`Checking for old config file (mdss.json)...`);
-
-    const localConfigFileExists = await FsExtra.pathExists(localConfigFile);
+    logger.await(`Checking for old config file \`${configFile}\`...`);
+    const localConfigFileExists = await FsExtra.pathExists(defaultConfigFile);
 
     if (localConfigFileExists) {
-      logger.await(`Deleting old config file (mdss.json)...`);
+      logger.await(`Deleting old config file \`${configFile}\`...`);
 
-      await FsExtra.unlink(localConfigFile);
+      await FsExtra.unlink(defaultConfigFile);
     }
-  } catch {
-    logger.error(`Could not delete config file (mdss.json).`);
+  } catch (err) {
+    logger.error(`Could not delete config file \`${configFile}\`.\n`, err);
     return;
   }
 
   try {
-    if (hasCustomConfigDir || hasCustomOutputDir) {
-      logger.await(`Creating new config file (mdss.json)...`);
-
+    if (isConfigDirCustom || isOutputDirCustom) {
+      logger.await(`Creating new config file \`${configFile}\`...`);
       const configFileData = {
-        configPath: localConfigDir,
-        outputPath: localOutputDir,
+        configPath: configDir,
+        outputPath: outputDir,
       };
       const configFileContents = JSON.stringify(configFileData, null, 2);
 
-      await FsExtra.writeFile(localConfigFile, configFileContents);
-      logger.success(`Created ${localConfigFile}\n`);
+      await FsExtra.writeFile(defaultConfigFile, configFileContents);
+      logger.success(`Created ${defaultConfigFile}\n`);
     }
-  } catch {
-    logger.error(`Could not create config file (mdss.json)`);
+  } catch (err) {
+    logger.error(`Could not create config file \`${configFile}\`.`, err);
     return;
   }
 
   try {
-    logger.await(`Creating config/output dir...`);
-
-    await FsExtra.ensureDir(resolve(localConfigDir));
-    await FsExtra.ensureDir(resolve(localOutputDir));
-  } catch {
-    logger.error(`Could not create config/output dir.`);
+    logger.await(`Creating config dir \`${configDir}\`...`);
+    await FsExtra.ensureDir(resolve(configDir));
+  } catch (err) {
+    logger.error(`Could not create config/output dir.\n`, err);
     return;
   }
 
   try {
-    configFileList = await FsExtra.readdir(mdssConfigDir);
-  } catch {
-    logger.error(`Could not get the list of config files.`);
+    logger.await(`Creating output dir \`${outputDir}\`...`);
+    await FsExtra.ensureDir(resolve(outputDir));
+  } catch (err) {
+    logger.error(`Could not create config/output dir.\n`, err);
+    return;
   }
 
   try {
+    logger.await(`Getting list of config files...`);
+    const configFileList = await FsExtra.readdir(mdssConfigDir);
+
     for (const configFile of configFileList) {
       logger.await(`Copying ${configFile}...`);
 
       const configFileFrom = resolve(mdssConfigDir, configFile);
-      const configFileTo = resolve(localConfigDir, configFile);
+      const configFileTo = resolve(configDir, configFile);
 
       await FsExtra.copy(configFileFrom, configFileTo);
       logger.success(`Copied ${configFile}\n`);
     }
   } catch (err) {
-    logger.error(`Could not copy config files.`);
+    logger.error(`Could not copy config files.\n`, err);
     return;
   }
 }
