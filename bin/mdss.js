@@ -9,6 +9,6 @@ program
   .usage("<command> [options]")
   .command("build", "Generate custom MDSS stylesheets")
   .alias("b")
-  .command("customize", "Set up MDSS for customization")
-  .alias("c")
+  .command("init", "Initilize MDSS for customization")
+  .alias("i")
   .parse(process.argv);

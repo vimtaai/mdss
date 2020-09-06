@@ -8,16 +8,16 @@ import Csso from "csso";
 
 import { resolve } from "path";
 
-import { defaultConfigDir, defaultOutputDir, defaultConfigFile } from "./helpers/constants.js";
-import { mdssConfigDir } from "./helpers/mdss-paths.js";
+import { defaultThemeDir, defaultOutputDir, defaultConfigFile } from "./helpers/constants.js";
+import { mdssThemeDir } from "./helpers/mdss-paths.js";
 
 const program = new Commander.Command();
 const logger = new Signale.Signale({ scope: "mdss", interactive: true });
 
 program
-  .option("-f --config-file <path>", "path to the configuration file")
-  .option("-c --config-path <path>", "path to the configuration directory")
-  .option("-o --output-path <path>", "path to the output directory")
+  .option("-c --config-file <path>", "path to the configuration file")
+  .option("-t --theme-dir <path>", "path to the theme directory")
+  .option("-o --output-dir <path>", "path to the output directory")
   .option("-s --screen", "generate print only stylesheet")
   .option("-p --print", "generate print only stylesheet")
   .option("-b --bundle", "generate bundled stylesheet for both media (default)")
@@ -41,8 +41,8 @@ async function build(program) {
     bundle: program.all || program.bundle || !isOutputSelected,
   };
 
-  let configDir = program.configPath || defaultConfigDir;
-  let outputDir = program.outputPath || defaultOutputDir;
+  let themeDir = program.themeDir || defaultThemeDir;
+  let outputDir = program.outputDir || defaultOutputDir;
 
   try {
     logger.await(`Checking for config file \`${configFile}\`...`);
@@ -52,30 +52,34 @@ async function build(program) {
       logger.await(`Reading config file \`${configFile}\`...`);
 
       const configFileContents = await FsExtra.readFile(configFile, "utf-8");
-      const { configPath, outputPath } = JSON.parse(configFileContents);
+      const { themeDir, outputDir } = JSON.parse(configFileContents);
 
-      configDir = configPath;
-      outputDir = outputPath;
+      themeDir = themeDir; // ! TODO
+      outputDir = outputDir; // ! TODO
     }
   } catch (err) {
-    logger.error(`Could not read config file \`${configDir}\`.`, err);
+    logger.error(`Could not read config file \`${configFile}\`.`, err);
     return;
   }
 
-  logger.info(`Config Path:\t ${configDir}\n`);
-  logger.info(`Output Path:\t ${outputDir}\n`);
-  logger.info(`Targets:\t ${targets.join(", ")}\n`);
+  logger.info(`Theme dir:\t ${themeDir}\n`);
+  logger.info(`Output dir:\t ${outputDir}\n`);
+  logger.info(
+    `Targets:\t ${Object.keys(targets)
+      .filter((target) => targets[target])
+      .join(", ")}\n`
+  ); // ! TODO
   logger.info(`Dev Mode:\t ${isDevBuild}\n`);
 
   try {
-    logger.await(`Checking for config dir...`);
-    const configDirExists = await FsExtra.pathExists(configDir);
+    logger.await(`Checking for theme dir...`);
+    const themeDirExists = await FsExtra.pathExists(themeDir);
 
-    if (!configDirExists) {
-      throw new Error(`Config dir not found`);
+    if (!themeDirExists) {
+      throw new Error(`Theme dir not found`);
     }
   } catch (err) {
-    logger.error(`Config dir not found. Did you forget to run "mdss customize"?.\n`, err);
+    logger.error(`Theme dir not found. Did you forget to run "mdss init"?.\n`, err);
     return;
   }
 
@@ -103,7 +107,7 @@ async function build(program) {
 
       const result = Sass.renderSync({
         data: sassCode,
-        includePaths: [resolve(configDir), resolve(mdssConfigDir)],
+        includePaths: [resolve(themeDir), resolve(mdssThemeDir)],
         outputStyle: "expanded",
         outFile: outputFile,
         sourceMap: true,

@@ -1,16 +1,16 @@
 @import "helpers/mixins";
 @import "helpers/functions";
 
-@import "config/external.config";
+@import "theme/external.config";
 @import "external.config";
 
-@import "config/shared.config";
+@import "theme/shared.config";
 @import "shared.config";
 
-@import "config/extras.config";
+@import "theme/extras.config";
 @import "extras.config";
 
-@import "config/custom.config";
+@import "theme/custom.config";
 @import "custom.config";
 
 @import "entry/shared";
@@ -23,7 +23,7 @@
   @import url($import);
 }
 
-@import "config/screen.config";
+@import "theme/screen.config";
 @import "screen.config";
 @if index($MEDIA, screen) != null {
   @if $BUNDLE {
@@ -35,7 +35,7 @@
   }
 }
 
-@import "config/print.config";
+@import "theme/print.config";
 @import "print.config";
 @if index($MEDIA, print) != null {
   @if $BUNDLE {

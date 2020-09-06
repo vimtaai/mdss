@@ -6,4 +6,4 @@ export function scriptDir() {
 }
 
 export const mdssSourceDir = resolve(scriptDir(), "..", "..", "src");
-export const mdssConfigDir = resolve(mdssSourceDir, "config");
+export const mdssThemeDir = resolve(mdssSourceDir, "theme");
