@@ -9,7 +9,7 @@ import Csso from "csso";
 import { resolve } from "path";
 
 import { defaultThemeDir, defaultOutputDir, defaultConfigFile } from "./helpers/constants.js";
-import { mdssThemeDir } from "./helpers/mdss-paths.js";
+import { mdssSourceDir, mdssThemeDir } from "./helpers/mdss-paths.js";
 
 const program = new Commander.Command();
 const logger = new Signale.Signale({ scope: "mdss", interactive: true });
@@ -65,11 +65,11 @@ async function build(program) {
   logger.info(`Theme dir:\t ${themeDir}\n`);
   logger.info(`Output dir:\t ${outputDir}\n`);
   logger.info(
-    `Targets:\t ${Object.keys(targets)
+    `Targets:\t\t ${Object.keys(targets)
       .filter((target) => targets[target])
       .join(", ")}\n`
   ); // ! TODO
-  logger.info(`Dev Mode:\t ${isDevBuild}\n`);
+  logger.info(`Dev Mode:\t\t ${isDevBuild}\n`);
 
   try {
     logger.await(`Checking for theme dir...`);
@@ -91,7 +91,11 @@ async function build(program) {
     return;
   }
 
-  for (const target of targets) {
+  for (const target in targets) {
+    if (!targets[target]) {
+      continue;
+    }
+
     try {
       logger.await(`Generating output...`);
       const isBundleBuild = target === "bundle";
@@ -107,7 +111,7 @@ async function build(program) {
 
       const result = Sass.renderSync({
         data: sassCode,
-        includePaths: [resolve(themeDir), resolve(mdssThemeDir)],
+        includePaths: [resolve(themeDir), resolve(mdssSourceDir)],
         outputStyle: "expanded",
         outFile: outputFile,
         sourceMap: true,
@@ -126,7 +130,7 @@ async function build(program) {
 
       logger.success(`Created ${outputBasename}\n`);
     } catch (err) {
-      logger.error(`Could create output file \`${outputBasename}\`.\n`, err);
+      logger.error(`Could create output file for \`${target}\`.\n`, err);
       return;
     }
   }

@@ -6,16 +6,16 @@
   "license": "MIT",
   "repository": "github:vimtaai/mdss",
   "type": "module",
-  "main": "build/mdss.min.css",
+  "main": "dist/mdss.min.css",
   "bin": "bin/mdss.js",
   "files": [
     "/src",
     "/bin",
-    "/build"
+    "/dist"
   ],
   "scripts": {
-    "build": "node bin/mdss.js build --all --config-path src/config --output-path build",
-    "build:dev": "node bin/mdss.js build --dev --all --config-path src/config --output-path build",
+    "build": "node bin/mdss.js build --all --theme-dir src/theme --output-dir dist",
+    "build:dev": "node bin/mdss.js build --dev --all --theme-dir src/theme --output-dir dist",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
