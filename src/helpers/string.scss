@@ -1,0 +1,9 @@
+@function repeat($string, $times, $separator: " ") {
+  $result: "";
+
+  @for $i from 1 through $times - 1 {
+    $result: $result + $string + $separator;
+  }
+
+  @return unquote($result + $string);
+}

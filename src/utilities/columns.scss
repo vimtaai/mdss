@@ -1,0 +1,19 @@
+@mixin utilities-columns {
+  @for $column-count from 2 through $columns-max-count {
+    .columns\:#{$column-count} {
+      display: grid;
+      grid-gap: $columns-spacing;
+      grid-template-columns: repeat(auto, $column-count);
+      padding: $columns-spacing 0;
+
+      @include tablet-only {
+        $tablet-column-count: ceil($column-count / 2);
+        grid-template-columns: repeat(auto, $tablet-column-count);
+      }
+
+      @include mobile-only {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}

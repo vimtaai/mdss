@@ -1,3 +1,4 @@
+@import "helpers/string";
 @import "helpers/media";
 @import "helpers/align";
 
@@ -18,6 +19,8 @@
 @import "extensions/block";
 @import "extensions/inline";
 @import "extensions/table";
+@import "utilities/align";
+@import "utilities/columns";
 
 @import "theme/screen/layout.config";
 @import "theme/screen/base.config";
@@ -34,6 +37,8 @@ $CURRENT_MEDIA: screen;
   @include extensions-inline;
   @include extensions-table;
   @include extensions-table;
+  @include utilities-align;
+  @include utilities-columns;
 }
 
 // @import "theme/print/layout.config";
