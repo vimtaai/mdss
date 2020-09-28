@@ -16,4 +16,24 @@
       }
     }
   }
+
+  .columns\:auto {
+    align-items: stretch;
+    display: flex;
+    justify-content: space-evenly;
+
+    & > * {
+      margin: $columns-spacing;
+      flex-shrink: 1;
+      width: 100%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
