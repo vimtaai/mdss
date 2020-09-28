@@ -16,6 +16,7 @@
   "scripts": {
     "build": "node bin/mdss.js build --all --theme-dir src/theme --output-dir dist",
     "build:dev": "node bin/mdss.js build --dev --all --theme-dir src/theme --output-dir dist",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build:dev\"",
     "prepare": "npm run build && npm run build:dev"
   },
   "dependencies": {
@@ -24,5 +25,8 @@
     "fs-extra": "^9.0.1",
     "sass": "^1.26.10",
     "signale": "^1.4.0"
+  },
+  "devDependencies": {
+    "chokidar": "^3.4.2"
   }
 }

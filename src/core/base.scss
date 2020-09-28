@@ -1,0 +1,29 @@
+@mixin core-base {
+  // Document root
+  body {
+    background: $root-background;
+    box-sizing: border-box;
+    color: $root-font-color;
+    font-family: $root-font-family;
+    font-size: $root-font-size;
+    line-height: $root-line-height;
+    max-width: $root-max-width;
+    margin: $root-spacing-before $root-spacing-right $root-spacing-after $root-spacing-left;
+    min-width: $root-min-width;
+    overflow-x: hidden;
+    width: 100%;
+
+    > * {
+      max-width: $root-max-width;
+    }
+
+    @include screen-only {
+      ::selection {
+        background: transparentize($color-primary, 0.75);
+      }
+    }
+
+    @include print-only {
+    }
+  }
+}

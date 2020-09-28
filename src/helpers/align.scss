@@ -1,0 +1,17 @@
+@mixin align-block($alignment) {
+  @if $alignment == center {
+    margin: 0 auto;
+  } @else if $alignment == left {
+    float: left;
+
+    & + * {
+      clear: left;
+    }
+  } @else if $alignment == right {
+    float: right;
+
+    & + * {
+      clear: right;
+    }
+  }
+}

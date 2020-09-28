@@ -1,0 +1,37 @@
+// Definition lists
+$deflist-spacing-before        : $spacing-default;
+$deflist-spacing-after         : $spacing-default;
+
+$deflist-term-font-family      : null;
+$deflist-term-font-size        : null;
+$deflist-term-font-weight      : $font-weight-bold;
+$deflist-term-font-color       : null;
+$deflist-term-indent           : 0;
+
+$deflist-details-font-family   : null;
+$deflist-details-font-size     : null;
+$deflist-details-font-weight   : null;
+$deflist-details-font-color    : null;
+$deflist-details-indent        : $spacing-large;
+
+// Task list (unchecked, checked)
+$tasklist-background           : $root-background,                                     $color-positive;
+$tasklist-border               : solid #{$color-object-light} #{$border-width-medium}, none;
+$tasklist-border-radius        : $border-radius-default,                               null;
+
+$tasklist-size                 : $size-small;
+
+$tasklist-check-color          : null, $color-text-light-focused;
+$tasklist-check-width          : null, $border-width-200;
+
+// Tables
+$table-width                   : null;
+$table-align                   : center;
+$table-collapse                : collapse;
+
+$table-header-background       : $color-lightgray-300;
+$table-row-odd-background      : null;
+$table-row-even-background     : $color-lightgray-200;
+
+$table-cell-padding-vertical   : $spacing-default;
+$table-cell-padding-horizontal : $spacing-large;

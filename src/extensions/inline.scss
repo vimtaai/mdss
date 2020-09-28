@@ -1,0 +1,26 @@
+@mixin extensions-inline {
+  // Strikethrough
+  strike {
+    text-decoration: line-through;
+  }
+
+  // Deletion
+  del {
+    background: $color-negative-disabled;
+    color: $color-negative-focused;
+    text-decoration: line-through;
+  }
+
+  // Insertion
+  ins {
+    background: $color-positive-disabled;
+    color: $color-positive-focused;
+    text-decoration: underline;
+  }
+
+  // Highlight
+  mark {
+    background: $color-warning-disabled;
+    color: $color-warning-focused;
+  }
+}

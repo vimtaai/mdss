@@ -1,0 +1,39 @@
+// Static font families
+$font-family-sans-serif : #{"Barlow", sans-serif};
+$font-family-monospace  : #{"Hack", monospace};
+
+// Semantic font families
+$font-family-default    : $font-family-sans-serif;
+$font-family-heading    : $font-family-sans-serif;
+$font-family-ui         : $font-family-sans-serif;
+$font-family-code       : $font-family-monospace;
+
+// Static font sizes
+$font-size-100          : 15px;
+$font-size-200          : 17px;
+$font-size-300          : 19px;
+$font-size-400          : 21px;
+$font-size-500          : 25px;
+
+// Semantic font sizes
+$font-size-small        : $font-size-100;
+$font-size-default      : $font-size-200;
+$font-size-large        : $font-size-300;
+$font-size-ui           : $font-size-100;
+
+// Semantic font-weights
+$font-weight-thin       : 300;
+$font-weight-default    : 400;
+$font-weight-bold       : 600;
+
+// Static line heights
+$line-height-100        : 1;
+$line-height-200        : 1.41;
+$line-height-300        : 1.73;
+$line-height-400        : 2;
+$line-height-500        : 2.24;
+
+// Semantic line heights
+$line-height-small      : $line-height-200;
+$line-height-default    : $line-height-300;
+$line-height-ui         : $line-height-200;

@@ -1,0 +1,50 @@
+@import "helpers/media";
+@import "helpers/align";
+
+@import "theme/import.config";
+
+@import "theme/tokens/colors.config";
+@import "theme/tokens/sizes.config";
+@import "theme/tokens/typography.config";
+@import "theme/tokens/objects.config";
+
+@each $import in $theme-imports {
+  @import url($import);
+}
+
+@import "core/base";
+@import "core/block";
+@import "core/inline";
+@import "extensions/block";
+@import "extensions/inline";
+@import "extensions/table";
+
+@import "theme/screen/layout.config";
+@import "theme/screen/base.config";
+@import "theme/screen/extensions.config";
+@import "theme/screen/utilities.config";
+@import "theme/screen/components.config";
+
+$CURRENT_MEDIA: screen;
+@if index($MEDIA, screen) {
+  @include core-base;
+  @include core-block;
+  @include core-inline;
+  @include extensions-block;
+  @include extensions-inline;
+  @include extensions-table;
+  @include extensions-table;
+}
+
+// @import "theme/print/layout.config";
+// @import "theme/print/typography.config";
+// @import "theme/print/components.config";
+// $CURRENT_MEDIA: print;
+// @if index($MEDIA, print) {
+//   @include core-base;
+//   @include core-block;
+//   @include core-inline;
+//   @include extensions-block;
+//   @include extensions-inline;
+//   @include extensions-table;
+// }

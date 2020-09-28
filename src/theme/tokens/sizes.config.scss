@@ -1,0 +1,28 @@
+// Breakpoints
+$breakpoint-mobile : 375px;
+$breakpoint-tablet : 750px;
+
+// Static sizes
+$size-100          : 16px;
+$size-200          : 24px;
+$size-300          : 32px;
+$size-400          : 40px;
+$size-500          : 48px;
+
+// Semantic sizes
+$size-tiny         : $size-100;
+$size-small        : $size-200;
+$size-default      : $size-300;
+$size-large        : $size-400;
+
+// Static spacing
+$spacing-100       : 2px;
+$spacing-200       : 4px;
+$spacing-300       : 8px;
+$spacing-400       : 12px;
+$spacing-500       : 24px;
+
+// Semantic spacing
+$spacing-small     : $spacing-100;
+$spacing-default   : $spacing-200;
+$spacing-large     : $spacing-500;

@@ -106,7 +106,7 @@ async function build(program) {
       const sassCode = `
         $BUNDLE: ${isBundleBuild};
         $MEDIA: ${isBundleBuild ? "screen print" : target};
-        @import "entry/index";
+        @import "index";
       `;
 
       const result = Sass.renderSync({
