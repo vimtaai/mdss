@@ -19,7 +19,7 @@
 
     @include screen-only {
       ::selection {
-        background: transparentize($color-primary, 0.75);
+        background: $color-primary-disabled;
       }
     }
 

@@ -1,4 +1,6 @@
+@import "helpers/math";
 @import "helpers/string";
+@import "helpers/luminance";
 @import "helpers/media";
 @import "helpers/align";
 
@@ -20,6 +22,7 @@
 @import "extensions/inline";
 @import "extensions/table";
 @import "utilities/align";
+@import "utilities/colors";
 @import "utilities/columns";
 
 @import "theme/screen/layout.config";
@@ -38,6 +41,7 @@ $CURRENT_MEDIA: screen;
   @include extensions-table;
   @include extensions-table;
   @include utilities-align;
+  @include utilities-colors;
   @include utilities-columns;
 }
 

@@ -1,3 +1,13 @@
+// Colors (background, text)
+$available-colors : (
+  primary          : ($color-primary,     $color-primary),
+  secondary        : ($color-secondary,   $color-secondary),
+  negative         : ($color-negative,    $color-negative-muted),
+  warning          : ($color-warning,     $color-warning-muted),
+  positive         : ($color-positive,    $color-positive-muted),
+  informative      : ($color-informative, $color-informative-muted)
+);
+
 // Columns
 $columns-max-count : 6;
 $columns-spacing   : $spacing-default;
