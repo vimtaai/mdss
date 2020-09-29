@@ -1,11 +1,20 @@
-// Colors (background, text)
-$available-colors : (
-  primary          : ($color-primary,     $color-primary),
-  secondary        : ($color-secondary,   $color-secondary),
-  negative         : ($color-negative,    $color-negative-muted),
-  warning          : ($color-warning,     $color-warning-muted),
-  positive         : ($color-positive,    $color-positive-muted),
-  informative      : ($color-informative, $color-informative-muted)
+// Colors
+$background-colors : (
+  primary          : $color-primary,
+  secondary        : $color-secondary,
+  negative         : $color-negative,
+  notice           : $color-notice,
+  positive         : $color-positive,
+  informative      : $color-informative
+);
+
+$text-colors       : (
+  primary          : $color-primary-focused,
+  secondary        : $color-secondary-focused,
+  negative         : $color-negative-focused,
+  notice           : $color-notice-focused,
+  positive         : $color-positive-focused,
+  informative      : $color-informative-focused
 );
 
 // Columns

@@ -1,18 +1,14 @@
 @mixin utilities-colors {
-  @each $name, $colors in $available-colors {
-    $background-color: nth($colors, 1);
-
+  @each $name, $color in $background-colors {
     .background\:#{$name} {
-      background: $background-color;
-      color: contrast-color($background-color);
+      background: $color;
+      color: contrast-color($color);
     }
   }
 
-  @each $name, $colors in $available-colors {
-    $text-color: nth($colors, 2);
-
+  @each $name, $color in $text-colors {
     .text\:#{$name} {
-      color: $text-color;
+      color: $color;
     }
   }
 }

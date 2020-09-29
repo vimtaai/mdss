@@ -15,7 +15,7 @@ $deflist-details-font-color    : null;
 $deflist-details-indent        : $spacing-large;
 
 // Task list (unchecked, checked)
-$tasklist-background           : $root-background,                               $color-positive;
+$tasklist-background           : $root-background,                               $color-positive-muted;
 $tasklist-border               : solid #{$color-object} #{$border-width-medium}, none;
 $tasklist-border-radius        : $border-radius-default,                         null;
 
