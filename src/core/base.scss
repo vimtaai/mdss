@@ -17,14 +17,5 @@
     > * {
       max-width: $root-max-width;
     }
-
-    @include screen-only {
-      ::selection {
-        background: $color-primary-disabled;
-      }
-    }
-
-    @include print-only {
-    }
   }
 }
