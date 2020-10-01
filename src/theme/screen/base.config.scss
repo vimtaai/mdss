@@ -33,7 +33,7 @@ $quote-indent                  : $spacing-large;
 // Code
 $code-block-font-family        : $font-family-code;
 $code-block-font-size          : $font-size-small;
-$code-block-font-color         : null;
+$code-block-font-color         : $root-font-color;
 $code-block-line-height        : $line-height-small;
 $code-block-spacing-before     : $spacing-default;
 $code-block-spacing-after      : $spacing-default;

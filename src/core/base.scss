@@ -11,6 +11,7 @@
     margin: $root-spacing-before $root-spacing-right $root-spacing-after $root-spacing-left;
     min-width: $root-min-width;
     overflow-x: hidden;
+    padding: #{$root-padding-y} #{$root-padding-x};
     width: 100%;
 
     > * {

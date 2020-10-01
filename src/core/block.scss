@@ -33,6 +33,7 @@
     line-height: $code-block-line-height;
     margin: $code-block-spacing-before 0 $code-block-spacing-after;
     margin-left: $code-block-indent;
+    overflow-x: auto;
 
     & > code {
       color: $code-block-font-color;

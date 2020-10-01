@@ -1,0 +1,120 @@
+$syntax-highlighting-tokens-prism: (
+  "comments": ".token.comment, .token.doctype .token, .token.macro, .token.macro .token",
+  "keywords": ".token.builtin, .token.keyword, .token.rule",
+  "literals": ".token.constant, .token.boolean, .token.symbol",
+  "strings": ".token.string, .token.attr-value, .token.macro .token.string",
+  "templates": ".token.interpolation",
+  "numbers": ".token.number",
+  "regexes": ".token.regex",
+  "types": ".token.class-name",
+  "functions": ".token.function",
+  "tags": ".token.tag, .token.selector, .token.title",
+  "attributes": ".token.attr-name, .token.property",
+  "link": ".token.url",
+);
+$syntax-highlighting-ignore-prism: ".token.attr-equal, .token.code.keyword";
+
+$syntax-highlighting-tokens-hljs: (
+  "comments": ".hljs-comment, .hljs-meta, .hljs-meta-keyword",
+  "keywords": ".hljs-keyword",
+  "literals": ".hljs-literal, .hljs-symbol",
+  "strings": ".hljs-string, .hljs-meta-string",
+  "templates": ".hljs-subst",
+  "numbers": ".hljs-number",
+  "regexes": ".hljs-regexp",
+  "types": ".hljs-type, .hljs-class > .hljs-title, .hljs-built_in",
+  "functions": ".hljs-title, .hljs-selector-pseudo",
+  "tags": ".hljs-tag, .hljs-selector-tag, .hljs-selector-class, .hljs-section",
+  "attributes": ".hljs-attr, .hljs-attribute, .hljs-selector-attr",
+  "link": ".hljs-link",
+);
+$syntax-highlighting-ignore-hljs: null;
+
+$syntax-highlighting-tokens-pandoc: (
+  "comments": ".co, .do, .pp, .an, &.html .dt",
+  "keywords": ".kw, .cf, .im, .dt",
+  "literals": ".li",
+  "strings": ".st, .vs, .cn, .pp + .im",
+  "templates": ".sc",
+  "numbers": ".nu, .fl, .dv, .bu, .bn",
+  "regexes": ".ss",
+  "types": ".cl, &.java .bu, ",
+  "functions": ".fu, .at, .in",
+  "tags": ".kw, &.markdown .fu",
+  "attributes": ".ot",
+  "link": ".ot",
+);
+$syntax-highlighting-ignore-pandoc: "&.markdown .dt, &.markdown .st, &.java .im";
+
+$syntax-highlighting-tokens: (
+  "prism": $syntax-highlighting-tokens-prism,
+  "hljs": $syntax-highlighting-tokens-hljs,
+  "pandoc": $syntax-highlighting-tokens-pandoc,
+);
+$syntax-highlighting-ignore: (
+  "prism": $syntax-highlighting-ignore-prism,
+  "hljs": $syntax-highlighting-ignore-hljs,
+  "pandoc": $syntax-highlighting-ignore-pandoc,
+);
+
+@mixin extensions-highlight {
+  // Syntax highlighting
+  $selectors: map-get($syntax-highlighting-tokens, $syntax-highlighting-provider);
+  $ignored-selectors: map-get($syntax-highlighting-ignore, $syntax-highlighting-provider);
+
+  pre code {
+    #{map-get($selectors, "comments")} {
+      color: $syntax-highlighting-color-comments;
+    }
+
+    #{map-get($selectors, "keywords")} {
+      color: $syntax-highlighting-color-keywords;
+    }
+
+    #{map-get($selectors, "literals")} {
+      color: $syntax-highlighting-color-literals;
+    }
+
+    #{map-get($selectors, "strings")} {
+      color: $syntax-highlighting-color-strings;
+    }
+
+    #{map-get($selectors, "templates")} {
+      color: $syntax-highlighting-color-templates;
+    }
+
+    #{map-get($selectors, "numbers")} {
+      color: $syntax-highlighting-color-numbers;
+    }
+
+    #{map-get($selectors, "regexes")} {
+      color: $syntax-highlighting-color-regexes;
+    }
+
+    #{map-get($selectors, "types")} {
+      color: $syntax-highlighting-color-types;
+    }
+
+    #{map-get($selectors, "functions")} {
+      color: $syntax-highlighting-color-functions;
+    }
+
+    #{map-get($selectors, "tags")} {
+      color: $syntax-highlighting-color-tags;
+    }
+
+    #{map-get($selectors, "link")} {
+      color: $syntax-highlighting-color-link;
+    }
+
+    #{map-get($selectors, "attributes")} {
+      color: $syntax-highlighting-color-attributes;
+    }
+
+    @if $ignored-selectors {
+      #{$ignored-selectors} {
+        color: $code-block-font-color;
+      }
+    }
+  }
+}
