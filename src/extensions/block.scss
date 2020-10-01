@@ -24,11 +24,11 @@
   ul {
     li > input[type="checkbox"]:first-child {
       height: 0;
-      left: -#{$tasklist-size * 0.4};
+      left: -#{$list-indent + $tasklist-size * 0.4};
       margin: 0;
       padding: 0;
       position: absolute;
-      top: calc(50% - #{$tasklist-size * 0.4});
+      top: #{$tasklist-size * 0.15};
       width: 0;
 
       // Box
