@@ -3,12 +3,12 @@
     .columns\:#{$column-count} {
       display: grid;
       grid-gap: $columns-spacing;
-      grid-template-columns: repeat(auto, $column-count);
+      grid-template-columns: repeat($column-count, 1fr);
       padding: $columns-spacing 0;
 
       @include tablet-only {
         $tablet-column-count: ceil($column-count / 2);
-        grid-template-columns: repeat(auto, $tablet-column-count);
+        grid-template-columns: repeat($tablet-column-count, 1fr);
       }
 
       @include mobile-only {

@@ -1,4 +1,4 @@
-@function repeat($string, $times, $separator: " ") {
+@function repeat($times, $string, $separator: " ") {
   $result: "";
 
   @for $i from 1 through $times - 1 {
