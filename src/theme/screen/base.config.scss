@@ -47,6 +47,12 @@ $list-spacing-before           : $spacing-default;
 $list-spacing-after            : $spacing-default;
 $list-indent                   : $spacing-large;
 
+// Thematic breaks
+$thematic-break-color          : $color-primary;
+$thematic-break-width          : $border-width-medium;
+$thematic-break-spacing-before : $spacing-large;
+$thematic-break-spacing-after  : $spacing-large;
+
 // Links (base, hover, active)
 $link-font-family              : null,              null,           null;
 $link-font-size                : null,              null,           null;
@@ -58,7 +64,3 @@ $code-inline-font-family       : $font-family-code;
 $code-inline-font-size         : $font-size-small;
 $code-inline-font-weight       : null;
 $code-inline-font-color        : null;
-
-// Thematic breaks
-$thematic-break-spacing-before : $spacing-default;
-$thematic-break-spacing-after  : $spacing-default;
