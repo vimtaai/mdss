@@ -25,6 +25,7 @@
 @import "utilities/align";
 @import "utilities/colors";
 @import "utilities/columns";
+@import "utilities/object";
 
 @import "theme/screen/layout.config";
 @import "theme/screen/base.config";
@@ -44,4 +45,5 @@ $CURRENT_MEDIA: screen;
   @include utilities-align;
   @include utilities-colors;
   @include utilities-columns;
+  @include utilities-objects;
 }
