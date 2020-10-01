@@ -40,21 +40,8 @@ $CURRENT_MEDIA: screen;
   @include extensions-block;
   @include extensions-inline;
   @include extensions-table;
-  @include extensions-table;
+  @include extensions-highlight;
   @include utilities-align;
   @include utilities-colors;
   @include utilities-columns;
 }
-
-// @import "theme/print/layout.config";
-// @import "theme/print/typography.config";
-// @import "theme/print/components.config";
-// $CURRENT_MEDIA: print;
-// @if index($MEDIA, print) {
-//   @include core-base;
-//   @include core-block;
-//   @include core-inline;
-//   @include extensions-block;
-//   @include extensions-inline;
-//   @include extensions-table;
-// }
