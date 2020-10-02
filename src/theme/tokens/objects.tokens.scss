@@ -1,24 +1,16 @@
-// Static border width
-$border-width-100      : 1px;
-$border-width-200      : 2px;
-$border-width-300      : 3px;
-$border-width-400      : 4px;
-$border-width-500      : 5px;
+// Static border width tokens
+$border-width-300      : 1px;
+$border-width-400      : 2px;
+$border-width-500      : 4px;
+$border-width-700      : 5px;
 
-// Semantic border width
-$border-width-thin     : $border-width-100;
-$border-width-medium   : $border-width-200;
-$border-width-thick    : $border-width-400;
+// Semantic border width tokens
 
-// Static border radius
-$border-radius-100     : 2px;
-$border-radius-200     : 4px;
-$border-radius-300     : 6px;
-$border-radius-400     : 10px;
-$border-radius-500     : 50%;
+// Static border radius tokens
+$border-radius-300     : 2px;
+$border-radius-400     : 4px;
+$border-radius-500     : 6px;
+$border-radius-700     : 10px;
 
-// Semantic border radius
-$border-radius-small   : $border-radius-100;
-$border-radius-default : $border-radius-200;
-$border-radius-large   : $border-radius-400;
-$border-radius-full    : $border-radius-500;
+// Semantic border radius tokens
+$border-radius-full    : 50%;

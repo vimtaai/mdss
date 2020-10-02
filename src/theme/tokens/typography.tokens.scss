@@ -3,38 +3,44 @@ $font-family-sans-serif : #{"Barlow", sans-serif};
 $font-family-monospace  : #{"Hack", monospace};
 
 // Semantic font families
-$font-family-default    : $font-family-sans-serif;
-$font-family-heading    : $font-family-sans-serif;
+$font-family-base       : $font-family-sans-serif;
 $font-family-ui         : $font-family-sans-serif;
 $font-family-code       : $font-family-monospace;
 
 // Static font sizes
-$font-size-100          : 15px;
-$font-size-200          : 17px;
-$font-size-300          : 19px;
-$font-size-400          : 21px;
-$font-size-500          : 25px;
+$font-size-100          : 11px;
+$font-size-300          : 15px;
+$font-size-400          : 17px;
+$font-size-500          : 19px;
+$font-size-700          : 25px;
 
 // Semantic font sizes
-$font-size-small        : $font-size-100;
-$font-size-default      : $font-size-200;
-$font-size-large        : $font-size-300;
-$font-size-huge         : $font-size-500;
-$font-size-ui           : $font-size-100;
+$font-size-base         : $font-size-400;
+$font-size-ui           : $font-size-300;
+$font-size-code         : $font-size-300;
+
+// Static font weights
+$font-weight-100        : 100;
+$font-weight-300        : 300;
+$font-weight-400        : 400;
+$font-weight-500        : 500;
+$font-weight-700        : 700;
 
 // Semantic font-weights
-$font-weight-thin       : 300;
-$font-weight-default    : 400;
-$font-weight-bold       : 600;
+$font-weight-base       : 400;
+$font-weight-ui         : 500;
+$font-weight-code       : 400;
+
+$font-weight-bold       : 700;
 
 // Static line heights
-$line-height-100        : 1;
-$line-height-200        : 1.41;
-$line-height-300        : 1.73;
-$line-height-400        : 2;
-$line-height-500        : 2.24;
+$line-height-100        : 1.25;
+$line-height-300        : 1.5;
+$line-height-400        : 1.75;
+$line-height-500        : 2;
+$line-height-700        : 2.25;
 
 // Semantic line heights
-$line-height-small      : $line-height-200;
-$line-height-default    : $line-height-300;
-$line-height-ui         : $line-height-200;
+$line-height-base       : $line-height-400;
+$line-height-ui         : $line-height-300;
+$line-height-code       : $line-height-300;

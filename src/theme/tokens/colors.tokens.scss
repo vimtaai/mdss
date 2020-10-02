@@ -1,127 +1,127 @@
-// Static colors
+// Static color tokens
 $color-white                : #ffffff;
 $color-black                : rgb(0, 0, 0);
 
 $color-lightgray-100        : #f2f4f8;
-$color-lightgray-200        : #e6eaf0;
-$color-lightgray-300        : #dce1ea;
-$color-lightgray-400        : #d2d9e5;
-$color-lightgray-500        : #ccd3e1;
+$color-lightgray-300        : #e6eaf0;
+$color-lightgray-400        : #dce1ea;
+$color-lightgray-500        : #d2d9e5;
+$color-lightgray-700        : #ccd3e1;
 
 $color-darkgray-100         : #344356;
-$color-darkgray-200         : #2a3646;
-$color-darkgray-300         : #232d39;
-$color-darkgray-400         : #1b232d;
-$color-darkgray-500         : #11161c;
+$color-darkgray-300         : #2a3646;
+$color-darkgray-400         : #232d39;
+$color-darkgray-500         : #1b232d;
+$color-darkgray-700         : #11161c;
 
 $color-primary-100          : #f4c8c0;
-$color-primary-200          : #e3755e;
-$color-primary-300          : #d54325;
-$color-primary-400          : #b2381f;
-$color-primary-500          : #842a17;
+$color-primary-300          : #e3755e;
+$color-primary-400          : #d54325;
+$color-primary-500          : #b2381f;
+$color-primary-700          : #842a17;
 
 $color-secondary-100        : #ebccc2;
-$color-secondary-200        : #cd8269;
-$color-secondary-300        : #b85c3e;
-$color-secondary-400        : #994d34;
-$color-secondary-500        : #723926;
+$color-secondary-300        : #cd8269;
+$color-secondary-400        : #b85c3e;
+$color-secondary-500        : #994d34;
+$color-secondary-700        : #723926;
 
 $color-red-100              : #f5c7cb;
-$color-red-200              : #e5717a;
-$color-red-300              : #db3743;
-$color-red-400              : #bf222e;
-$color-red-500              : #8e1923;
+$color-red-300              : #e5717a;
+$color-red-400              : #db3743;
+$color-red-500              : #bf222e;
+$color-red-700              : #8e1923;
 
 $color-orange-100           : #f1cbaf;
-$color-orange-200           : #dc7b36;
-$color-orange-300           : #b65f20;
-$color-orange-400           : #994f1b;
-$color-orange-500           : #703a14;
+$color-orange-300           : #dc7b36;
+$color-orange-400           : #b65f20;
+$color-orange-500           : #994f1b;
+$color-orange-700           : #703a14;
 
 $color-gold-100             : #ecd07b;
-$color-gold-200             : #b78f1a;
-$color-gold-300             : #927215;
-$color-gold-400             : #7a6011;
-$color-gold-500             : #5a460d;
+$color-gold-300             : #b78f1a;
+$color-gold-400             : #927215;
+$color-gold-500             : #7a6011;
+$color-gold-700             : #5a460d;
 
 $color-lime-100             : #c4de43;
-$color-lime-200             : #889e1c;
-$color-lime-300             : #6c7e16;
-$color-lime-400             : #5b6912;
-$color-lime-500             : #434e0e;
+$color-lime-300             : #889e1c;
+$color-lime-400             : #6c7e16;
+$color-lime-500             : #5b6912;
+$color-lime-700             : #434e0e;
 
 $color-green-100            : #8fe3b9;
-$color-green-200            : #2aa96a;
-$color-green-300            : #228754;
-$color-green-400            : #1c7047;
-$color-green-500            : #155334;
+$color-green-300            : #2aa96a;
+$color-green-400            : #228754;
+$color-green-500            : #1c7047;
+$color-green-700            : #155334;
 
 $color-teal-100             : #87e1e1;
-$color-teal-200             : #29a3a3;
-$color-teal-300             : #218383;
-$color-teal-400             : #1b6d6d;
-$color-teal-500             : #145151;
+$color-teal-300             : #29a3a3;
+$color-teal-400             : #218383;
+$color-teal-500             : #1b6d6d;
+$color-teal-700             : #145151;
 
 $color-blue-100             : #b6d6f5;
-$color-blue-200             : #4b99e5;
-$color-blue-300             : #1e77d0;
-$color-blue-400             : #1964ad;
-$color-blue-500             : #124a80;
+$color-blue-300             : #4b99e5;
+$color-blue-400             : #1e77d0;
+$color-blue-500             : #1964ad;
+$color-blue-700             : #124a80;
 
 $color-purple-100           : #d8cdee;
-$color-purple-200           : #a186d7;
-$color-purple-300           : #8563cb;
-$color-purple-400           : #724ac2;
-$color-purple-500           : #553398;
+$color-purple-300           : #a186d7;
+$color-purple-400           : #8563cb;
+$color-purple-500           : #724ac2;
+$color-purple-700           : #553398;
 
 $color-violet-100           : #f6c3e5;
-$color-violet-200           : #e962bc;
-$color-violet-300           : #da1f9b;
-$color-violet-400           : #b71a82;
-$color-violet-500           : #881361;
+$color-violet-300           : #e962bc;
+$color-violet-400           : #da1f9b;
+$color-violet-500           : #b71a82;
+$color-violet-700           : #881361;
 
-// Semantic colors
-$color-primary              : $color-primary-300;
-$color-primary-focused      : $color-primary-400;
-$color-primary-muted        : $color-primary-200;
+// Semantic color tokens
+$color-primary              : $color-primary-400;
+$color-primary-focused      : $color-primary-500;
+$color-primary-muted        : $color-primary-300;
 $color-primary-disabled     : $color-primary-100;
 
-$color-secondary            : $color-secondary-300;
-$color-secondary-focused    : $color-secondary-400;
-$color-secondary-muted      : $color-secondary-200;
+$color-secondary            : $color-secondary-400;
+$color-secondary-focused    : $color-secondary-500;
+$color-secondary-muted      : $color-secondary-300;
 $color-secondary-disabled   : $color-secondary-100;
 
-$color-negative             : $color-red-300;
-$color-negative-focused     : $color-red-400;
-$color-negative-muted       : $color-red-200;
+$color-negative             : $color-red-400;
+$color-negative-focused     : $color-red-500;
+$color-negative-muted       : $color-red-300;
 $color-negative-disabled    : $color-red-100;
 
-$color-notice               : $color-orange-300;
-$color-notice-focused       : $color-orange-400;
-$color-notice-muted         : $color-orange-200;
+$color-notice               : $color-orange-400;
+$color-notice-focused       : $color-orange-500;
+$color-notice-muted         : $color-orange-300;
 $color-notice-disabled      : $color-orange-100;
 
-$color-positive             : $color-green-300;
-$color-positive-focused     : $color-green-400;
-$color-positive-muted       : $color-green-200;
+$color-positive             : $color-green-400;
+$color-positive-focused     : $color-green-500;
+$color-positive-muted       : $color-green-300;
 $color-positive-disabled    : $color-green-100;
 
-$color-informative          : $color-blue-300;
-$color-informative-focused  : $color-blue-400;
-$color-informative-muted    : $color-blue-200;
+$color-informative          : $color-blue-400;
+$color-informative-focused  : $color-blue-500;
+$color-informative-muted    : $color-blue-300;
 $color-informative-disabled : $color-blue-100;
 
-$color-text-dark            : $color-darkgray-300;
+$color-text-dark            : $color-darkgray-400;
 $color-text-dark-focused    : $color-darkgray-100;
-$color-text-dark-muted      : $color-darkgray-400;
-$color-text-dark-disabled   : $color-darkgray-500;
+$color-text-dark-muted      : $color-darkgray-500;
+$color-text-dark-disabled   : $color-darkgray-700;
 
 $color-text-light           : $color-white;
 $color-text-light-focused   : $color-white;
 $color-text-light-muted     : $color-lightgray-100;
-$color-text-light-disabled  : $color-lightgray-200;
+$color-text-light-disabled  : $color-lightgray-300;
 
-$color-object               : $color-lightgray-400;
-$color-object-focused       : $color-lightgray-500;
-$color-object-muted         : $color-lightgray-300;
-$color-object-disabled      : $color-lightgray-200;
+$color-object               : $color-lightgray-500;
+$color-object-focused       : $color-lightgray-700;
+$color-object-muted         : $color-lightgray-400;
+$color-object-disabled      : $color-lightgray-300;

@@ -1,24 +1,17 @@
-// Static sizes
-$size-100          : 16px;
-$size-200          : 24px;
-$size-300          : 32px;
-$size-400          : 40px;
-$size-500          : 48px;
+// Static size tokens
+$size-100          : 8px;
+$size-300          : 24px;
+$size-400          : 32px;
+$size-500          : 40px;
+$size-700          : 56px;
 
-// Semantic sizes
-$size-tiny         : $size-100;
-$size-small        : $size-200;
-$size-default      : $size-300;
-$size-large        : $size-400;
+// Semantic size tokens
 
-// Static spacing
-$spacing-100       : 2px;
-$spacing-200       : 6px;
-$spacing-300       : 8px;
+// Static spacing tokens
+$spacing-100       : 3px;
+$spacing-300       : 9px;
 $spacing-400       : 12px;
-$spacing-500       : 24px;
+$spacing-500       : 15px;
+$spacing-700       : 21px;
 
-// Semantic spacing
-$spacing-small     : $spacing-100;
-$spacing-default   : $spacing-200;
-$spacing-large     : $spacing-500;
+// Semantic spacing tokens

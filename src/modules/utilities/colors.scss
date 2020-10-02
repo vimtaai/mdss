@@ -1,11 +1,11 @@
-@each $name, $color in $background-colors {
+@each $name, $color in $utility-background-colors {
   .background\:#{$name} {
     background: $color;
     color: contrast-color($color);
   }
 }
 
-@each $name, $color in $text-colors {
+@each $name, $color in $utility-text-colors {
   .text\:#{$name} {
     color: $color;
   }

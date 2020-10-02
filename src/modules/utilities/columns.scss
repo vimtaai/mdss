@@ -4,7 +4,6 @@
     display: grid;
     grid-gap: $columns-spacing;
     grid-template-columns: repeat($column-count, 1fr);
-    padding: $columns-spacing 0;
 
     @include tablet-only {
       $tablet-column-count: ceil($column-count / 2);

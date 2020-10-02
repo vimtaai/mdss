@@ -1,33 +1,43 @@
 // Floating
-$floated-margin-x  : $spacing-default;
-$floated-margin-y  : $spacing-default;
+$floated-margin-x          : $spacing-400;
+$floated-margin-y          : $spacing-400;
 
 // Font sizes
-$font-sizes        : (
-  small            : $font-size-small,
-  large            : $font-size-large,
-  huge             : $font-size-huge
+$utility-font-sizes        : (
+  tiny                     : $font-size-100,
+  small                    : $font-size-300,
+  normal                   : $font-size-400,
+  large                    : $font-size-500,
+  huge                     : $font-size-700
 );
 
 // Colors
-$background-colors : (
-  primary          : $color-primary,
-  secondary        : $color-secondary,
-  negative         : $color-negative,
-  notice           : $color-notice,
-  positive         : $color-positive,
-  informative      : $color-informative
+$utility-background-colors : (
+  primary                  : $color-primary,
+  secondary                : $color-secondary,
+  negative                 : $color-negative,
+  notice                   : $color-notice,
+  positive                 : $color-positive,
+  informative              : $color-informative
 );
 
-$text-colors       : (
-  primary          : $color-primary-focused,
-  secondary        : $color-secondary-focused,
-  negative         : $color-negative-focused,
-  notice           : $color-notice-focused,
-  positive         : $color-positive-focused,
-  informative      : $color-informative-focused
+$utility-text-colors       : (
+  primary                  : $color-primary-focused,
+  secondary                : $color-secondary-focused,
+  negative                 : $color-negative-focused,
+  notice                   : $color-notice-focused,
+  positive                 : $color-positive-focused,
+  informative              : $color-informative-focused
+);
+
+// Roundings
+$utility-roundings         : (
+  small                    : $border-radius-300,
+  normal                   : $border-radius-400,
+  large                    : $border-radius-700,
+  full                     : $border-radius-full
 );
 
 // Columns
-$columns-max-count : 6;
-$columns-spacing   : $spacing-large;
+$columns-max-count         : 6;
+$columns-spacing           : $spacing-500;

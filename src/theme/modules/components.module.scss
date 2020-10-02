@@ -1,6 +1,6 @@
 // Button (base, hover, active)
-$button-background      : $color-object,          $color-primary,    $color-primary-focused;
-$button-border          : none,                   null,              null;
-$button-border-radius   : $border-radius-default, null,              null;
-$button-font-color      : $color-text-dark,       $color-text-light, $color-text-light;
-$button-font-weight     : $font-weight-bold,      null,              null;
+$button-background      : $color-object,      $color-primary,    $color-primary-focused;
+$button-border          : none,               null,              null;
+$button-border-radius   : $border-radius-400, null,              null;
+$button-font-color      : $color-text-dark,   $color-text-light, $color-text-light;
+$button-font-weight     : $font-weight-500,   null,              null;

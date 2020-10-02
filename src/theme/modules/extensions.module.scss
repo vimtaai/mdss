@@ -1,10 +1,10 @@
 // Definition lists
-$deflist-spacing-before               : $spacing-default;
-$deflist-spacing-after                : $spacing-default;
+$deflist-spacing-before               : $spacing-400;
+$deflist-spacing-after                : $spacing-400;
 
 $deflist-term-font-family             : null;
 $deflist-term-font-size               : null;
-$deflist-term-font-weight             : $font-weight-bold;
+$deflist-term-font-weight             : $font-weight-500;
 $deflist-term-font-color              : null;
 $deflist-term-indent                  : 0;
 
@@ -12,41 +12,41 @@ $deflist-details-font-family          : null;
 $deflist-details-font-size            : null;
 $deflist-details-font-weight          : null;
 $deflist-details-font-color           : null;
-$deflist-details-indent               : $spacing-large;
+$deflist-details-indent               : $spacing-500;
 
 // Task list (unchecked, checked)
-$tasklist-background                  : $root-background,                               $color-positive-muted;
-$tasklist-border                      : solid #{$color-object} #{$border-width-medium}, none;
-$tasklist-border-radius               : $border-radius-default,                         null;
+$tasklist-background                  : $root-background,                            $color-positive-muted;
+$tasklist-border                      : solid #{$color-object} #{$border-width-400}, none;
+$tasklist-border-radius               : $border-radius-400,                          null;
 
-$tasklist-size                        : $size-small;
+$tasklist-size                        : $size-300;
 
 $tasklist-check-color                 : null, $color-text-light-focused;
-$tasklist-check-width                 : null, $border-width-200;
+$tasklist-check-width                 : null, $border-width-400;
 
 // Tables
 $table-width                          : null;
 $table-align                          : center;
 $table-collapse                       : collapse;
 
-$table-header-background              : $color-lightgray-300;
+$table-header-background              : $color-lightgray-400;
 $table-row-odd-background             : null;
-$table-row-even-background            : $color-lightgray-200;
+$table-row-even-background            : $color-lightgray-300;
 
-$table-cell-padding-vertical          : $spacing-default;
-$table-cell-padding-horizontal        : $spacing-large;
+$table-cell-padding-vertical          : $spacing-300;
+$table-cell-padding-horizontal        : $spacing-700;
 
 // Syntax highlighting
 $syntax-highlighting-provider         : "prism";
-$syntax-highlighting-color-comments   : $color-lightgray-500;
-$syntax-highlighting-color-keywords   : $color-blue-300;
-$syntax-highlighting-color-literals   : $color-purple-300;
-$syntax-highlighting-color-strings    : $color-red-300;
-$syntax-highlighting-color-templates  : $color-violet-300;
-$syntax-highlighting-color-numbers    : $color-red-300;
-$syntax-highlighting-color-regexes    : $color-orange-200;
-$syntax-highlighting-color-types      : $color-teal-200;
-$syntax-highlighting-color-functions  : $color-gold-200;
-$syntax-highlighting-color-tags       : $color-blue-300;
-$syntax-highlighting-color-attributes : $color-green-300;
-$syntax-highlighting-color-link       : $color-lime-300;
+$syntax-highlighting-color-comments   : $color-lightgray-700;
+$syntax-highlighting-color-keywords   : $color-blue-400;
+$syntax-highlighting-color-literals   : $color-purple-400;
+$syntax-highlighting-color-strings    : $color-red-400;
+$syntax-highlighting-color-templates  : $color-violet-400;
+$syntax-highlighting-color-numbers    : $color-red-400;
+$syntax-highlighting-color-regexes    : $color-orange-300;
+$syntax-highlighting-color-types      : $color-teal-300;
+$syntax-highlighting-color-functions  : $color-gold-300;
+$syntax-highlighting-color-tags       : $color-blue-400;
+$syntax-highlighting-color-attributes : $color-green-400;
+$syntax-highlighting-color-link       : $color-lime-400;
