@@ -2,6 +2,13 @@
 $floated-margin-x  : $spacing-default;
 $floated-margin-y  : $spacing-default;
 
+// Font sizes
+$font-sizes        : (
+  small            : $font-size-small,
+  large            : $font-size-large,
+  huge             : $font-size-huge
+);
+
 // Colors
 $background-colors : (
   primary          : $color-primary,
@@ -23,4 +30,4 @@ $text-colors       : (
 
 // Columns
 $columns-max-count : 6;
-$columns-spacing   : $spacing-default;
+$columns-spacing   : $spacing-large;

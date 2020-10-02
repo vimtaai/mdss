@@ -1,0 +1,5 @@
+@each $name, $font-size in $font-sizes {
+  .size\:#{$name} {
+    font-size: $font-size;
+  }
+}
