@@ -1,0 +1,19 @@
+dl {
+  margin: $deflist-spacing-before 0 $deflist-spacing-after;
+
+  dt {
+    color: $deflist-term-font-color;
+    font-family: $deflist-term-font-family;
+    font-size: $deflist-term-font-size;
+    font-weight: $deflist-term-font-weight;
+    margin-left: $deflist-term-indent;
+  }
+
+  dd {
+    color: $deflist-details-font-color;
+    font-family: $deflist-details-font-family;
+    font-size: $deflist-details-font-size;
+    font-weight: $deflist-details-font-weight;
+    margin-left: $deflist-details-indent;
+  }
+}

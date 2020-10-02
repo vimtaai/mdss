@@ -1,35 +1,29 @@
 @mixin screen-only {
-  @if $CURRENT_MEDIA == screen {
+  @media screen {
     @content;
   }
 }
 
 @mixin print-only {
-  @if $CURRENT_MEDIA == print {
+  @media print {
     @content;
   }
 }
 
 @mixin mobile-only {
-  @if $CURRENT_MEDIA == screen {
-    @media screen and (max-width: #{$breakpoint-mobile - 1}) {
-      @content;
-    }
+  @media screen and (max-width: #{$breakpoint-mobile - 1}) {
+    @content;
   }
 }
 
 @mixin tablet-only {
-  @if $CURRENT_MEDIA == screen {
-    @media screen and (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1}) {
-      @content;
-    }
+  @media screen and (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1}) {
+    @content;
   }
 }
 
 @mixin mobile-and-tablet-only {
-  @if $CURRENT_MEDIA == screen {
-    @media screen and (max-width: #{$breakpoint-tablet - 1}) {
-      @content;
-    }
+  @media screen and (max-width: #{$breakpoint-tablet - 1}) {
+    @content;
   }
 }

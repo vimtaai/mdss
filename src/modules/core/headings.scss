@@ -1,0 +1,10 @@
+@for $level from 1 through 6 {
+  h#{$level} {
+    color: nth($heading-font-color, $level);
+    font-family: nth($heading-font-family, $level);
+    font-size: nth($heading-font-size, $level);
+    font-weight: nth($heading-font-weight, $level);
+    line-height: nth($heading-line-height, $level);
+    margin: nth($heading-spacing-before, $level) 0 nth($heading-spacing-after, $level);
+  }
+}

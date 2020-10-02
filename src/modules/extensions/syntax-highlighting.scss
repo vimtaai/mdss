@@ -57,64 +57,62 @@ $syntax-highlighting-ignore: (
   "pandoc": $syntax-highlighting-ignore-pandoc,
 );
 
-@mixin extensions-highlight {
-  // Syntax highlighting
-  $selectors: map-get($syntax-highlighting-tokens, $syntax-highlighting-provider);
-  $ignored-selectors: map-get($syntax-highlighting-ignore, $syntax-highlighting-provider);
+// Syntax highlighting
+$selectors: map-get($syntax-highlighting-tokens, $syntax-highlighting-provider);
+$ignored-selectors: map-get($syntax-highlighting-ignore, $syntax-highlighting-provider);
 
-  pre code {
-    #{map-get($selectors, "comments")} {
-      color: $syntax-highlighting-color-comments;
-    }
+pre code {
+  #{map-get($selectors, "comments")} {
+    color: $syntax-highlighting-color-comments;
+  }
 
-    #{map-get($selectors, "keywords")} {
-      color: $syntax-highlighting-color-keywords;
-    }
+  #{map-get($selectors, "keywords")} {
+    color: $syntax-highlighting-color-keywords;
+  }
 
-    #{map-get($selectors, "literals")} {
-      color: $syntax-highlighting-color-literals;
-    }
+  #{map-get($selectors, "literals")} {
+    color: $syntax-highlighting-color-literals;
+  }
 
-    #{map-get($selectors, "strings")} {
-      color: $syntax-highlighting-color-strings;
-    }
+  #{map-get($selectors, "strings")} {
+    color: $syntax-highlighting-color-strings;
+  }
 
-    #{map-get($selectors, "templates")} {
-      color: $syntax-highlighting-color-templates;
-    }
+  #{map-get($selectors, "templates")} {
+    color: $syntax-highlighting-color-templates;
+  }
 
-    #{map-get($selectors, "numbers")} {
-      color: $syntax-highlighting-color-numbers;
-    }
+  #{map-get($selectors, "numbers")} {
+    color: $syntax-highlighting-color-numbers;
+  }
 
-    #{map-get($selectors, "regexes")} {
-      color: $syntax-highlighting-color-regexes;
-    }
+  #{map-get($selectors, "regexes")} {
+    color: $syntax-highlighting-color-regexes;
+  }
 
-    #{map-get($selectors, "types")} {
-      color: $syntax-highlighting-color-types;
-    }
+  #{map-get($selectors, "types")} {
+    color: $syntax-highlighting-color-types;
+  }
 
-    #{map-get($selectors, "functions")} {
-      color: $syntax-highlighting-color-functions;
-    }
+  #{map-get($selectors, "functions")} {
+    color: $syntax-highlighting-color-functions;
+  }
 
-    #{map-get($selectors, "tags")} {
-      color: $syntax-highlighting-color-tags;
-    }
+  #{map-get($selectors, "tags")} {
+    color: $syntax-highlighting-color-tags;
+  }
 
-    #{map-get($selectors, "link")} {
-      color: $syntax-highlighting-color-link;
-    }
+  #{map-get($selectors, "link")} {
+    color: $syntax-highlighting-color-link;
+  }
 
-    #{map-get($selectors, "attributes")} {
-      color: $syntax-highlighting-color-attributes;
-    }
+  #{map-get($selectors, "attributes")} {
+    color: $syntax-highlighting-color-attributes;
+  }
 
-    @if $ignored-selectors {
-      #{$ignored-selectors} {
-        color: $code-block-font-color;
-      }
+  @if $ignored-selectors {
+    #{$ignored-selectors} {
+      color: $code-block-font-color;
     }
   }
 }

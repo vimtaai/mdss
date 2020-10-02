@@ -1,0 +1,27 @@
+table {
+  @include align-block($table-align);
+
+  border-collapse: $table-collapse;
+  width: $table-width;
+
+  thead {
+    tr {
+      background: $table-header-background;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background: $table-row-odd-background;
+    }
+
+    tr:nth-child(even) {
+      background: $table-row-even-background;
+    }
+  }
+
+  th,
+  td {
+    padding: #{$table-cell-padding-vertical} #{$table-cell-padding-horizontal};
+  }
+}

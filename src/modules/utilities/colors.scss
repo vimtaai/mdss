@@ -1,0 +1,12 @@
+@each $name, $color in $background-colors {
+  .background\:#{$name} {
+    background: $color;
+    color: contrast-color($color);
+  }
+}
+
+@each $name, $color in $text-colors {
+  .text\:#{$name} {
+    color: $color;
+  }
+}

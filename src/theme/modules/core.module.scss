@@ -12,13 +12,13 @@ $paragraph-spacing-after       : $spacing-default;
 $paragraph-text-align          : left;
 
 // Headings (h1, [h2], [h3], [h4], [h5], [h6])
-$heading-font-family           : null,                 null,                 null,                 null;
-$heading-font-size             : $font-size-500,       $font-size-400,       $font-size-300,       $font-size-200;
-$heading-font-weight           : $font-weight-default, $font-weight-default, $font-weight-default, $font-weight-default;
-$heading-font-color            : $color-primary,       $color-secondary,     null,                 null;
-$heading-line-height           : null,                 null,                 null,                 null;
-$heading-spacing-before        : 0,                    $spacing-200,         $spacing-100,         $spacing-100;
-$heading-spacing-after         : $spacing-400,         $spacing-200,         $spacing-100,         $spacing-100;
+$heading-font-family           : null,                 null,                 null,                 null,                 null,                 null;
+$heading-font-size             : $font-size-500,       $font-size-400,       $font-size-300,       $font-size-200,       $font-size-200,       $font-size-200;
+$heading-font-weight           : $font-weight-default, $font-weight-default, $font-weight-default, $font-weight-default, $font-weight-default, $font-weight-default;
+$heading-font-color            : $color-primary,       $color-secondary,     null,                 null,                 null,                 null;
+$heading-line-height           : null,                 null,                 null,                 null,                 null,                 null;
+$heading-spacing-before        : 0,                    $spacing-200,         $spacing-100,         $spacing-100,         null,                 null;
+$heading-spacing-after         : $spacing-400,         $spacing-200,         $spacing-100,         $spacing-100,         null,                 null;
 
 // Blockquote
 $quote-font-family             : null;

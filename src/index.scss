@@ -4,46 +4,62 @@
 @import "helpers/media";
 @import "helpers/align";
 
+@import "theme/tokens/colors.tokens";
+@import "theme/tokens/sizes.tokens";
+@import "theme/tokens/typography.tokens";
+@import "theme/tokens/objects.tokens";
+
+@import "theme/modules/layout.module";
+@import "theme/modules/core.module";
+@import "theme/modules/extensions.module";
+@import "theme/modules/utilities.module";
+@import "theme/modules/components.module";
+
 @import "theme/import.config";
-
-@import "theme/tokens/colors.config";
-@import "theme/tokens/sizes.config";
-@import "theme/tokens/typography.config";
-@import "theme/tokens/objects.config";
-
 @each $import in $theme-imports {
   @import url($import);
 }
 
-@import "core/base";
-@import "core/block";
-@import "core/inline";
-@import "extensions/block";
-@import "extensions/inline";
-@import "extensions/table";
-@import "extensions/highlight";
-@import "utilities/align";
-@import "utilities/colors";
-@import "utilities/columns";
-@import "utilities/object";
+@import "modules/core/root";
+@import "modules/core/paragraphs";
+@import "modules/core/headings";
+@import "modules/core/emphases";
+@import "modules/core/blockquotes";
+@import "modules/core/lists";
+@import "modules/core/links";
+@import "modules/core/images";
+@import "modules/core/thematic-breaks";
+@import "modules/core/inline-code";
+@import "modules/core/code-blocks";
 
-@import "theme/screen/layout.config";
-@import "theme/screen/base.config";
-@import "theme/screen/extensions.config";
-@import "theme/screen/utilities.config";
-@import "theme/screen/components.config";
+@import "modules/extensions/strikethroughs";
+@import "modules/extensions/tables";
+@import "modules/extensions/task-lists";
+@import "modules/extensions/syntax-highlighting";
+@import "modules/extensions/definition-lists";
+@import "modules/extensions/changes";
+@import "modules/extensions/highlights";
+@import "modules/extensions/super-subscripts";
+// @import "modules/extensions/abbreviations";
+// @import "modules/extensions/footnotes";
+// @import "modules/extensions/math";
 
-$CURRENT_MEDIA: screen;
-@if index($MEDIA, screen) {
-  @include core-base;
-  @include core-block;
-  @include core-inline;
-  @include extensions-block;
-  @include extensions-inline;
-  @include extensions-table;
-  @include extensions-highlight;
-  @include utilities-align;
-  @include utilities-colors;
-  @include utilities-columns;
-  @include utilities-objects;
-}
+@import "modules/utilities/text-align";
+@import "modules/utilities/floating";
+@import "modules/utilities/clearing";
+@import "modules/utilities/columns";
+@import "modules/utilities/colors";
+@import "modules/utilities/rounding";
+// @import "modules/utilities/display";
+// @import "modules/utilities/media-filters";
+
+// @import "modules/components/cards";
+// @import "modules/components/buttons";
+// @import "modules/components/badges";
+
+// @import "modules/extras/auto-link-urls";
+// @import "modules/extras/manual-page-breaks";
+// @import "modules/extras/auto-page-breaks";
+// @import "modules/extras/prevent-page-breaks";
+// @import "modules/extras/heading-numbering";
+// @import "modules/extras/element-numbering";

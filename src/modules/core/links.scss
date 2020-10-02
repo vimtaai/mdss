@@ -1,0 +1,22 @@
+a {
+  color: nth($link-font-color, 1);
+  font-family: nth($link-font-family, 1);
+  font-size: nth($link-font-size, 1);
+  font-weight: nth($link-font-weight, 1);
+
+  @include screen-only {
+    &:hover {
+      color: nth($link-font-color, 2);
+      font-family: nth($link-font-family, 2);
+      font-size: nth($link-font-size, 2);
+      font-weight: nth($link-font-weight, 2);
+    }
+
+    &:active {
+      color: nth($link-font-color, 3);
+      font-family: nth($link-font-family, 3);
+      font-size: nth($link-font-size, 3);
+      font-weight: nth($link-font-weight, 3);
+    }
+  }
+}

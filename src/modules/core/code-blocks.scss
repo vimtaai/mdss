@@ -1,0 +1,12 @@
+pre {
+  line-height: $code-block-line-height;
+  margin: $code-block-spacing-before 0 $code-block-spacing-after;
+  margin-left: $code-block-indent;
+  overflow-x: auto;
+
+  & > code {
+    color: $code-block-font-color;
+    font-family: $code-block-font-family;
+    font-size: $code-block-font-size;
+  }
+}

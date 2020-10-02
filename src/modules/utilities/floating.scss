@@ -1,0 +1,9 @@
+.float\:left {
+  float: left;
+  margin: #{$floated-margin-y} #{$floated-margin-x} #{$floated-margin-y} 0;
+}
+
+.float\:right {
+  float: right;
+  margin: #{$floated-margin-y} 0 #{$floated-margin-y} #{$floated-margin-x};
+}

@@ -1,0 +1,9 @@
+blockquote {
+  color: $quote-font-color;
+  font-family: $quote-font-family;
+  font-size: $quote-font-size;
+  font-weight: $quote-font-weight;
+  line-height: $quote-line-height;
+  margin: $quote-spacing-before 0 $quote-spacing-after;
+  margin-left: $quote-indent;
+}

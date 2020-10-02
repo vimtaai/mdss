@@ -1,0 +1,24 @@
+ul,
+ol {
+  list-style-position: outside;
+  margin: $list-spacing-before 0 $list-spacing-after;
+  margin-left: $list-indent;
+  padding: 0;
+
+  ul {
+    margin-left: 0;
+  }
+
+  li {
+    margin-left: #{$list-indent};
+    position: relative;
+  }
+}
+
+ul {
+  list-style-type: $list-unordered-style;
+}
+
+ol {
+  list-style-type: $list-ordered-style;
+}
