@@ -23,8 +23,8 @@ $tasklist-check-color                 : null, $color-white;
 $tasklist-check-width                 : null, $border-width-400;
 
 // Syntax highlighting
-$syntax-highlighting-provider         : "prism";
-$syntax-highlighting-color-comments   : $color-lightgray-700;
+$syntax-highlighting-provider         : prism;
+$syntax-highlighting-color-comments   : $color-lime-300;
 $syntax-highlighting-color-keywords   : $color-blue-400;
 $syntax-highlighting-color-literals   : $color-purple-400;
 $syntax-highlighting-color-strings    : $color-red-400;
@@ -35,7 +35,7 @@ $syntax-highlighting-color-types      : $color-teal-300;
 $syntax-highlighting-color-functions  : $color-gold-300;
 $syntax-highlighting-color-tags       : $color-blue-400;
 $syntax-highlighting-color-attributes : $color-green-400;
-$syntax-highlighting-color-link       : $color-lime-400;
+$syntax-highlighting-color-link       : $color-green-400;
 
 // Definition lists
 $deflist-spacing-before               : $margin-400;
