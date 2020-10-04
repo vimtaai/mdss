@@ -1,6 +1,11 @@
 code {
+  @include border($code-inline-border-width, $code-inline-border-color);
+
+  background: $code-inline-background;
+  border-radius: $code-inline-rounding;
   color: $code-inline-font-color;
   font-family: $code-inline-font-family;
   font-size: $code-inline-font-size;
   font-weight: $code-inline-font-weight;
+  padding: #{$code-inline-padding-y} #{$code-inline-padding-x};
 }

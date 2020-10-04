@@ -2,16 +2,17 @@ ul,
 ol {
   list-style-position: outside;
   margin: $list-spacing-before 0 $list-spacing-after;
-  margin-left: $list-level-indent;
+  margin-left: $list-indent;
   padding: 0;
   position: relative;
 
   ul {
-    margin: 0 0 0 #{$list-level-indent - $list-item-indent};
+    margin: 0 0 0 #{$list-indent - $list-item-indent};
   }
 
   li {
     margin-left: 0;
+    padding: #{$list-item-padding-y} #{$list-item-padding-x};
     padding-left: $list-item-indent;
     position: relative;
   }

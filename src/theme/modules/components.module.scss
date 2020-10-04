@@ -3,6 +3,6 @@ $component-font-family  : $font-family-sans-serif;
 $component-font-weight  : $font-weight-500;
 
 // Button (base, hover, active)
-$button-color         : $color-lightgray-400, $color-lightgray-300, $color-lightgray-500;
-$button-border        : none,                 null,                 null;
-$button-border-radius : $border-radius-400,   null,                 null;
+$button-color            : $color-lightgray-400, $color-lightgray-300, $color-lightgray-500;
+$button-border           : none,                 null,                 null;
+$button-rounding         : $rounding-400,        null,                 null;

@@ -1,7 +1,9 @@
 body {
   @include align-block($root-align);
+  @include border($root-border-width, $root-border-color);
 
   background: $root-background;
+  border-radius: $root-rounding;
   box-sizing: border-box;
   color: $root-font-color;
   font-family: $root-font-family;

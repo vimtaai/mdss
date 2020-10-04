@@ -1,9 +1,15 @@
 blockquote {
+  @include border($quote-border-width, $quote-border-color);
+
+  background: $quote-background;
+  border-radius: $quote-rounding;
   color: $quote-font-color;
   font-family: $quote-font-family;
   font-size: $quote-font-size;
   font-weight: $quote-font-weight;
   line-height: $quote-line-height;
-  margin: $quote-spacing-before 0 $quote-spacing-after;
-  margin-left: $quote-indent;
+  margin-top: $quote-spacing-before;
+  margin-bottom: $quote-spacing-after;
+  padding: #{$quote-padding-y} #{$quote-padding-x};
+  padding-left: $quote-indent;
 }

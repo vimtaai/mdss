@@ -5,7 +5,7 @@ ul {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: #{$tasklist-size * 0.15};
+    top: #{$tasklist-size * 0.15 + $list-item-padding-y};
     width: 0;
 
     // Box
@@ -13,7 +13,7 @@ ul {
       content: "";
       background: nth($tasklist-background, 1);
       border: solid #{nth($tasklist-border-color, 1)} #{nth($tasklist-border-width, 1)};
-      border-radius: nth($tasklist-border-radius, 1);
+      border-radius: nth($tasklist-rounding, 1);
       box-sizing: border-box;
       display: block;
       transition: background-color #{$transition-duration} #{$transition-easing},
@@ -25,7 +25,7 @@ ul {
     &:checked::before {
       background: nth($tasklist-background, 2);
       border: solid #{nth($tasklist-border-color, 2)} #{nth($tasklist-border-width, 2)};
-      border-radius: nth($tasklist-border-radius, 2);
+      border-radius: nth($tasklist-rounding, 2);
     }
 
     // Checkmark
