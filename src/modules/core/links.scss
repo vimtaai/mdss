@@ -3,6 +3,7 @@ a {
   font-family: nth($link-font-family, 1);
   font-size: nth($link-font-size, 1);
   font-weight: nth($link-font-weight, 1);
+  transition: color #{$transition-duration} #{$transition-easing};
 
   @include screen-only {
     &:hover {

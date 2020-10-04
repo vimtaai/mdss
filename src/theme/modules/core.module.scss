@@ -3,8 +3,16 @@ $root-font-family              : $font-family-sans-serif;
 $root-font-size                : $font-size-400;
 $root-font-weight              : null;
 $root-font-color               : $color-text-dark;
-$root-background               : $color-white;
 $root-line-height              : $line-height-400;
+
+$root-align                    : center;
+$root-spacing-before           : 0;
+$root-spacing-after            : 0;
+$root-padding-x                : $padding-400;
+$root-padding-y                : $padding-400;
+$root-background               : $color-white;
+$root-border                   : null;
+$root-rounding                 : null;
 
 // Paragraphs
 $paragraph-spacing-before      : $margin-400;

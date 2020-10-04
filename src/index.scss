@@ -4,21 +4,23 @@
 @import "helpers/media";
 @import "helpers/align";
 
+@import "theme/config/import.config";
+@import "theme/config/layout.config";
+@import "theme/config/motion.config";
+
+@each $import in $theme-imports {
+  @import url($import);
+}
+
 @import "theme/tokens/colors.tokens";
 @import "theme/tokens/sizes.tokens";
 @import "theme/tokens/typography.tokens";
 @import "theme/tokens/objects.tokens";
 
-@import "theme/modules/layout.module";
 @import "theme/modules/core.module";
 @import "theme/modules/extensions.module";
 @import "theme/modules/utilities.module";
 @import "theme/modules/components.module";
-
-@import "theme/import.config";
-@each $import in $theme-imports {
-  @import url($import);
-}
 
 @import "modules/core/root";
 @import "modules/core/paragraphs";

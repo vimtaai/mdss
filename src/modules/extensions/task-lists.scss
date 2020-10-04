@@ -16,6 +16,8 @@ ul {
       border-radius: nth($tasklist-border-radius, 1);
       box-sizing: border-box;
       display: block;
+      transition: background-color #{$transition-duration} #{$transition-easing},
+        border-color #{$transition-duration} #{$transition-easing};
       height: $tasklist-size;
       width: $tasklist-size;
     }

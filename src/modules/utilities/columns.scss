@@ -2,7 +2,7 @@
 @for $column-count from 2 through $columns-max-count {
   .columns\:#{$column-count} {
     display: grid;
-    grid-gap: $columns-spacing;
+    grid-gap: $columns-gutter;
     grid-template-columns: repeat($column-count, 1fr);
 
     @include tablet-only {
@@ -23,7 +23,7 @@
   justify-content: space-evenly;
 
   & > * {
-    margin: $columns-spacing;
+    margin: $columns-gutter;
     flex-shrink: 1;
     width: 100%;
 
