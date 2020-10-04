@@ -1,6 +1,10 @@
 // Floating
-$floated-margin-x          : $spacing-400;
-$floated-margin-y          : $spacing-400;
+$floated-margin-x          : $margin-400;
+$floated-margin-y          : $margin-400;
+
+// Columns
+$columns-max-count         : 6;
+$columns-spacing           : $margin-300;
 
 // Font sizes
 $utility-font-sizes        : (
@@ -13,31 +17,25 @@ $utility-font-sizes        : (
 
 // Colors
 $utility-background-colors : (
-  primary                  : $color-primary,
-  secondary                : $color-secondary,
-  negative                 : $color-negative,
-  notice                   : $color-notice,
-  positive                 : $color-positive,
-  informative              : $color-informative
+  primary                  : $color-primary-400,
+  secondary                : $color-secondary-400,
+  negative                 : $color-red-400,
+  positive                 : $color-green-400,
+  informative              : $color-blue-400
 );
 
 $utility-text-colors       : (
-  primary                  : $color-primary-focused,
-  secondary                : $color-secondary-focused,
-  negative                 : $color-negative-focused,
-  notice                   : $color-notice-focused,
-  positive                 : $color-positive-focused,
-  informative              : $color-informative-focused
+  primary                  : $color-primary-500,
+  secondary                : $color-secondary-500,
+  negative                 : $color-red-500,
+  positive                 : $color-green-500,
+  informative              : $color-blue-500
 );
 
 // Roundings
 $utility-roundings         : (
   small                    : $border-radius-300,
   normal                   : $border-radius-400,
-  large                    : $border-radius-700,
+  large                    : $border-radius-500,
   full                     : $border-radius-full
 );
-
-// Columns
-$columns-max-count         : 6;
-$columns-spacing           : $spacing-500;

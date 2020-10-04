@@ -1,6 +1,6 @@
 // Static color tokens
 $color-white                : #ffffff;
-$color-black                : rgb(0, 0, 0);
+$color-black                : #000000;
 
 $color-lightgray-100        : #f2f4f8;
 $color-lightgray-300        : #e6eaf0;
@@ -81,47 +81,5 @@ $color-violet-500           : #b71a82;
 $color-violet-700           : #881361;
 
 // Semantic color tokens
-$color-primary              : $color-primary-400;
-$color-primary-focused      : $color-primary-500;
-$color-primary-muted        : $color-primary-300;
-$color-primary-disabled     : $color-primary-100;
-
-$color-secondary            : $color-secondary-400;
-$color-secondary-focused    : $color-secondary-500;
-$color-secondary-muted      : $color-secondary-300;
-$color-secondary-disabled   : $color-secondary-100;
-
-$color-negative             : $color-red-400;
-$color-negative-focused     : $color-red-500;
-$color-negative-muted       : $color-red-300;
-$color-negative-disabled    : $color-red-100;
-
-$color-notice               : $color-orange-400;
-$color-notice-focused       : $color-orange-500;
-$color-notice-muted         : $color-orange-300;
-$color-notice-disabled      : $color-orange-100;
-
-$color-positive             : $color-green-400;
-$color-positive-focused     : $color-green-500;
-$color-positive-muted       : $color-green-300;
-$color-positive-disabled    : $color-green-100;
-
-$color-informative          : $color-blue-400;
-$color-informative-focused  : $color-blue-500;
-$color-informative-muted    : $color-blue-300;
-$color-informative-disabled : $color-blue-100;
-
 $color-text-dark            : $color-darkgray-400;
-$color-text-dark-focused    : $color-darkgray-100;
-$color-text-dark-muted      : $color-darkgray-500;
-$color-text-dark-disabled   : $color-darkgray-700;
-
 $color-text-light           : $color-white;
-$color-text-light-focused   : $color-white;
-$color-text-light-muted     : $color-lightgray-100;
-$color-text-light-disabled  : $color-lightgray-300;
-
-$color-object               : $color-lightgray-500;
-$color-object-focused       : $color-lightgray-700;
-$color-object-muted         : $color-lightgray-400;
-$color-object-disabled      : $color-lightgray-300;

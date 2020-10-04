@@ -1,66 +1,70 @@
 // Root typography
-$root-font-family              : $font-family-base;
-$root-font-size                : $font-size-base;
+$root-font-family              : $font-family-sans-serif;
+$root-font-size                : $font-size-400;
 $root-font-weight              : null;
 $root-font-color               : $color-text-dark;
 $root-background               : $color-white;
-$root-line-height              : $line-height-base;
+$root-line-height              : $line-height-400;
 
 // Paragraphs
-$paragraph-spacing-before      : $spacing-400;
-$paragraph-spacing-after       : $spacing-400;
+$paragraph-spacing-before      : $margin-300;
+$paragraph-spacing-after       : $margin-300;
 $paragraph-text-align          : left;
 
+// Emphases
+$strong-font-weight            : $font-weight-700;
+
 // Headings (h1, [h2], [h3], [h4], [h5], [h6])
-$heading-font-family           : null,             null,             null,             null,             null,                 null;                
-$heading-font-size             : $font-size-700,   $font-size-500,   $font-size-400,   $font-size-300,   $font-size-100,       $font-size-100;
-$heading-font-weight           : $font-weight-500, $font-weight-500, $font-weight-500, $font-weight-500, $font-weight-500,  $font-weight-500;
-$heading-font-color            : $color-primary,   $color-secondary, null,             null,             null,                 null;
-$heading-line-height           : null,             null,             null,             null,             null,                 null;                
-$heading-spacing-before        : 0,                $spacing-300,     $spacing-100,     $spacing-100,     null,                 null;
-$heading-spacing-after         : $spacing-500,     $spacing-400,     $spacing-300,     $spacing-300,     null,                 null;
+$heading-font-family           : null,               null,                 null,             null,             null,              null;
+$heading-font-size             : $font-size-900,     $font-size-700,       $font-size-500,   $font-size-400,   $font-size-300,    $font-size-100;
+$heading-font-weight           : $font-weight-500,   $font-weight-500,     $font-weight-500, $font-weight-500, $font-weight-500,  $font-weight-500;
+$heading-font-color            : $color-primary-400, $color-secondary-400, null,             null,             null,              null;
+$heading-line-height           : null,               null,                 null,             null,             null,              null;
+$heading-spacing-before        : 0,                  $margin-300,          $margin-100,      $margin-100,      null,              null;
+$heading-spacing-after         : $margin-400,        $margin-300,          $margin-300,      $margin-100,      null,              null;
 
 // Blockquote
 $quote-font-family             : null;
-$quote-font-size               : null;
+$quote-font-size               : $font-size-500;
 $quote-font-weight             : null;
-$quote-font-color              : $color-secondary;
+$quote-font-color              : $color-secondary-400;
 $quote-line-height             : null;
-$quote-spacing-before          : $spacing-400;
-$quote-spacing-after           : $spacing-400;
-$quote-indent                  : $spacing-700;
+$quote-spacing-before          : $margin-400;
+$quote-spacing-after           : $margin-400;
+$quote-indent                  : $margin-700;
 
 // Code
-$code-block-font-family        : $font-family-code;
-$code-block-font-size          : $font-size-code;
-$code-block-font-color         : $root-font-color;
-$code-block-line-height        : $line-height-code;
-$code-block-spacing-before     : $spacing-400;
-$code-block-spacing-after      : $spacing-400;
+$code-block-font-family        : $font-family-monospace;
+$code-block-font-size          : $font-size-300;
+$code-block-font-color         : null;
+$code-block-line-height        : $line-height-300;
+$code-block-spacing-before     : $margin-400;
+$code-block-spacing-after      : $margin-400;
 $code-block-indent             : null;
 
 // Lists
 $list-unordered-style          : square;
 $list-ordered-style            : numeric;
 $list-line-height              : $line-height-300;
-$list-spacing-before           : $spacing-400;
-$list-spacing-after            : $spacing-400;
-$list-indent                   : $spacing-700;
+$list-spacing-before           : $margin-400;
+$list-spacing-after            : $margin-400;
+$list-level-indent             : $margin-700;
+$list-item-indent              : $margin-100;
 
 // Thematic breaks
-$thematic-break-color          : $color-primary;
-$thematic-break-width          : $border-width-700;
-$thematic-break-spacing-before : $spacing-700;
-$thematic-break-spacing-after  : $spacing-700;
+$thematic-break-color          : $color-primary-500;
+$thematic-break-width          : $border-width-500;
+$thematic-break-spacing-before : $margin-700;
+$thematic-break-spacing-after  : $margin-700;
 
 // Links (base, hover, active)
-$link-font-family              : null,             null,                 null;
-$link-font-size                : null,             null,                 null;
-$link-font-weight              : $font-weight-700, null,                 null;
-$link-font-color               : $color-primary,   $color-primary-muted, $color-primary-focused;
+$link-font-family              : null,               null,               null;
+$link-font-size                : null,               null,               null;
+$link-font-weight              : $font-weight-700,   null,               null;
+$link-font-color               : $color-primary-500, $color-primary-400, $color-primary-700;
 
 // Inline code
-$code-inline-font-family       : $font-family-code;
-$code-inline-font-size         : $font-size-code;
+$code-inline-font-family       : $font-family-monospace;
+$code-inline-font-size         : $font-size-300;
 $code-inline-font-weight       : null;
 $code-inline-font-color        : null;

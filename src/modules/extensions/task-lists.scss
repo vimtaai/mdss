@@ -1,7 +1,7 @@
 ul {
   li > input[type="checkbox"]:first-child {
     height: 0;
-    left: -#{$list-indent + $tasklist-size * 0.4};
+    left: -$tasklist-size;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -12,7 +12,7 @@ ul {
     &::before {
       content: "";
       background: nth($tasklist-background, 1);
-      border: nth($tasklist-border, 1);
+      border: solid #{nth($tasklist-border-color, 1)} #{nth($tasklist-border-width, 1)};
       border-radius: nth($tasklist-border-radius, 1);
       box-sizing: border-box;
       display: block;
@@ -22,7 +22,7 @@ ul {
 
     &:checked::before {
       background: nth($tasklist-background, 2);
-      border: nth($tasklist-border, 2);
+      border: solid #{nth($tasklist-border-color, 2)} #{nth($tasklist-border-width, 2)};
       border-radius: nth($tasklist-border-radius, 2);
     }
 
