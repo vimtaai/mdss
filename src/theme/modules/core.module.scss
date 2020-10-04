@@ -7,8 +7,8 @@ $root-background               : $color-white;
 $root-line-height              : $line-height-400;
 
 // Paragraphs
-$paragraph-spacing-before      : $margin-300;
-$paragraph-spacing-after       : $margin-300;
+$paragraph-spacing-before      : $margin-400;
+$paragraph-spacing-after       : $margin-400;
 $paragraph-text-align          : left;
 
 // Emphases
@@ -21,7 +21,7 @@ $heading-font-weight           : $font-weight-500,   $font-weight-500,     $font
 $heading-font-color            : $color-primary-400, $color-secondary-400, null,             null,             null,              null;
 $heading-line-height           : null,               null,                 null,             null,             null,              null;
 $heading-spacing-before        : 0,                  $margin-300,          $margin-100,      $margin-100,      null,              null;
-$heading-spacing-after         : $margin-400,        $margin-300,          $margin-300,      $margin-100,      null,              null;
+$heading-spacing-after         : $margin-500,        $margin-400,          $margin-300,      $margin-100,      null,              null;
 
 // Blockquote
 $quote-font-family             : null;
@@ -52,7 +52,7 @@ $list-level-indent             : $margin-700;
 $list-item-indent              : $margin-100;
 
 // Thematic breaks
-$thematic-break-color          : $color-primary-500;
+$thematic-break-color          : $color-primary-400;
 $thematic-break-width          : $border-width-500;
 $thematic-break-spacing-before : $margin-700;
 $thematic-break-spacing-after  : $margin-700;
@@ -61,7 +61,7 @@ $thematic-break-spacing-after  : $margin-700;
 $link-font-family              : null,               null,               null;
 $link-font-size                : null,               null,               null;
 $link-font-weight              : $font-weight-700,   null,               null;
-$link-font-color               : $color-primary-500, $color-primary-400, $color-primary-700;
+$link-font-color               : $color-primary-400, $color-primary-300, $color-primary-500;
 
 // Inline code
 $code-inline-font-family       : $font-family-monospace;
