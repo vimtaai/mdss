@@ -1,0 +1,11 @@
+$weight-levels: (
+  100: 1,
+  300: 2,
+  400: 3,
+  500: 4,
+  700: 5,
+);
+
+@function weight($token, $level) {
+  @return nth($token, map-get($weight-levels, $level));
+}

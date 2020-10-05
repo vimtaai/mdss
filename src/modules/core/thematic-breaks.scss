@@ -2,6 +2,7 @@ hr {
   background: $thematic-break-color;
   border: none;
   border-radius: $thematic-break-rounding;
+  box-sizing: border-box;
   height: $thematic-break-height;
   margin-top: $thematic-break-spacing-before;
   margin-bottom: $thematic-break-spacing-after;

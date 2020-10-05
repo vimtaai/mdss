@@ -1,85 +1,98 @@
 // Static color tokens
-$color-white                : #ffffff;
-$color-black                : #000000;
+$color-white         : #ffffff;
+$color-black         : #000000;
 
-$color-lightgray-100        : #f2f4f8;
-$color-lightgray-300        : #e6eaf0;
-$color-lightgray-400        : #dce1ea;
-$color-lightgray-500        : #d2d9e5;
-$color-lightgray-700        : #ccd3e1;
+$color-lightgray     : #f2f4f8, #e6eaf0, #dce1ea, #d2d9e5, #ccd3e1;
+$color-lightgray-100 : nth($color-lightgray, 1);
+$color-lightgray-300 : nth($color-lightgray, 2);
+$color-lightgray-400 : nth($color-lightgray, 3);
+$color-lightgray-500 : nth($color-lightgray, 4);
+$color-lightgray-700 : nth($color-lightgray, 5);
 
-$color-darkgray-100         : #344356;
-$color-darkgray-300         : #2a3646;
-$color-darkgray-400         : #232d39;
-$color-darkgray-500         : #1b232d;
-$color-darkgray-700         : #11161c;
+$color-darkgray      : #344356, #2a3646, #232d39, #1b232d, #11161c;
+$color-darkgray-100  : nth($color-darkgray, 1);
+$color-darkgray-300  : nth($color-darkgray, 2);
+$color-darkgray-400  : nth($color-darkgray, 3);
+$color-darkgray-500  : nth($color-darkgray, 4);
+$color-darkgray-700  : nth($color-darkgray, 5);
 
-$color-primary-100          : #f4c8c0;
-$color-primary-300          : #e3755e;
-$color-primary-400          : #d54325;
-$color-primary-500          : #b2381f;
-$color-primary-700          : #842a17;
+$color-primary       : #f4c8c0, #df6248, #d54325, #bc3b21, #99301b;
+$color-primary-100   : nth($color-primary, 1);
+$color-primary-300   : nth($color-primary, 2);
+$color-primary-400   : nth($color-primary, 3);
+$color-primary-500   : nth($color-primary, 4);
+$color-primary-700   : nth($color-primary, 5);
 
-$color-secondary-100        : #ebccc2;
-$color-secondary-300        : #cd8269;
-$color-secondary-400        : #b85c3e;
-$color-secondary-500        : #994d34;
-$color-secondary-700        : #723926;
+$color-secondary     : #ebccc2, #c77257, #b85c3e, #a35137, #83422c;
+$color-secondary-100 : nth($color-secondary, 1);
+$color-secondary-300 : nth($color-secondary, 2);
+$color-secondary-400 : nth($color-secondary, 3);
+$color-secondary-500 : nth($color-secondary, 4);
+$color-secondary-700 : nth($color-secondary, 5);
 
-$color-red-100              : #f5c7cb;
-$color-red-300              : #e5717a;
-$color-red-400              : #db3743;
-$color-red-500              : #bf222e;
-$color-red-700              : #8e1923;
+$color-red           : #f5c7cb, #e25c66, #db3743, #ca2431, #a41d28;
+$color-red-100       : nth($color-red, 1);
+$color-red-300       : nth($color-red, 2);
+$color-red-400       : nth($color-red, 3);
+$color-red-500       : nth($color-red, 4);
+$color-red-700       : nth($color-red, 5);
 
-$color-orange-100           : #f1cbaf;
-$color-orange-300           : #dc7b36;
-$color-orange-400           : #b65f20;
-$color-orange-500           : #994f1b;
-$color-orange-700           : #703a14;
+$color-orange        : #f1cbaf, #d26d25, #b65f20, #a1541c, #824417;
+$color-orange-100    : nth($color-orange, 1);
+$color-orange-300    : nth($color-orange, 2);
+$color-orange-400    : nth($color-orange, 3);
+$color-orange-500    : nth($color-orange, 4);
+$color-orange-700    : nth($color-orange, 5);
 
-$color-gold-100             : #ecd07b;
-$color-gold-300             : #b78f1a;
-$color-gold-400             : #927215;
-$color-gold-500             : #7a6011;
-$color-gold-700             : #5a460d;
+$color-gold          : #ecd07b, #a88418, #927215, #806512, #68520f;
+$color-gold-100      : nth($color-gold, 1);
+$color-gold-300      : nth($color-gold, 2);
+$color-gold-400      : nth($color-gold, 3);
+$color-gold-500      : nth($color-gold, 4);
+$color-gold-700      : nth($color-gold, 5);
 
-$color-lime-100             : #c4de43;
-$color-lime-300             : #889e1c;
-$color-lime-400             : #6c7e16;
-$color-lime-500             : #5b6912;
-$color-lime-700             : #434e0e;
+$color-lime          : #c4de43, #7d9119, #6c7e16, #607014, #4d5910;
+$color-lime-100      : nth($color-lime, 1);
+$color-lime-300      : nth($color-lime, 2);
+$color-lime-400      : nth($color-lime, 3);
+$color-lime-500      : nth($color-lime, 4);
+$color-lime-700      : nth($color-lime, 5);
 
-$color-green-100            : #8fe3b9;
-$color-green-300            : #2aa96a;
-$color-green-400            : #228754;
-$color-green-500            : #1c7047;
-$color-green-700            : #155334;
+$color-green         : #90e3ba, #279b62, #228754, #1e774b, #18613d;
+$color-green-100     : nth($color-green, 1);
+$color-green-300     : nth($color-green, 2);
+$color-green-400     : nth($color-green, 3);
+$color-green-500     : nth($color-green, 4);
+$color-green-700     : nth($color-green, 5);
 
-$color-teal-100             : #87e1e1;
-$color-teal-300             : #29a3a3;
-$color-teal-400             : #218383;
-$color-teal-500             : #1b6d6d;
-$color-teal-700             : #145151;
+$color-teal          : #87e1e1, #269797, #218383, #1d7474, #175e5e;
+$color-teal-100      : nth($color-teal, 1);
+$color-teal-300      : nth($color-teal, 2);
+$color-teal-400      : nth($color-teal, 3);
+$color-teal-500      : nth($color-teal, 4);
+$color-teal-700      : nth($color-teal, 5);
 
-$color-blue-100             : #b6d6f5;
-$color-blue-300             : #4b99e5;
-$color-blue-400             : #1e77d0;
-$color-blue-500             : #1964ad;
-$color-blue-700             : #124a80;
+$color-blue          : #b7d6f5, #348ce2, #1e77d0, #1a6ab8, #155695;
+$color-blue-100      : nth($color-blue, 1);
+$color-blue-300      : nth($color-blue, 2);
+$color-blue-400      : nth($color-blue, 3);
+$color-blue-500      : nth($color-blue, 4);
+$color-blue-700      : nth($color-blue, 5);
 
-$color-purple-100           : #d8cdee;
-$color-purple-300           : #a186d7;
-$color-purple-400           : #8563cb;
-$color-purple-500           : #724ac2;
-$color-purple-700           : #553398;
+$color-purple        : #d8cdee, #9679d2, #8563cb, #7852c5, #623bb1;
+$color-purple-100    : nth($color-purple, 1);
+$color-purple-300    : nth($color-purple, 2);
+$color-purple-400    : nth($color-purple, 3);
+$color-purple-500    : nth($color-purple, 4);
+$color-purple-700    : nth($color-purple, 5);
 
-$color-violet-100           : #f6c3e5;
-$color-violet-300           : #e962bc;
-$color-violet-400           : #da1f9b;
-$color-violet-500           : #b71a82;
-$color-violet-700           : #881361;
+$color-violet        : #f6c4e5, #e54ab1, #da1f9b, #c11c89, #9d1670;
+$color-violet-100    : nth($color-violet, 1);
+$color-violet-300    : nth($color-violet, 2);
+$color-violet-400    : nth($color-violet, 3);
+$color-violet-500    : nth($color-violet, 4);
+$color-violet-700    : nth($color-violet, 5);
 
 // Semantic color tokens
-$color-text-dark            : $color-darkgray-400;
-$color-text-light           : $color-white;
+$color-text-dark     : $color-darkgray-400;
+$color-text-light    : $color-white;

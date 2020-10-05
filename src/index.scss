@@ -1,9 +1,10 @@
-@import "helpers/math";
-@import "helpers/string";
-@import "helpers/luminance";
-@import "helpers/media";
 @import "helpers/align";
 @import "helpers/border";
+@import "helpers/luminance";
+@import "helpers/math";
+@import "helpers/media";
+@import "helpers/string";
+@import "helpers/weight";
 
 @import "theme/config/import.config";
 @import "theme/config/layout.config";
@@ -47,6 +48,17 @@
 // @import "modules/extensions/footnotes";
 // @import "modules/extensions/math";
 
+// @import "modules/components/cards";
+@import "modules/components/buttons";
+// @import "modules/components/badges";
+
+// @import "modules/extras/auto-link-urls";
+// @import "modules/extras/manual-page-breaks";
+// @import "modules/extras/auto-page-breaks";
+// @import "modules/extras/prevent-page-breaks";
+// @import "modules/extras/heading-numbering";
+// @import "modules/extras/element-numbering";
+
 @import "modules/utilities/text-align";
 @import "modules/utilities/floating";
 @import "modules/utilities/clearing";
@@ -56,14 +68,3 @@
 @import "modules/utilities/font-size";
 // @import "modules/utilities/display";
 // @import "modules/utilities/media-filters";
-
-// @import "modules/components/cards";
-// @import "modules/components/buttons";
-// @import "modules/components/badges";
-
-// @import "modules/extras/auto-link-urls";
-// @import "modules/extras/manual-page-breaks";
-// @import "modules/extras/auto-page-breaks";
-// @import "modules/extras/prevent-page-breaks";
-// @import "modules/extras/heading-numbering";
-// @import "modules/extras/element-numbering";

@@ -1,4 +1,4 @@
-code {
+:not(pre) > code {
   @include border($code-inline-border-width, $code-inline-border-color);
 
   background: $code-inline-background;

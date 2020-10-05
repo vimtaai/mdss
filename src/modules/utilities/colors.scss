@@ -1,12 +1,12 @@
 @each $name, $color in $utility-background-colors {
   .background\:#{$name} {
-    background: $color;
-    color: contrast-color($color);
+    background: weight($color, 400);
+    color: contrast-color(weight($color, 400));
   }
 }
 
 @each $name, $color in $utility-text-colors {
   .text\:#{$name} {
-    color: $color;
+    color: weight($color, 500);
   }
 }
