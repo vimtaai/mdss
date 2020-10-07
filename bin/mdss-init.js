@@ -42,7 +42,7 @@ async function init(program) {
   let filename = program.filename || defaultFilename;
 
   if (isConfigFileUsed) {
-    logger.info(`Config file:  ${configFile}\n`);
+    logger.info(`Config file: ${configFile}\n`);
   }
   logger.info(`Theme dir:   ${themeDir}\n`);
   logger.info(`Output dir:  ${outputDir}\n`);

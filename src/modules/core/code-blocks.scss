@@ -9,6 +9,12 @@ pre {
   overflow-x: auto;
   padding: #{$code-block-padding-y} #{$code-block-padding-x};
   padding-left: $code-block-indent;
+  white-space: pre;
+
+  @include print-only {
+    overflow-x: hidden;
+    white-space: pre-wrap;
+  }
 
   & > code {
     color: $code-block-font-color;

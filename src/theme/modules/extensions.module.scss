@@ -37,6 +37,8 @@ $syntax-highlighting-color-tags       : $color-blue-400;
 $syntax-highlighting-color-attributes : $color-green-400;
 $syntax-highlighting-color-link       : $color-green-400;
 
+$syntax-highlighting-wrap-languages   : "md", "markdown", "txt", "text";
+
 // Definition lists
 $deflist-spacing-before               : $margin-400;
 $deflist-spacing-after                : $margin-400;
