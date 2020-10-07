@@ -103,13 +103,13 @@ $link-font-color               : $color-primary-400, $color-primary-300, $color-
 
 // Inline code
 $code-inline-font-family       : $font-family-monospace;
-$code-inline-font-size         : $font-size-300;
+$code-inline-font-size         : $font-size-smaller;
 $code-inline-font-weight       : null;
 $code-inline-font-color        : null;
 
-$code-inline-padding-x          : $padding-100;
-$code-inline-padding-y          : $padding-100;
-$code-inline-background         : $color-lightgray-100;
-$code-inline-border-width       : $border-width-300;
-$code-inline-border-color       : $color-lightgray-400;
-$code-inline-rounding           : $rounding-400;
+$code-inline-padding-x         : $padding-100;
+$code-inline-padding-y         : $padding-100;
+$code-inline-background        : $color-lightgray-100;
+$code-inline-border-width      : $border-width-300;
+$code-inline-border-color      : $color-lightgray-400;
+$code-inline-rounding          : $rounding-400;

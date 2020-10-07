@@ -2,7 +2,7 @@
 $font-family-sans-serif : #{"Barlow", sans-serif};
 $font-family-monospace  : #{"Hack", monospace};
 
-// Static font sizes
+// Static font size tokens
 $font-size-100          : 10px;
 $font-size-300          : 14px;
 $font-size-400          : 16px;
@@ -10,14 +10,18 @@ $font-size-500          : 18px;
 $font-size-700          : 22px;
 $font-size-900          : 28px;
 
-// Static font weights
+// Semantic font size tokens
+$font-size-smaller      : 0.85em;
+$font-size-larger       : 1.15em;
+
+// Static font weight tokens
 $font-weight-100        : 100;
 $font-weight-300        : 300;
 $font-weight-400        : 400;
 $font-weight-500        : 500;
 $font-weight-700        : 700;
 
-// Static line heights
+// Static line height tokens
 $line-height-300        : 1.5;
 $line-height-400        : 1.75;
 $line-height-500        : 2;
