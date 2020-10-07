@@ -8,7 +8,12 @@ import Csso from "csso";
 
 import { resolve } from "path";
 
-import { defaultThemeDir, defaultOutputDir, defaultConfigFile } from "./helpers/constants.js";
+import {
+  defaultConfigFile,
+  defaultThemeDir,
+  defaultOutputDir,
+  defaultFilename,
+} from "./helpers/constants.js";
 import { mdssSourceDir, mdssThemeDir } from "./helpers/mdss-paths.js";
 
 const program = new Commander.Command();
@@ -18,6 +23,7 @@ program
   .option("-c --config-file [path]", "path to the config file")
   .option("-t --theme-dir <path>", "path to the theme directory")
   .option("-o --output-dir <path>", "path to the output directory")
+  .option("-f --filename <name>", "base filename for the build")
   .option("-d --dev", "genereate uncompressed, development stylesheets")
   .option("-q --quiet", "omit console output")
   .parse(process.argv);
@@ -30,11 +36,13 @@ async function build(program) {
   const isConfigFileSet = program.configFile !== undefined;
   const isThemeDirSet = program.themeDir !== undefined;
   const isOutputDirSet = program.outputDir !== undefined;
+  const isFilenameSet = program.filename !== undefined;
   const isConfigFileUsed = isConfigFileSet;
 
   let configFile = typeof program.configFile === "string" ? program.configFile : defaultConfigFile;
   let themeDir = program.themeDir || defaultThemeDir;
   let outputDir = program.outputDir || defaultOutputDir;
+  let filename = program.filename || defaultFilename;
   let isDevBuild = program.dev || false;
 
   try {
@@ -44,6 +52,7 @@ async function build(program) {
 
       themeDir = configFileData.themeDir;
       outputDir = configFileData.outputDir;
+      filename = configFileData.filename;
     }
   } catch (err) {
     logger.error(`Could not read config file \`${configFile}\`.\n`, err);
@@ -55,6 +64,7 @@ async function build(program) {
   }
   logger.info(`Theme dir:   ${themeDir}\n`);
   logger.info(`Output dir:  ${outputDir}\n`);
+  logger.info(`Filename:    ${filename}\n`);
   logger.info(`Dev Mode:    ${isDevBuild}\n`);
 
   try {
@@ -79,31 +89,31 @@ async function build(program) {
 
   try {
     logger.await(`Generating output...`);
-    const outputBasename = `mdss${isDevBuild ? `` : `.min`}.css`;
-    const outputFile = resolve(outputDir, outputBasename);
+    const basename = `${filename}${isDevBuild ? `` : `.min`}.css`;
+    const fullPath = resolve(outputDir, basename);
     const sassIndexFile = resolve(mdssSourceDir, "index.scss");
 
     const result = Sass.renderSync({
       file: sassIndexFile,
       includePaths: [resolve(themeDir), resolve(mdssThemeDir)],
       outputStyle: "expanded",
-      outFile: outputFile,
+      outFile: fullPath,
       sourceMap: true,
     });
 
     if (isDevBuild) {
-      logger.await(`Writing output file \`${outputBasename}\`...`);
-      await FsExtra.writeFile(outputFile, result.css);
-      logger.success(`Created \`${outputBasename}\`\n`);
+      logger.await(`Writing output file \`${basename}\`...`);
+      await FsExtra.writeFile(fullPath, result.css);
+      logger.success(`Created \`${basename}\`\n`);
 
-      logger.await(`Writing output file \`${outputBasename}.map\`...`);
-      await FsExtra.writeFile(outputFile + ".map", result.map);
-      logger.success(`Created \`${outputBasename}.map\`\n`);
+      logger.await(`Writing output file \`${basename}.map\`...`);
+      await FsExtra.writeFile(fullPath + ".map", result.map);
+      logger.success(`Created \`${basename}.map\`\n`);
     } else {
       const minified = Csso.minify(result.css);
-      logger.await(`Writing output file \`${outputBasename}\`...`);
-      await FsExtra.writeFile(outputFile, minified.css);
-      logger.success(`Created \`${outputBasename}\`\n`);
+      logger.await(`Writing output file \`${basename}\`...`);
+      await FsExtra.writeFile(fullPath, minified.css);
+      logger.success(`Created \`${basename}\`\n`);
     }
   } catch (err) {
     logger.error(`Could create output file.\n`, err);

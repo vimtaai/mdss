@@ -6,7 +6,12 @@ import FsExtra from "fs-extra";
 
 import { resolve } from "path";
 
-import { defaultThemeDir, defaultOutputDir, defaultConfigFile } from "./helpers/constants.js";
+import {
+  defaultConfigFile,
+  defaultThemeDir,
+  defaultOutputDir,
+  defaultFilename,
+} from "./helpers/constants.js";
 import { mdssThemeDir } from "./helpers/mdss-paths.js";
 
 const program = new Commander.Command();
@@ -16,6 +21,7 @@ program
   .option("-c --config-file [path]", "set config file path")
   .option("-t --theme-dir <path>", "set theme directory path")
   .option("-o --output-dir <path>", "set output directory path")
+  .option("-f --filename <name>", "set base filename")
   .option("-q --quiet", "omit console output")
   .parse(process.argv);
 
@@ -27,22 +33,25 @@ async function init(program) {
   const isConfigFileSet = program.configFile !== undefined;
   const isThemeDirSet = program.themeDir !== undefined;
   const isOutputDirSet = program.outputDir !== undefined;
+  const isFilenameSet = program.filename !== undefined;
   const isConfigFileUsed = isConfigFileSet || isThemeDirSet || isOutputDirSet;
 
   let configFile = typeof program.configFile === "string" ? program.configFile : defaultConfigFile;
   let themeDir = program.themeDir || defaultThemeDir;
   let outputDir = program.outputDir || defaultOutputDir;
+  let filename = program.filename || defaultFilename;
 
   if (isConfigFileUsed) {
-    logger.info(`Config file: ${configFile}\n`);
+    logger.info(`Config file:  ${configFile}\n`);
   }
   logger.info(`Theme dir:   ${themeDir}\n`);
   logger.info(`Output dir:  ${outputDir}\n`);
+  logger.info(`Filename:    ${filename}\n`);
 
   try {
     if (isConfigFileUsed) {
       logger.await(`Writing config file \`${configFile}\`...`);
-      const configFileData = { themeDir, outputDir };
+      const configFileData = { themeDir, outputDir, filename };
 
       await FsExtra.writeJson(configFile, configFileData, { spaces: 2 });
       logger.success(`Created \`${configFile}\`\n`);
