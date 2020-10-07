@@ -14,8 +14,8 @@
     "/dist"
   ],
   "scripts": {
-    "build": "node bin/mdss.js build --all --theme-dir src/theme --output-dir dist",
-    "build:dev": "node bin/mdss.js build --dev --all --theme-dir src/theme --output-dir dist",
+    "build": "node bin/mdss.js build --theme-dir src/theme --output-dir dist",
+    "build:dev": "node bin/mdss.js build --dev --theme-dir src/theme --output-dir dist",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build:dev\"",
     "prepare": "npm run build && npm run build:dev"
   },

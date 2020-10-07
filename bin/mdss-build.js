@@ -15,13 +15,9 @@ const program = new Commander.Command();
 const logger = new Signale.Signale({ scope: "mdss", interactive: true });
 
 program
-  .option("-c --config-file <path>", "path to the configuration file")
+  .option("-c --config-file [path]", "path to the config file")
   .option("-t --theme-dir <path>", "path to the theme directory")
   .option("-o --output-dir <path>", "path to the output directory")
-  .option("-s --screen", "generate print only stylesheet")
-  .option("-p --print", "generate print only stylesheet")
-  .option("-b --bundle", "generate bundled stylesheet for both media (default)")
-  .option("-a --all", "generate separate stylesheets for all media and bundle")
   .option("-d --dev", "genereate uncompressed, development stylesheets")
   .option("-q --quiet", "omit console output")
   .parse(process.argv);
@@ -31,108 +27,87 @@ async function build(program) {
     logger.disable();
   }
 
-  const configFile = program.configFile || defaultConfigFile;
-  const isDevBuild = program.dev || false;
-  const isOutputSelected = program.screen || program.print || program.bundle;
+  const isConfigFileSet = program.configFile !== undefined;
+  const isThemeDirSet = program.themeDir !== undefined;
+  const isOutputDirSet = program.outputDir !== undefined;
+  const isConfigFileUsed = isConfigFileSet;
 
-  const targets = {
-    screen: program.all || program.screen,
-    print: program.all || program.print,
-    bundle: program.all || program.bundle || !isOutputSelected,
-  };
-
+  let configFile = typeof program.configFile === "string" ? program.configFile : defaultConfigFile;
   let themeDir = program.themeDir || defaultThemeDir;
   let outputDir = program.outputDir || defaultOutputDir;
+  let isDevBuild = program.dev || false;
 
   try {
-    logger.await(`Checking for config file \`${configFile}\`...`);
-    const configFileExists = await FsExtra.pathExists(configFile);
-
-    if (configFileExists) {
+    if (isConfigFileUsed) {
       logger.await(`Reading config file \`${configFile}\`...`);
+      const configFileData = await FsExtra.readJson(configFile);
 
-      const configFileContents = await FsExtra.readFile(configFile, "utf-8");
-      const { themeDir, outputDir } = JSON.parse(configFileContents);
-
-      themeDir = themeDir; // ! TODO
-      outputDir = outputDir; // ! TODO
+      themeDir = configFileData.themeDir;
+      outputDir = configFileData.outputDir;
     }
   } catch (err) {
-    logger.error(`Could not read config file \`${configFile}\`.`, err);
+    logger.error(`Could not read config file \`${configFile}\`.\n`, err);
     return;
   }
 
-  logger.info(`Theme dir:\t ${themeDir}\n`);
-  logger.info(`Output dir:\t ${outputDir}\n`);
-  logger.info(
-    `Targets:\t\t ${Object.keys(targets)
-      .filter((target) => targets[target])
-      .join(", ")}\n`
-  ); // ! TODO
-  logger.info(`Dev Mode:\t\t ${isDevBuild}\n`);
+  if (isConfigFileUsed) {
+    logger.info(`Config file: ${configFile}\n`);
+  }
+  logger.info(`Theme dir:   ${themeDir}\n`);
+  logger.info(`Output dir:  ${outputDir}\n`);
+  logger.info(`Dev Mode:    ${isDevBuild}\n`);
 
   try {
-    logger.await(`Checking for theme dir...`);
+    logger.await(`Checking for theme dir \`${themeDir}\`...`);
     const themeDirExists = await FsExtra.pathExists(themeDir);
 
     if (!themeDirExists) {
-      throw new Error(`Theme dir not found`);
+      throw new Error();
     }
   } catch (err) {
-    logger.error(`Theme dir not found. Did you forget to run "mdss init"?.\n`, err);
+    logger.error(`Theme dir \`${themeDir}\` not found. Did you forget to run "mdss init"?\n`, err);
     return;
   }
 
   try {
-    logger.await(`Checking for output dir...`);
+    logger.await(`Creating output dir \`${outputDir}\`...`);
     await FsExtra.ensureDir(outputDir);
   } catch {
-    logger.error(`Could not create output dir \`${outputFile.dir}\`.\n`, err);
+    logger.error(`Could not create output dir \`${outputDir}\`.\n`, err);
     return;
   }
 
-  for (const target in targets) {
-    if (!targets[target]) {
-      continue;
+  try {
+    logger.await(`Generating output...`);
+    const outputBasename = `mdss${isDevBuild ? `` : `.min`}.css`;
+    const outputFile = resolve(outputDir, outputBasename);
+    const sassIndexFile = resolve(mdssSourceDir, "index.scss");
+
+    const result = Sass.renderSync({
+      file: sassIndexFile,
+      includePaths: [resolve(themeDir), resolve(mdssThemeDir)],
+      outputStyle: "expanded",
+      outFile: outputFile,
+      sourceMap: true,
+    });
+
+    if (isDevBuild) {
+      logger.await(`Writing output file \`${outputBasename}\`...`);
+      await FsExtra.writeFile(outputFile, result.css);
+      logger.success(`Created \`${outputBasename}\`\n`);
+
+      logger.await(`Writing output file \`${outputBasename}.map\`...`);
+      await FsExtra.writeFile(outputFile + ".map", result.map);
+      logger.success(`Created \`${outputBasename}.map\`\n`);
+    } else {
+      const minified = Csso.minify(result.css);
+      logger.await(`Writing output file \`${outputBasename}\`...`);
+      await FsExtra.writeFile(outputFile, minified.css);
+      logger.success(`Created \`${outputBasename}\`\n`);
     }
-
-    try {
-      logger.await(`Generating output...`);
-      const isBundleBuild = target === "bundle";
-      const outputBasenameSuffix = isBundleBuild ? `` : `-${target}`;
-      const outputBasename = `mdss${outputBasenameSuffix}${isDevBuild ? `` : `.min`}.css`;
-      const outputFile = resolve(outputDir, outputBasename);
-
-      const sassCode = `
-        $BUNDLE: ${isBundleBuild};
-        $MEDIA: ${isBundleBuild ? "screen print" : target};
-        @import "index";
-      `;
-
-      const result = Sass.renderSync({
-        data: sassCode,
-        includePaths: [resolve(themeDir), resolve(mdssSourceDir)],
-        outputStyle: "expanded",
-        outFile: outputFile,
-        sourceMap: true,
-      });
-
-      logger.await(`Writing output...`);
-
-      if (isDevBuild) {
-        await FsExtra.writeFile(outputFile, result.css);
-        logger.success(`Created ${outputBasename}.map\n`);
-        await FsExtra.writeFile(outputFile + ".map", result.map);
-      } else {
-        const minified = Csso.minify(result.css);
-        await FsExtra.writeFile(outputFile, minified.css);
-      }
-
-      logger.success(`Created ${outputBasename}\n`);
-    } catch (err) {
-      logger.error(`Could create output file for \`${target}\`.\n`, err);
-      return;
-    }
+  } catch (err) {
+    logger.error(`Could create output file.\n`, err);
+    return;
   }
 }
 
