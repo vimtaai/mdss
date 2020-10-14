@@ -33,9 +33,13 @@
 }
 
 @function contrast-color($background-color) {
+  @if $background-color == null {
+    @return null;
+  }
+
   $contrast: contrast($background-color, $color-text-light);
 
-  @if ($contrast >= 3.5) {
+  @if $contrast >= 3.5 {
     @return $color-text-light;
   } @else {
     @return $color-text-dark;
