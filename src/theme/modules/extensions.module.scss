@@ -12,15 +12,15 @@ $table-cell-padding-vertical          : $padding-300;
 $table-cell-padding-horizontal        : $padding-700;
 
 // Task list (unchecked, checked)
-$tasklist-background                  : $root-background,     $color-green-300;
-$tasklist-border-color                : $color-lightgray-700, $color-green-300;
-$tasklist-border-width                : $border-width-400,    null;
-$tasklist-rounding                    : $rounding-full,       null;
+$tasklist-background                  : $root-background     $color-green-300;
+$tasklist-border-color                : $color-lightgray-700 $color-green-300;
+$tasklist-border-width                : $border-width-400    null;
+$tasklist-rounding                    : $rounding-full       null;
 
 $tasklist-size                        : $size-300;
 
-$tasklist-check-color                 : null, $color-white;
-$tasklist-check-width                 : null, $border-width-400;
+$tasklist-check-color                 : null $color-white;
+$tasklist-check-width                 : null $border-width-400;
 
 // Syntax highlighting
 $syntax-highlighting-provider         : prism;
@@ -37,7 +37,7 @@ $syntax-highlighting-color-tags       : $color-blue-400;
 $syntax-highlighting-color-attributes : $color-green-400;
 $syntax-highlighting-color-link       : $color-green-400;
 
-$syntax-highlighting-wrap-languages   : "md", "markdown", "txt", "text";
+$syntax-highlighting-wrap-languages   : "md" "markdown" "txt" "text";
 
 // Definition lists
 $deflist-spacing-before               : $margin-400;

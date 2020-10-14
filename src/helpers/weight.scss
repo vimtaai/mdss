@@ -1,11 +1,13 @@
-$weight-levels: (
-  100: 1,
-  300: 2,
-  400: 3,
-  500: 4,
-  700: 5,
-);
+$weight-levels: 100, 300, 400, 500, 700;
 
 @function weight($token, $level) {
-  @return nth($token, map-get($weight-levels, $level));
+  @if $token == null or $level == null {
+    @return null;
+  }
+
+  @if $level == 0 {
+    @return 0;
+  }
+
+  @return nth($token, index($weight-levels, $level));
 }

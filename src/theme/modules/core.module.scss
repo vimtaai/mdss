@@ -1,86 +1,93 @@
-// Root typography
+/* Root element */
 $root-font-family              : $font-family-sans-serif;
 $root-font-size                : $font-size-400;
 $root-font-weight              : null;
-$root-font-color               : $color-text-dark;
-$root-line-height              : $line-height-400;
 
 $root-align                    : center;
+$root-line-height              : $line-height-400;
 $root-spacing-before           : 0;
 $root-spacing-after            : 0;
 $root-padding-x                : $padding-400;
 $root-padding-y                : $padding-400;
-$root-background               : $color-white;
 $root-border-width             : null;
-$root-border-color             : null;
 $root-rounding                 : null;
 
-// Paragraphs
+$root-font-color               : $color-text-dark;
+$root-background               : $color-white;
+$root-border-color             : null;
+
+/* Paragraphs */
 $paragraph-spacing-before      : $margin-400;
 $paragraph-spacing-after       : $margin-400;
+
 $paragraph-text-align          : left;
 
-// Emphases
+/* Emphases */
 $strong-font-weight            : $font-weight-700;
 
-// Headings (h1, [h2], [h3], [h4], [h5], [h6])
-$heading-font-family           : null,               null,                 null,             null,             null,              null;
-$heading-font-size             : $font-size-900,     $font-size-700,       $font-size-500,   $font-size-400,   $font-size-300,    $font-size-100;
-$heading-font-weight           : $font-weight-500,   $font-weight-500,     $font-weight-500, $font-weight-500, $font-weight-500,  $font-weight-500;
-$heading-font-color            : $color-primary-400, $color-secondary-400, null,             null,             null,              null;
-$heading-line-height           : null,               null,                 null,             null,             null,              null;
+/* Headings */
+//                               h1                 h2                   h3               h4               h5                h6
+$heading-font-family           : null               null                 null             null             null              null;
+$heading-font-size             : $font-size-900     $font-size-700       $font-size-500   $font-size-400   $font-size-300    $font-size-100;
+$heading-font-weight           : $font-weight-500   $font-weight-500     $font-weight-500 $font-weight-500 $font-weight-500  $font-weight-500;
 
-$heading-spacing-before        : 0,                  $margin-300,          $margin-100,      $margin-100,      null,              null;
-$heading-spacing-after         : $margin-500,        $margin-400,          $margin-300,      $margin-100,      null,              null;
-$heading-padding-x             : null,               null,                 null,             null,             null,              null;
-$heading-padding-y             : null,               null,                 null,             null,             null,              null;
-$heading-background            : null,               null,                 null,             null,             null,              null;
-$heading-border-width          : null,               null,                 null,             null,             null,              null;
-$heading-border-color          : null,               null,                 null,             null,             null,              null;
-$heading-rounding              : null,               null,                 null,             null,             null,              null;
+//                               h1                 h2                   h3               h4               h5                h6
+$heading-line-height           : null               null                 null             null             null              null;
+$heading-spacing-before        : 0                  $margin-300          $margin-100      $margin-100      null              null;
+$heading-spacing-after         : $margin-500        $margin-400          $margin-300      $margin-100      null              null;
+$heading-padding-x             : null               null                 null             null             null              null;
+$heading-padding-y             : null               null                 null             null             null              null;
+$heading-border-width          : null               null                 null             null             null              null;
+$heading-rounding              : null               null                 null             null             null              null;
 
-// Blockquote
+//                               h1                 h2                   h3               h4               h5                h6
+$heading-font-color            : $color-primary-400 $color-secondary-400 null             null             null              null;
+$heading-background            : null               null                 null             null             null              null;
+$heading-border-color          : null               null                 null             null             null              null;
+
+/* Blockquote */
 $quote-font-family             : null;
 $quote-font-size               : $font-size-500;
 $quote-font-weight             : null;
-$quote-font-color              : $color-secondary-400;
-$quote-line-height             : null;
 
+$quote-line-height             : null;
 $quote-spacing-before          : $margin-400;
 $quote-spacing-after           : $margin-400;
 $quote-padding-x               : null;
 $quote-padding-y               : null;
-$quote-background              : null;
-$quote-border-width            : null;
-$quote-border-color            : null;
-$quote-rounding                : null;
-
 $quote-indent                  : $padding-700;
+$quote-rounding                : null;
+$quote-border-width            : null;
 
-// Code blocks
+$quote-font-color              : $color-secondary-400;
+$quote-background              : null;
+$quote-border-color            : null;
+
+/* Code blocks */
 $code-block-font-family        : $font-family-monospace;
 $code-block-font-size          : $font-size-300;
-$code-block-font-color         : null;
-$code-block-line-height        : $line-height-300;
+$code-block-font-weight        : null;
 
+$code-block-line-height        : $line-height-300;
 $code-block-spacing-before     : $margin-400;
 $code-block-spacing-after      : $margin-400;
 $code-block-padding-x          : $padding-400;
 $code-block-padding-y          : $padding-300;
-$code-block-background         : $color-lightgray-100;
+$code-block-indent             : null;
 $code-block-border-width       : $border-width-300;
-$code-block-border-color       : $color-lightgray-400;
 $code-block-rounding           : $rounding-400;
 
-$code-block-indent             : null;
+$code-block-font-color         : null;
+$code-block-background         : $color-lightgray-100;
+$code-block-border-color       : $color-lightgray-400;
 
 // Lists
-$list-unordered-style          : square;
 $list-ordered-style            : numeric;
-$list-indent                   : $margin-700;
+$list-unordered-style          : square;
 
 $list-spacing-before           : $margin-400;
 $list-spacing-after            : $margin-400;
+$list-indent                   : $margin-700;
 
 $list-item-padding-x           : null;
 $list-item-padding-y           : $padding-100;
@@ -92,24 +99,26 @@ $thematic-break-height         : $border-width-500;
 
 $thematic-break-spacing-before : $margin-700;
 $thematic-break-spacing-after  : $margin-700;
-
 $thematic-break-rounding       : $rounding-400;
 
-// Links (base, hover, active)
-$link-font-family              : null,               null,               null;
-$link-font-size                : null,               null,               null;
-$link-font-weight              : $font-weight-700,   null,               null;
-$link-font-color               : $color-primary-400, $color-primary-300, $color-primary-500;
+// Links
+$link-font-family              : null;
+$link-font-size                : null;
+$link-font-weight              : $font-weight-700;
+
+//                               base,              hover,             active
+$link-font-color               : $color-primary-400 $color-primary-300 $color-primary-500;
 
 // Inline code
 $code-inline-font-family       : $font-family-monospace;
 $code-inline-font-size         : $font-size-smaller;
 $code-inline-font-weight       : null;
-$code-inline-font-color        : null;
 
 $code-inline-padding-x         : $padding-100;
 $code-inline-padding-y         : $padding-100;
-$code-inline-background        : $color-lightgray-100;
 $code-inline-border-width      : $border-width-300;
-$code-inline-border-color      : $color-lightgray-400;
 $code-inline-rounding          : $rounding-400;
+
+$code-inline-font-color        : null;
+$code-inline-background        : $color-lightgray-100;
+$code-inline-border-color      : $color-lightgray-400;

@@ -15,21 +15,21 @@ $utility-font-sizes        : (
   huge                     : $font-size-700
 );
 
-// Colors (base, hover, active)
+// Colors
 $utility-background-colors : (
-  primary                  : $color-primary,
-  secondary                : $color-secondary,
-  negative                 : $color-red,
-  positive                 : $color-green,
-  informative              : $color-blue
+  primary                  : $color-primary-400,
+  secondary                : $color-secondary-400,
+  negative                 : $color-red-400,
+  positive                 : $color-green-400,
+  informative              : $color-blue-400
 );
 
 $utility-text-colors       : (
-  primary                  : $color-primary,
-  secondary                : $color-secondary,
-  negative                 : $color-red,
-  positive                 : $color-green,
-  informative              : $color-blue
+  primary                  : $color-primary-500,
+  secondary                : $color-secondary-500,
+  negative                 : $color-red-500,
+  positive                 : $color-green-500,
+  informative              : $color-blue-500
 );
 
 // Roundings
@@ -37,5 +37,6 @@ $utility-roundings         : (
   small                    : $rounding-300,
   normal                   : $rounding-400,
   large                    : $rounding-500,
+  pill                     : $rounding-pill,
   full                     : $rounding-full
 );

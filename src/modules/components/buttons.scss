@@ -1,17 +1,17 @@
-.button,
-.button\:outline {
-  border: none;
-  background: none;
-
+button,
+.button {
   align-items: center;
+  background: none;
+  border: solid $button-border-width transparent;
   border-radius: $button-rounding;
   box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
   font-family: $component-font-family;
-  font-size: $font-size-300;
+  font-size: $button-font-size;
   font-weight: $component-font-weight;
-  min-height: $size-400;
+  line-height: $component-line-height;
+  height: $button-size;
   justify-content: center;
   padding: #{$button-padding-y} #{$button-padding-x};
   text-decoration: none;
@@ -19,80 +19,67 @@
 }
 
 .button {
-  @include border($button-border-width, $button-border-color);
-
-  background: weight($button-background, 400);
-  color: contrast-color(weight($button-background, 400));
+  background: nth($button-color, 1);
+  color: contrast-color(nth($button-color, 1));
 
   &:hover {
-    @include border($button-border-width, $button-border-color);
-
-    background: weight($button-background, 300);
-    border-radius: $button-rounding;
-    color: contrast-color(weight($button-background, 300));
+    background: nth($button-color, 2);
+    color: contrast-color(nth($button-color, 2));
   }
 
   &:active {
-    @include border($button-border-width, $button-border-color);
-
-    background: weight($button-background, 500);
-    border-radius: $button-rounding;
-    color: contrast-color(weight($button-background, 500));
-  }
-
-  @each $name, $color in $utility-background-colors {
-    &.background\:#{$name} {
-      background: weight($color, 400);
-      color: contrast-color(weight($color, 400));
-
-      &:hover {
-        background: weight($color, 300);
-        color: contrast-color(weight($color, 300));
-      }
-
-      &:active {
-        background: weight($color, 500);
-        color: contrast-color(weight($color, 500));
-      }
-    }
+    background: nth($button-color, 3);
+    color: contrast-color(nth($button-color, 3));
   }
 }
 
 .button\:outline {
+  @extend .button;
   @include border($button-border-width, $root-font-color);
-
+  background: none;
   color: $root-font-color;
 
   &:hover {
-    @include border($button-border-width, $root-font-color);
-
-    color: $root-font-color;
+    background: $root-font-color;
+    border: solid $button-border-width transparent;
+    color: contrast-color($root-font-color);
   }
+}
 
-  &:active {
-    @include border($button-border-width, $root-font-color);
+.button\:quiet {
+  @extend .button;
+  background: none;
+  color: $root-font-color;
+}
 
-    color: $root-font-color;
-  }
+@each $name, $color in $button-variants {
+  .button.color\:#{$name} {
+    background: nth($color, 1);
+    color: contrast-color(nth($color, 1));
 
-  @each $name, $color in $utility-background-colors {
-    &.background\:#{$name} {
-      @include border($button-border-width, weight($color, 400));
-
-      background: none;
-      color: weight($color, 400);
-
-      &:hover {
-        @include border($button-border-width, weight($color, 300));
-
-        color: weight($color, 300);
-      }
-
-      &:active {
-        @include border($button-border-width, weight($color, 500));
-
-        color: weight($color, 500);
-      }
+    &:hover {
+      background: nth($color, 2);
+      color: contrast-color(nth($color, 2));
     }
+
+    &:active {
+      background: nth($color, 3);
+      color: contrast-color(nth($color, 3));
+    }
+  }
+
+  .button\:outline.color\:#{$name} {
+    @include border($button-border-width, nth($color, 1));
+    background: none;
+    color: nth($color, 1);
+
+    &:hover {
+      border: solid $button-border-width transparent;
+    }
+  }
+
+  .button\:quiet.color\:#{$name} {
+    background: none;
+    color: nth($color, 1);
   }
 }

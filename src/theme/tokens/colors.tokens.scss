@@ -2,96 +2,83 @@
 $color-white         : #ffffff;
 $color-black         : #000000;
 
-$color-lightgray     : #f2f4f8, #e6eaf0, #dce1ea, #d2d9e5, #ccd3e1;
-$color-lightgray-100 : nth($color-lightgray, 1);
-$color-lightgray-300 : nth($color-lightgray, 2);
-$color-lightgray-400 : nth($color-lightgray, 3);
-$color-lightgray-500 : nth($color-lightgray, 4);
-$color-lightgray-700 : nth($color-lightgray, 5);
+$color-lightgray-100 : #f2f4f8;
+$color-lightgray-300 : #e6eaf0;
+$color-lightgray-400 : #dce1ea;
+$color-lightgray-500 : #d2d9e5;
+$color-lightgray-700 : #ccd3e1;
 
-$color-darkgray      : #344356, #2a3646, #232d39, #1b232d, #11161c;
-$color-darkgray-100  : nth($color-darkgray, 1);
-$color-darkgray-300  : nth($color-darkgray, 2);
-$color-darkgray-400  : nth($color-darkgray, 3);
-$color-darkgray-500  : nth($color-darkgray, 4);
-$color-darkgray-700  : nth($color-darkgray, 5);
+$color-darkgray-100  : #344356;
+$color-darkgray-300  : #2a3646;
+$color-darkgray-400  : #232d39;
+$color-darkgray-500  : #1b232d;
+$color-darkgray-700  : #11161c;
 
-$color-primary       : #f4c8c0, #df6248, #d54325, #bc3b21, #99301b;
-$color-primary-100   : nth($color-primary, 1);
-$color-primary-300   : nth($color-primary, 2);
-$color-primary-400   : nth($color-primary, 3);
-$color-primary-500   : nth($color-primary, 4);
-$color-primary-700   : nth($color-primary, 5);
+$color-primary-100   : #f4c8c0;
+$color-primary-300   : #df6248;
+$color-primary-400   : #d54325;
+$color-primary-500   : #bc3b21;
+$color-primary-700   : #99301b;
 
-$color-secondary     : #ebccc2, #c77257, #b85c3e, #a35137, #83422c;
-$color-secondary-100 : nth($color-secondary, 1);
-$color-secondary-300 : nth($color-secondary, 2);
-$color-secondary-400 : nth($color-secondary, 3);
-$color-secondary-500 : nth($color-secondary, 4);
-$color-secondary-700 : nth($color-secondary, 5);
+$color-secondary-100 : #ebccc2;
+$color-secondary-300 : #c77257;
+$color-secondary-400 : #b85c3e;
+$color-secondary-500 : #a35137;
+$color-secondary-700 : #83422c;
 
-$color-red           : #f5c7cb, #e25c66, #db3743, #ca2431, #a41d28;
-$color-red-100       : nth($color-red, 1);
-$color-red-300       : nth($color-red, 2);
-$color-red-400       : nth($color-red, 3);
-$color-red-500       : nth($color-red, 4);
-$color-red-700       : nth($color-red, 5);
+$color-red-100       : #f5c7cb;
+$color-red-300       : #e25c66;
+$color-red-400       : #db3743;
+$color-red-500       : #ca2431;
+$color-red-700       : #a41d28;
 
-$color-orange        : #f1cbaf, #d26d25, #b65f20, #a1541c, #824417;
-$color-orange-100    : nth($color-orange, 1);
-$color-orange-300    : nth($color-orange, 2);
-$color-orange-400    : nth($color-orange, 3);
-$color-orange-500    : nth($color-orange, 4);
-$color-orange-700    : nth($color-orange, 5);
+$color-orange-100    : #f1cbaf;
+$color-orange-300    : #d26d25;
+$color-orange-400    : #b65f20;
+$color-orange-500    : #a1541c;
+$color-orange-700    : #824417;
 
-$color-gold          : #ecd07b, #a88418, #927215, #806512, #68520f;
-$color-gold-100      : nth($color-gold, 1);
-$color-gold-300      : nth($color-gold, 2);
-$color-gold-400      : nth($color-gold, 3);
-$color-gold-500      : nth($color-gold, 4);
-$color-gold-700      : nth($color-gold, 5);
+$color-gold-100      : #ecd07b;
+$color-gold-300      : #a88418;
+$color-gold-400      : #927215;
+$color-gold-500      : #806512;
+$color-gold-700      : #68520f;
 
-$color-lime          : #c4de43, #7d9119, #6c7e16, #607014, #4d5910;
-$color-lime-100      : nth($color-lime, 1);
-$color-lime-300      : nth($color-lime, 2);
-$color-lime-400      : nth($color-lime, 3);
-$color-lime-500      : nth($color-lime, 4);
-$color-lime-700      : nth($color-lime, 5);
+$color-lime-100      : #c4de43;
+$color-lime-300      : #7d9119;
+$color-lime-400      : #6c7e16;
+$color-lime-500      : #607014;
+$color-lime-700      : #4d5910;
 
-$color-green         : #90e3ba, #279b62, #228754, #1e774b, #18613d;
-$color-green-100     : nth($color-green, 1);
-$color-green-300     : nth($color-green, 2);
-$color-green-400     : nth($color-green, 3);
-$color-green-500     : nth($color-green, 4);
-$color-green-700     : nth($color-green, 5);
+$color-green-100     : #90e3ba;
+$color-green-300     : #279b62;
+$color-green-400     : #228754;
+$color-green-500     : #1e774b;
+$color-green-700     : #18613d;
 
-$color-teal          : #87e1e1, #269797, #218383, #1d7474, #175e5e;
-$color-teal-100      : nth($color-teal, 1);
-$color-teal-300      : nth($color-teal, 2);
-$color-teal-400      : nth($color-teal, 3);
-$color-teal-500      : nth($color-teal, 4);
-$color-teal-700      : nth($color-teal, 5);
+$color-teal-100      : #87e1e1;
+$color-teal-300      : #269797;
+$color-teal-400      : #218383;
+$color-teal-500      : #1d7474;
+$color-teal-700      : #175e5e;
 
-$color-blue          : #b7d6f5, #348ce2, #1e77d0, #1a6ab8, #155695;
-$color-blue-100      : nth($color-blue, 1);
-$color-blue-300      : nth($color-blue, 2);
-$color-blue-400      : nth($color-blue, 3);
-$color-blue-500      : nth($color-blue, 4);
-$color-blue-700      : nth($color-blue, 5);
+$color-blue-100      : #b7d6f5;
+$color-blue-300      : #348ce2;
+$color-blue-400      : #1e77d0;
+$color-blue-500      : #1a6ab8;
+$color-blue-700      : #155695;
 
-$color-purple        : #d8cdee, #9679d2, #8563cb, #7852c5, #623bb1;
-$color-purple-100    : nth($color-purple, 1);
-$color-purple-300    : nth($color-purple, 2);
-$color-purple-400    : nth($color-purple, 3);
-$color-purple-500    : nth($color-purple, 4);
-$color-purple-700    : nth($color-purple, 5);
+$color-purple-100    : #d8cdee;
+$color-purple-300    : #9679d2;
+$color-purple-400    : #8563cb;
+$color-purple-500    : #7852c5;
+$color-purple-700    : #623bb1;
 
-$color-violet        : #f6c4e5, #e54ab1, #da1f9b, #c11c89, #9d1670;
-$color-violet-100    : nth($color-violet, 1);
-$color-violet-300    : nth($color-violet, 2);
-$color-violet-400    : nth($color-violet, 3);
-$color-violet-500    : nth($color-violet, 4);
-$color-violet-700    : nth($color-violet, 5);
+$color-violet-100    : #f6c4e5;
+$color-violet-300    : #e54ab1;
+$color-violet-400    : #da1f9b;
+$color-violet-500    : #c11c89;
+$color-violet-700    : #9d1670;
 
 // Semantic color tokens
 $color-text-dark     : $color-darkgray-400;

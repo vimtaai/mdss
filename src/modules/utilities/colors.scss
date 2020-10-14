@@ -1,12 +1,15 @@
+$components: "button, .button";
+$stateful-components: "button, .button";
+
 @each $name, $color in $utility-background-colors {
   .background\:#{$name} {
-    background: weight($color, 400);
-    color: contrast-color(weight($color, 400));
+    background: $color;
+    color: contrast-color($color);
   }
 }
 
 @each $name, $color in $utility-text-colors {
   .text\:#{$name} {
-    color: weight($color, 500);
+    color: $color;
   }
 }

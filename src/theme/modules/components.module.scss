@@ -1,17 +1,21 @@
 // Generic UI component settings
-$component-font-family  : $font-family-sans-serif;
-$component-font-weight  : $font-weight-500;
+$component-font-family   : $font-family-sans-serif;
+$component-font-weight   : $font-weight-500;
+$component-line-height   : $line-height-300;
 
-// Button
-$button-background       : $color-lightgray;
+// Button 
+$button-size             : $size-400;
+$button-font-size        : $font-size-400;
+
+$button-padding-x        : $padding-500;
+$button-padding-y        : 0;
 $button-border-width     : $border-width-400;
-$button-border-color     : null;
-$button-padding-x        : $padding-700;
-$button-padding-y        : $padding-500;
 $button-rounding         : $rounding-400;
 
-// Button sizes
-$button-sizes            : (
-  small                  : $size-300,
-  large                  : $size-500
+$button-color            : $color-lightgray-400 $color-lightgray-500 $color-lightgray-700;
+$button-variants         : (
+  primary                : $color-primary-400   $color-primary-500   $color-primary-700,
+  secondary              : $color-secondary-400 $color-secondary-500 $color-secondary-700,
+  negative               : $color-red-400       $color-red-500       $color-red-700,
+  positive               : $color-green-400     $color-green-500     $color-green-700,
 );
