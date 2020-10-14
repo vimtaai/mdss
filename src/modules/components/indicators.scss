@@ -1,0 +1,15 @@
+.indicator {
+  background: $indicator-color;
+  border: none;
+  border-radius: $indicator-rounding;
+  box-sizing: border-box;
+  display: inline-block;
+  height: $indicator-size;
+  width: $indicator-size;
+}
+
+@each $name, $color in $indicator-variants {
+  .indicator.color\:#{$name} {
+    background: $color;
+  }
+}

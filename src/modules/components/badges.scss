@@ -1,0 +1,24 @@
+.badge {
+  align-items: center;
+  background: $badge-color;
+  border: none;
+  border-radius: $badge-rounding;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  font-family: $component-font-family;
+  font-size: $badge-font-size;
+  font-weight: $component-font-weight;
+  line-height: $component-line-height;
+  height: $badge-size;
+  justify-content: center;
+  padding: #{$badge-padding-y} #{$badge-padding-x};
+  text-decoration: none;
+}
+
+@each $name, $color in $badge-variants {
+  .badge.color\:#{$name} {
+    background: $color;
+    color: contrast-color($color);
+  }
+}
