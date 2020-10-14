@@ -1,10 +1,15 @@
-// Floating
-$floated-margin-x          : $margin-400;
-$floated-margin-y          : $margin-400;
-
 // Columns
 $columns-max-count         : 6;
 $columns-gutter            : $margin-300;
+
+// Margins
+$utility-margins           : (
+  tiny                     : $margin-100,
+  small                    : $margin-300,
+  normal                   : $margin-400,
+  large                    : $margin-500,
+  huge                     : $margin-700
+);
 
 // Font sizes
 $utility-font-sizes        : (
