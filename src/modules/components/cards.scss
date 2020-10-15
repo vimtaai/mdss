@@ -2,5 +2,20 @@
   border: solid $card-border-width $card-border-color;
   border-radius: $card-rounding;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: #{$card-padding-y} #{$card-padding-x};
+}
+
+.card\:header {
+  order: -1;
+}
+
+.card\:content {
+  flex-grow: 1;
+}
+
+.card\:footer {
+  order: 1;
 }

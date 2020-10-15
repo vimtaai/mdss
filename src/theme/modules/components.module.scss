@@ -12,8 +12,10 @@ $button-padding-y        : 0;
 $button-border-width     : $border-width-400;
 $button-rounding         : $rounding-400;
 
+//                         base                 hover                active
 $button-color            : $color-lightgray-400 $color-lightgray-500 $color-lightgray-700;
 $button-variants         : (
+  //                       base                 hover                active
   primary                : $color-primary-400   $color-primary-500   $color-primary-700,
   secondary              : $color-secondary-400 $color-secondary-500 $color-secondary-700,
   negative               : $color-red-400       $color-red-500       $color-red-700,
