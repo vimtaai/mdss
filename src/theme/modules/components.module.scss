@@ -58,3 +58,11 @@ $indicator-variants      : (
   purple                 : $color-purple-400,
   violet                 : $color-violet-400
 );
+
+// Cards
+$card-padding-x          : $padding-400;
+$card-padding-y          : $padding-400;
+$card-border-width       : $border-width-300;
+$card-rounding           : $rounding-400;
+
+$card-border-color       : $color-lightgray-400;
