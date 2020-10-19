@@ -1,7 +1,6 @@
 pre {
-  @include border($code-block-border-width, $code-block-border-color);
-
   background: $code-block-background;
+  border: $code-block-border-style $code-block-border-width $code-block-border-color;
   border-radius: $code-block-rounding;
   line-height: $code-block-line-height;
   margin-top: $code-block-spacing-before;

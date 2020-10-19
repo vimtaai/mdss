@@ -5,26 +5,28 @@ ul {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: #{$tasklist-size * 0.15 + $list-item-padding-y};
+    top: #{$tasklist-size * 0.1 + $list-item-padding-y};
     width: 0;
 
     // Box
     &::before {
       content: "";
       background: nth($tasklist-background, 1);
-      border: solid #{nth($tasklist-border-color, 1)} #{nth($tasklist-border-width, 1)};
+      border: nth($tasklist-border-style, 1) nth($tasklist-border-color, 1)
+        nth($tasklist-border-width, 1);
       border-radius: nth($tasklist-rounding, 1);
       box-sizing: border-box;
       display: block;
-      transition: background-color #{$transition-duration} #{$transition-easing},
-        border-color #{$transition-duration} #{$transition-easing};
+      transition: background-color $transition-duration $transition-easing,
+        border-color $transition-duration $transition-easing;
       height: $tasklist-size;
       width: $tasklist-size;
     }
 
     &:checked::before {
       background: nth($tasklist-background, 2);
-      border: solid #{nth($tasklist-border-color, 2)} #{nth($tasklist-border-width, 2)};
+      border: nth($tasklist-border-style, 2) nth($tasklist-border-color, 2)
+        nth($tasklist-border-width, 2);
       border-radius: nth($tasklist-rounding, 2);
     }
 

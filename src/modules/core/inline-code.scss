@@ -1,7 +1,6 @@
 :not(pre) > code {
-  @include border($code-inline-border-width, $code-inline-border-color);
-
   background: $code-inline-background;
+  border: $code-inline-border-style $code-inline-border-width $code-inline-border-color;
   border-radius: $code-inline-rounding;
   color: $code-inline-font-color;
   font-family: $code-inline-font-family;

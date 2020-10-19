@@ -1,7 +1,6 @@
 blockquote {
-  @include border($quote-border-width, $quote-border-color);
-
   background: $quote-background;
+  border: $quote-border-style $quote-border-width $quote-border-color;
   border-radius: $quote-rounding;
   color: $quote-font-color;
   font-family: $quote-font-family;

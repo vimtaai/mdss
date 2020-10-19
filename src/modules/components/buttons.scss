@@ -35,13 +35,13 @@ button,
 
 .button\:outline {
   @extend .button;
-  @include border($button-border-width, $root-font-color);
   background: none;
+  border: $button-border-style $button-border-width $root-font-color;
   color: $root-font-color;
 
   &:hover {
     background: $root-font-color;
-    border: solid $button-border-width transparent;
+    border: $button-border-style $button-border-width transparent;
     color: contrast-color($root-font-color);
   }
 }
@@ -69,12 +69,12 @@ button,
   }
 
   .button\:outline.color\:#{$name} {
-    @include border($button-border-width, nth($color, 1));
     background: none;
+    border: $button-border-style $button-border-width nth($color, 1);
     color: nth($color, 1);
 
     &:hover {
-      border: solid $button-border-width transparent;
+      border: $button-border-style $button-border-width transparent;
     }
   }
 

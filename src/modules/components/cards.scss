@@ -1,5 +1,5 @@
 .card {
-  border: solid $card-border-width $card-border-color;
+  border: $card-border-style $card-border-width $card-border-color;
   border-radius: $card-rounding;
   box-sizing: border-box;
   display: flex;

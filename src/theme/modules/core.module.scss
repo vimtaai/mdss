@@ -10,6 +10,7 @@ $root-spacing-after            : 0;
 $root-padding-x                : $padding-400;
 $root-padding-y                : $padding-400;
 $root-border-width             : null;
+$root-border-style             : null;
 $root-rounding                 : null;
 
 $root-font-color               : $color-text-dark;
@@ -38,6 +39,7 @@ $heading-spacing-after         : $margin-500        $margin-400          $margin
 $heading-padding-x             : null               null                 null             null             null              null;
 $heading-padding-y             : null               null                 null             null             null              null;
 $heading-border-width          : null               null                 null             null             null              null;
+$heading-border-style          : null               null                 null             null             null              null;
 $heading-rounding              : null               null                 null             null             null              null;
 
 //                               h1                 h2                   h3               h4               h5                h6
@@ -56,8 +58,9 @@ $quote-spacing-after           : $margin-400;
 $quote-padding-x               : null;
 $quote-padding-y               : null;
 $quote-indent                  : $padding-700;
-$quote-rounding                : null;
 $quote-border-width            : null;
+$quote-border-style            : null;
+$quote-rounding                : null;
 
 $quote-font-color              : $color-secondary-400;
 $quote-background              : null;
@@ -75,6 +78,7 @@ $code-block-padding-x          : $padding-400;
 $code-block-padding-y          : $padding-300;
 $code-block-indent             : null;
 $code-block-border-width       : $border-width-300;
+$code-block-border-style       : $border-style-solid;
 $code-block-rounding           : $rounding-400;
 
 $code-block-font-color         : null;
@@ -117,6 +121,7 @@ $code-inline-font-weight       : null;
 $code-inline-padding-x         : $padding-100;
 $code-inline-padding-y         : $padding-100;
 $code-inline-border-width      : $border-width-300;
+$code-inline-border-style      : $border-style-solid;
 $code-inline-rounding          : $rounding-400;
 
 $code-inline-font-color        : null;

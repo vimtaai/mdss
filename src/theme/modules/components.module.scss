@@ -10,6 +10,7 @@ $button-font-size        : $font-size-400;
 $button-padding-x        : $padding-500;
 $button-padding-y        : 0;
 $button-border-width     : $border-width-400;
+$button-border-style     : $border-style-solid;
 $button-rounding         : $rounding-400;
 
 //                         base                 hover                active
@@ -27,7 +28,9 @@ $badge-size              : $size-300;
 $badge-font-size         : $font-size-300;
 
 $badge-padding-x         : $padding-300;
-$badge-padding-y         : 0;
+$badge-padding-y         : null;
+$badge-border-width      : null;
+$badge-border-style      : null;
 $badge-rounding          : $rounding-400;
 
 $badge-color             : $color-lightgray-400;
@@ -46,6 +49,8 @@ $badge-variants          : (
 // Indicators
 $indicator-size          : $size-100;
 
+$indicator-border-width  : null;
+$indicator-border-style  : null;
 $indicator-rounding      : $rounding-full;
 
 $indicator-color         : $color-lightgray-700;
@@ -65,6 +70,7 @@ $indicator-variants      : (
 $card-padding-x          : $padding-400;
 $card-padding-y          : $padding-400;
 $card-border-width       : $border-width-300;
+$card-border-style       : $border-style-solid;
 $card-rounding           : $rounding-400;
 
 $card-border-color       : $color-lightgray-400;

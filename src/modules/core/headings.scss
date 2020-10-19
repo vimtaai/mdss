@@ -1,8 +1,9 @@
 @for $level from 1 through 6 {
   h#{$level} {
-    @include border(nth($heading-border-width, $level), nth($heading-border-color, $level));
-
     background: nth($heading-background, $level);
+    border: nth($heading-border-style, $level)
+      nth($heading-border-width, $level)
+      nth($heading-border-color, $level);
     border-radius: nth($heading-rounding, $level);
     color: nth($heading-font-color, $level);
     font-family: nth($heading-font-family, $level);

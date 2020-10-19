@@ -1,13 +1,17 @@
 // Static border width tokens
-$border-width-300 : 1px;
-$border-width-400 : 2px;
-$border-width-500 : 3px;
+$border-width-300    : 1px;
+$border-width-400    : 2px;
+$border-width-500    : 3px;
+
+// Static border style tokens
+$border-style-solid  : solid;
+$border-style-dotted : dotted;
 
 // Static border radius tokens
-$rounding-300     : 2px;
-$rounding-400     : 4px;
-$rounding-500     : 6px;
+$rounding-300        : 2px;
+$rounding-400        : 4px;
+$rounding-500        : 6px;
 
 // Semantic border radius tokens
-$rounding-full    : 50%;
-$rounding-pill    : 9999px;
+$rounding-full       : 50%;
+$rounding-pill       : 9999px;

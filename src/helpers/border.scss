@@ -1,5 +1,0 @@
-@mixin border($width, $color) {
-  @if $width and $color {
-    border: solid #{$width} #{$color};
-  }
-}
