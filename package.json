@@ -23,10 +23,10 @@
     "commander": "^6.1.0",
     "csso": "^4.0.3",
     "fs-extra": "^9.0.1",
-    "sass": "^1.26.10",
+    "sass": "^1.27.0",
     "signale": "^1.4.0"
   },
   "devDependencies": {
-    "chokidar": "^3.4.2"
+    "chokidar": "^3.4.3"
   }
 }
