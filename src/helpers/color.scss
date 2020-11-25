@@ -1,0 +1,40 @@
+@function contrast($color1, $color2) {
+  @if luminance($color1) > luminance($color2) {
+    @return (luminance($color1) + 0.05) / (luminance($color2) + 0.05);
+  } @else {
+    @return (luminance($color2) + 0.05) / (luminance($color1) + 0.05);
+  }
+}
+
+@function contrast-color($background-color) {
+  @if $background-color == null {
+    @return null;
+  }
+
+  $contrast: contrast($background-color, $color-text-light);
+
+  @if $contrast >= 3 {
+    @return $color-text-light;
+  } @else {
+    @return $color-text-dark;
+  }
+}
+
+@function scale-color-contrast($color, $contrast-level, $background: $color-background) {
+  $scaled-color: $color;
+  $scale-step: 5%;
+
+  @if lightness($background) > 50% {
+    $scale-step: -5%;
+  }
+
+  @while contrast($scaled-color, $background) < $contrast-level {
+    $scaled-color: scale-color(
+      $scaled-color,
+      $lightness: $scale-step,
+      $saturation: $scale-step / 2
+    );
+  }
+
+  @return $scaled-color;
+}

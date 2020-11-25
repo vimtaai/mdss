@@ -1,47 +1,47 @@
 // Columns
 $columns-max-count         : 6;
-$columns-gutter            : $margin-300;
+$columns-gutter            : weight($spacing-gutter, 300);
 
 // Margins
 $utility-margins           : (
-  tiny                     : $margin-100,
-  small                    : $margin-300,
-  normal                   : $margin-400,
-  large                    : $margin-500,
-  huge                     : $margin-700
+  tiny                     : weight($spacing-stacking, 100),
+  small                    : weight($spacing-stacking, 300),
+  normal                   : weight($spacing-stacking, 400),
+  large                    : weight($spacing-stacking, 500),
+  huge                     : weight($spacing-stacking, 700)
 );
 
 // Font sizes
 $utility-font-sizes        : (
-  tiny                     : $font-size-100,
-  small                    : $font-size-300,
-  normal                   : $font-size-400,
-  large                    : $font-size-500,
-  huge                     : $font-size-700
+  tiny                     : weight($font-size-body, 100),
+  small                    : weight($font-size-body, 300),
+  normal                   : weight($font-size-body, 400),
+  large                    : weight($font-size-body, 500),
+  huge                     : weight($font-size-body, 700)
 );
 
 // Colors
 $utility-background-colors : (
-  primary                  : $color-primary-400,
-  secondary                : $color-secondary-400,
-  negative                 : $color-red-400,
-  positive                 : $color-green-400,
-  informative              : $color-blue-400
+  primary                  : weight($color-primary, 400),
+  secondary                : weight($color-secondary, 400),
+  negative                 : weight($color-red, 400),
+  positive                 : weight($color-green, 400),
+  informative              : weight($color-blue, 400)
 );
 
 $utility-text-colors       : (
-  primary                  : $color-primary-500,
-  secondary                : $color-secondary-500,
-  negative                 : $color-red-500,
-  positive                 : $color-green-500,
-  informative              : $color-blue-500
+  primary                  : weight($color-primary, 500),
+  secondary                : weight($color-secondary, 500),
+  negative                 : weight($color-red, 500),
+  positive                 : weight($color-green, 500),
+  informative              : weight($color-blue, 500)
 );
 
 // Roundings
 $utility-roundings         : (
-  small                    : $rounding-300,
-  normal                   : $rounding-400,
-  large                    : $rounding-500,
+  small                    : weight($rounding, 300),
+  normal                   : weight($rounding, 400),
+  large                    : weight($rounding, 500),
   pill                     : $rounding-pill,
   full                     : $rounding-full
 );

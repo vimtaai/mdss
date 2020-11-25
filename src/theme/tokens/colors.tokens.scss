@@ -1,85 +1,26 @@
-// Static color tokens
-$color-white         : #ffffff;
-$color-black         : #000000;
+/* Color base values */
+//                  base       step
+$color-lightgray  : #eff1f5  20%;
+$color-darkgray   : #232d39  20%;
+$color-primary    : #d54325  20%;
+$color-secondary  : #b85c3e  20%;
+$color-red        : #db3743  20%;
+$color-orange     : #da7126  20%;
+$color-gold       : #d3a829  20%;
+$color-lime       : #a7c028  20%;
+$color-green      : #349464  20%;
+$color-teal       : #2da0a0  20%;
+$color-blue       : #1e77d0  20%;
+$color-purple     : #7e59c9  20%;
+$color-violet     : #da1f9b  20%;
+$color-negative   : $color-red;
+$color-positive   : $color-green;
+$color-informative: $color-blue;
+$color-notice     : $color-orange;
 
-$color-lightgray-100 : #f2f4f8;
-$color-lightgray-300 : #e6eaf0;
-$color-lightgray-400 : #dce1ea;
-$color-lightgray-500 : #d2d9e5;
-$color-lightgray-700 : #ccd3e1;
-
-$color-darkgray-100  : #344356;
-$color-darkgray-300  : #2a3646;
-$color-darkgray-400  : #232d39;
-$color-darkgray-500  : #1b232d;
-$color-darkgray-700  : #11161c;
-
-$color-primary-100   : #f4c8c0;
-$color-primary-300   : #df6248;
-$color-primary-400   : #d54325;
-$color-primary-500   : #bc3b21;
-$color-primary-700   : #99301b;
-
-$color-secondary-100 : #ebccc2;
-$color-secondary-300 : #c77257;
-$color-secondary-400 : #b85c3e;
-$color-secondary-500 : #a35137;
-$color-secondary-700 : #83422c;
-
-$color-red-100       : #f5c7cb;
-$color-red-300       : #e25c66;
-$color-red-400       : #db3743;
-$color-red-500       : #ca2431;
-$color-red-700       : #a41d28;
-
-$color-orange-100    : #f1cbaf;
-$color-orange-300    : #d26d25;
-$color-orange-400    : #b65f20;
-$color-orange-500    : #a1541c;
-$color-orange-700    : #824417;
-
-$color-gold-100      : #ecd07b;
-$color-gold-300      : #a88418;
-$color-gold-400      : #927215;
-$color-gold-500      : #806512;
-$color-gold-700      : #68520f;
-
-$color-lime-100      : #c4de43;
-$color-lime-300      : #7d9119;
-$color-lime-400      : #6c7e16;
-$color-lime-500      : #607014;
-$color-lime-700      : #4d5910;
-
-$color-green-100     : #90e3ba;
-$color-green-300     : #279b62;
-$color-green-400     : #228754;
-$color-green-500     : #1e774b;
-$color-green-700     : #18613d;
-
-$color-teal-100      : #87e1e1;
-$color-teal-300      : #269797;
-$color-teal-400      : #218383;
-$color-teal-500      : #1d7474;
-$color-teal-700      : #175e5e;
-
-$color-blue-100      : #b7d6f5;
-$color-blue-300      : #348ce2;
-$color-blue-400      : #1e77d0;
-$color-blue-500      : #1a6ab8;
-$color-blue-700      : #155695;
-
-$color-purple-100    : #d8cdee;
-$color-purple-300    : #9679d2;
-$color-purple-400    : #8563cb;
-$color-purple-500    : #7852c5;
-$color-purple-700    : #623bb1;
-
-$color-violet-100    : #f6c4e5;
-$color-violet-300    : #e54ab1;
-$color-violet-400    : #da1f9b;
-$color-violet-500    : #c11c89;
-$color-violet-700    : #9d1670;
-
-// Semantic color tokens
-$color-text-dark     : $color-darkgray-400;
-$color-text-light    : $color-white;
+/* Color static tokens */
+$color-white      : #ffffff;
+$color-black      : #000000;
+$color-background : $color-white;
+$color-text-light : $color-white;
+$color-text-dark  : weight($color-darkgray, 400);

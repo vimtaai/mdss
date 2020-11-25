@@ -1,4 +1,5 @@
 @import "helpers/align";
+@import "helpers/color";
 @import "helpers/luminance";
 @import "helpers/math";
 @import "helpers/media";
@@ -14,8 +15,8 @@
 }
 
 @import "theme/tokens/colors.tokens";
-@import "theme/tokens/sizes.tokens";
 @import "theme/tokens/typography.tokens";
+@import "theme/tokens/spacing.tokens";
 @import "theme/tokens/objects.tokens";
 
 @import "theme/modules/core.module";

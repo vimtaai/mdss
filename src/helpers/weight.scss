@@ -1,13 +1,19 @@
-$weight-levels: 100, 300, 400, 500, 700;
-
-@function weight($token, $level) {
-  @if $token == null or $level == null {
-    @return null;
+@function weight($token, $level: 400) {
+  @if length($token) != 2 {
+    @error "Trying to get weighted value on a non-scalable value.";
   }
 
-  @if $level == 0 {
-    @return 0;
-  }
+  $base-value: nth($token, 1);
+  $step-value: nth($token, 2);
+  $step-multiplier: ($level - 400) / 100;
+  $adjust-amount: $step-value * $step-multiplier;
 
-  @return nth($token, index($weight-levels, $level));
+  @if (type-of($base-value) == color) {
+    // $target-contrast: contrast($base-value, $color-background) - ($step-value * $step-multiplier);
+    // @return scale-color-contrast($base-value, $target-contrast);
+
+    @return scale-color($base-value, $lightness: -$adjust-amount);
+  } @else {
+    @return $base-value + $adjust-amount;
+  }
 }

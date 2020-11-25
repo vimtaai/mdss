@@ -1,27 +1,21 @@
-// Static font families
+/* Font family static tokens */
 $font-family-sans-serif : #{"Barlow", sans-serif};
 $font-family-monospace  : #{"Hack", monospace};
 
-// Static font size tokens
-$font-size-100          : 10px;
-$font-size-300          : 14px;
-$font-size-400          : 16px;
-$font-size-500          : 18px;
-$font-size-700          : 22px;
-$font-size-900          : 28px;
+/* Font size base and step values */
+//                        base  step
+$font-size-body         : 16px  2px; // 10 12 14 16 18 20 22 24 26 28
+$font-size-heading      : 18px  2px; // 12 14 16 18 20 22 24 26 28 30
+$font-size-ui           : 14px  2px; // 8  10 12 14 16 18 20 22 24 26
 
-// Semantic font size tokens
+/* Font size static tokens */
 $font-size-smaller      : 0.85em;
 $font-size-larger       : 1.15em;
 
-// Static font weight tokens
-$font-weight-100        : 100;
-$font-weight-300        : 300;
-$font-weight-400        : 400;
-$font-weight-500        : 500;
-$font-weight-700        : 700;
+/* Line height base and step values */
+//                        base  step
+$line-height-body       : 1.75  0.25; // 1.00 1.25 1.50 1.75 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75
+$line-height-heading    : 1.25  0.25; // 0.50 0.75 1.00 1.25 1.50 1.75 2.00 2.25 2.50 2.75 3.00 3.25
+$line-height-ui         : 1.5   0.25; // 0.75 1.00 1.25 1.50 1.75 2.00 2.25 2.50 2.75 3.00 3.25 3.50
 
-// Static line height tokens
-$line-height-300        : 1.5;
-$line-height-400        : 1.75;
-$line-height-500        : 2;
+/* Line height static tokens */

@@ -23,25 +23,3 @@
 
   @return $R * 0.2126 + $G * 0.7152 + $B * 0.0722;
 }
-
-@function contrast($color1, $color2) {
-  @if luminance($color1) > luminance($color2) {
-    @return (luminance($color1) + 0.05) / (luminance($color2) + 0.05);
-  } @else {
-    @return (luminance($color2) + 0.05) / (luminance($color1) + 0.05);
-  }
-}
-
-@function contrast-color($background-color) {
-  @if $background-color == null {
-    @return null;
-  }
-
-  $contrast: contrast($background-color, $color-text-light);
-
-  @if $contrast >= 3.5 {
-    @return $color-text-light;
-  } @else {
-    @return $color-text-dark;
-  }
-}
