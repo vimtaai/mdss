@@ -7,8 +7,8 @@ $component-line-height   : weight($line-height-ui, 300);
 $button-size             : weight($object-size, 400);
 $button-font-size        : weight($font-size-ui, 400);
 
-$button-padding-x        : weight($spacing-inset, 700);
-$button-padding-y        : weight($spacing-inset, 500);
+$button-padding-x        : weight($spacing-inset, 500);
+$button-padding-y        : weight($spacing-inset, 400);
 $button-border-width     : weight($border-width, 400);
 $button-border-style     : solid;
 $button-rounding         : weight($rounding, 400);
@@ -27,7 +27,7 @@ $button-variants         : (
 $badge-size              : weight($object-size, 300);
 $badge-font-size         : weight($font-size-ui, 300);
 
-$badge-padding-x         : weight($spacing-inset, 400);
+$badge-padding-x         : weight($spacing-inset, 300);
 $badge-padding-y         : null;
 $badge-border-width      : null;
 $badge-border-style      : null;
@@ -53,7 +53,7 @@ $indicator-border-width  : null;
 $indicator-border-style  : null;
 $indicator-rounding      : $rounding-full;
 
-$indicator-color         : weight($color-lightgray, 700);
+$indicator-color         : weight($color-lightgray, 500);
 $indicator-variants      : (
   "red"                  : weight($color-red, 400),
   "orange"               : weight($color-orange, 400),
@@ -67,8 +67,8 @@ $indicator-variants      : (
 );
 
 // Cards
-$card-padding-x          : weight($spacing-inset, 700);
-$card-padding-y          : weight($spacing-inset, 700);
+$card-padding-x          : weight($spacing-inset, 300);
+$card-padding-y          : weight($spacing-inset, 400);
 $card-border-width       : weight($border-width, 300);
 $card-border-style       : solid;
 $card-rounding           : weight($rounding, 400);
