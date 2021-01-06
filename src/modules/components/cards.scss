@@ -1,11 +1,11 @@
 .card {
-  border: $card-border-style $card-border-width $card-border-color;
-  border-radius: $card-rounding;
+  border: _($card-border);
+  border-radius: _($card-rounding);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: #{$card-padding-y} #{$card-padding-x};
+  padding: _($card-spacing-inset);
 }
 
 .card\:header {

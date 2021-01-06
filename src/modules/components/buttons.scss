@@ -2,84 +2,84 @@ button,
 .button {
   align-items: center;
   background: none;
-  border: solid $button-border-width transparent;
-  border-radius: $button-rounding;
+  border: _($button-border);
+  border-radius: _($button-rounding);
   box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
-  font-family: $component-font-family;
-  font-size: $button-font-size;
-  font-weight: $component-font-weight;
-  line-height: $component-line-height;
-  height: $button-size;
+  font-family: _($component-font-family);
+  font-size: _($button-font-size);
+  font-weight: _($component-font-weight);
+  line-height: _($component-line-height);
+  height: _($button-size);
   justify-content: center;
-  padding: #{$button-padding-y} #{$button-padding-x};
+  padding: _($button-spacing-inset);
   text-decoration: none;
-  transition: all #{$transition-duration} #{$transition-easing};
+  transition: all _($transition-duration) _($transition-easing);
 }
 
 .button {
-  background: nth($button-color, 1);
-  color: contrast-color(nth($button-color, 1));
+  background: _(map-get($button-variants, "default"), "default");
+  color: contrast-color(_(map-get($button-variants, "default"), "default"));
 
   &:hover {
-    background: nth($button-color, 2);
-    color: contrast-color(nth($button-color, 2));
+    background: _(map-get($button-variants, "default"), "hover");
+    color: contrast-color(_(map-get($button-variants, "default"), "hover"));
   }
 
   &:active {
-    background: nth($button-color, 3);
-    color: contrast-color(nth($button-color, 3));
+    background: _(map-get($button-variants, "default"), "active");
+    color: contrast-color(_(map-get($button-variants, "default"), "active"));
   }
 }
 
 .button\:outline {
   @extend .button;
   background: none;
-  border: $button-border-style $button-border-width $root-font-color;
-  color: $root-font-color;
+  border-color: _($root-font-color);
+  color: _($root-font-color);
 
   &:hover {
-    background: $root-font-color;
-    border: $button-border-style $button-border-width transparent;
-    color: contrast-color($root-font-color);
+    background: _($root-font-color);
+    border-color: transparent;
+    color: contrast-color(_($root-font-color));
   }
 }
 
 .button\:quiet {
   @extend .button;
   background: none;
-  color: $root-font-color;
+  color: _($root-font-color);
 }
 
-@each $name, $color in $button-variants {
+@each $name, $color in map-remove($button-variants, "default") {
   .button.color\:#{$name} {
-    background: nth($color, 1);
-    color: contrast-color(nth($color, 1));
+    background: _($color, "default");
+    color: contrast-color(_($color, "default"));
 
     &:hover {
-      background: nth($color, 2);
-      color: contrast-color(nth($color, 2));
+      background: _($color, "hover");
+      color: contrast-color(_($color, "hover"));
     }
 
     &:active {
-      background: nth($color, 3);
-      color: contrast-color(nth($color, 3));
+      background: _($color, "active");
+      color: contrast-color(_($color, "active"));
     }
   }
 
   .button\:outline.color\:#{$name} {
     background: none;
-    border: $button-border-style $button-border-width nth($color, 1);
-    color: nth($color, 1);
+    border-color: _($color, "default");
+    color: _($color, "default");
 
     &:hover {
-      border: $button-border-style $button-border-width transparent;
+      border-color: transparent;
     }
   }
 
   .button\:quiet.color\:#{$name} {
     background: none;
-    color: nth($color, 1);
+    color: _($color, "default");
   }
 }

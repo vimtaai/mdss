@@ -1,17 +1,16 @@
 @for $level from 1 through 6 {
   h#{$level} {
-    background: nth($heading-background, $level);
-    border: nth($heading-border-style, $level)
-      nth($heading-border-width, $level)
-      nth($heading-border-color, $level);
-    border-radius: nth($heading-rounding, $level);
-    color: nth($heading-font-color, $level);
-    font-family: nth($heading-font-family, $level);
-    font-size: nth($heading-font-size, $level);
-    font-weight: nth($heading-font-weight, $level);
-    line-height: nth($heading-line-height, $level);
-    margin-top: nth($heading-spacing-before, $level);
-    margin-bottom: nth($heading-spacing-after, $level);
-    padding: #{nth($heading-padding-y, $level)} #{nth($heading-padding-x, $level)};
+    background: _(nth-if($heading-background, $level));
+    border: _(nth-if($heading-border, $level));
+    border-radius: _(nth-if($heading-rounding, $level));
+    color: _(nth-if($heading-font-color, $level));
+    font-family: _(nth-if($heading-font-family, $level));
+    font-size: _(nth-if($heading-font-size, $level));
+    font-style: _(nth-if($heading-font-style, $level));
+    font-weight: _(nth-if($heading-font-weight, $level));
+    line-height: _(nth-if($heading-line-height, $level));
+    margin-bottom: _(nth-if($heading-spacing-after, $level));
+    margin-top: _(nth-if($heading-spacing-before, $level));
+    padding: _(nth-if($heading-spacing-inset, $level));
   }
 }

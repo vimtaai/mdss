@@ -1,31 +1,31 @@
 @each $name, $margin in $utility-margins {
   .margin\:#{$name} {
-    margin: $margin;
+    margin: _($margin);
   }
 
   .margin\:vertical\:#{$name} {
-    margin-top: $margin;
-    margin-bottom: $margin;
+    margin-top: _($margin);
+    margin-bottom: _($margin);
   }
 
   .margin\:horizontal\:#{$name} {
-    margin-left: $margin;
-    margin-right: $margin;
+    margin-left: _($margin);
+    margin-right: _($margin);
   }
 
   .margin\:left\:#{$name} {
-    margin-left: $margin;
+    margin-left: _($margin);
   }
 
   .margin\:right\:#{$name} {
-    margin-right: $margin;
+    margin-right: _($margin);
   }
 
   .margin\:top\:#{$name} {
-    margin-top: $margin;
+    margin-top: _($margin);
   }
 
   .margin\:bottom\:#{$name} {
-    margin-bottom: $margin;
+    margin-bottom: _($margin);
   }
 }

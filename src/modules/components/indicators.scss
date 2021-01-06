@@ -1,15 +1,15 @@
 .indicator {
-  background: $indicator-color;
+  background: _(map-get($indicator-variants, "default"));
   border: none;
-  border-radius: $indicator-rounding;
+  border-radius: _($indicator-rounding);
   box-sizing: border-box;
   display: inline-block;
-  height: $indicator-size;
-  width: $indicator-size;
+  height: _($indicator-size);
+  width: _($indicator-size);
 }
 
 @each $name, $color in $indicator-variants {
   .indicator.color\:#{$name} {
-    background: $color;
+    background: _($color);
   }
 }

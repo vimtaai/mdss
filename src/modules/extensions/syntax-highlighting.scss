@@ -71,51 +71,51 @@ pre {
 
   code {
     #{map-get($selectors, comments)} {
-      color: $syntax-highlighting-color-comments;
+      color: _($syntax-highlighting-color-comments);
     }
 
     #{map-get($selectors, keywords)} {
-      color: $syntax-highlighting-color-keywords;
+      color: _($syntax-highlighting-color-keywords);
     }
 
     #{map-get($selectors, literals)} {
-      color: $syntax-highlighting-color-literals;
+      color: _($syntax-highlighting-color-literals);
     }
 
     #{map-get($selectors, strings)} {
-      color: $syntax-highlighting-color-strings;
+      color: _($syntax-highlighting-color-strings);
     }
 
     #{map-get($selectors, templates)} {
-      color: $syntax-highlighting-color-templates;
+      color: _($syntax-highlighting-color-templates);
     }
 
     #{map-get($selectors, numbers)} {
-      color: $syntax-highlighting-color-numbers;
+      color: _($syntax-highlighting-color-numbers);
     }
 
     #{map-get($selectors, regexes)} {
-      color: $syntax-highlighting-color-regexes;
+      color: _($syntax-highlighting-color-regexes);
     }
 
     #{map-get($selectors, types)} {
-      color: $syntax-highlighting-color-types;
+      color: _($syntax-highlighting-color-types);
     }
 
     #{map-get($selectors, functions)} {
-      color: $syntax-highlighting-color-functions;
+      color: _($syntax-highlighting-color-functions);
     }
 
     #{map-get($selectors, tags)} {
-      color: $syntax-highlighting-color-tags;
+      color: _($syntax-highlighting-color-tags);
     }
 
     #{map-get($selectors, link)} {
-      color: $syntax-highlighting-color-link;
+      color: _($syntax-highlighting-color-link);
     }
 
     #{map-get($selectors, attributes)} {
-      color: $syntax-highlighting-color-attributes;
+      color: _($syntax-highlighting-color-attributes);
     }
 
     @if $ignored-selectors {

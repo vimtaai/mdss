@@ -1,0 +1,7 @@
+@function is_list($value) {
+  @return type-of($value) == list and list-separator($value) == space and not is-bracketed($value);
+}
+
+@function nth-if($list, $index) {
+  @return if(length($list) >= $index, nth($list, $index), null);
+}

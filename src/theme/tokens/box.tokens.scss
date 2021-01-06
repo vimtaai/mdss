@@ -1,0 +1,18 @@
+/* Object size scalable tokens */
+$object-size            : ("base": 32px, "step": 8px);
+
+/* Spacing scalable tokens */
+$spacing-inline         : ("base": 16px, "step": 4px);
+$spacing-stacking       : ("base": 24px, "step": 6px);
+$spacing-inset          : ("base": 14px, "step": 4px);
+$spacing-gutter         : ("base": 24px, "step": 6px);
+
+/* Border width scalable tokens  */
+$border-width           : ("base": 2px, "step": 1px);
+
+/* Rounding scalable tokens  */
+$rounding               : ("base": 4px, "step": 2px);
+
+/* Rounding static tokens */
+$rounding-full          : 50%;
+$rounding-pill          : 9999px;

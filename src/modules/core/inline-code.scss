@@ -1,10 +1,12 @@
 :not(pre) > code {
-  background: $code-inline-background;
-  border: $code-inline-border-style $code-inline-border-width $code-inline-border-color;
-  border-radius: $code-inline-rounding;
-  color: $code-inline-font-color;
-  font-family: $code-inline-font-family;
-  font-size: $code-inline-font-size;
-  font-weight: $code-inline-font-weight;
-  padding: #{$code-inline-padding-y} #{$code-inline-padding-x};
+  background: _($code-inline-background);
+  border: _($code-inline-border);
+  border-radius: _($code-inline-rounding);
+  color: _($code-inline-font-color);
+  display: inline-block;
+  font-family: _($code-inline-font-family);
+  font-size: _($code-inline-font-size);
+  font-style: _($code-inline-font-style);
+  font-weight: _($code-inline-font-weight);
+  padding: _($code-inline-spacing-inset);
 }

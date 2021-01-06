@@ -1,24 +1,24 @@
 .badge {
   align-items: center;
-  background: $badge-color;
+  background: _(map-get($badge-variants, "default"));
   border: none;
-  border-radius: $badge-rounding;
+  border-radius: _($badge-rounding);
   box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
-  font-family: $component-font-family;
-  font-size: $badge-font-size;
-  font-weight: $component-font-weight;
-  line-height: $component-line-height;
-  height: $badge-size;
+  font-family: _($component-font-family);
+  font-size: _($badge-font-size);
+  font-weight: _($component-font-weight);
+  line-height: _($component-line-height);
+  height: _($badge-size);
   justify-content: center;
-  padding: #{$badge-padding-y} #{$badge-padding-x};
+  padding: _($badge-spacing-inset);
   text-decoration: none;
 }
 
-@each $name, $color in $badge-variants {
+@each $name, $color in map-remove($badge-variants, "default") {
   .badge.color\:#{$name} {
-    background: $color;
-    color: contrast-color($color);
+    background: _($color);
+    color: contrast-color(_($color));
   }
 }

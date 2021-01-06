@@ -1,4 +1,4 @@
 mark {
-  background: $highlight-background;
-  color: $highlight-font-color;
+  background: _($highlight-background);
+  color: _($highlight-font-color);
 }

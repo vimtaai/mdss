@@ -1,14 +1,13 @@
 blockquote {
-  background: $quote-background;
-  border: $quote-border-style $quote-border-width $quote-border-color;
-  border-radius: $quote-rounding;
-  color: $quote-font-color;
-  font-family: $quote-font-family;
-  font-size: $quote-font-size;
-  font-weight: $quote-font-weight;
-  line-height: $quote-line-height;
-  margin-top: $quote-spacing-before;
-  margin-bottom: $quote-spacing-after;
-  padding: #{$quote-padding-y} #{$quote-padding-x};
-  padding-left: $quote-indent;
+  background: _($blockquote-background);
+  border: _($blockquote-border);
+  border-radius: _($blockquote-rounding);
+  color: _($blockquote-font-color);
+  font-family: _($blockquote-font-family);
+  font-size: _($blockquote-font-size);
+  font-weight: _($blockquote-font-weight);
+  line-height: _($blockquote-line-height);
+  margin-bottom: _($blockquote-spacing-after);
+  margin-top: _($blockquote-spacing-before);
+  padding: _($blockquote-spacing-inset);
 }

@@ -1,27 +1,34 @@
 ul,
 ol {
   list-style-position: outside;
-  margin: $list-spacing-before 0 $list-spacing-after;
-  margin-left: $list-indent;
+  margin: 0;
+  margin-bottom: _($list-spacing-after);
+  margin-top: _($list-spacing-before);
   padding: 0;
+  padding-left: _($list-indent);
   position: relative;
 
   ul {
-    margin: 0 0 0 #{$list-indent - $list-item-indent};
+    margin: 0;
+    margin-left: #{_($list-item-indent) - _($list-indent)};
   }
 
   li {
     margin-left: 0;
-    padding: #{$list-item-padding-y} #{$list-item-padding-x};
-    padding-left: $list-item-indent;
+    padding: _($list-item-spacing-inset);
+    padding-left: _($list-item-indent);
     position: relative;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
   }
 }
 
 ul {
-  list-style-type: $list-unordered-style;
+  list-style-type: _($list-unordered-style);
 }
 
 ol {
-  list-style-type: $list-ordered-style;
+  list-style-type: _($list-ordered-style);
 }

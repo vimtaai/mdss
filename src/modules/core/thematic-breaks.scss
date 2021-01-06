@@ -1,9 +1,9 @@
 hr {
-  background: $thematic-break-color;
+  background: _($break-background);
   border: none;
-  border-radius: $thematic-break-rounding;
+  border-radius: _($break-rounding);
   box-sizing: border-box;
-  height: $thematic-break-height;
-  margin-top: $thematic-break-spacing-before;
-  margin-bottom: $thematic-break-spacing-after;
+  height: _($break-height);
+  margin-bottom: _($break-spacing-after);
+  margin-top: _($break-spacing-before);
 }

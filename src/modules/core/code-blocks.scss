@@ -1,13 +1,12 @@
 pre {
-  background: $code-block-background;
-  border: $code-block-border-style $code-block-border-width $code-block-border-color;
-  border-radius: $code-block-rounding;
-  line-height: $code-block-line-height;
-  margin-top: $code-block-spacing-before;
-  margin-bottom: $code-block-spacing-after;
+  background: _($code-block-background);
+  border: _($code-block-border);
+  border-radius: _($code-block-rounding);
+  line-height: _($code-block-line-height);
+  margin-bottom: _($code-block-spacing-after);
+  margin-top: _($code-block-spacing-before);
   overflow-x: auto;
-  padding: #{$code-block-padding-y} #{$code-block-padding-x};
-  padding-left: $code-block-indent;
+  padding: _($code-block-spacing-inset);
   white-space: pre;
 
   @include print-only {
@@ -16,9 +15,9 @@ pre {
   }
 
   & > code {
-    color: $code-block-font-color;
-    font-family: $code-block-font-family;
-    font-size: $code-block-font-size;
-    font-weight: $code-block-font-weight;
+    color: _($code-block-font-color);
+    font-family: _($code-block-font-family);
+    font-size: _($code-block-font-size);
+    font-weight: _($code-block-font-weight);
   }
 }

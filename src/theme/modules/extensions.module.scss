@@ -3,45 +3,42 @@ $table-width                          : null;
 $table-align                          : center;
 $table-collapse                       : collapse;
 
-$table-header-background              : weight($color-lightgray, 400);
+$table-header-background              : [$color-lightgray 400];
 $table-row-odd-background             : null;
-$table-row-even-background            : weight($color-lightgray, 300);
+$table-row-even-background            : [$color-lightgray 300];
 
-$table-cell-padding-vertical          : weight($spacing-inset, 300);
-$table-cell-padding-horizontal        : weight($spacing-inset, 700);
+$table-cell-spacing-inset             : [$spacing-inset 300] [$spacing-inset 700];
 
 /* Task list (unchecked, checked) */
-$tasklist-background                  : $root-background              weight($color-green, 300);
-$tasklist-border-color                : weight($color-lightgray, 700) weight($color-green, 300);
-$tasklist-border-width                : weight($border-width, 400)    null;
-$tasklist-border-style                : solid                         null;
-$tasklist-rounding                    : $rounding-full                null;
+$tasklist-check-color                 : $color-white;
+$tasklist-check-width                 : [$border-width 400];
 
-$tasklist-size                        : weight($object-size, 300);
+$tasklist-size                        : ("default": [$object-size 300],                               "checked": null);
+$tasklist-background                  : ("default": $root-background,                                 "checked": [$color-green 300]);
+$tasklist-border                      : ("default": solid [$border-width 400] [$color-lightgray 700], "checked": solid [$border-width 400] [$color-green 300]);
+$tasklist-rounding                    : ("default": $rounding-full,                                   "checked": null);
 
-$tasklist-check-color                 : null $color-white; 
-$tasklist-check-width                 : null weight($border-width, 400);
 
 /* Syntax highlighting */
 $syntax-highlighting-provider         : "prism";
-$syntax-highlighting-color-comments   : weight($color-lime, 500);
-$syntax-highlighting-color-keywords   : weight($color-blue, 400);
-$syntax-highlighting-color-literals   : weight($color-purple, 400);
-$syntax-highlighting-color-strings    : weight($color-red, 400);
-$syntax-highlighting-color-templates  : weight($color-violet, 400);
-$syntax-highlighting-color-numbers    : weight($color-red, 400);
-$syntax-highlighting-color-regexes    : weight($color-orange, 500);
-$syntax-highlighting-color-types      : weight($color-teal, 500);
-$syntax-highlighting-color-functions  : weight($color-gold, 500);
-$syntax-highlighting-color-tags       : weight($color-blue, 400);
-$syntax-highlighting-color-attributes : weight($color-green, 400);
-$syntax-highlighting-color-link       : weight($color-green, 400);
+$syntax-highlighting-color-comments   : [$color-lime 500];
+$syntax-highlighting-color-keywords   : [$color-blue 400];
+$syntax-highlighting-color-literals   : [$color-purple 400];
+$syntax-highlighting-color-strings    : [$color-red 400];
+$syntax-highlighting-color-templates  : [$color-violet 400];
+$syntax-highlighting-color-numbers    : [$color-red 400];
+$syntax-highlighting-color-regexes    : [$color-orange 500];
+$syntax-highlighting-color-types      : [$color-teal 500];
+$syntax-highlighting-color-functions  : [$color-gold 500];
+$syntax-highlighting-color-tags       : [$color-blue 400];
+$syntax-highlighting-color-attributes : [$color-green 400];
+$syntax-highlighting-color-link       : [$color-green 400];
 
 $syntax-highlighting-wrap-languages   : "md" "markdown" "txt" "text";
 
 /* Definition lists */
-$deflist-spacing-before               : weight($spacing-stacking, 400);
-$deflist-spacing-after                : weight($spacing-stacking, 400);
+$deflist-spacing-before               : [$spacing-stacking 400];
+$deflist-spacing-after                : [$spacing-stacking 400];
 
 $deflist-term-font-family             : null;
 $deflist-term-font-size               : null;
@@ -53,17 +50,17 @@ $deflist-details-font-family          : null;
 $deflist-details-font-size            : null;
 $deflist-details-font-weight          : null;
 $deflist-details-font-color           : null;
-$deflist-details-indent               : weight($spacing-inset, 700);
+$deflist-details-indent               : [$spacing-inset 700];
 
 /* Changes */
-$insertion-background                 : weight($color-green, 100);
-$insertion-font-color                 : weight($color-green, 700);
+$insertion-background                 : [$color-green 100];
+$insertion-font-color                 : [$color-green 700];
 
-$deletion-background                  : weight($color-red, 100);
-$deletion-font-color                  : weight($color-red, 700);
+$deletion-background                  : [$color-red 100];
+$deletion-font-color                  : [$color-red 700];
 
-$highlight-background                 : weight($color-gold, 100);
-$highlight-font-color                 : weight($color-gold, 700);
+$highlight-background                 : [$color-gold 100];
+$highlight-font-color                 : [$color-gold 700];
 
 /* Superscripts, subscripts */
 $superscript-font-size                : $font-size-smaller;

@@ -1,19 +1,21 @@
 dl {
-  margin: $deflist-spacing-before 0 $deflist-spacing-after;
+  margin: 0;
+  margin-bottom: _($deflist-spacing-before);
+  margin-top: _($deflist-spacing-after);
 
   dt {
-    color: $deflist-term-font-color;
-    font-family: $deflist-term-font-family;
-    font-size: $deflist-term-font-size;
-    font-weight: $deflist-term-font-weight;
-    margin-left: $deflist-term-indent;
+    color: _($deflist-term-font-color);
+    font-family: _($deflist-term-font-family);
+    font-size: _($deflist-term-font-size);
+    font-weight: _($deflist-term-font-weight);
+    margin-left: _($deflist-term-indent);
   }
 
   dd {
-    color: $deflist-details-font-color;
-    font-family: $deflist-details-font-family;
-    font-size: $deflist-details-font-size;
-    font-weight: $deflist-details-font-weight;
-    margin-left: $deflist-details-indent;
+    color: _($deflist-details-font-color);
+    font-family: _($deflist-details-font-family);
+    font-size: _($deflist-details-font-size);
+    font-weight: _($deflist-details-font-weight);
+    margin-left: _($deflist-details-indent);
   }
 }

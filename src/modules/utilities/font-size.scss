@@ -1,5 +1,5 @@
 @each $name, $font-size in $utility-font-sizes {
   .size\:#{$name} {
-    font-size: $font-size;
+    font-size: _($font-size);
   }
 }

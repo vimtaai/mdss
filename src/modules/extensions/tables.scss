@@ -1,27 +1,27 @@
 table {
-  @include align-block($table-align);
+  @include align-block(_($table-align));
 
-  border-collapse: $table-collapse;
-  width: $table-width;
+  border-collapse: _($table-collapse);
+  width: _($table-width);
 
   thead {
     tr {
-      background: $table-header-background;
+      background: _($table-header-background);
     }
   }
 
   tbody {
     tr:nth-child(odd) {
-      background: $table-row-odd-background;
+      background: _($table-row-odd-background);
     }
 
     tr:nth-child(even) {
-      background: $table-row-even-background;
+      background: _($table-row-even-background);
     }
   }
 
   th,
   td {
-    padding: #{$table-cell-padding-vertical} #{$table-cell-padding-horizontal};
+    padding: _($table-cell-spacing-inset);
   }
 }

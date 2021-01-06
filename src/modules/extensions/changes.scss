@@ -1,11 +1,11 @@
 del {
-  background: $deletion-background;
-  color: $deletion-font-color;
+  background: _($deletion-background);
+  color: _($deletion-font-color);
   text-decoration: line-through;
 }
 
 ins {
-  background: $insertion-background;
-  color: $insertion-font-color;
+  background: _($insertion-background);
+  color: _($insertion-font-color);
   text-decoration: underline;
 }

@@ -1,23 +1,24 @@
 body {
-  @include align-block($root-align);
+  @include align-block(_($root-align));
 
-  background: $root-background;
-  border: $root-border-style $root-border-width $root-border-color;
-  border-radius: $root-rounding;
+  background: _($root-background);
+  border: _($root-border);
+  border-radius: _($root-rounding);
   box-sizing: border-box;
-  color: $root-font-color;
-  font-family: $root-font-family;
-  font-size: $root-font-size;
-  line-height: $root-line-height;
-  max-width: $root-max-width;
-  margin-top: $root-spacing-before;
-  margin-bottom: $root-spacing-after;
-  min-width: $root-min-width;
+  color: _($root-font-color);
+  font-family: _($root-font-family);
+  font-size: _($root-font-size);
+  line-height: _($root-line-height);
+  margin-bottom: _($root-spacing-after);
+  margin-top: _($root-spacing-before);
+  max-width: _($root-max-width);
+  min-width: _($root-min-width);
   overflow-x: hidden;
-  padding: #{$root-padding-y} #{$root-padding-x};
+  padding: _($root-spacing-inset);
+  text-align: _($root-text-align);
   width: 100%;
 
   > * {
-    max-width: $root-max-width;
+    max-width: _($root-max-width);
   }
 }

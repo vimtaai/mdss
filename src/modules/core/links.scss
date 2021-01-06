@@ -1,17 +1,18 @@
 a {
-  color: nth($link-font-color, 1);
-  font-family: $link-font-family;
-  font-size: $link-font-size;
-  font-weight: $link-font-weight;
+  color: _(map-get($link-font-color, "default"));
+  font-family: _($link-font-family);
+  font-size: _($link-font-size);
+  font-style: _($link-font-style);
+  font-weight: _($link-font-weight);
   transition: color #{$transition-duration} #{$transition-easing};
 
   @include screen-only {
     &:hover {
-      color: nth($link-font-color, 2);
+      color: _(map-get($link-font-color, "hover"));
     }
 
     &:active {
-      color: nth($link-font-color, 3);
+      color: _(map-get($link-font-color, "active"));
     }
   }
 }

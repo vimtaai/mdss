@@ -1,4 +1,6 @@
 p {
-  margin: $paragraph-spacing-before 0 $paragraph-spacing-after;
-  text-align: $paragraph-text-align;
+  margin-bottom: _($paragraph-spacing-after);
+  margin-top: _($paragraph-spacing-before);
+  padding: _($paragraph-spacing-inset);
+  text-align: _($paragraph-text-align);
 }

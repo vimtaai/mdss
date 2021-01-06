@@ -1,129 +1,121 @@
-/* Root element */
-$root-font-family              : $font-family-sans-serif;
-$root-font-size                : weight($font-size-body, 400);
-$root-font-weight              : null;
+/* Root element (block) */
+$root-font-family          : $font-family-sans-serif;
+$root-font-size            : [$font-size-body 400];
+$root-font-color           : $color-text-dark;
+$root-font-weight          : null;
+$root-font-style           : null;
 
-$root-align                    : center;
-$root-line-height              : weight($line-height-body, 400);
-$root-spacing-before           : 0;
-$root-spacing-after            : 0;
-$root-padding-x                : weight($spacing-inset, 700);
-$root-padding-y                : weight($spacing-stacking, 200);
-$root-border-width             : null;
-$root-border-style             : null;
-$root-rounding                 : null;
+$root-align                : center;
+$root-text-align           : null;
+$root-line-height          : [$line-height-body 400];
+$root-spacing-before       : 0;
+$root-spacing-after        : 0;
+$root-spacing-inset        : [$spacing-inset 500];
+$root-background           : $color-background;
+$root-border               : null;
+$root-rounding             : null;
 
-$root-font-color               : $color-text-dark;
-$root-background               : $color-background;
-$root-border-color             : null;
+/* Paragraphs (block) */
+$paragraph-text-align      : null;
+$paragraph-spacing-before  : [$spacing-stacking 300];
+$paragraph-spacing-after   : 0;
+$paragraph-spacing-inset   : null;
 
-/* Paragraphs */
-$paragraph-spacing-before      : weight($spacing-stacking, 300);
-$paragraph-spacing-after       : weight($spacing-stacking, 300);
+/* Headings (block) */
+//                           h1                       h2                       h3
+$heading-font-family       : null                     null                     null;
+$heading-font-size         : [$font-size-heading 900] [$font-size-heading 700] [$font-size-heading 600];
+$heading-font-color        : [$color-primary 400]     [$color-secondary 400]   null;
+$heading-font-weight       : 500                      500                      500;
+$heading-font-style        : 500                      500                      500;
 
-$paragraph-text-align          : left;
+$heading-text-align        : null                     null                     null;
+$heading-line-height       : null                     null                     null;
+$heading-spacing-before    : 0                        [$spacing-stacking 200]  [$spacing-stacking 100];
+$heading-spacing-after     : [$spacing-stacking 400]  [$spacing-stacking 200]  [$spacing-stacking 100];
+$heading-spacing-inset     : null                     null                     null;
+$heading-background        : null                     null                     null;
+$heading-border            : null                     null                     null;
+$heading-rounding          : null                     null                     null;
 
-/* Emphases */
-$strong-font-weight            : 700;
+/* Blockquote (block) */
+$blockquote-font-family    : null;
+$blockquote-font-size      : [$font-size-body 500];
+$blockquote-font-color     : [$color-secondary 400];
+$blockquote-font-weight    : null;
+$blockquote-font-style     : null;
 
-/* Headings */
-//                               h1                              h2                              h3                              h4                              h5                              h6
-$heading-font-family           : null                            null                            null                            null                            null                            null;
-$heading-font-size             : weight($font-size-heading, 900) weight($font-size-heading, 700) weight($font-size-heading, 600) weight($font-size-heading, 500) weight($font-size-heading, 400) weight($font-size-heading, 300);
-$heading-font-weight           : 500                             500                             500                             500                             500                             500;
+$blockquote-text-align     : null;
+$blockquote-line-height    : null;
+$blockquote-spacing-before : [$spacing-stacking 400];
+$blockquote-spacing-after  : [$spacing-stacking 400];
+$blockquote-spacing-inset  : [$spacing-inset 300] [$spacing-inset 300] [$spacing-inset 300] [$spacing-inset 700];
+$blockquote-background     : null;
+$blockquote-border         : null;
+$blockquote-rounding       : null;
 
-//                               h1                              h2                              h3                              h4                              h5                              h6
-$heading-line-height           : null                            null                            null                            null                            null                            null;
-$heading-spacing-before        : 0                               weight($spacing-stacking, 200)  weight($spacing-stacking, 100)  weight($spacing-stacking, 100)  0                               0;
-$heading-spacing-after         : weight($spacing-stacking, 400)  weight($spacing-stacking, 200)  weight($spacing-stacking, 100)  weight($spacing-stacking, 100)  0                               0;
-$heading-padding-x             : null                            null                            null                            null                            null                            null;
-$heading-padding-y             : null                            null                            null                            null                            null                            null;
-$heading-border-width          : null                            null                            null                            null                            null                            null;
-$heading-border-style          : null                            null                            null                            null                            null                            null;
-$heading-rounding              : null                            null                            null                            null                            null                            null;
+/* Lists (block) */
+$list-ordered-style        : numeric;
+$list-unordered-style      : square;
 
-//                               h1                          h2                                  h3                              h4                              h5                              h6
-$heading-font-color            : weight($color-primary, 400) weight($color-secondary, 400)       null                            null                            null                            null;
-$heading-background            : null                        null                                null                            null                            null                            null;
-$heading-border-color          : null                        null                                null                            null                            null                            null;
+$list-spacing-before       : [$spacing-stacking 400];
+$list-spacing-after        : [$spacing-stacking 400];
+$list-indent               : [$spacing-inset 900];
 
-/* Blockquote */
-$quote-font-family             : null;
-$quote-font-size               : weight($font-size-body, 500);
-$quote-font-weight             : null;
+$list-item-spacing-inset   : 0;
+$list-item-indent          : [$spacing-inset 300];
 
-$quote-line-height             : null;
-$quote-spacing-before          : weight($spacing-stacking, 400);
-$quote-spacing-after           : weight($spacing-stacking, 400);
-$quote-padding-x               : null;
-$quote-padding-y               : null;
-$quote-indent                  : weight($spacing-inset, 700);
-$quote-border-width            : null;
-$quote-border-style            : null;
-$quote-rounding                : null;
+/* Code blocks (block) */
+$code-block-font-family    : $font-family-monospace;
+$code-block-font-size      : [$font-size-body 300];
+$code-block-font-color     : null;
+$code-block-font-weight    : null;
+$code-block-font-style     : null;
 
-$quote-font-color              : weight($color-secondary, 400);
-$quote-background              : null;
-$quote-border-color            : null;
+$code-block-text-align     : null;
+$code-block-line-height    : [$line-height-body 300];
+$code-block-spacing-before : [$spacing-stacking 400];
+$code-block-spacing-after  : [$spacing-stacking 400];
+$code-block-spacing-inset  : [$spacing-inset 400] [$spacing-inset 500];
+$code-block-background     : [$color-lightgray 300];
+$code-block-border         : solid [$color-lightgray 500] [$border-width 300];
+$code-block-rounding       : [$rounding 400];
 
-/* Code blocks */
-$code-block-font-family        : $font-family-monospace;
-$code-block-font-size          : weight($font-size-body, 300);
-$code-block-font-weight        : null;
+/* Thematic breaks (block) */
+$break-height              : [$border-width 500];
+$break-spacing-before      : [$spacing-stacking 700];
+$break-spacing-after       : [$spacing-stacking 700];
+$break-background          : [$color-primary 400];
+$break-rounding            : [$rounding 400];
 
-$code-block-line-height        : weight($line-height-body, 300);
-$code-block-spacing-before     : weight($spacing-stacking, 400);
-$code-block-spacing-after      : weight($spacing-stacking, 400);
-$code-block-padding-x          : weight($spacing-inset, 500);
-$code-block-padding-y          : weight($spacing-inset, 400);
-$code-block-indent             : null;
-$code-block-border-width       : weight($border-width, 300);
-$code-block-border-style       : solid;
-$code-block-rounding           : weight($rounding, 400);
+/* Links (inline) */
+$link-font-family          : null;
+$link-font-size            : null;
+$link-font-color           : ("default": [$color-primary 400], "hover": [$color-primary 300], "active": [$color-primary 500]);
+$link-font-weight          : 700;
+$link-font-style           : null;
 
-$code-block-font-color         : null;
-$code-block-background         : weight($color-lightgray, 300);
-$code-block-border-color       : weight($color-lightgray, 500);
+/* Emphases (inline) */
+$emphasis-font-family      : null;
+$emphasis-font-size        : null;
+$emphasis-font-color       : null;
+$emphasis-font-weight      : null;
+$emphasis-font-style       : italic;
 
-/* Lists */
-$list-ordered-style            : numeric;
-$list-unordered-style          : square;
+$strong-font-family        : null;
+$strong-font-size          : null;
+$strong-font-color         : null;
+$strong-font-weight        : 700;
+$strong-font-style         : null;
 
-$list-spacing-before           : weight($spacing-stacking, 400);
-$list-spacing-after            : weight($spacing-stacking, 400);
-$list-indent                   : weight($spacing-inset, 900);
+/* Inline code (inline-block) */
+$code-inline-font-family   : $font-family-monospace;
+$code-inline-font-size     : $font-size-smaller;
+$code-inline-font-color    : null;
+$code-inline-font-weight   : null;
+$code-inline-font-style    : null;
 
-$list-item-padding-x           : null;
-$list-item-padding-y           : weight($spacing-inset, 300);
-$list-item-indent              : weight($spacing-inset, 200);
-
-/* Thematic breaks */
-$thematic-break-color          : weight($color-primary, 400);
-$thematic-break-height         : weight($border-width, 500);
-
-$thematic-break-spacing-before : weight($spacing-stacking, 700);
-$thematic-break-spacing-after  : weight($spacing-stacking, 700);
-$thematic-break-rounding       : weight($rounding, 400);
-
-/* Links */
-$link-font-family              : null;
-$link-font-size                : null;
-$link-font-weight              : 700;
-
-//                               base                        hover                       active
-$link-font-color               : weight($color-primary, 400) weight($color-primary, 300) weight($color-primary, 500);
-
-/* Inline code */
-$code-inline-font-family       : $font-family-monospace;
-$code-inline-font-size         : $font-size-smaller;
-$code-inline-font-weight       : null;
-
-$code-inline-padding-x         : weight($spacing-inset, 100);
-$code-inline-padding-y         : weight($spacing-inset, 100);
-$code-inline-border-width      : weight($border-width, 300);
-$code-inline-border-style      : solid;
-$code-inline-rounding          : weight($rounding, 400);
-
-$code-inline-font-color        : null;
-$code-inline-background        : weight($color-lightgray, 300);
-$code-inline-border-color      : weight($color-lightgray, 500);
+$code-inline-spacing-inset : 0 [$spacing-inset 100];
+$code-inline-border        : solid [$color-lightgray 500] [$border-width 300];
+$code-inline-rounding      : [$rounding 400];
+$code-inline-background    : [$color-lightgray 300];

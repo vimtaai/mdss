@@ -1,6 +1,6 @@
 // Border radius
 @each $name, $rounding in $utility-roundings {
   .rounding\:#{$name} {
-    border-radius: $rounding;
+    border-radius: _($rounding);
   }
 }

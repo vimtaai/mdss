@@ -1,9 +1,9 @@
 sup {
-  font-size: $superscript-font-size;
+  font-size: _($superscript-font-size);
   vertical-align: super;
 }
 
 sub {
-  font-size: $subscript-font-size;
+  font-size: _($subscript-font-size);
   vertical-align: sub;
 }

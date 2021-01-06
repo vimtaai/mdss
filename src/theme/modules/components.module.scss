@@ -1,76 +1,65 @@
 // Generic UI component settings
-$component-font-family   : $font-family-sans-serif;
-$component-font-weight   : 500;
-$component-line-height   : weight($line-height-ui, 300);
+$component-font-family : $font-family-sans-serif;
+$component-font-weight : 500;
+$component-line-height : [$line-height-ui 300];
 
 // Buttons
-$button-size             : weight($object-size, 400);
-$button-font-size        : weight($font-size-ui, 400);
+$button-size           : [$object-size 400];
+$button-font-size      : [$font-size-ui 400];
 
-$button-padding-x        : weight($spacing-inset, 500);
-$button-padding-y        : weight($spacing-inset, 400);
-$button-border-width     : weight($border-width, 400);
-$button-border-style     : solid;
-$button-rounding         : weight($rounding, 400);
+$button-spacing-inset  : 0 [$spacing-inset 500];
+$button-border         : solid [$border-width 400] transparent;
+$button-rounding       : [$rounding 400];
 
-//                         base                          hover                         active
-$button-color            : weight($color-lightgray, 400) weight($color-lightgray, 500) weight($color-lightgray, 700);
-$button-variants         : (
-  //                       base                          hover                         active
-  "primary"              : weight($color-primary, 400)   weight($color-primary, 500)   weight($color-primary, 700),
-  "secondary"            : weight($color-secondary, 400) weight($color-secondary, 500) weight($color-secondary, 700),
-  "negative"             : weight($color-red, 400)       weight($color-red, 500)       weight($color-red, 700),
-  "positive"             : weight($color-green, 400)     weight($color-green, 500)     weight($color-green, 700),
+$button-variants       : (
+  "default"   : ("default": [$color-lightgray 400], "hover": [$color-lightgray 500], "active": [$color-lightgray 700]),
+  "primary"   : ("default": [$color-primary 400],   "hover": [$color-primary 500],   "active": [$color-primary 700]),
+  "secondary" : ("default": [$color-secondary 400], "hover": [$color-secondary 500], "active": [$color-secondary 700]),
+  "negative"  : ("default": [$color-red 400],       "hover": [$color-red 500],       "active": [$color-red 700]),
+  "positive"  : ("default": [$color-green 400],     "hover": [$color-green 500],     "active": [$color-green 700]),
 );
 
 // Badges
-$badge-size              : weight($object-size, 300);
-$badge-font-size         : weight($font-size-ui, 300);
+$badge-size            : [$object-size 300];
+$badge-font-size       : [$font-size-ui 300];
 
-$badge-padding-x         : weight($spacing-inset, 300);
-$badge-padding-y         : null;
-$badge-border-width      : null;
-$badge-border-style      : null;
-$badge-rounding          : weight($rounding, 400);
+$badge-spacing-inset   : 0 [$spacing-inset 300];
+$badge-border          : null;
+$badge-rounding        : [$rounding 400];
 
-$badge-color             : weight($color-lightgray, 400);
-$badge-variants          : (
-  "red"                  : weight($color-red, 400),
-  "orange"               : weight($color-orange, 400),
-  "gold"                 : weight($color-gold, 400),
-  "lime"                 : weight($color-lime, 400),
-  "green"                : weight($color-green, 400),
-  "teal"                 : weight($color-teal, 400),
-  "blue"                 : weight($color-blue, 400),
-  "purple"               : weight($color-purple, 400),
-  "violet"               : weight($color-violet, 400)
+$badge-variants        : (
+  "default" : [$color-lightgray 400],
+  "red"     : [$color-red 400],
+  "orange"  : [$color-orange 400],
+  "gold"    : [$color-gold 400],
+  "lime"    : [$color-lime 400],
+  "green"   : [$color-green 400],
+  "teal"    : [$color-teal 400],
+  "blue"    : [$color-blue 400],
+  "purple"  : [$color-purple 400],
+  "violet"  : [$color-violet 400]
 );
 
 // Indicators
-$indicator-size          : weight($object-size, 100);
+$indicator-size        : [$object-size 100];
 
-$indicator-border-width  : null;
-$indicator-border-style  : null;
-$indicator-rounding      : $rounding-full;
+$indicator-border      : null;
+$indicator-rounding    : $rounding-full;
 
-$indicator-color         : weight($color-lightgray, 500);
-$indicator-variants      : (
-  "red"                  : weight($color-red, 400),
-  "orange"               : weight($color-orange, 400),
-  "gold"                 : weight($color-gold, 400),
-  "lime"                 : weight($color-lime, 400),
-  "green"                : weight($color-green, 400),
-  "teal"                 : weight($color-teal, 400),
-  "blue"                 : weight($color-blue, 400),
-  "purple"               : weight($color-purple, 400),
-  "violet"               : weight($color-violet, 400)
+$indicator-variants    : (
+  "default" : [$color-lightgray 500],
+  "red"     : [$color-red 400],
+  "orange"  : [$color-orange 400],
+  "gold"    : [$color-gold 400],
+  "lime"    : [$color-lime 400],
+  "green"   : [$color-green 400],
+  "teal"    : [$color-teal 400],
+  "blue"    : [$color-blue 400],
+  "purple"  : [$color-purple 400],
+  "violet"  : [$color-violet 400]
 );
 
 // Cards
-$card-padding-x          : weight($spacing-inset, 300);
-$card-padding-y          : weight($spacing-inset, 400);
-$card-border-width       : weight($border-width, 300);
-$card-border-style       : solid;
-$card-rounding           : weight($rounding, 400);
-
-$card-border-color       : weight($color-lightgray, 400);
+$card-spacing-inset    : [$spacing-inset 300] [$spacing-inset 400];
+$card-border           : solid [$border-width 300] [$color-lightgray 400];
+$card-rounding         : [$rounding 400];

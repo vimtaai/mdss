@@ -1,7 +1,15 @@
 em {
-  font-style: italic;
+  color: _($emphasis-font-color);
+  font-family: _($emphasis-font-family);
+  font-size: _($emphasis-font-size);
+  font-style: _($emphasis_font-style);
+  font-weight: _($emphasis-font-weight);
 }
 
 strong {
-  font-weight: $strong-font-weight;
+  color: _($strong-font-color);
+  font-family: _($strong-font-family);
+  font-size: _($strong-font-size);
+  font-style: _($strong_font-style);
+  font-weight: _($strong-font-weight);
 }

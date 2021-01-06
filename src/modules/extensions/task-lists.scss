@@ -1,47 +1,47 @@
 ul {
   li > input[type="checkbox"]:first-child {
     height: 0;
-    left: -$tasklist-size;
+    left: -1 * _($tasklist-size);
     margin: 0;
+    margin-top: calc(
+      #{_($root-font-size)} * #{_($root-line-height) / 2} - #{_($tasklist-size) / 2}
+    );
     padding: 0;
     position: absolute;
-    top: #{$tasklist-size * 0.1 + $list-item-padding-y};
     width: 0;
 
     // Box
     &::before {
       content: "";
-      background: nth($tasklist-background, 1);
-      border: nth($tasklist-border-style, 1) nth($tasklist-border-color, 1)
-        nth($tasklist-border-width, 1);
-      border-radius: nth($tasklist-rounding, 1);
+      background: _(map-get($tasklist-background, "default"));
+      border: _(map-get($tasklist-border, "default"));
+      border-radius: _(map-get($tasklist-rounding, "default"));
       box-sizing: border-box;
       display: block;
       transition: background-color $transition-duration $transition-easing,
         border-color $transition-duration $transition-easing;
-      height: $tasklist-size;
-      width: $tasklist-size;
+      height: _($tasklist-size);
+      width: _($tasklist-size);
     }
 
     &:checked::before {
-      background: nth($tasklist-background, 2);
-      border: nth($tasklist-border-style, 2) nth($tasklist-border-color, 2)
-        nth($tasklist-border-width, 2);
-      border-radius: nth($tasklist-rounding, 2);
+      background: _(map-get($tasklist-background, "checked"));
+      border: _(map-get($tasklist-border, "checked"));
+      border-radius: _(map-get($tasklist-rounding, "checked"));
     }
 
     // Checkmark
     &::after {
       content: "";
       display: none;
-      border-left: solid nth($tasklist-check-color, 2) $tasklist-check-width;
-      border-bottom: solid nth($tasklist-check-color, 2) $tasklist-check-width;
-      height: #{$tasklist-size * 0.15};
-      left: #{$tasklist-size * 0.25};
+      border-left: solid _($tasklist-check-color) _($tasklist-check-width);
+      border-bottom: solid _($tasklist-check-color) _($tasklist-check-width);
+      height: #{_($tasklist-size) * 0.15};
+      left: #{_($tasklist-size) * 0.25};
       position: absolute;
-      top: #{$tasklist-size * 0.35};
+      top: #{_($tasklist-size) * 0.35};
       transform: rotate(-45deg);
-      width: #{$tasklist-size * 0.4};
+      width: #{_($tasklist-size) * 0.4};
     }
 
     &:checked::after {

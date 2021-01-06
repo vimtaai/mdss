@@ -1,0 +1,59 @@
+@function is-scalable($token) {
+  @return map-has-key($token, "base") and map-has-key($token, "step");
+}
+
+@function is-token($value) {
+  @return length($value) == 2 and is-bracketed($value);
+}
+
+@function weight($token, $level: 400) {
+  @if not is-scalable($token) {
+    @return $token;
+  }
+
+  $base-value: map-get($token, "base");
+  $step-value: map-get($token, "step");
+  $step-multiplier: ($level - 400) / 100;
+  $adjust-amount: $step-value * $step-multiplier;
+
+  @if (type-of($base-value) == color) {
+    @return scale-color($base-value, $lightness: -$adjust-amount);
+  } @else {
+    @return $base-value + $adjust-amount;
+  }
+}
+
+@function resolve-state($value, $state) {
+  @if type-of($value) != map {
+    @return $value;
+  }
+
+  @if not map-has-key($value, $state) {
+    @return map-get($value, "default");
+  }
+
+  @return map-get($value, $state);
+}
+
+@function resolve-value($value) {
+  @if not is-token($value) {
+    @return $value;
+  }
+
+  $token: nth($value, 1);
+  $scale: nth($value, 2);
+
+  @return weight($token, $scale);
+}
+
+@function _($value, $state: "default") {
+  @if not is-list($value) {
+    @return resolve-value(resolve_state($value, $state));
+  }
+
+  $output: [];
+  @each $item in $value {
+    $output: append($output, resolve-value(resolve_state($item, $state)));
+  }
+  @return join([], $output, $separator: space, $bracketed: false);
+}
