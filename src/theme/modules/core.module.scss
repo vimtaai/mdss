@@ -42,14 +42,14 @@ $heading-rounding          : null                     null                     n
 $blockquote-font-family    : null;
 $blockquote-font-size      : [$font-size-body 500];
 $blockquote-font-color     : [$color-secondary 400];
-$blockquote-font-weight    : null;
+$blockquote-font-weight    : 500;
 $blockquote-font-style     : null;
 
 $blockquote-text-align     : null;
 $blockquote-line-height    : null;
 $blockquote-spacing-before : [$spacing-stacking 400];
 $blockquote-spacing-after  : [$spacing-stacking 400];
-$blockquote-spacing-inset  : [$spacing-inset 300] [$spacing-inset 300] [$spacing-inset 300] [$spacing-inset 700];
+$blockquote-spacing-inset  : 0 [$spacing-inset 300] 0 [$spacing-inset 700];
 $blockquote-background     : null;
 $blockquote-border         : null;
 $blockquote-rounding       : null;
@@ -92,7 +92,7 @@ $break-rounding            : [$rounding 400];
 $link-font-family          : null;
 $link-font-size            : null;
 $link-font-color           : ("default": [$color-primary 400], "hover": [$color-primary 300], "active": [$color-primary 500]);
-$link-font-weight          : 700;
+$link-font-weight          : 500;
 $link-font-style           : null;
 
 /* Emphases (inline) */

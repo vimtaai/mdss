@@ -6,14 +6,20 @@
 @import "helpers/string";
 @import "helpers/token";
 
+/* Default */
 @import "theme/config/import.config";
 @import "theme/config/layout.config";
 @import "theme/config/motion.config";
+/* Custom */
+@import "config/import.config";
+@import "config/layout.config";
+@import "config/motion.config";
 
 @each $import in $theme-imports {
   @import url($import);
 }
 
+/* Default theme */
 @import "theme/tokens/box.tokens";
 @import "theme/tokens/colors.tokens";
 @import "theme/tokens/typography.tokens";
@@ -23,6 +29,17 @@
 @import "theme/modules/utilities.module";
 @import "theme/modules/components.module";
 
+/* Custom theme */
+@import "tokens/box.tokens";
+@import "tokens/colors.tokens";
+@import "tokens/typography.tokens";
+
+@import "modules/core.module";
+@import "modules/extensions.module";
+@import "modules/utilities.module";
+@import "modules/components.module";
+
+/* Modules */
 @import "modules/core/root";
 @import "modules/core/paragraphs";
 @import "modules/core/emphases";

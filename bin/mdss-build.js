@@ -20,7 +20,7 @@ const program = new Commander.Command();
 const logger = new Signale.Signale({ scope: "mdss", interactive: true });
 
 program
-  .option("-c --config-file [path]", "path to the config file")
+  .option("-c --config-file [path]", "use config file")
   .option("-t --theme-dir <path>", "path to the theme directory")
   .option("-o --output-dir <path>", "path to the output directory")
   .option("-f --filename <name>", "base filename for the build")
@@ -33,16 +33,16 @@ async function build(program) {
     logger.disable();
   }
 
-  const isConfigFileSet = program.configFile !== undefined;
+  const isConfigFileUsed = program.configFile !== undefined;
+  const isConfigFileSet = typeof program.configFile === "string";
   const isThemeDirSet = program.themeDir !== undefined;
   const isOutputDirSet = program.outputDir !== undefined;
   const isFilenameSet = program.filename !== undefined;
-  const isConfigFileUsed = isConfigFileSet;
 
-  let configFile = typeof program.configFile === "string" ? program.configFile : defaultConfigFile;
-  let themeDir = program.themeDir || defaultThemeDir;
-  let outputDir = program.outputDir || defaultOutputDir;
-  let filename = program.filename || defaultFilename;
+  let configFile = isConfigFileSet ? program.configFile : defaultConfigFile;
+  let themeDir = isThemeDirSet ? program.themeDir : defaultThemeDir;
+  let outputDir = isOutputDirSet ? program.outputDir : defaultOutputDir;
+  let outputFilename = isFilenameSet ? program.filename : defaultFilename;
   let isDevBuild = program.dev || false;
 
   try {
@@ -52,7 +52,7 @@ async function build(program) {
 
       themeDir = configFileData.themeDir;
       outputDir = configFileData.outputDir;
-      filename = configFileData.filename;
+      outputFilename = configFileData.outputFilename;
     }
   } catch (err) {
     logger.error(`Could not read config file \`${configFile}\`.\n`, err);
@@ -64,7 +64,7 @@ async function build(program) {
   }
   logger.info(`Theme dir:   ${themeDir}\n`);
   logger.info(`Output dir:  ${outputDir}\n`);
-  logger.info(`Filename:    ${filename}\n`);
+  logger.info(`Filename:    ${outputFilename}\n`);
   logger.info(`Dev Mode:    ${isDevBuild}\n`);
 
   try {
@@ -89,7 +89,7 @@ async function build(program) {
 
   try {
     logger.await(`Generating output...`);
-    const basename = `${filename}${isDevBuild ? `` : `.min`}.css`;
+    const basename = `${outputFilename}${isDevBuild ? `` : `.min`}.css`;
     const fullPath = resolve(outputDir, basename);
     const sassIndexFile = resolve(mdssSourceDir, "index.scss");
 
