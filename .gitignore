@@ -4,3 +4,4 @@ node_modules
 build
 # editor config
 .vscode
+.idea
