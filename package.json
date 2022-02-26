@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "commander": "^9.0.0",
-    "csso": "^3.5.1",
+    "csso": "^5.0.2",
     "mkdirp": "^1.0.4",
     "node-sass": "^7.0.1"
   }

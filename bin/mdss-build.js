@@ -117,7 +117,7 @@ async function build (program) {
       console.log(`[CREATE] ${outputFilePath}.map`)
       await write(outputFilePath + '.map', result.map)
     } else {
-      const minified = csso.minify(result.css)
+      const minified = csso.minify(result.css.toString())
       await write(outputFilePath, minified.css)
     }
   }
