@@ -86,7 +86,7 @@ async function build (program) {
   console.log(`Output Dir:\t ${config.outputPath}\n`)
 
   // Building
-  mkdir(config.outputAbsolutePath)
+  mkdir.sync(config.outputAbsolutePath)
 
   for (const target of targets) {
     const media = (target === 'bundle') ? bundle : target
