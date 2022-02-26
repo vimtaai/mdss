@@ -29,15 +29,15 @@ async function build (program) {
 
   // Command line options
   const options = {
-    dev: program.dev || false,
+    dev: program.opts().dev || false,
     target: {
-      bundle: program.all || program.bundle,
-      screen: program.all || program.screen,
-      print: program.all || program.print
+      bundle: program.opts().all || program.opts().bundle,
+      screen: program.opts().all || program.opts().screen,
+      print: program.opts().all || program.opts().print
     },
     bundle: {
-      screen: !program.withoutScreen,
-      print: !program.withoutPrint
+      screen: !program.opts().withoutScreen,
+      print: !program.opts().withoutPrint
     }
   }
 
@@ -50,8 +50,8 @@ async function build (program) {
 
   // Configuration
   const config = {
-    configPath: program.configPath || defaultConfigPath,
-    outputPath: program.outputPath || defaultOutputPath
+    configPath: program.opts().configPath || defaultConfigPath,
+    outputPath: program.opts().outputPath || defaultOutputPath
   }
 
   try {
