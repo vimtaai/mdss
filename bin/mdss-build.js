@@ -21,7 +21,7 @@ program
   .option('-o --output-path [path]', 'path to the output directory')
   .parse(process.argv)
 
-const sass = require('node-sass') // Build tool
+const sass = require('sass') // Build tool
 const csso = require('csso') // Minifying tool
 
 async function build (program) {
